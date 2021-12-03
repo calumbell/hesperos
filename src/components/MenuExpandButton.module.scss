@@ -1,0 +1,14 @@
+
+.menu-expand-btn {
+  background-color: transparent;
+  border: none;
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  .menu-expand-btn {
+    display: flex;
+  }
+}

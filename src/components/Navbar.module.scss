@@ -1,6 +1,13 @@
 .navbar {
+  display: flex;
+  height: 2rem;
+  justify-content: space-between;
+}
+
+.navbar-left-side {   
   align-items: center;
   display: flex;
+  flex: 25%;
   justify-content: space-between;
 
   a {
@@ -12,3 +19,38 @@
     color: inherit;
   }
 }
+
+.navbar-right-side {
+  @extend .navbar-left-side;
+  flex: 75%;
+}
+
+.nav-expand-btn {
+  background-color: transparent;
+  border: none;
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  .nav-expand-btn {
+    display: flex;
+  }
+
+  .navbar-right-side {
+    display: none;
+  }
+
+  .popup-menu {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: absolute;
+    justify-content: right;
+    top: 5rem;
+    right: 2.5rem;
+  }
+}
+
