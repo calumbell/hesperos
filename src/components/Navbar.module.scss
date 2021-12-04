@@ -2,6 +2,7 @@
   display: flex;
   height: 2rem;
   justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .navbar-left-side {   
@@ -15,22 +16,15 @@
     font-size: 0.8rem;
     font-weight: 300;
   }
-  a:visited {
-    color: inherit;
-  }
+
 }
 
+.site-brand {
+  width: 128px;
+}
 .navbar-right-side {
   @extend .navbar-left-side;
   flex: 75%;
-}
-
-.nav-expand-btn {
-  background-color: transparent;
-  border: none;
-  display: none;
-  margin: 0;
-  padding: 0;
 }
 
 @media (max-width: 600px) {

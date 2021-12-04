@@ -11,7 +11,7 @@ export default function EventCard({ data }) {
         alt={data.imgAltText}
       />
       <time>{data.date}</time>
-      <p>{data.title}</p>
+      <sub className={styles.cardTitle}>{data.title}</sub>
 
     </Link>
   )

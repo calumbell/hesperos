@@ -7,13 +7,15 @@ import Layout from '../components/Layout.jsx';
 export default function eventPage({ data }) {
   // data argument contains result of graphql query
   const event = data.prismicEvent.data;
-  console.log(event)
+
   return (
     <Layout >
       <Link 
         className={styles.backlink}
         to="/events/"
-      > Back to all events</Link>
+      > 
+        Back to all events
+      </Link>
       <div className={styles.eventDetailContainer}>
 
         <aside className={styles.eventDetailsAside}>

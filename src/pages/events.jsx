@@ -11,7 +11,7 @@ export default function Events() {
         nodes {
           uid
           data {
-            date
+            date(formatString: "dddd DD MMMM YYYY")
             title {
               text
             }
