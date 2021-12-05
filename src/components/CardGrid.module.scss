@@ -1,0 +1,19 @@
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+
+@media (min-width: 600px) {
+  .cardGrid {
+    grid-template-columns: 1fr 1fr;
+    
+  }
+}
+
+@media (min-width: 960px) {
+  .cardGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
