@@ -1,5 +1,6 @@
-import { Link } from 'gatsby';
 import React, { useState } from 'react';
+import { Link } from 'gatsby';
+
 import MenuExpandButton from './MenuExpandButton';
 import * as styles from './Navbar.module.scss';
 
@@ -7,9 +8,14 @@ export default function Navbar({ siteBrand }) {
   const [isExpanded, setExpanded] = useState(false);
 
   return (
-    <nav className={styles.navbar}>
+    <nav 
+      className={styles.navbar}
+    >
       <div className={styles.navbarLeftSide}>
-        <Link to="/">
+        <Link 
+          to="/"
+          onClick={() => setExpanded(false)}
+        >
           <img 
             className={styles.siteBrand}
             src={siteBrand.url}
@@ -24,9 +30,12 @@ export default function Navbar({ siteBrand }) {
       />
 
       <div 
-        className={`${styles.navbarRightSide}
+        className={`
+          ${ styles.navbarRightSide }
           ${ isExpanded && styles.popupMenu}
         `}
+        
+        onClick={() => setExpanded(false)}
       >
         <Link to="/about/">ABOUT</Link>
         <Link to="/events/">EVENTS</Link>

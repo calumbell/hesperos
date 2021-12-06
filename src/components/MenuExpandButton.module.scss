@@ -1,11 +1,13 @@
-
 .menu-expand-btn {
   background-color: transparent;
   border: none;
+  color: black;
+  cursor: pointer;
   display: none;
   margin: 0;
   padding: 0;
 }
+
 
 @media (max-width: 600px) {
   .menu-expand-btn {

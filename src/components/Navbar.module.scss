@@ -1,8 +1,8 @@
 .navbar {
   display: flex;
-  height: 2rem;
+  height: 4rem;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .navbar-left-side {   
@@ -10,21 +10,33 @@
   display: flex;
   flex: 25%;
   justify-content: space-between;
-
-  a {
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 300;
-  }
-
 }
 
 .site-brand {
+  align-self: flex-end;
   width: 128px;
 }
+
 .navbar-right-side {
   @extend .navbar-left-side;
   flex: 75%;
+
+  a {
+    transition: color 0.25s;
+    background: transparent;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-top: 1rem;
+  }
+}
+
+.navbar-right-side:hover {
+  color: lightgrey;
+  a:hover {
+    color: black;
+    text-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -33,18 +45,29 @@
   }
 
   .navbar-right-side {
+    align-items: flex-end;
+    background-color: white;
     display: none;
+    flex-direction: column;
+    height: auto;
+    justify-content: right;
+    position: absolute;
+    right: -500px;
+    top: 5rem;
+    transition: right 0.25s;
   }
 
   .popup-menu {
-    align-items: flex-end;
     display: flex;
-    flex-direction: column;
-    height: auto;
-    position: absolute;
-    justify-content: right;
-    top: 5rem;
-    right: 2.5rem;
+    animation: 0.33s popUpMenuSlideIn forwards;
+  }
+
+  @keyframes popUpMenuSlideIn {
+    from {
+      right: -5rem;
+    }
+    to {
+      right: 2.5rem;
+    }
   }
 }
-
