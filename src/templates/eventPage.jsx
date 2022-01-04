@@ -32,7 +32,7 @@ export default function eventPage({ data }) {
           
         </aside>
 
-        <div className={styles.eventDetailsMain}>
+        <div>
           <p>{event.event_description.text}</p>
           { event.buy_ticket_link.url &&
             <a

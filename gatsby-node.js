@@ -19,3 +19,25 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   })
 };
+
+
+/*
+ * To pass variables into graphql page queries, they must be added to the
+ * page context via the Create Page API. We use this date to filter events.
+ * gatsbyjs.com/docs/creating-and-modifying-pages/#pass-context-to-pages
+ */
+
+const date = new Date();
+const formattedDate = `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2,'0')}-${date.getDate().toString().padStart(2,'0')}`;
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { deletePage, createPage } = actions;
+  deletePage(page);
+  createPage({
+    ...page,
+    context: {
+      ...page.context,
+      date: formattedDate,
+    },
+  });
+}

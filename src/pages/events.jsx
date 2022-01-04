@@ -1,32 +1,10 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout.jsx';
 import EventCard from '../components/EventCard.jsx';
 import CardGrid from '../components/CardGrid.jsx';
 
-export default function Events() {
-
-  // Query Prismic for event summaries
-  const data = useStaticQuery(graphql`
-    query EventSummaries {
-      allPrismicEvent {
-        nodes {
-          uid
-          data {
-            date(formatString: "dddd DD MMMM YYYY")
-            title {
-              text
-            }
-            event_image {
-              url
-              alt
-            }
-          }
-        }
-      }
-    }
-  `);
-  
+export default function Events({data}) {
   // Flattener function for graphql response
   const flattenEventData = node => {
     return {
@@ -49,3 +27,28 @@ export default function Events() {
     </Layout>
   )
 }
+
+// Fetch events data
+// Results are passed to Event cmp via 'data' prop
+export const query = graphql`
+  query EventSummaries($date: Date) {
+    allPrismicEvent(
+      sort: {fields: data___date, order: ASC}
+      filter: {data: {date: {gte: $date}}}
+    ) {
+      nodes {
+        uid
+        data {
+          date(formatString: "dddd DD MMMM YYYY")
+          title {
+            text
+          }
+          event_image {
+            url
+            alt
+          }
+        }
+      }
+    }
+  }
+  `;
