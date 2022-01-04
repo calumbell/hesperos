@@ -28,7 +28,7 @@ export default function MenuExpandButton({
       onClick={() => {setExpanded(!isExpanded)}}
     >
       <motion.svg 
-        whileHover={{ scale: 1.15 }}
+        whileHover={{ scale: 1.1  }}
         viewBox="0 0 50 43" 
         width="3rem" height="1.5rem"  
         stroke="black"
