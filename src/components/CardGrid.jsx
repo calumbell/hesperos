@@ -6,9 +6,10 @@ export default function CardGrid({
   Card,     // The card component to be rendered
   data,     // Arr of data, each index = 1 card
   flatten,  // A fn. that formats props for Card cmpnt
+  size,     // 'large' or 'small'
 }) {
   return (
-    <div className={styles.cardGrid}>
+    <div className={size === 'small' ? styles.cardGridSm : styles.cardGridLg}>
       {data.map((item, i) => {
         return <Card key={i} data={flatten(item)}/>
       })}

@@ -1,19 +1,28 @@
-.cardGrid {
+.card-grid-lg {
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
 }
 
+.card-grid-sm {
+  @extend .card-grid-lg;
+  grid-template-columns: repeat(2, 1fr);
+}
 
 @media (min-width: 600px) {
-  .cardGrid {
-    grid-template-columns: 1fr 1fr;
-    
+  .card-grid-lg {
+    grid-template-columns: repeat(2, 1fr);
   }
+  .card-grid-sm {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
 }
 
 @media (min-width: 960px) {
-  .cardGrid {
-    grid-template-columns: 1fr 1fr 1fr;
+  .card-grid-lg {
+    padding: 0rem 3rem;
+  }
+  .card-grid-sm {
+    grid-template-columns: repeat(5, 1fr);
   }
 }

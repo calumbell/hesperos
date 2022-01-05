@@ -10,12 +10,6 @@ export default function eventPage({ data }) {
 
   return (
     <Layout >
-      <Link 
-        className={styles.backlink}
-        to="/events/"
-      > 
-        Back to all events
-      </Link>
       <div className={styles.eventDetailContainer}>
 
         <aside className={styles.eventDetailsAside}>
@@ -46,6 +40,14 @@ export default function eventPage({ data }) {
 
         </div>
       </div>
+      <footer>
+        <Link 
+          className={styles.backlink}
+          to="/events/"
+        > 
+          Back to all events
+        </Link>
+      </footer>
     </Layout>
   )
 }

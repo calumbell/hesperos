@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout.jsx';
 import EventCard from '../components/EventCard.jsx';
 import CardGrid from '../components/CardGrid.jsx';
@@ -24,6 +24,9 @@ export default function Events({data}) {
         data={data.allPrismicEvent.nodes}
         flatten={flattenEventData}
       />
+      <footer>
+        <Link to="/pastEvents">Past Events</Link>
+      </footer>
     </Layout>
   )
 }
