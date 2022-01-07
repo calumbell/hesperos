@@ -6,12 +6,15 @@ import CardGrid from '../components/CardGrid';
 
 export default function PastEvents({ data }) {
   const flattenEventData = node => {
+    let date = node.data.date.split(" ").slice(1);
+    date[1] = `${date[1].slice(0,3)}.`;
+    date = date.join(" ");
     return {
       uid: node.uid,
       img: node.data.event_image.url,
       imgAltText: node.data.event_image.alt,
       title: node.data.title.text,
-      date: node.data.date.split(" ").slice(1).join(" "),
+      date: date,
       location: node.data.location,
     }  
   }

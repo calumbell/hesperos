@@ -12,9 +12,8 @@ export default function EventCardThumbnail({ data }) {
       >
       </img>
       <div className={styles.tooltip}>
-          <p>{data.title}</p>
-          <p>{data.date}</p>
-          <p>{data.location}</p>
+          <p className={styles.tooltipTitle}>{data.title}</p>
+          <p className={styles.tooltipDate}>{data.date}</p>
       </div>
     </Link>
   )

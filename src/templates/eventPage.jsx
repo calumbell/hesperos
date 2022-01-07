@@ -10,10 +10,11 @@ export default function eventPage({ data }) {
 
   return (
     <Layout >
+      <h1>{event.title.text}</h1>
       <div className={styles.eventDetailContainer}>
-
+        
         <aside className={styles.eventDetailsAside}>
-          <h1>{event.title.text}</h1>
+          
           <p>{event.location.text}</p>
           <time>{event.date}</time>
           <time>{event.time.text}</time>

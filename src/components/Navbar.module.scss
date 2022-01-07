@@ -39,7 +39,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .nav-expand-btn {
     display: flex;
   }
@@ -58,8 +58,14 @@
   }
 
   .popup-menu {
-    display: flex;
     animation: 0.33s popUpMenuSlideIn forwards;
+    display: flex;
+    opacity: 0.9;
+    padding: 0 0 1.5rem 1.5rem;
+    z-index: 2;
+    a {
+      opacity: 1;
+    }
   }
 
   @keyframes popUpMenuSlideIn {
