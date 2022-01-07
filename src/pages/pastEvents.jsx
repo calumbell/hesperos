@@ -11,10 +11,14 @@ export default function PastEvents({ data }) {
       img: node.data.event_image.url,
       imgAltText: node.data.event_image.alt,
       title: node.data.title.text,
-      date: node.data.date,
+      date: node.data.date.split(" ").slice(1).join(" "),
+      location: node.data.location,
     }  
   }
- 
+  
+  /* Create object where each key is a year, and that keys value
+   * is an array of all events from that year. */
+
   let eventsByYear = {};
   data.allPrismicEvent.nodes.forEach((event) => {
     const year = event.data.date.split(' ')[3];

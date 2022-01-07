@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Link } from 'gatsby';
+import { Link } from 'gatsby';
 import * as styles from './EventCardThumbnail.module.scss';
 
 export default function EventCardThumbnail({ data }) {
@@ -9,7 +9,13 @@ export default function EventCardThumbnail({ data }) {
         className={styles.cardImage} 
         src={data.img}
         alt={data.imgAltText}
-      />
+      >
+      </img>
+      <div className={styles.tooltip}>
+          <p>{data.title}</p>
+          <p>{data.date}</p>
+          <p>{data.location}</p>
+      </div>
     </Link>
   )
 }
