@@ -15,14 +15,17 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "framer-motion": "^5.3.3",
+    "framer-motion": "^5.5.6",
     "gatsby": "^4.2.0",
     "gatsby-cli": "^4.2.0",
     "gatsby-plugin-image": "^2.2.0",
     "gatsby-plugin-sass": "^5.2.0",
-    "gatsby-source-prismic": "^5.2.2",
+    "gatsby-source-prismic": "^5.2.3",
+    "immer": "^9.0.7",
+    "object-path": ">=0.11.8",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "sass": "^1.43.5"
+    "sass": "^1.43.5",
+    "trim": ">=0.0.3"
   }
 }
