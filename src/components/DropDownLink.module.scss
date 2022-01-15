@@ -1,0 +1,25 @@
+/* Container - needed to position dropdown content */
+.drop-down-container {
+  display: inline;
+  position: relative;
+}
+
+.drop-down-container:hover .drop-down-content {
+  display: block;
+}
+
+.drop-down-content {
+  background-color: white;
+  display: none;
+  list-style: none;
+  opacity: 0.9;
+  padding: 0.25rem 0rem;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+
+  /* Background opacity is 0.9, but links are opacity 1 */
+  a {
+    opacity: 1;
+  }
+}

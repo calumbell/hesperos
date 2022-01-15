@@ -21,7 +21,7 @@
   @extend .navbar-left-side;
   flex: 75%;
 
-  a {
+  * {
     transition: color 0.25s;
     background: transparent;
     text-decoration: none;
