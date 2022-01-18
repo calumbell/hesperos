@@ -1,4 +1,6 @@
-.menu-expand-btn {
+@import '../styles/breakpoints';
+ 
+ .menu-expand-btn {
   background-color: transparent;
   border: none;
   color: black;
@@ -9,7 +11,7 @@
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: $breakpoint-sm) {
   .menu-expand-btn {
     display: flex;
   }
