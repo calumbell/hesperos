@@ -1,3 +1,5 @@
+@import '../styles/breakpoints.scss';
+
 /* Container - needed to position dropdown content */
 .drop-down-container {
   display: inline;
@@ -11,15 +13,20 @@
 .drop-down-content {
   background-color: white;
   display: none;
+  justify-content: center;
   list-style: none;
+  margin-top: 0.75rem;
   opacity: 0.9;
-  padding: 0.25rem 0rem;
+  padding: 1rem;
   position: absolute;
   top: 0;
+  right: -75%;
   z-index: 1;
 
   /* Background opacity is 0.9, but links are opacity 1 */
-  a {
+  li {
     opacity: 1;
+    padding: 0.25rem;
+    font-weight: 500;
   }
 }

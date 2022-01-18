@@ -1,3 +1,5 @@
+@import '../styles/breakpoints.scss';
+
 .navbar {
   display: flex;
   height: 4rem;
@@ -21,7 +23,7 @@
   @extend .navbar-left-side;
   flex: 75%;
 
-  * {
+  a, div {
     transition: color 0.25s;
     background: transparent;
     text-decoration: none;
@@ -39,11 +41,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  .nav-expand-btn {
-    display: flex;
-  }
-
+@media screen and (max-width: $breakpoint-md) {
   .navbar-right-side {
     align-items: flex-end;
     background-color: white;

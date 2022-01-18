@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
@@ -8,6 +8,17 @@ import * as styles from './Navbar.module.scss';
 
 export default function Navbar({ siteBrand }) {
   const [isExpanded, setExpanded] = useState(false);
+
+  // Logic for condionally rendering based of browser window
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakpoint = 767;
+
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleWindowResize);
+    // clean-up function to remove listener on unmount
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
 
   return (
     <nav 
@@ -40,22 +51,28 @@ export default function Navbar({ siteBrand }) {
         onClick={() => setExpanded(false)}
       >
         <Link to="/about/">ABOUT</Link>
-        <DropDownLink
-          dropDownName = "EVENTS"
-          defaultRoute = "/events"
-          links = {[
-            {
-              shortName: "UPCOMING",
-              longName: "UPCOMING EVENTS",
-              route: "/events",
-            },
-            {
-              shortName: "ARCHIVE",
-              longName: "EVENTS ARCHIVE",
-              route: "/pastEvents",
-            }
-          ]}
-        />
+        { width > breakpoint ?
+          <DropDownLink
+            dropDownName = "EVENTS"
+            defaultRoute = "/events"
+            links = {[
+              {
+                shortName: "UPCOMING",
+                longName: "UPCOMING EVENTS",
+                route: "/events",
+              },
+              {
+                shortName: "ARCHIVE",
+                longName: "EVENTS ARCHIVE",
+                route: "/pastEvents",
+              }
+            ]}
+          />
+          : <>
+            <Link to="/events/">UPCOMING EVENTS</Link>
+            <Link to="/pastEvents/">EVENTS ARCHIVE</Link>
+          </>
+        }
   
         <Link to="/news/">NEWS</Link>
         <Link to="/support/">SUPPORT US</Link>
