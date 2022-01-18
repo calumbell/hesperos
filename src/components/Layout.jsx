@@ -12,7 +12,7 @@ export default function Layout({ children }) {
       prismicWebsiteDetails {
         data {
           site_brand {
-            url
+            gatsbyImageData(placeholder: BLURRED)
             alt
           }
         }
@@ -27,7 +27,8 @@ export default function Layout({ children }) {
         siteBrand={query.prismicWebsiteDetails.data.site_brand}
       />
 
-      <motion.main id="content-wrapper"
+      <motion.main 
+        id="content-wrapper"
         initial={{ opacity: 0, x: -25}}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0}}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import MenuExpandButton from './MenuExpandButton';
 import DropDownLink from './DropDownLink';
@@ -17,9 +18,9 @@ export default function Navbar({ siteBrand }) {
           to="/"
           onClick={() => setExpanded(false)}
         >
-          <img 
+          <GatsbyImage 
             className={styles.siteBrand}
-            src={siteBrand.url}
+            image={getImage(siteBrand.gatsbyImageData)}
             alt={siteBrand.alt}
           />
         </Link>

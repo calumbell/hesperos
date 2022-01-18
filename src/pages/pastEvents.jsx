@@ -11,7 +11,7 @@ export default function PastEvents({ data }) {
     date = date.join(" ");
     return {
       uid: node.uid,
-      img: node.data.event_image.url,
+      img: node.data.event_image.gatsbyImageData,
       imgAltText: node.data.event_image.alt,
       title: node.data.title.text,
       date: date,
@@ -70,7 +70,7 @@ export const query = graphql`
             text
           }
           event_image {
-            url
+            gatsbyImageData(placeholder: BLURRED)
             alt
           }
         }

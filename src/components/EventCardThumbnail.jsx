@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
+
 import * as styles from './EventCardThumbnail.module.scss';
 
 export default function EventCardThumbnail({ data }) {
   return (
     <Link to={`/events/${data.uid}`} className={styles.card}>
-      <img
+      <GatsbyImage
         className={styles.cardImage} 
-        src={data.img}
+        image={data.img}
         alt={data.imgAltText}
-      >
-      </img>
+      />
       <div className={styles.tooltip}>
           <p className={styles.tooltipTitle}>{data.title}</p>
           <p className={styles.tooltipDate}>{data.date}</p>

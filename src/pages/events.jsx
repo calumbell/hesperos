@@ -5,11 +5,12 @@ import EventCard from '../components/EventCard.jsx';
 import CardGrid from '../components/CardGrid.jsx';
 
 export default function Events({data}) {
-  // Flattener function for graphql response
+
+  // Flattener fnc converts graphql response to less deeply nested JSON
   const flattenEventData = node => {
     return {
       uid: node.uid,
-      img: node.data.event_image.url,
+      img: node.data.event_image.gatsbyImageData,
       imgAltText: node.data.event_image.alt,
       title: node.data.title.text,
       date: node.data.date,
@@ -47,7 +48,7 @@ export const query = graphql`
             text
           }
           event_image {
-            url
+            gatsbyImageData(placeholder: BLURRED)
             alt
           }
         }

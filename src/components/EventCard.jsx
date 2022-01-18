@@ -1,13 +1,14 @@
 import { Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import * as styles from './EventCard.module.scss';
 
 export default function EventCard({ data }) {
   return (
     <Link to={`/events/${data.uid}`} className={styles.eventCard}>
-      <img 
+      <GatsbyImage 
         className={styles.cardImage}
-        src={data.img}
+        image={data.img}
         alt={data.imgAltText}
       />
       <time>{data.date}</time>
