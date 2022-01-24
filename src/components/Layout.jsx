@@ -31,7 +31,7 @@ export default function Layout({ children }) {
         id="content-wrapper"
         initial={{ opacity: 0, x: -25}}
         animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0}}
+        exit={{ opacity: 0 }}
         transition={{
           type: 'spring',
           mass: 0.1,

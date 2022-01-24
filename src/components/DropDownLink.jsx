@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import * as styles from './DropDownLink.module.scss';
 
@@ -13,7 +13,7 @@ export default function DropDownLink({
         { links &&
           <ul className={styles.dropDownContent}>
             { links.map(link => {
-              return <li><Link to={link.route}>{link.shortName}</Link></li>
+              return <li><Link to={link.route}>{link.displayName}</Link></li>
             })}
           </ul>
         }

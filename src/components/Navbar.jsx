@@ -7,28 +7,26 @@ import DropDownLink from './DropDownLink';
 import * as styles from './Navbar.module.scss';
 
 export default function Navbar({ siteBrand }) {
+  // determines whether the pop-up menu is expanded or hidden
   const [isExpanded, setExpanded] = useState(false);
 
-  // Logic for condionally rendering based of browser window
+  // Logic for condional rendering based of browser window
   const [width, setWidth] = useState(window.innerWidth);
   const breakpoint = 767;
 
+  /* [] as 2nd arg to only attach listener on   *
+   * rtns cleanup fnc that runs on unmount      */
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleWindowResize);
-    // clean-up function to remove listener on unmount
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
 
+
   return (
-    <nav 
-      className={styles.navbar}
-    >
+    <nav className={styles.navbar}>
       <div className={styles.navbarLeftSide}>
-        <Link 
-          to="/"
-          onClick={() => setExpanded(false)}
-        >
+        <Link to="/" onClick={() => setExpanded(false)}>
           <GatsbyImage 
             className={styles.siteBrand}
             image={getImage(siteBrand.gatsbyImageData)}
@@ -44,11 +42,14 @@ export default function Navbar({ siteBrand }) {
 
       <div 
         className={`
-          ${ styles.navbarRightSide }
-          ${ isExpanded && styles.popupMenu}
+          ${styles.navbarRightSide} 
+          ${isExpanded && styles.popupMenu}
         `}
         
+        // close hamburg. menu when the user clicks on it or presses Esc/Enter while focused
         onClick={() => setExpanded(false)}
+        onKeyDown={(e) => { if (['Escape', 'Enter'].includes(e.key)) setExpanded(false)}}
+        aria-hidden='true'
       >
         <Link to="/about/">ABOUT</Link>
         { width > breakpoint ?
@@ -57,13 +58,11 @@ export default function Navbar({ siteBrand }) {
             defaultRoute = "/events"
             links = {[
               {
-                shortName: "UPCOMING",
-                longName: "UPCOMING EVENTS",
+                displayName: "UPCOMING",
                 route: "/events",
               },
               {
-                shortName: "ARCHIVE",
-                longName: "EVENTS ARCHIVE",
+                displayName: "PAST",
                 route: "/pastEvents",
               }
             ]}

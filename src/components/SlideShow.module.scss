@@ -1,0 +1,11 @@
+.slide-show-container {
+  width: 100%;
+  justify-items: center;
+  display: flex;
+}
+
+.slide-show-image {
+  height: 75vh;
+  width: 90vw;
+  position: absolute;
+}
