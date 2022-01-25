@@ -5,17 +5,17 @@ import SlideShow from '../components/SlideShow.jsx';
 import * as styles from './index.module.scss';
 
 export default function Index({data}) {
-  console.log(data.allPrismicEvent.nodes[0].data);
+  const nextEvent = data.allPrismicEvent.nodes[0];
   return (
     <Layout>
       <aside className={styles.homePageAside}>
         <h1>Hesperos Choir</h1>
         <p>{data.prismicHomepage.data.short_description.text}</p>
-        {data.allPrismicEvent.nodes[0] && (
-          <Link to={`/events/${data.allPrismicEvent.nodes[0].uid}`}>
-            <sub>Our next concert:</sub>
-            <h2>{data.allPrismicEvent.nodes[0].data.title.text}</h2>
-            <p>{data.allPrismicEvent.nodes[0].data.date}</p>
+        {nextEvent && (
+          <Link to={`/events/${nextEvent.uid}`}>
+            <sub>Our next event:</sub>
+            <h2>{nextEvent.data.title.text}</h2>
+            <p>{nextEvent.data.date}</p>
           </Link>)
         }
       </aside>

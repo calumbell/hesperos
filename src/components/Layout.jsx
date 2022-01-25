@@ -29,13 +29,13 @@ export default function Layout({ children }) {
 
       <motion.main 
         id="content-wrapper"
-        initial={{ opacity: 0, x: -25}}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0}}
+        animate={{ opacity: 1}}
         exit={{ opacity: 0 }}
         transition={{
-          type: 'spring',
+          type: 'tween',
           mass: 0.1,
-          stiffness: 100,
+          stiffness: 10,
           duration: 0.5,
         }}
       >
