@@ -1,0 +1,32 @@
+.grid-row-container {
+  display: grid;
+  grid-auto-flow: column;
+  margin-bottom: 2rem;
+  h2 {
+    font-size: 3rem;
+  }
+}
+
+.container-one-col {
+  @extend .grid-row-container;
+  grid-template-columns: 1fr;
+}
+
+.container-two-col {
+  @extend .grid-row-container;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-item {
+  justify-self: center;
+}
+
+.left {
+  @extend .grid-item;
+  grid-column: 1;
+}
+
+.right {
+  @extend .grid-item;
+  grid-column: 2;
+}

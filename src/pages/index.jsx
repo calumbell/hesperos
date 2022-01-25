@@ -25,7 +25,7 @@ export default function Index({data}) {
   )
 }
 
-// query Prismic for page data
+// query Prismic for page data & next event data
 export const query = graphql`
   query HomepageQuery ($date: Date) {
     prismicHomepage {
