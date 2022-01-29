@@ -33,12 +33,12 @@ export default function ContactForm() {
       <div className={styles.formGridRow}>
         <div className={styles.formInputLabelGroup}>
           <label for='messageBodyFormInput'>Message
-            <textarea className={styles.lrgTextArea} type='text' name='message'/>
+            <textarea className={styles.lrgTextField} type='text' name='message'/>
           </label>
         </div>
       </div>
       <div className={styles.formGridRow}>
-        <input type='submit' />
+        <input className={styles.submitBtn} type='submit' value='Submit Query' />
       </div>
       
     </form>

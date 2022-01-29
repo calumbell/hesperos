@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout.jsx';
 import SlideShow from '../components/SlideShow.jsx';
-import * as styles from './index.module.scss';
+import * as styles from '../styles/index.module.scss';
 
 export default function Index({data}) {
   const nextEvent = data.allPrismicEvent.nodes[0];
@@ -44,7 +44,6 @@ export const query = graphql`
         }
       }
     }
-
     allPrismicEvent(
       sort: {fields: data___date, order: ASC}
       limit: 1
