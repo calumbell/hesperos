@@ -25,6 +25,14 @@
     "gatsby-transformer-sharp": "^4.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sass": "^1.49.0"
+    "sass": "^1.49.0",
+    "node-fetch": ">=3.2.0",
+    "nth-check": ">=2.0.1",
+    "immer": ">=9.0.12",
+    "object-path": ">=0.11.8",
+    "browserslist": ">=4.19.1",
+    "postcss": ">=8.4.5",
+    "ansi-regex": ">=6.0.1",
+    "ws": ">=8.4.2"
   }
 }
