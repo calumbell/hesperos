@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout.jsx';
 import TextWithFacingImageGrid from '../components/TextWithFacingImageGrid.jsx';
+import TitleBanner from '../components/TitleBanner.jsx';
 
 export default function About({data}) {
   const pageData = data.prismicAboutPage.data;
@@ -21,9 +22,13 @@ export default function About({data}) {
 
     }
   }
+  console.log(pageData.hero_image)
   return(
     <Layout>
-      <h1>{pageData.page_title.text}</h1>
+      <TitleBanner 
+        title={pageData.page_title.text}
+        image={pageData.hero_image}
+      />
       <TextWithFacingImageGrid 
         data={pageData.body[0].items.map(section => flattenSection(section))} 
       />

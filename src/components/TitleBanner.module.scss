@@ -1,0 +1,21 @@
+.banner-container {
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.banner-image {
+  z-index: -1;
+  height: 10rem;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.banner-text {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 1.5rem 3rem;
+  background-color: rgba($color: #ffffff, $alpha: 0.8);
+  border-radius: 0.25rem;
+}

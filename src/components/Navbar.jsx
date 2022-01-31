@@ -69,7 +69,7 @@ export default function Navbar({ siteBrand }) {
           />
           : <>
             <Link to="/events/">UPCOMING EVENTS</Link>
-            <Link to="/pastEvents/">EVENTS ARCHIVE</Link>
+            <Link to="/pastEvents/">PAST EVENTS</Link>
           </>
         }
   

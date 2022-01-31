@@ -12,8 +12,8 @@ export default function DropDownLink({
         <Link to={defaultRoute}>{dropDownName}</Link>
         { links &&
           <ul className={styles.dropDownContent}>
-            { links.map(link => {
-              return <li><Link to={link.route}>{link.displayName}</Link></li>
+            { links.map((link, i) => {
+              return <li key={i}><Link to={link.route}>{link.displayName}</Link></li>
             })}
           </ul>
         }

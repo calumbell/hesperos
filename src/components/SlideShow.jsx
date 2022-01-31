@@ -14,9 +14,7 @@ export default function SlideShow({images}) {
   }, [currentImage])
   
   return(
-    <AnimatePresence 
-      className={styles.slideShowContainer}
-    >
+    <AnimatePresence className={styles.slideShowContainer}>
       { images.map((image, i) => 
         { if(currentImage === i) {
             return(

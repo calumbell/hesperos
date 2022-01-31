@@ -8,7 +8,6 @@ export default function TextWithFacingImage({data}) {
   const bodyOnLeft = !(data.format === 'Main text right')
   const headingOnLeft = !(data.isHeadingAboveText ^ bodyOnLeft);
 
-  console.log(data.isHeadingAboveText)
   return (
     <div className={data.format === 'Full width text' ? `${styles.containerOneCol}` : `${styles.containerTwoCol}`}>
       <h2 className={headingOnLeft ? `${styles.left}` : `${styles.right}`}>{data.title}</h2>
