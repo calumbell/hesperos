@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
@@ -9,19 +9,6 @@ import * as styles from './Navbar.module.scss';
 export default function Navbar({ siteBrand }) {
   // determines whether the pop-up menu is expanded or hidden
   const [isExpanded, setExpanded] = useState(false);
-
-  // Logic for condional rendering based of browser window
-  const [width, setWidth] = useState(window.innerWidth);
-  const breakpoint = 767;
-
-  /* [] as 2nd arg to only attach listener on   *
-   * rtns cleanup fnc that runs on unmount      */
-  useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleWindowResize);
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, []);
-
 
   return (
     <nav className={styles.navbar}>
@@ -52,46 +39,37 @@ export default function Navbar({ siteBrand }) {
         aria-hidden='true'
       >
         <Link to="/about/">ABOUT</Link>
-        { width > breakpoint ?
-          <DropDownLink
-            dropDownName = "EVENTS"
-            defaultRoute = "/events"
-            links = {[
-              {
-                displayName: "UPCOMING",
-                route: "/events",
-              },
-              {
-                displayName: "PAST",
-                route: "/pastEvents",
-              }
-            ]}
-          />
-          : <>
-            <Link to="/events/">UPCOMING EVENTS</Link>
-            <Link to="/pastEvents/">PAST EVENTS</Link>
-          </>
-        }
-        { width > breakpoint ? 
-          <DropDownLink
-            dropDownName = "NEWS"
-            defaultRoute = "/news"
-            links ={[
-              {
-                displayName: "NEWS",
-                route: "/news"
-              },
-              {
-                displayName: "NOTES",
-                route: "/notes"
-              }
-            ]}
-          />
-          : <>
-            <Link to="/news/">NEWS</Link>
-            <Link to="/notes/">NOTES</Link>
-          </>
-        }
+        <DropDownLink
+          dropDownName = "EVENTS"
+          defaultRoute = "/events"
+          links = {[
+            {
+              displayName: "UPCOMING",
+              route: "/events",
+              expandedName: "UPCOMING EVENTS",
+            },
+            {
+              displayName: "PAST",
+              route: "/pastEvents",
+              expandedName: "PAST EVENTS",
+            }
+          ]}
+        />
+        <DropDownLink
+          dropDownName = "NEWS"
+          defaultRoute = "/news"
+          links ={[
+            {
+              displayName: "NEWS",
+              route: "/news"
+            },
+            {
+              displayName: "NOTES",
+              route: "/notes"
+            }
+          ]}
+        />
+        
         <Link to="/support/">SUPPORT US</Link>
         <Link to="/join/">GET INVOLVED</Link>
         <Link to="/contact/">CONTACT</Link>

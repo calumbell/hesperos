@@ -16,11 +16,12 @@
   justify-content: center;
   list-style: none;
   margin-top: 0.75rem;
-  margin-left: -0.25rem;
+  margin-left: -1.25rem;
   opacity: 0.9;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
   position: absolute;
   top: 0;
+  left: 0;
   z-index: 2;
 
   /* Background opacity is 0.9, but links are opacity 1 */
