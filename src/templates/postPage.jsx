@@ -10,9 +10,9 @@ export default function postPage({ data }) {
 
   return (
     <Layout>
-      <h1>{post.title.text}</h1>
-      <sub>{post.date}</sub>
       <article>
+        <h1>{post.title.text}</h1>
+        <time>{post.date}</time>
         {post.body.map((section, i) => {
           if (section.slice_type === "text_section") {
             return RichText.render(section.primary.section_body.richText)

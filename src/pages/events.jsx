@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout.jsx';
-import EventCard from '../components/EventCard.jsx';
+import Card from '../components/Card.jsx';
 import CardGrid from '../components/CardGrid.jsx';
 
 export default function Events({data}) {
@@ -10,10 +10,12 @@ export default function Events({data}) {
   const flattenEventData = node => {
     return {
       uid: node.uid,
-      img: node.data.event_image.gatsbyImageData,
-      imgAltText: node.data.event_image.alt,
+      subroute: `events`,
+      image: node.data.event_image.gatsbyImageData,
+      altText: node.data.event_image.alt,
       title: node.data.title.text,
       date: node.data.date,
+      displayDateBubble: true,
     }  
   }
 
@@ -21,7 +23,7 @@ export default function Events({data}) {
     <Layout>
       <h1>Events</h1>
       <CardGrid
-        Card={EventCard}
+        Card={Card}
         data={data.allPrismicEvent.nodes}
         flatten={flattenEventData}
       />

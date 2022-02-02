@@ -1,3 +1,5 @@
+@import '../styles/breakpoints.scss';
+
 .card-grid-lg {
   display: grid;
   grid-template-columns: 1fr;
@@ -8,7 +10,7 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
-@media (min-width: 600px) {
+@media (min-width: $breakpoint-sm) {
   .card-grid-lg {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -18,7 +20,7 @@
 
 }
 
-@media (min-width: 960px) {
+@media (min-width: $breakpoint-md) {
   .card-grid-lg {
     grid-template-columns: repeat(3, 1fr);
     padding: 0rem 1rem;

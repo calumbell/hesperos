@@ -72,8 +72,26 @@ export default function Navbar({ siteBrand }) {
             <Link to="/pastEvents/">PAST EVENTS</Link>
           </>
         }
-  
-        <Link to="/news/">NEWS</Link>
+        { width > breakpoint ? 
+          <DropDownLink
+            dropDownName = "NEWS"
+            defaultRoute = "/news"
+            links ={[
+              {
+                displayName: "NEWS",
+                route: "/news"
+              },
+              {
+                displayName: "NOTES",
+                route: "/notes"
+              }
+            ]}
+          />
+          : <>
+            <Link to="/news/">NEWS</Link>
+            <Link to="/notes/">NOTES</Link>
+          </>
+        }
         <Link to="/support/">SUPPORT US</Link>
         <Link to="/join/">GET INVOLVED</Link>
         <Link to="/contact/">CONTACT</Link>

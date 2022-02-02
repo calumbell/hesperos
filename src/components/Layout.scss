@@ -29,6 +29,7 @@ h2 {
 sub {
   font-style: italic;
 }
+
 p {
   font-weight: 300;
   line-height: 1.5rem;
@@ -38,6 +39,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 
 // === Responsive Font Size ===
 // ----------------------------
@@ -75,4 +77,8 @@ html {
 
 button {
   padding: 1rem;
+}
+
+article {
+  margin: 2rem 7rem;
 }
