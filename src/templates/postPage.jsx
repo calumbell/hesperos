@@ -16,10 +16,29 @@ export default function postPage({ data }) {
         {post.body.map((section, i) => {
           if (section.slice_type === "text_section") {
             return RichText.render(section.primary.section_body.richText)
-          } else {
-            console.log(section.primary)
-            return <GatsbyImage key={i} image={section.primary.imbedded_image.gatsbyImageData} alt={section.primary.imbedded_image.alt}/>
+          } 
+          else if (section.slice_type === "imbedded_image") {
+            return <>
+              <GatsbyImage 
+                key={i} 
+                image={section.primary.embedded_image.gatsbyImageData} 
+                alt={section.primary.embedded_image.alt}
+              />
+              <sub>{section.primary.caption.text}</sub>
+
+            </>
           }
+          else if (section.slice_type === "embedded_element") {
+            const html = section.primary.element.provider_name === "YouTube"
+              ? section.primary.element.html.replace(`width="200"`, `width="100%"`).replace(`height="113"`, `height="300"`)
+              : section.primary.element.html;
+            
+            return <>
+              <div dangerouslySetInnerHTML={{ __html: html}} />
+              <sub>{section.primary.caption.text}</sub>
+              </>
+          }
+          return null;
         })}
       </article>
     </Layout>
@@ -54,9 +73,25 @@ export const query = graphql`
           ... on PrismicPostDataBodyImbeddedImage {
             slice_type
             primary {
-              imbedded_image {
+              embedded_image {
                 gatsbyImageData
                 url
+              }
+              caption {
+                text
+              }
+            }
+          }
+
+          ... on PrismicPostDataBodyEmbeddedElement {
+            slice_type
+            primary {
+              element {
+                html
+                provider_name
+              }
+              caption {
+                text
               }
             }
           }
