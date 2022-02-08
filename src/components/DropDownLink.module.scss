@@ -4,14 +4,17 @@
 .drop-down-container {
   display: inline;
   position: relative;
+  color: inherit;
 }
 
 .drop-down-container:hover .drop-down-content {
   display: block;
+  * {
+    color: var(--medium);
+  }
 }
 
 .drop-down-content {
-  background-color: white;
   display: none;
   justify-content: center;
   list-style: none;

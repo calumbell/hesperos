@@ -34,9 +34,9 @@
 }
 
 .navbar-right-side:hover {
-  color: lightgrey;
+  color: var(--medium);
   a:hover {
-    color: black;
+    color: var(--dark);
     text-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
   }
 }
@@ -44,7 +44,7 @@
 @media screen and (max-width: $breakpoint-md) {
   .navbar-right-side {
     align-items: flex-end;
-    background-color: white;
+    background-color: var(--light);
     display: none;
     flex-direction: column;
     height: auto;
@@ -58,8 +58,8 @@
   .popup-menu {
     animation: 0.33s popUpMenuSlideIn forwards;
     display: flex;
-    opacity: 0.9;
-    padding: 0 0 1.5rem 1.5rem;
+    opacity: 0.97;
+    padding: 0 1rem 1.5rem 1.5rem;
     z-index: 2;
     a {
       opacity: 1;

@@ -2,6 +2,7 @@
   width: 100%;
   position: relative;
   margin-bottom: 2rem;
+  background-color: none;
 }
 
 .banner-image {
@@ -18,4 +19,5 @@
   padding: 1.5rem 3rem;
   background-color: rgba($color: #ffffff, $alpha: 0.8);
   border-radius: 0.25rem;
+  border-width: 0rem;
 }

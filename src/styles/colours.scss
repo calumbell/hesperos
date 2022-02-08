@@ -1,0 +1,24 @@
+:root {
+  --primary: #4854e0;
+  --dark: #140a0a;
+  --medium: #92949c;
+  --light: rgb(255, 255, 255);
+}
+
+* {
+  color: var(--dark);
+}
+
+a, ul, input {
+  background-color: var(--light);
+}
+
+button {
+  background-color: var(--primary);
+}
+
+
+input[type=submit] {
+  border-color: var(--primary);
+  border-width: 0.5rem;
+}
