@@ -22,7 +22,7 @@ export default function About({data}) {
 
     }
   }
-  console.log(pageData.hero_image)
+
   return(
     <Layout>
       <TitleBanner 

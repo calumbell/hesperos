@@ -6,7 +6,6 @@ import Card from '../components/Card';
 import CardGrid from '../components/CardGrid';
 
 export default function Notes({data}) {
-  console.log(data)
   const flattenPostData = node => {
     return {
       uid: node.uid,

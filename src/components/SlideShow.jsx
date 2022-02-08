@@ -27,15 +27,15 @@ export default function SlideShow({images}) {
                   type: 'spring',
                   duration: 1,
                 }}
+                
               >
                 <GatsbyImage
                   className={styles.slideShowImage}
-                  key={i} 
                   image={image.image.gatsbyImageData}
                 />
               </motion.div>
             )
-          } else return <></>
+          } else return null;
         }
       )}
     </AnimatePresence>

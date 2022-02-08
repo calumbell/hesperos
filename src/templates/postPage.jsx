@@ -17,6 +17,7 @@ export default function postPage({ data }) {
           if (section.slice_type === "text_section") {
             return RichText.render(section.primary.section_body.richText)
           } 
+
           else if (section.slice_type === "imbedded_image") {
             return <>
               <GatsbyImage 
@@ -28,7 +29,9 @@ export default function postPage({ data }) {
 
             </>
           }
+
           else if (section.slice_type === "embedded_element") {
+            // remove default sizing for embedded YouTube videos
             const html = section.primary.element.provider_name === "YouTube"
               ? section.primary.element.html.replace(`width="200"`, `width="100%"`).replace(`height="113"`, `height="300"`)
               : section.primary.element.html;
@@ -36,8 +39,9 @@ export default function postPage({ data }) {
             return <>
               <div dangerouslySetInnerHTML={{ __html: html}} />
               <sub>{section.primary.caption.text}</sub>
-              </>
+            </>
           }
+
           return null;
         })}
       </article>
@@ -57,7 +61,6 @@ export const query = graphql`
           text
         }
         date(formatString: "DD MMMM YYYY")
-
         body {
           ... on PrismicPostDataBodyTextSection {
             slice_type
@@ -82,7 +85,6 @@ export const query = graphql`
               }
             }
           }
-
           ... on PrismicPostDataBodyEmbeddedElement {
             slice_type
             primary {

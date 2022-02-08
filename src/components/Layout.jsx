@@ -1,8 +1,9 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { motion } from 'framer-motion';
-
+import { Helmet } from 'react-helmet';
 import './Layout.scss';
+import favicon from '../images/hesperos-favicon.png'
 
 import Navbar from './Navbar.jsx';
 
@@ -22,6 +23,11 @@ export default function Layout({ children }) {
 
   return (
     <div id="page-container">
+      <Helmet>
+        <title>Hesperos Choir</title>
+        <link rel="icon" href={favicon}></link>
+      </Helmet>
+
       <Navbar 
         id="navigation"
         siteBrand={query.prismicWebsiteDetails.data.site_brand}

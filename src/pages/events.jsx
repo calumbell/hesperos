@@ -12,7 +12,7 @@ export default function Events({data}) {
       uid: node.uid,
       subroute: `events`,
       image: node.data.event_image.gatsbyImageData,
-      altText: node.data.event_image.alt,
+      altText: node.data.event_image.alt || '',
       title: node.data.title.text,
       date: node.data.date,
       displayDateBubble: true,
