@@ -1,11 +1,56 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import { RichText } from 'prismic-reactjs';
+
+import TitleBanner from '../components/TitleBanner.jsx'
 import Layout from '../components/Layout.jsx';
 
-export default function Join() {
+export default function Join({data}) {
+  const pageData = data.prismicJoinPage.data;
   return (
     <Layout>
-      <h1>Get Involved</h1>
-      <p>Lorem Ibsen</p>
+      <TitleBanner
+        title={pageData.page_title.text}
+        image={pageData.banner_image}
+      />
+
+      {pageData.body.map(section => {
+        return(
+          <section>
+            <h2>{section.primary.section_title.text}</h2>
+            {console.log(section.primary.section_content)}
+            {RichText.render(section.primary.section_content.richText)}
+          </section>
+        )
+      })}
     </Layout>
   )
 }
+
+export const query = graphql`
+  query JoinPageQuery {
+    prismicJoinPage {
+      data {
+        page_title {
+          text
+        }
+        banner_image {
+          gatsbyImageData
+          alt
+        }
+        body {
+          ... on PrismicJoinPageDataBodyTextSection {
+            primary {
+              section_title {
+                text
+              }
+              section_content {
+                richText
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
