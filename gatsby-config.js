@@ -20,5 +20,12 @@ module.exports = {
       },
     },
     "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint: "https://gmail.us5.list-manage.com/subscribe/post?u=aca0a48cab4c3371147bdb0b5&amp;id=b2be373673",
+        timeout: 3500,
+      }
+    },
   ],
 };

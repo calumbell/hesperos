@@ -1,14 +1,14 @@
 import React from 'react';
 import ContactForm from '../components/ContactForm.jsx';
 import Layout from '../components/Layout.jsx';
+import MailchimpForm from '../components/MailchimpForm.jsx';
 
 import * as styles from '../styles/contact.module.scss';
 
 export default function Contact() {
   return (
     <Layout>
-      <div className={styles.contentWithAsideLeft}>
-        
+      <section className={styles.contentWithAsideLeft}>       
         <aside>
         <h1>Contact</h1>
         <p>
@@ -21,7 +21,11 @@ export default function Contact() {
         </p>
         </aside>
         <ContactForm />
-      </div>
+      </section>
+      
+      <section>
+        <MailchimpForm />
+      </section>
     </Layout>
   )
 }
