@@ -14,6 +14,20 @@
   justify-content: space-between;
 }
 
+.highlight-link {
+  color: var(--primary);
+  border-color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-width: 0.25rem;
+  border-style: solid;
+  border-radius: 1rem;
+}
+
+.highlight-link:hover {
+  transition: border-color 2s;
+  border-color: var(--primary-shade);
+}
+
 .site-brand {
   align-self: flex-end;
   width: 128px;
@@ -54,7 +68,11 @@
     top: 5rem;
     transition: right 0.25s;
   }
-
+  .highlight-link {
+    color: black;
+    border: none;
+    padding: unset;
+  }
   .popup-menu {
     animation: 0.33s popUpMenuSlideIn forwards;
     display: flex;

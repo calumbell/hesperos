@@ -1,5 +1,6 @@
 :root {
-  --primary: #4854e0;
+  --primary: #3b46b8;
+  --primary-shade: #22286e;
   --dark: #140a0a;
   --medium: #92949c;
   --light: rgb(255, 255, 255);
@@ -9,7 +10,7 @@
   color: var(--dark);
 }
 
-a, ul, input {
+a, ul, input, aside {
   background-color: var(--light);
 }
 
