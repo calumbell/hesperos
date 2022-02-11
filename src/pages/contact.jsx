@@ -6,6 +6,50 @@ import MailchimpForm from '../components/MailchimpForm.jsx';
 import * as styles from '../styles/contact.module.scss';
 
 export default function Contact({data}) {
+
+  const contactFormFields = [
+    {
+      type: 'multi',
+      content: [{
+          type: 'text',
+          content: {
+            name: 'fname',
+            displayName: 'First Name',
+          }
+        },
+        {
+          type: 'text',
+          content: {
+            name: 'lname',
+            displayName: 'Last Name',
+          }
+        }
+      ]
+    },
+    {
+      type: 'email',
+      content: {
+        name: 'email',
+        displayName: 'Email Address',
+      }
+    },
+    
+    {
+      type: 'text',
+      content: {
+        name: 'subject',
+        displayName: 'Subject',
+      }
+    },
+    { type: 'textarea',
+      content: {
+        name: 'message',
+        displayName: 'Message'
+      }
+    }
+  ]
+
+
   return (
     <Layout>
       <section className={styles.contentWithAside}>       
@@ -18,7 +62,11 @@ export default function Contact({data}) {
             All data is processed in accordance with GDPR regulations.
           </p>
         </aside>
-        <ContactForm />
+
+        <ContactForm 
+          endpoint=""
+          fields={contactFormFields}
+        />
       </section>
       
       <section className={styles.contentWithAside}>
