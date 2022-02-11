@@ -88,7 +88,7 @@ export default function ContactForm({fields}) {
       {fields.map(field => {return createFormField(field)})}    
       <div className={styles.formGridRow}>
         <button className={styles.submitBtn} type='submit'>
-          Submit Query
+          Submit
         </button>
       </div>
     </form>

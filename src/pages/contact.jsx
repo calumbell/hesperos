@@ -77,7 +77,7 @@ export default function Contact({data}) {
             (not more than once a month).
           </p>
           <p>
-          You can unsubscribe at any time by clicking the link in the footer of our emails.
+            You can unsubscribe at any time by clicking the link in the footer of our emails.
           </p>
         </aside>
         <MailchimpForm />

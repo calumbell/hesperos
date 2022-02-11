@@ -45,7 +45,7 @@ export const query = graphql`
             gatsbyImageData
             alt
           }
-          date(formatString: "dddd DD MMMM YYYYY")
+          date(formatString: "dddd DD MMMM YYYY")
         }
       }
     }

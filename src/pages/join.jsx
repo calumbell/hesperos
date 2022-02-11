@@ -2,9 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
 
-import TitleBanner from '../components/TitleBanner.jsx'
+import TitleBanner from '../components/TitleBanner.jsx';
 import Layout from '../components/Layout.jsx';
-
+import ContactForm from '../components/ContactForm.jsx';
 export default function Join({data}) {
   const pageData = data.prismicJoinPage.data;
   return (
@@ -23,6 +23,53 @@ export default function Join({data}) {
           </section>
         )
       })}
+
+      <ContactForm 
+        endpoint=""
+        fields={[
+          {
+            type: 'multi',
+            content: [
+              {
+                type: 'text',
+                content: {
+                  name: 'fname',
+                  displayName: 'First Name',
+                }
+              },
+              {
+                type: 'text',
+                content: {
+                  name: 'lname',
+                  displayName: 'Last Name',
+                }
+              }
+            ]
+          },
+          {
+            type: 'email',
+            content: {
+              name: 'email',
+              displayName: 'Email',
+            }
+          },
+          {
+            type: 'text',
+            content: {
+              name: 'part',
+              displayName: 'Voice Part',
+            }
+          },
+          {
+            type: 'textarea',
+            content: {
+              name: 'experience',
+              displayName: 'Singing Experience',
+            }
+          },
+        ]}
+      />
+
     </Layout>
   )
 }
