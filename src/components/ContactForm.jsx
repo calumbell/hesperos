@@ -2,8 +2,16 @@ import React from 'react';
 import * as styles from './ContactForm.module.scss';
 
 export default function ContactForm() {
+  const handleSubmit = event => {
+    event.preventDefault();
+    // TODO: send form data via email
+  };
+
   return(
-    <form className={styles.formGrid}>
+    <form 
+      className={styles.formGrid}
+      obSubmit={handleSubmit}
+    >
       <div className={styles.formGridRow}>
         <label className={styles.formInputLabelGroup}>First Name
           <input type='text' name='firstName' />
@@ -38,7 +46,9 @@ export default function ContactForm() {
         </div>
       </div>
       <div className={styles.formGridRow}>
-        <input className={styles.submitBtn} type='submit' value='Submit Query' />
+        <button className={styles.submitBtn} type='submit'>
+          Submit Query
+        </button>
       </div>
       
     </form>

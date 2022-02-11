@@ -5,25 +5,33 @@ import MailchimpForm from '../components/MailchimpForm.jsx';
 
 import * as styles from '../styles/contact.module.scss';
 
-export default function Contact() {
+export default function Contact({data}) {
   return (
     <Layout>
-      <section className={styles.contentWithAsideLeft}>       
+      <section className={styles.contentWithAside}>       
         <aside>
-        <h1>Contact</h1>
-        <p>
-          Please use this contact form if you have any questions about the choir,
-          or sign up to our mailing list below for regular updates (not more than
-          once a month).
-        </p>
-        <p>
-           All data is processed in accordance with GDPR regulations.
-        </p>
+          <h1>Contact</h1>
+          <p>
+            Please use this contact form if you have any questions about the choir.
+          </p>
+          <p>
+            All data is processed in accordance with GDPR regulations.
+          </p>
         </aside>
         <ContactForm />
       </section>
       
-      <section>
+      <section className={styles.contentWithAside}>
+        <aside>
+          <h2>Mailing List</h2>
+          <p>
+            Sign up to our mailing list for regular updates 
+            (not more than once a month).
+          </p>
+          <p>
+          You can unsubscribe at any time by clicking the link in the footer of our emails.
+          </p>
+        </aside>
         <MailchimpForm />
       </section>
     </Layout>

@@ -1,5 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
+
+import * as styles from './MailchimpForm.module.scss';
 
 export default function MailchimpForm() {
   const [email, setEmail] = useState('');
@@ -8,14 +10,9 @@ export default function MailchimpForm() {
   
   const handleSubmit = event => {
     event.preventDefault();
-
     addToMailchimp(email, {
       FNAME: firstName,
       LNAME: lastName,
-    })
-    .then(data => {
-      console.log(data)
-      alert(data.response)
     })
   }
 
@@ -32,39 +29,43 @@ export default function MailchimpForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>
-          <span>Email Address</span>
+    <form 
+      onSubmit={handleSubmit}
+      className={styles.formGrid}
+    >
+      <div className={styles.formGridRow}>
+        <label className={styles.labelInputGroup}>
+          Email Address
           <input 
             type="email"
             name="EMAIL"
-            placeholder="Enter Email Address"
             onChange={handleEmailChange}
           />
         </label>
       </div>
-      <div>
-        <label>
-          <span>First Name</span>
+      <div className={styles.formGridRow}>
+        <label className={styles.labelInputGroup}>
+          First Name
           <input 
             type="text"
             name="first name"
-            placeholder="Enter First Name"
             onChange={handleFirstNameChange}
           />
         </label>
-        <label>
-          <span>Second Name</span>
+        <label className={styles.labelInputGroup}>
+          Second Name
           <input 
             type="text"
             name="second name"
-            placeholder="Enter Second Name"
             onChange={handleLastNameChange}
           />
         </label>
       </div>
-      <button type="submit">Subscribe</button>
+      <div className={styles.formGridRow}>
+        <button className={styles.submitBtn} type="submit">
+          Subscribe
+        </button>
+      </div>
     </form>
   )
 }

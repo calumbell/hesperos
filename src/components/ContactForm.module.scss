@@ -13,9 +13,9 @@
 .form-input-label-group {
   display: inline-block;
   width: 100%;
-  font-weight: 300;
 
   * {
+    line-height: 1.2rem;
     display: block;
     width: 100%;
     padding: 0.5rem 0rem;
@@ -29,5 +29,4 @@
 .submit-btn {
   padding: 0.7rem 1rem;
   justify-self: center;
-  border-radius: 6px;
 }
