@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout.jsx';
 import TitleBanner from '../components/TitleBanner.jsx';
+import Donate from '../components/Donate.jsx';
 
 export default function Support({data}) {
   const pageData = data.prismicSupportPage.data;
@@ -15,6 +16,7 @@ export default function Support({data}) {
       />
       
       <h2>Make of one-off donation</h2>
+      <Donate />
       <p>Thank you for deciding to help the evening star shine a little brighter</p>
     </Layout>
   )

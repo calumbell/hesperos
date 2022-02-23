@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
 import * as styles from '../styles/modules/MenuExpandButton.module.scss';
 
 export default function MenuExpandButton({
