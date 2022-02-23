@@ -1,6 +1,6 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import * as styles from './TitleBanner.module.scss';
+import * as styles from '../styles/modules/TitleBanner.module.scss';
 
 export default function TitleAndBanner({title, image}) {
   return (

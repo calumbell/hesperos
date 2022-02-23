@@ -5,6 +5,7 @@ import { RichText } from 'prismic-reactjs';
 import TitleBanner from '../components/TitleBanner.jsx';
 import Layout from '../components/Layout.jsx';
 import ContactForm from '../components/ContactForm.jsx';
+
 export default function Join({data}) {
   const pageData = data.prismicJoinPage.data;
   return (

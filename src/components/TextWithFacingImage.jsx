@@ -1,6 +1,6 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import * as styles from './TextWithFacingImage.module.scss';
+import * as styles from '../styles/modules/TextWithFacingImage.module.scss';
 
 export default function TextWithFacingImage({data}) {
 

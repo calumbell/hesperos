@@ -32,7 +32,7 @@ export default function Notes({data}) {
 export const query = graphql`
   query NotesPostSummaries {
     allPrismicPost(
-      sort: {fields: data___date, order: ASC}
+      sort: {fields: data___date, order: DESC}
       filter: {data: {post_type: {eq: "Notes"}}}
     ) {
       nodes {

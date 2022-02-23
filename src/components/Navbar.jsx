@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import MenuExpandButton from './MenuExpandButton';
 import DropDownLink from './DropDownLink';
-import * as styles from './Navbar.module.scss';
+import * as styles from '../styles/modules/Navbar.module.scss';
 
 export default function Navbar({ siteBrand }) {
   // determines whether the pop-up menu is expanded or hidden

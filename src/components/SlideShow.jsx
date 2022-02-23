@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { AnimatePresence, motion } from 'framer-motion';
-import * as styles from './SlideShow.module.scss';
+import * as styles from '../styles/modules/SlideShow.module.scss';
 
 export default function SlideShow({images}) {
   const [currentImage, setCurrentImage] = useState(0);

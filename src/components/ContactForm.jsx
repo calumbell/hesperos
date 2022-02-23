@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './ContactForm.module.scss';
+import * as styles from '../styles/modules/ContactForm.module.scss';
 
 /* 
  * -= ContactForm =-

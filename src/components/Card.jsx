@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import * as styles from './Card.module.scss';
+import * as styles from '../styles/modules/Card.module.scss';
 
 export default function EventCard({ data }) {
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
-import './Layout.scss';
+import '../styles/modules/Layout.scss';
 import favicon from '../images/hesperos-favicon.png'
 
 import Navbar from './Navbar.jsx';

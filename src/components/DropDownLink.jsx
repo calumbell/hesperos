@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
-import * as styles from './DropDownLink.module.scss';
+import * as styles from '../styles/modules/DropDownLink.module.scss';
 
 export default function DropDownLink({
   dropDownName,

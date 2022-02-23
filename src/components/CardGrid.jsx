@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './CardGrid.module.scss';
+import * as styles from '../styles/modules/CardGrid.module.scss';
 
 
 export default function CardGrid({ 
