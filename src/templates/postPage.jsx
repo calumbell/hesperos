@@ -12,6 +12,7 @@ export default function postPage({ data }) {
     <Layout>
       <article>
         <h1>{post.title.text}</h1>
+        <sub>{post.title.subtitle}</sub>
         <time>{post.date}</time>
         {post.body.map((section, i) => {
           if (section.slice_type === "text_section") {
@@ -58,6 +59,9 @@ export const query = graphql`
     prismicPost(uid: {eq: $slug}) {
       data {
         title {
+          text
+        }
+        subtitle {
           text
         }
         date(formatString: "DD MMMM YYYY")

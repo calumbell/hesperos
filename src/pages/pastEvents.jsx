@@ -14,6 +14,7 @@ export default function PastEvents({ data }) {
       img: node.data.event_image.gatsbyImageData,
       imgAltText: node.data.event_image.alt,
       title: node.data.title.text,
+      subtitle: node.data.location.text,
       date: date,
       location: node.data.location,
     }  
@@ -67,6 +68,9 @@ export const query = graphql`
         data {
           date(formatString: "dddd DD MMMM YYYY")
           title {
+            text
+          }
+          location {
             text
           }
           event_image {

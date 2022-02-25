@@ -10,6 +10,7 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+/* Layout for small screens */
 @media (min-width: $breakpoint-sm) {
   .card-grid-lg {
     grid-template-columns: repeat(2, 1fr);
@@ -20,12 +21,30 @@
 
 }
 
+/* Layout for medium screens */
 @media (min-width: $breakpoint-md) {
   .card-grid-lg {
     grid-template-columns: repeat(3, 1fr);
     padding: 0rem 1rem;
   }
   .card-grid-sm {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Layout for large screens */
+@media (min-width: $breakpoint-lg) {
+  .card-grid-sm {
     grid-template-columns: repeat(5, 1fr);
+  }
+  * {
+    font-size: 15px;
+  }
+}
+
+/* Layout for extra large screens */
+@media (min-width: $breakpoint-xl) {
+  .card-grid-lg {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

@@ -14,6 +14,7 @@ export default function Events({data}) {
       image: node.data.event_image.gatsbyImageData,
       altText: node.data.event_image.alt || '',
       title: node.data.title.text,
+      subtitle: node.data.location.text,
       date: node.data.date,
       displayDateBubble: true,
     }  
@@ -47,6 +48,9 @@ export const query = graphql`
         data {
           date(formatString: "dddd DD MMMM YYYY")
           title {
+            text
+          }
+          location {
             text
           }
           event_image {

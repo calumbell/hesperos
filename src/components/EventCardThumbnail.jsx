@@ -14,7 +14,8 @@ export default function EventCardThumbnail({ data }) {
       />
       <div className={styles.tooltip}>
           <p className={styles.tooltipTitle}>{data.title}</p>
-          <p className={styles.tooltipDate}>{data.date}</p>
+          <p className={styles.tooltipItem}>{data.date}</p>
+          <p className={styles.tooltipItem}>{data.subtitle}</p>
       </div>
     </Link>
   )

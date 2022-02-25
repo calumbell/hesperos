@@ -11,6 +11,7 @@ export default function Notes({data}) {
       uid: node.uid,
       subroute: `notes`,
       title: node.data.title.text,
+      subtitle: node.data.subtitle.text,
       date: node.data.date,
       image: node.data.thumbnail.gatsbyImageData,
       altText: node.data.thumbnail.alt,
@@ -39,6 +40,9 @@ export const query = graphql`
         uid
         data {
           title {
+            text
+          }
+          subtitle {
             text
           }
           thumbnail {

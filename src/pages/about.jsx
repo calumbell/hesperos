@@ -19,7 +19,6 @@ export default function About({data}) {
       },
       format: section.format,
       isHeadingAboveText: section.heading_above_main_text,
-
     }
   }
 

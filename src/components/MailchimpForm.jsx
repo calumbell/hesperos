@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
-
 import * as styles from '../styles/modules/MailchimpForm.module.scss';
 
 export default function MailchimpForm() {

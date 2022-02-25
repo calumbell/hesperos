@@ -1,9 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import TitleBanner from '../components/TitleBanner';
+import Donate from '../components/Donate';
 
-import Layout from '../components/Layout.jsx';
-import TitleBanner from '../components/TitleBanner.jsx';
-import Donate from '../components/Donate.jsx';
+
 
 export default function Support({data}) {
   const pageData = data.prismicSupportPage.data;

@@ -19,6 +19,7 @@ export default function EventCard({ data }) {
           <p className={styles.bubbleTextSm}>{data.date.split(" ")[2].slice(0,3)}</p>
         </div>
       }
+      <sub>{data.subtitle}</sub>
     </Link>
   )
 }
