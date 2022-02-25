@@ -1,9 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Layout, TextWithFacingImageGrid, TitleBanner } from '../components';
 
-import Layout from '../components/Layout.jsx';
-import TextWithFacingImageGrid from '../components/TextWithFacingImageGrid.jsx';
-import TitleBanner from '../components/TitleBanner.jsx';
+// import Layout from '../components/Layout.jsx';
+// import TextWithFacingImageGrid from '../components/TextWithFacingImageGrid.jsx';
+// import TitleBanner from '../components/TitleBanner.jsx';
 
 export default function About({data}) {
   const pageData = data.prismicAboutPage.data;

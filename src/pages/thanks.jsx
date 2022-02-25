@@ -1,5 +1,7 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import { Layout } from '../components';
+
+// import Layout from '../components/Layout';
 
 const ThankYou = () => (
   <Layout>

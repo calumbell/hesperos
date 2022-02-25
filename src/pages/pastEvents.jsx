@@ -1,8 +1,10 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout';
-import EventCardThumbnail from '../components/EventCardThumbnail';
-import CardGrid from '../components/CardGrid';
+import { EventCardThumbnail, CardGrid, Layout } from '../components';
+
+// import Layout from '../components/Layout';
+// import EventCardThumbnail from '../components/EventCardThumbnail';
+// import CardGrid from '../components/CardGrid';
 
 export default function PastEvents({ data }) {
   const flattenEventData = node => {

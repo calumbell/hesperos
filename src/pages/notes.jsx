@@ -1,9 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
-import Layout from '../components/Layout';
-import Card from '../components/Card';
-import CardGrid from '../components/CardGrid';
+import { Card, CardGrid, Layout } from '../components';
 
 export default function Notes({data}) {
   const flattenPostData = node => {

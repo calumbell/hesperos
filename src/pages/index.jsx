@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout.jsx';
-import SlideShow from '../components/SlideShow.jsx';
+import { Layout, SlideShow } from '../components';
 import * as styles from '../styles/index.module.scss';
 
 export default function Index({data}) {

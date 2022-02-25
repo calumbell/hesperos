@@ -1,8 +1,10 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout.jsx';
-import Card from '../components/Card.jsx';
-import CardGrid from '../components/CardGrid.jsx';
+import { Card, CardGrid, Layout } from '../components';
+
+// import Layout from '../components/Layout.jsx';
+// import Card from '../components/Card.jsx';
+// import CardGrid from '../components/CardGrid.jsx';
 
 export default function Events({data}) {
 

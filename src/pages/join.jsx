@@ -1,9 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
-import TitleBanner from '../components/TitleBanner';
-import Layout from '../components/Layout';
-import ContactForm from '../components/ContactForm';
+import { ContactForm, Layout, TitleBanner } from '../components';
+
+// import TitleBanner from '../components/TitleBanner';
+// import Layout from '../components/Layout';
+// import ContactForm from '../components/ContactForm';
 
 export default function Join({data}) {
   const pageData = data.prismicJoinPage.data;

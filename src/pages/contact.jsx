@@ -1,7 +1,9 @@
 import React from 'react';
-import ContactForm from '../components/ContactForm.jsx';
-import Layout from '../components/Layout.jsx';
-import MailchimpForm from '../components/MailchimpForm.jsx';
+import { ContactForm, Layout, MailchimpForm } from '../components';
+
+// import ContactForm from '../components/ContactForm.jsx';
+// import Layout from '../components/Layout.jsx';
+// import MailchimpForm from '../components/MailchimpForm.jsx';
 
 import * as styles from '../styles/contact.module.scss';
 
