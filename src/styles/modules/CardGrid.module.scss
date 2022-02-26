@@ -1,4 +1,4 @@
-@import '../breakpoints.scss';
+@import '../breakpoints';
 
 .card-grid-lg {
   display: grid;
@@ -45,6 +45,9 @@
 /* Layout for extra large screens */
 @media (min-width: $breakpoint-xl) {
   .card-grid-lg {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card-grid-sm {
+    grid-template-columns: repeat(5, 1fr);
   }
 }

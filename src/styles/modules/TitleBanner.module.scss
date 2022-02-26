@@ -19,4 +19,11 @@
   padding: 1.5rem 3rem;
   background-color: rgba($color: #ffffff, $alpha: 0.8);
   border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.banner-subtitle {
+  display: block;
+  text-align: right;
+  font-weight: 300;
 }

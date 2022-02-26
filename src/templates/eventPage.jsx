@@ -1,19 +1,25 @@
 import React from 'react';
 import * as styles from './eventPage.module.scss';
-
+import { RichText } from 'prismic-reactjs';
 import { Link, graphql } from 'gatsby';
-import Layout from '../components/Layout.jsx';
+import { Layout, TitleBanner } from  '../components';
 
 export default function eventPage({ data }) {
   // data argument contains result of graphql query
   const event = data.prismicEvent.data;
 
   return (
-    <Layout >
-      <h1>{event.title.text}</h1>
+    <Layout>
+      <TitleBanner
+        title={event.title.text}
+        image={event.event_image}
+        subtitle={event.location.text || null}
+      />
+
       <div className={styles.eventDetailContainer}>
+
         <aside className={styles.eventDetailsAside}>   
-          <p>{event.location.text}</p>
+          <p>{event.location.text || `Location TBC`}</p>
           <time>{event.date}</time>
           <time>{event.time.text}</time>
           <p>
@@ -22,7 +28,13 @@ export default function eventPage({ data }) {
               href={`http://maps.google.com/?q=${event.address.text}`}
             > (View on Map)</a>
           </p>
-          
+
+          <Link className={styles.backlink} to="/events/">
+            Back to all events
+          </Link>
+          <Link className={styles.backlink} to="/pastEvents/">
+            View Past Events
+          </Link>
         </aside>
 
         <div>
@@ -39,14 +51,14 @@ export default function eventPage({ data }) {
 
         </div>
       </div>
-      <footer>
-        <Link 
-          className={styles.backlink}
-          to="/events/"
-        > 
-          Back to all events
-        </Link>
-      </footer>
+      { event.program.richText.length > 0 &&
+        <div className={styles.program}>
+          <h2>Program</h2>
+          <p>
+            {RichText.render(event.program.richText)}
+          </p>
+        </div>
+      }
     </Layout>
   )
 }
@@ -70,11 +82,19 @@ export const query = graphql`
         location {
           text
         }
+        event_image {
+          gatsbyImageData(placeholder: BLURRED)
+          alt
+        }
         address {
           text
         }
         event_description {
           text
+        }
+        program {
+          text
+          richText
         }
         buy_ticket_link {
           url

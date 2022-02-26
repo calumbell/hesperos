@@ -1,4 +1,5 @@
 const path = require('path');
+const { formatDate } = require('./src/utils/dates')
 
 exports.createPages = async ({ graphql, actions }) => {
   const { data } =  await graphql(`
@@ -46,9 +47,6 @@ exports.createPages = async ({ graphql, actions }) => {
  * gatsbyjs.com/docs/creating-and-modifying-pages/#pass-context-to-pages
  */
 
-const date = new Date();
-const formattedDate = `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2,'0')}-${date.getDate().toString().padStart(2,'0')}`;
-
 exports.onCreatePage = ({ page, actions }) => {
   const { deletePage, createPage } = actions;
   deletePage(page);
@@ -56,7 +54,7 @@ exports.onCreatePage = ({ page, actions }) => {
     ...page,
     context: {
       ...page.context,
-      date: formattedDate,
+      date: formatDate(new Date()),
     },
   });
 }

@@ -3,10 +3,6 @@ import { graphql } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
 import { ContactForm, Layout, TitleBanner } from '../components';
 
-// import TitleBanner from '../components/TitleBanner';
-// import Layout from '../components/Layout';
-// import ContactForm from '../components/ContactForm';
-
 export default function Join({data}) {
   const pageData = data.prismicJoinPage.data;
   return (
@@ -20,7 +16,6 @@ export default function Join({data}) {
         return(
           <section>
             <h2>{section.primary.section_title.text}</h2>
-            {console.log(section.primary.section_content)}
             {RichText.render(section.primary.section_content.richText)}
           </section>
         )

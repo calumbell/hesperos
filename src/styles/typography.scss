@@ -14,8 +14,12 @@ h1, h2, h3, h4, h5, h6, sub  {
   font-family: 'EB Garamond', serif;
 }
 
+/*
+ * Default text styles for elements
+ */
+
 h1 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 500;
   margin: .5rem 0rem 1.5rem 0rem;
 }
@@ -40,6 +44,22 @@ a {
   text-decoration: none;
 }
 
+/*
+ * Classes for overloading default element styles
+ * ie. for resizing very long or short h1 elements 
+ */
+
+.h1-lg {
+  font-size: 2.8rem;
+}
+
+.h1-sm {
+  font-size: 1.9rem;
+}
+
+.h1-xs {
+  font-size: 1.6rem;
+}
 
 // === Responsive Font Size ===
 // ----------------------------
@@ -62,13 +82,13 @@ a {
 
 @media (min-width: $breakpoint-lg) {
   * {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
 @media (min-width: $breakpoint-xl) {
   * {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 

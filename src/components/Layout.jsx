@@ -33,7 +33,7 @@ export default function Layout({ children }) {
         siteBrand={query.prismicWebsiteDetails.data.site_brand}
       />
 
-      <motion.main 
+      <motion.main
         id="content-wrapper"
         initial={{ opacity: 0}}
         animate={{ opacity: 1}}
