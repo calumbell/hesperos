@@ -52,16 +52,16 @@ export default function MailchimpForm() {
           />
         </label>
         <label className={styles.labelInputGroup}>
-          Second Name
+          Last Name
           <input 
             type="text"
-            name="second name"
+            name="last name"
             onChange={handleLastNameChange}
           />
         </label>
       </div>
       <div className={styles.formGridRow}>
-        <button className={styles.submitBtn} type="submit">
+        <button className="call-to-action" type="submit">
           Subscribe
         </button>
       </div>

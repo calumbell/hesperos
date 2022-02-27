@@ -72,7 +72,7 @@ export default function Navbar({ siteBrand }) {
         
         <Link to="/join/">GET INVOLVED</Link>
         <Link to="/contact/">CONTACT</Link>
-        <Link to="/support/" className={styles.highlightLink}>SUPPORT US</Link>
+        <Link to="/support/" className="call-to-action">SUPPORT US</Link>
       </div>
     </nav>
   )

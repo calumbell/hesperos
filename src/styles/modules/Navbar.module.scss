@@ -15,18 +15,9 @@
 }
 
 .highlight-link {
-  color: var(--primary);
-  border-color: var(--primary);
-  padding: 0.5rem 1rem;
-  border-width: 0.25rem;
-  border-style: solid;
-  border-radius: 1rem;
+  @extend .call-to-action !optional;
 }
 
-.highlight-link:hover {
-  transition: border-color 2s;
-  border-color: var(--primary-shade);
-}
 
 .site-brand {
   align-self: flex-end;
@@ -68,19 +59,24 @@
     top: 5rem;
     transition: right 0.25s;
   }
-  .highlight-link {
-    color: black;
-    border: none;
-    padding: unset;
-  }
+
   .popup-menu {
     animation: 0.33s popUpMenuSlideIn forwards;
     display: flex;
     opacity: 0.97;
     padding: 0 1rem 1.5rem 1.5rem;
     z-index: 2;
+
+    /* For unsetting affordance styling when a link is in pop-out menu */
     a {
       opacity: 1;
+      color: var(--dark);
+      border: none;
+      padding: unset;
+    }
+    
+    a:hover {
+      background-color: transparent;
     }
   }
 

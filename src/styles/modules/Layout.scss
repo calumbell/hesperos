@@ -22,3 +22,29 @@ article {
 form {
   display: block;
 }
+
+input, textarea {
+  border-width: 0.13rem;
+  border-style: ridge;
+  border-color: var(--primary);
+}
+
+/* Global classes */
+.call-to-action {
+  color: var(--primary);
+  background-color: transparent;
+  border-color: var(--primary-shade);
+  padding: 0.5rem 1rem;
+  border-width: 0.25rem;
+  border-style: solid;
+  border-radius: 1rem;
+}
+
+.call-to-action:hover {
+  transition: border-color 0.25s;
+  transition: color 0.25;
+  background-color: var(--light-shade);
+  border-color: var(--primary-pale);
+  color: var(--dark);
+
+}

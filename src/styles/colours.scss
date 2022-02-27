@@ -1,14 +1,22 @@
 :root {
-  --primary: #3b46b8;
-  --primary-shade: #22286e;
+  --primary: #31708E;
+  --primary-shade: #5085A5;
+  --primary-pale: #8FC1E3;
+  --primary-highlight: #c3ddee;
+  --secondary: #e69317;
   --dark: #140a0a;
   --medium: #92949c;
-  --light: rgb(255, 255, 255);
-  --light-shade: #f3f6f3;
+  --light: #F7F9FB;
+  --light-shade: #ebf4fa;
 }
 
 * {
   color: var(--dark);
+}
+
+*:focus {
+  outline-offset: 0.25rem;
+  outline-color: var(--primary-shade);
 }
 
 html, a, ul, input, aside {
@@ -21,11 +29,11 @@ button {
 }
 
 input, textarea {
-  background-color: var(--light-shade);
+  background-color: var(--light);
   transition: background-color 0.25s;
+  font-weight: 300;
 }
 input:focus, textarea:focus {
-  background-color: var(--light);
+  background-color: var(--primary-highlight);
   border-color: var(--primary);
-
 }
