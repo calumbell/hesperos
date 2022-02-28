@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { MenuExpandButton, DropDownLink, Logo } from './';
 
-import MenuExpandButton from './MenuExpandButton';
-import DropDownLink from './DropDownLink';
 import * as styles from '../styles/modules/Navbar.module.scss';
 
-export default function Navbar({ siteBrand }) {
+export default function Navbar() {
   // determines whether the pop-up menu is expanded or hidden
   const [isExpanded, setExpanded] = useState(false);
 
@@ -14,11 +12,7 @@ export default function Navbar({ siteBrand }) {
     <nav className={styles.navbar}>
       <div className={styles.navbarLeftSide}>
         <Link to="/" onClick={() => setExpanded(false)}>
-          <GatsbyImage 
-            className={styles.siteBrand}
-            image={getImage(siteBrand.gatsbyImageData)}
-            alt={siteBrand.alt}
-          />
+          <Logo size="6rem"/>
         </Link>
       </div>
       

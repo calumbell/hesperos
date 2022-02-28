@@ -7,7 +7,7 @@
   --dark: #140a0a;
   --medium: #92949c;
   --light: #F7F9FB;
-  --light-shade: #ebf4fa;
+  --light-shade: #eaf2f7;
 }
 
 * {
@@ -15,12 +15,23 @@
 }
 
 *:focus {
-  outline-offset: 0.25rem;
-  outline-color: var(--primary-shade);
+  outline-offset: 0.1rem;
+  outline-width: 1rem;
+  outline-color: #c3ddee;
 }
 
-html, a, ul, input, aside {
+html {
+  background: radial-gradient(var(--light-shade), var(--light));
+  height: 100vh;
+  width: 100vw;
+}
+
+ul, input {
   background-color: var(--light);
+}
+
+p {
+  background-color: transparent;
 }
 
 button {
@@ -34,6 +45,6 @@ input, textarea {
   font-weight: 300;
 }
 input:focus, textarea:focus {
-  background-color: var(--primary-highlight);
+  background-color: var(--light-shade);
   border-color: var(--primary);
 }

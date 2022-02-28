@@ -5,6 +5,7 @@ import Donate from './Donate';
 import DropDownLink from './DropDownLink';
 import EventCardThumbnail from './EventCardThumbnail';
 import Layout from './Layout';
+import Logo from './Logo';
 import MailchimpForm from './MailchimpForm';
 import MenuExpandButton from './MenuExpandButton';
 import Navbar from './Navbar';
@@ -21,6 +22,7 @@ export {
   DropDownLink,
   EventCardThumbnail,
   Layout,
+  Logo,
   MailchimpForm,
   MenuExpandButton,
   Navbar,
