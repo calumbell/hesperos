@@ -15,7 +15,10 @@ const Donate = () => {
   }
 
   return (
-    <button onClick={redirectToCheckout}>
+    <button 
+      onClick={redirectToCheckout}
+      className={`call-to-action`}
+    >
       Donate
     </button>
   )

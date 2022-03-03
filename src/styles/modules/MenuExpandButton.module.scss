@@ -6,13 +6,22 @@
   color: black;
   cursor: pointer;
   display: none;
-  margin: 1rem 0 0 0;
+  margin: 1rem 0;
   padding: 0;
+
+  circle {
+    fill: var(--primary);
+  }
+
+  line {
+    stroke: var(--light);
+  }
 }
 
 
 @media (max-width: $breakpoint-md) {
   .menu-expand-btn {
     display: flex;
+    align-items: center;
   }
 }

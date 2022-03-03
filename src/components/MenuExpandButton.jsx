@@ -28,12 +28,16 @@ export default function MenuExpandButton({
     >
       <motion.svg 
         whileHover={{ scale: 1.1  }}
-        viewBox="0 0 50 43" 
+        viewBox="0 0 60 60" 
         width="35"
         height="25"  
-        stroke="black"
         strokeWidth="3"
       >
+        <circle 
+          cx="30"
+          cy="30"
+          r="30"
+        />
         <motion.line
           x1="0" y1="4"
           x2="50" y2="4"

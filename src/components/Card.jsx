@@ -11,6 +11,7 @@ export default function EventCard({ data }) {
         image={data.image}
         alt={data.altText}
       />
+
       <time>{data.date}</time>
       <h2 className={styles.cardTitle}>{data.title}</h2>
       {data.displayDateBubble &&

@@ -2,6 +2,8 @@
 
 /* Container - needed to position dropdown content */
 .drop-down-container {
+  padding-top: 1.1rem;
+  padding-bottom: .25rem;
   display: inline;
   position: relative;
   color: inherit;
@@ -18,16 +20,20 @@
   display: none;
   justify-content: center;
   list-style: none;
-  margin-top: 0.75rem;
-  margin-left: -1.25rem;
+  margin-top: 1.9rem;
+
   opacity: 0.9;
   padding: 0.5rem 1rem;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0.25rem;
+  left: -50%;
   z-index: 2;
 
-  /* Background opacity is 0.9, but links are opacity 1 */
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: linear-gradient(var(--primary), var(--secondary) );
+
   li {
     opacity: 1;
     padding: 0.25rem;

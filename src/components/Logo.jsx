@@ -1,4 +1,6 @@
 import React from 'react'
+import * as styles from '../styles/modules/Logo.module.scss';
+
 import { viewbox, path } from '../images/hesperosLogoSvgData';
 const Logo = () => {
   return (
@@ -12,7 +14,7 @@ const Logo = () => {
         id="Selection"
         fill="#5085A5" 
         stroke="black" 
-        stroke-width="1"
+        strokeWidth="1"
         d= {path} 
       />
     </svg>

@@ -1,26 +1,12 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import '../styles/modules/Layout.scss';
 import favicon from '../images/hesperos-favicon.png'
-
-import Navbar from './Navbar.jsx';
+import { Navbar } from '.';
+import routes from '../utils/routes';
 
 export default function Layout({ children }) {
-  const query = useStaticQuery(graphql`
-    query SiteDetails {
-      prismicWebsiteDetails {
-        data {
-          site_brand {
-            gatsbyImageData(placeholder: BLURRED)
-            alt
-          }
-        }
-      }
-    }
-  `);
-  
   return (
     <div id="page-container">
       <Helmet>
@@ -30,7 +16,7 @@ export default function Layout({ children }) {
 
       <Navbar 
         id="navigation"
-        siteBrand={query.prismicWebsiteDetails.data.site_brand}
+        routes={routes}
       />
 
       <motion.main

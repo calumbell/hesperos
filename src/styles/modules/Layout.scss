@@ -32,6 +32,8 @@ input, textarea {
   border-color: var(--primary);
 }
 
+
+
 /* Global classes */
 .call-to-action {
   color: var(--primary);
@@ -49,5 +51,44 @@ input, textarea {
   background-color: var(--light-shade);
   border-color: var(--primary-pale);
   color: var(--dark);
+}
 
+@mixin link-underline-anim-mixin() {
+  background: linear-gradient(90deg, var(--primary), var(--primary-highlight));
+  background-size: 0% 2px;
+  background-position: 100% .8rem;
+  background-repeat: no-repeat;
+  &:hover {
+    transition: 0.8s;
+    background: linear-gradient(90deg, var(--primary), var(--primary-highlight));
+    background-size: 100% 2px;
+    background-position: 100% .8rem;
+    background-repeat: no-repeat;
+  }
+}
+
+.nav-item {
+  transition: color 0.25s, background-size 0.4s;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-top: 1rem;
+  margin-bottom: .25rem;
+}
+
+.nav-dropdown {
+  @extend .nav-item;
+  a { @extend .nav-link; }
+}
+
+.nav-link {
+  @extend .nav-item;
+  @include link-underline-anim-mixin(); 
+}
+
+.nav-link:hover {
+    transition: 0.8s;
+    background: linear-gradient(90deg, var(--primary), var(--primary-highlight));
+    background-size: 100% 2px;
+    background-position: 100% .8rem;
+    background-repeat: no-repeat;
 }

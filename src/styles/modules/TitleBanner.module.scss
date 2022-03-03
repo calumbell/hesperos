@@ -17,7 +17,7 @@
   top: 1rem;
   left: 1rem;
   padding: 1.5rem 3rem;
-  background-color: rgba($color: #ffffff, $alpha: 0.8);
+  background-color: var(--light-opaque);
   border-radius: 0.25rem;
   overflow: hidden;
 }

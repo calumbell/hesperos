@@ -2,54 +2,42 @@
 
 .navbar {
   display: flex;
-  height: 4rem;
+  height: 3rem;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
 .navbar-left-side {   
-  align-items: center;
   display: flex;
   flex: 25%;
   justify-content: space-between;
+  align-items: center;
 }
+
 
 .highlight-link {
   @extend .call-to-action !optional;
 }
 
-
-.site-brand {
-  align-self: flex-end;
-  width: 128px;
-}
-
 .navbar-right-side {
   @extend .navbar-left-side;
   flex: 75%;
-
-  a, div {
-    transition: color 0.25s;
-    background: transparent;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 300;
-    margin-top: 1rem;
-  }
+  align-items: center;
 }
 
-.navbar-right-side:hover {
+.navbar-right-side:hover, .navbar-right-side:focus {
   color: var(--medium);
-  a:hover {
+  a:hover, a:focus {
     color: var(--dark);
-    text-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+    text-shadow: var(--primary-highlight) 0px 1px 4px;
   }
 }
 
+/* Styles for popup menu on smaller screens */
 @media screen and (max-width: $breakpoint-md) {
   .navbar-right-side {
     align-items: flex-end;
-    background-color: var(--light);
     display: none;
     flex-direction: column;
     height: auto;
@@ -63,29 +51,27 @@
   .popup-menu {
     animation: 0.33s popUpMenuSlideIn forwards;
     display: flex;
+    background-color: var(--light);
     opacity: 0.97;
     padding: 0 1rem 1.5rem 1.5rem;
     z-index: 2;
 
-    /* For unsetting affordance styling when a link is in pop-out menu */
-    a {
-      opacity: 1;
-      color: var(--dark);
-      border: none;
-      padding: unset;
-    }
-    
     a:hover {
       background-color: transparent;
     }
   }
+}
 
-  @keyframes popUpMenuSlideIn {
-    from {
-      right: -5rem;
-    }
-    to {
-      right: 2.5rem;
-    }
+
+/* ============================= *
+ *          Animations           *
+ * ============================= */
+
+@keyframes popUpMenuSlideIn {
+  from {
+    right: -5rem;
+  }
+  to {
+    right: 0rem;
   }
 }
