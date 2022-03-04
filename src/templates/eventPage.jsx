@@ -28,11 +28,12 @@ export default function eventPage({ data }) {
               href={`http://maps.google.com/?q=${event.address.text}`}
             > (View on Map)</a>
           </p>
-
-          <Link className={styles.backlink} to="/events/">
-            Back to all events
-          </Link>
-          <Link className={styles.backlink} to="/pastEvents/">
+          <p>
+            <Link className='link' to="/events/">
+              Back to all events
+            </Link>
+          </p>
+          <Link className='link' to="/pastEvents/">
             View Past Events
           </Link>
         </aside>
@@ -52,9 +53,9 @@ export default function eventPage({ data }) {
         </div>
       </div>
       { event.program.richText.length > 0 &&
-        <div className={styles.program}>
-          <h2>Program</h2>
-          <p>
+        <div className={styles.programContainer}>
+          <h2 className={styles.programTitle}>Program</h2>
+          <p className={styles.programText}>
             {RichText.render(event.program.richText)}
           </p>
         </div>

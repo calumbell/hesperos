@@ -12,14 +12,26 @@
     display: block;
   }
 }
-.program {
-  text-align: center;
-  margin: 1rem 3rem;
+.program-container {
+  background-color: var(--light-shade);
+  border: 2px solid var(--primary);
+  max-width: 32rem;
+  padding: 1rem;
+  display: table;
+  margin: auto;
 }
 
-.backlink {
-  display: block;
-  margin: 1rem 0 1rem 0;
+.program-title {
+  text-align: center;
+}
+
+.program-text {
+  text-align: left;
+  ul {
+    list-style-type: none;
+    background-color: transparent;
+    text-align: center;
+  }
 }
 
 @media (max-width: 640px) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
-import '../styles/modules/Layout.scss';
+import '../styles/index.scss';
 import favicon from '../images/hesperos-favicon.png'
 import { Navbar } from '.';
 import routes from '../utils/routes';

@@ -11,9 +11,6 @@
 
 .drop-down-container:hover .drop-down-content {
   display: block;
-  * {
-    color: var(--medium);
-  }
 }
 
 .drop-down-content {
@@ -21,7 +18,8 @@
   justify-content: center;
   list-style: none;
   margin-top: 1.9rem;
-
+  transition: opacity 5s;
+  background-color: var(--light);
   opacity: 0.9;
   padding: 0.5rem 1rem;
   position: absolute;

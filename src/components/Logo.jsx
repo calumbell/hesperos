@@ -15,7 +15,7 @@ const Logo = () => {
         fill="#5085A5" 
         stroke="black" 
         strokeWidth="1"
-        d= {path} 
+        d={path} 
       />
     </svg>
   )

@@ -43,20 +43,25 @@ export default function Navbar({routes}) {
       {routes.map((route, i) => {
         // if route has no child routes, render it as a Link
         if (!route['children'])
-          return <Link 
-            key={i}
-            className={(width > breakpoint && route['style'] ) || `nav-link`}
-            to={route.url}> {route.name}
-          </Link>
+          return (
+            <Link 
+              key={i}
+              className={(width > breakpoint && route['style'] ) || `nav-link`}
+              to={route.url}> 
+                {route.name}
+            </Link>
+          )
         
         // if route has child routes, render  as a drop down
-        return <DropDownLink
-          key={i}
-          menuTitle={route.name}
-          defaultURL={route.url}
-          links={route.children}
-          disableDropdown={breakpoint < width}
-        />
+        return (
+          <DropDownLink
+            key={i}
+            menuTitle={route.name}
+            defaultURL={route.url}
+            links={route.children}
+            disableDropdown={breakpoint < width}
+          />
+        )
       })}
       </div>
     </nav>

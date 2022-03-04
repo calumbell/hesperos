@@ -1,6 +1,6 @@
-@import '../breakpoints';
-@import '../colours';
-@import '../typography';
+@import 'breakpoints';
+@import 'colours';
+@import 'typography';
 
 // === Elements ===
 // -----------------
@@ -18,6 +18,9 @@ button {
   border-radius: .6rem;
 }
 
+ul {
+  background-color: transparent;
+}
 article {
   padding: 2rem 7rem;
 }
@@ -33,8 +36,10 @@ input, textarea {
 }
 
 
+/* ================================ */
+/* Component Classes                */
+/* -------------------------------- */
 
-/* Global classes */
 .call-to-action {
   color: var(--primary);
   background-color: transparent;
@@ -55,16 +60,27 @@ input, textarea {
 
 @mixin link-underline-anim-mixin() {
   background: linear-gradient(90deg, var(--primary), var(--primary-highlight));
-  background-size: 0% 2px;
+  background-size: 0% 4px;
   background-position: 100% .8rem;
   background-repeat: no-repeat;
+  overflow: visible;
   &:hover {
     transition: 0.8s;
     background: linear-gradient(90deg, var(--primary), var(--primary-highlight));
     background-size: 100% 2px;
     background-position: 100% .8rem;
     background-repeat: no-repeat;
+    color: var(--dark);
   }
+}
+
+.link {
+  color: var(--primary-shade);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  @include link-underline-anim-mixin();
 }
 
 .nav-item {
@@ -85,10 +101,9 @@ input, textarea {
   @include link-underline-anim-mixin(); 
 }
 
-.nav-link:hover {
-    transition: 0.8s;
-    background: linear-gradient(90deg, var(--primary), var(--primary-highlight));
-    background-size: 100% 2px;
-    background-position: 100% .8rem;
-    background-repeat: no-repeat;
+
+.rich-text {
+  a {
+    @extend .link; 
+  }
 }

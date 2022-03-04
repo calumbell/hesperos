@@ -8,16 +8,16 @@ export default function MenuExpandButton({
 
   const variants = {
     topLine: {
-      open: { y1: 41 },
-      closed: { y1: 4 },
+      open: { y1: 55 },
+      closed: { y1: 25 },
     },
     middleLine: {
       open: { opacity: 0, },
       closed: { opacity: 1, },
     },
     bottomLine: {
-      open: { y1: 4 },
-      closed: { y1: 41 },
+      open: { y1: 25 },
+      closed: { y1: 55 },
     },
   }
 
@@ -28,34 +28,34 @@ export default function MenuExpandButton({
     >
       <motion.svg 
         whileHover={{ scale: 1.1  }}
-        viewBox="0 0 60 60" 
-        width="35"
-        height="25"  
-        strokeWidth="3"
+        viewBox="0 0 80 80" 
+        width="50"
+        height="50"  
+        strokeWidth="4"
+        transform-origin="1 0.5"
       >
         <circle 
-          cx="30"
-          cy="30"
-          r="30"
+          cx="40"
+          cy="40"
+          r="35"
         />
         <motion.line
-          x1="0" y1="4"
-          x2="50" y2="4"
+          x1="20" y1="25"
+          x2="60" y2="25"
           variants={variants.topLine}
           inital="closed"
           animate={isExpanded ? "open" : "closed"}
         />
         <motion.line 
-          x1="0" y1="23" 
-          x2="50" y2="23" 
+          x1="20" y1="40" 
+          x2="60" y2="40" 
           variants={variants.middleLine}
           initial="closed"
           animate={isExpanded ? "open" : "closed"}
         />
         <motion.line 
-          x1="0" y1="41" 
-          x2="50" y2="41" 
-
+          x1="20" y1="55" 
+          x2="60" y2="55" 
           variants={variants.bottomLine}
           initial="closed"
           animate={isExpanded ? "open" : "closed"}

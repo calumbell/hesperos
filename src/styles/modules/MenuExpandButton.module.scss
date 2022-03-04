@@ -3,18 +3,18 @@
  .menu-expand-btn {
   background-color: transparent;
   border: none;
-  color: black;
   cursor: pointer;
   display: none;
   margin: 1rem 0;
   padding: 0;
 
   circle {
-    fill: var(--primary);
+    fill: var(--light);
+    stroke: var(--primary-shade);
   }
 
   line {
-    stroke: var(--light);
+    stroke: var(--primary);
   }
 }
 

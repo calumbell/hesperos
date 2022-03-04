@@ -14,7 +14,7 @@ export default function Join({data}) {
 
       {pageData.body.map(section => {
         return(
-          <section>
+          <section className='rich-text'>
             <h2>{section.primary.section_title.text}</h2>
             {RichText.render(section.primary.section_content.richText)}
           </section>
