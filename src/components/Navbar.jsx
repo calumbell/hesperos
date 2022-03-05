@@ -13,7 +13,7 @@ export default function Navbar({routes}) {
   const breakpoint = 767;
 
   /* [] as 2nd arg to only attach listener on   *
-    * rtns cleanup fnc that runs on unmount      */
+   * rtns cleanup fnc that runs on unmount      */
   useEffect(() => {
     const handleWindowResize = () => {
       setWidth(window.innerWidth);

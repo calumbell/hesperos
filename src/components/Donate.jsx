@@ -12,12 +12,16 @@ const Donate = () => {
       successUrl: `${window.location.origin}/thanks/`,
       cancelUrl: `${window.location.origin}/support/`,
     })
+    if (error) {
+      // Handle errors here
+      return;
+    }
   }
 
   return (
     <button 
       onClick={redirectToCheckout}
-      className={`call-to-action`}
+      className={`call-to-action w-50`}
     >
       Donate
     </button>

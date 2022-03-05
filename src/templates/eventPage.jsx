@@ -20,8 +20,8 @@ export default function eventPage({ data }) {
 
         <aside className={styles.eventDetailsAside}>   
           <p>{event.location.text || `Location TBC`}</p>
-          <time>{event.date}</time>
-          <time>{event.time.text}</time>
+          <time className='block'>{event.date}</time>
+          <time className='block'>{event.time.text}</time>
           <p>
             {event.address.text} 
             <a target="_blank" rel="noreferrer"
@@ -53,7 +53,7 @@ export default function eventPage({ data }) {
         </div>
       </div>
       { event.program.richText.length > 0 &&
-        <div className={styles.programContainer}>
+        <div className={`${styles.programContainer} bg-light-shade p-4`}>
           <h2 className={styles.programTitle}>Program</h2>
           <p className={styles.programText}>
             {RichText.render(event.program.richText)}

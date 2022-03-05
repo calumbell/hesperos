@@ -5,17 +5,13 @@
   border: none;
   cursor: pointer;
   display: none;
+  width: min-content;
 
-  circle {
-    fill: var(--clr-light);
-    stroke: var(--clr-primary-shade);
-  }
-
-  line {
-    stroke: var(--clr-primary);
+  * {
+    fill: hsl( var(--clr-light) );   
+    stroke: hsl( var(--clr-primary) );
   }
 }
-
 
 @media (max-width: $breakpoint-md) {
   .menu-expand-btn {

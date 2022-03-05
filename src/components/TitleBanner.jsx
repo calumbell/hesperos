@@ -12,7 +12,7 @@ export default function TitleAndBanner({title, image, subtitle}) {
     />
     <h1 
       className={`
-        px-5 py-4
+        px-5 py-4 bg-light-opaque
         ${styles.bannerText} 
         ${title.length < 10 && `h1-lg`} 
         ${title.length > 20 && `h1-sm`}

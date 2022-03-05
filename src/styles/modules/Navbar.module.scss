@@ -12,10 +12,10 @@
 }
 
 .navbar-right-side:hover, .navbar-right-side:focus {
-  color: var(--clr-medium);
+  color: hsl( var(--clr-medium) );
   a:hover, a:focus {
-    color: var(--clr-dark);
-    text-shadow: var(--clr-primary-highlight) 0px 1px 4px;
+    color: hsl( var(--clr-dark) );
+    text-shadow: hsl( var(--clr-primary-highlight) ) 0px 1px 4px;
   }
 }
 
@@ -34,7 +34,7 @@
 
   .popup-menu {
     animation: 0.33s popUpMenuSlideIn forwards;
-    background-color: var(--clr-light);
+    background-color: hsl( var(--clr-light) );
     opacity: 0.97;
     padding: 0 1rem 1.5rem 1.5rem;
     z-index: 2;

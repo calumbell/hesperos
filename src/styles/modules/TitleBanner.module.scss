@@ -14,7 +14,7 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background-color: var(--clr-light-opaque);
+  background-color: hsl( var(--clr-light) / 0.9 );
   border-radius: 0.25rem;
   overflow: hidden;
 }

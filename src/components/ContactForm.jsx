@@ -1,22 +1,5 @@
 import React from 'react';
-import * as styles from '../styles/modules/ContactForm.module.scss';
 
-/* 
- * -= ContactForm =-
- * Returns a form that contains all of the fields contained
- * in the 'fields' prop and sends the result to the endpoint
- * defined in the 'endpoint' prop.
- * 
- * 'fields' is an array of objects with the following structure.
- * (NB. if field == 'multi', then content is an array of subfields)
- * { 
- *     type: the type of this field - multi, text, textarea
- *     content {
- *       displayName: the name of the field as it areas in the label
- *       name: the name of the field as it appear in the POST data
- *     }
- * }
- */
 
 export default function ContactForm({fields}) {
   const handleSubmit = event => {
@@ -28,66 +11,47 @@ export default function ContactForm({fields}) {
     // render multi fields by iterating over their subfields
     if (field.type === 'multi') {
       return (
-        <div className={styles.formGridRow}>
+        <div className='form-row flex'>
           {field.content.map((subfield, i) => {
             return(
-              <div 
-                key={i}
-                className={styles.formInputLabelGroup}
-              >
-                <div className={styles.formInputLabelGroup}>
-                  <label>{subfield.content.displayName}
-                    <input 
-                      type={subfield.content.type}
-                      name={subfield.content.name}/>
-                  </label>
-                </div>
-            </div>
+              <div className='w-100' key={i}>
+                <label>{subfield.content.displayName}
+                  <input 
+                    className='p-2'
+                    type={subfield.type}
+                    name={subfield.content.name}/>
+                </label>
+              </div>
             )
           })}
         </div>
       )
     }
-    // render textareas
-    else if(field.type === 'textarea') {
-      return(
-        <div className={styles.formGridRow}>
-          <div className={styles.formInputLabelGroup}>
-            <label className='py-2'>{field.content.displayName}
-              <textarea 
-                className={`py-2 {styles.lrgTextField}`}
-                type='text' 
-                name={field.content.name}/>
-            </label>
-          </div>
-        </div>
-      )
-    }
 
-    // render text inputs
-    else if (['email', 'text'].includes(field.type)) {
-      return(
-        <div className={styles.formGridRow}>
-          <div className={styles.formInputLabelGroup}>
-            <label className='py-2'>{field.content.displayName}
-              <input 
-                className='py-2'
-                type={field.content.type}
-                name={field.content.name}/>
-            </label>
-          </div>
-        </div>
-      )
-    }
+    // render non-nested fields
+    return(
+      <div className='form-row flex'>
+        <label className='w-100'>{field.content.displayName}
+          {field.type === 'textarea' 
+          ? <textarea 
+              className='p-2'
+              type={field.content.type}
+              name={field.content.name}
+            />
+          : <input className='p-2'
+              type={field.content.type}
+              name={field.content.name}
+            />
+          }
+        </label>
+      </div>
+    )
   };
 
   return(
-    <form 
-      className={`${styles.formGrid} form grid p-1`}
-      onSubmit={handleSubmit}
-    >
-      {fields.map(field => {return createFormField(field)})}    
-      <div className={styles.formGridRow}>
+    <form className='form grid p-1' onSubmit={handleSubmit}>
+      {fields.map(field => {return createFormField(field)})}
+      <div className='form-row mt-2'>
         <button className='call-to-action' type='submit'>
           Submit
         </button>

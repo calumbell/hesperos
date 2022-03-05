@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
-import * as styles from '../styles/modules/MailchimpForm.module.scss';
 
 export default function MailchimpForm() {
   const [email, setEmail] = useState('');
@@ -30,38 +29,41 @@ export default function MailchimpForm() {
   return (
     <form 
       onSubmit={handleSubmit}
-      className={`form flex${styles.formGrid}`}
+      className='form flex'
     >
-      <div className={styles.formGridRow}>
-        <label className={styles.labelInputGroup}>
-          Email Address
-          <input 
-            type="email"
-            name="EMAIL"
-            onChange={handleEmailChange}
-          />
-        </label>
-      </div>
-      <div className={styles.formGridRow}>
-        <label className={styles.labelInputGroup}>
+      <div className='flex form-row'>
+        <label className='w-100'>
           First Name
           <input 
-            type="text"
-            name="first name"
+            className='w-100 p-2'
+            type='text'
+            name='first name'
             onChange={handleFirstNameChange}
           />
         </label>
-        <label className={styles.labelInputGroup}>
+        <label className='w-100'>
           Last Name
           <input 
-            type="text"
-            name="last name"
+            className='p-2'
+            type='text'
+            name='last name'
             onChange={handleLastNameChange}
           />
         </label>
       </div>
-      <div className={styles.formGridRow}>
-        <button className="call-to-action" type="submit">
+      <div className='flex form-row'>
+        <label className='w-100'>
+          Email Address
+          <input 
+            className='w-100 p-2'
+            type='email'
+            name='EMAIL'
+            onChange={handleEmailChange}
+          />
+        </label>
+      </div>
+      <div className='form-row mt-2'>
+        <button className='call-to-action' type='submit'>
           Subscribe
         </button>
       </div>
