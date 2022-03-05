@@ -15,15 +15,18 @@ export default function Navbar({routes}) {
   /* [] as 2nd arg to only attach listener on   *
     * rtns cleanup fnc that runs on unmount      */
   useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth);
+    const handleWindowResize = () => {
+      setWidth(window.innerWidth);
+      if (width > breakpoint) setMenuExpansion(false);
+    }
     window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
 
   
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.navbarLeftSide}>
+    <nav className={`flex mt-2 mb-3`}>
+      <div className={`flex ${styles.navbarLeftSide}`}>
         <Link to="/" onClick={() => setMenuExpansion(false)}>
           <Logo size="6rem"/>
         </Link>
@@ -35,7 +38,7 @@ export default function Navbar({routes}) {
       />
 
       <div 
-        className={`${styles.navbarRightSide} ${isMenuExpanded && styles.popupMenu}`}       
+        className={`flex ${styles.navbarRightSide} ${isMenuExpanded && `${styles.popupMenu} highlight-border`}`}       
         onClick={() => setMenuExpansion(false)} // close hamburg. clicks/presses Esc/Enter while focused
         onKeyDown={(e) => { if (['Escape', 'Enter'].includes(e.key)) setMenuExpansion(false)}}
         aria-hidden='true'
@@ -47,8 +50,9 @@ export default function Navbar({routes}) {
             <Link 
               key={i}
               className={(width > breakpoint && route['style'] ) || `nav-link`}
-              to={route.url}> 
-                {route.name}
+              to={route.url}
+            > 
+              {route.name}
             </Link>
           )
         

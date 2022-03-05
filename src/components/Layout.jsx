@@ -8,7 +8,7 @@ import routes from '../utils/routes';
 
 export default function Layout({ children }) {
   return (
-    <div id="page-container">
+    <div className="container">
       <Helmet>
         <title>Hesperos Choir</title>
         <link rel="icon" href={favicon}></link>

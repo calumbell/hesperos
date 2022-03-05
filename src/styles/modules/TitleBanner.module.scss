@@ -1,8 +1,6 @@
 .banner-container {
   width: 100%;
   position: relative;
-  margin-bottom: 2rem;
-  background-color: none;
 }
 
 .banner-image {
@@ -16,8 +14,7 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  padding: 1.5rem 3rem;
-  background-color: var(--light-opaque);
+  background-color: var(--clr-light-opaque);
   border-radius: 0.25rem;
   overflow: hidden;
 }

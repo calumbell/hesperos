@@ -1,9 +1,4 @@
-.form-grid {
-  display: grid;
-}
-
 .form-grid-row {
-  display: flex;
   gap: 2rem;
   padding: .25rem;
   justify-content: space-between;
@@ -11,15 +6,12 @@
 
 .submit-btn {
   padding: 0.7rem 1rem;
-  justify-self: center;
 }
 
 .label-input-group {
   width: 100%;
 
   * {
-    display: block;
-    width: 100%;
     padding: .5rem 0rem;
   }
 }

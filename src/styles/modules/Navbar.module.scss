@@ -1,36 +1,21 @@
 @import '../breakpoints';
 
-.navbar {
-  display: flex;
-  height: 3rem;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
 .navbar-left-side {   
-  display: flex;
   flex: 25%;
   justify-content: space-between;
   align-items: center;
 }
 
-
-.highlight-link {
-  @extend .call-to-action !optional;
-}
-
 .navbar-right-side {
   @extend .navbar-left-side;
   flex: 75%;
-  align-items: center;
 }
 
 .navbar-right-side:hover, .navbar-right-side:focus {
-  color: var(--medium);
+  color: var(--clr-medium);
   a:hover, a:focus {
-    color: var(--dark);
-    text-shadow: var(--primary-highlight) 0px 1px 4px;
+    color: var(--clr-dark);
+    text-shadow: var(--clr-primary-highlight) 0px 1px 4px;
   }
 }
 
@@ -38,7 +23,6 @@
 @media screen and (max-width: $breakpoint-md) {
   .navbar-right-side {
     align-items: flex-end;
-    display: none;
     flex-direction: column;
     height: auto;
     justify-content: right;
@@ -50,15 +34,10 @@
 
   .popup-menu {
     animation: 0.33s popUpMenuSlideIn forwards;
-    display: flex;
-    background-color: var(--light);
+    background-color: var(--clr-light);
     opacity: 0.97;
     padding: 0 1rem 1.5rem 1.5rem;
     z-index: 2;
-
-    a:hover {
-      background-color: transparent;
-    }
   }
 }
 

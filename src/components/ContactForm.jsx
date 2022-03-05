@@ -53,9 +53,9 @@ export default function ContactForm({fields}) {
       return(
         <div className={styles.formGridRow}>
           <div className={styles.formInputLabelGroup}>
-            <label>{field.content.displayName}
+            <label className='py-2'>{field.content.displayName}
               <textarea 
-                className={styles.lrgTextField} 
+                className={`py-2 {styles.lrgTextField}`}
                 type='text' 
                 name={field.content.name}/>
             </label>
@@ -69,8 +69,9 @@ export default function ContactForm({fields}) {
       return(
         <div className={styles.formGridRow}>
           <div className={styles.formInputLabelGroup}>
-            <label>{field.content.displayName}
+            <label className='py-2'>{field.content.displayName}
               <input 
+                className='py-2'
                 type={field.content.type}
                 name={field.content.name}/>
             </label>
@@ -82,7 +83,7 @@ export default function ContactForm({fields}) {
 
   return(
     <form 
-      className={styles.formGrid}
+      className={`${styles.formGrid} form grid p-1`}
       onSubmit={handleSubmit}
     >
       {fields.map(field => {return createFormField(field)})}    

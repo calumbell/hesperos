@@ -30,7 +30,7 @@ export default function MailchimpForm() {
   return (
     <form 
       onSubmit={handleSubmit}
-      className={styles.formGrid}
+      className={`form flex${styles.formGrid}`}
     >
       <div className={styles.formGridRow}>
         <label className={styles.labelInputGroup}>

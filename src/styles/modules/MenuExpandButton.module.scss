@@ -1,20 +1,18 @@
 @import '../breakpoints';
  
- .menu-expand-btn {
+.menu-expand-btn {
   background-color: transparent;
   border: none;
   cursor: pointer;
   display: none;
-  margin: 1rem 0;
-  padding: 0;
 
   circle {
-    fill: var(--light);
-    stroke: var(--primary-shade);
+    fill: var(--clr-light);
+    stroke: var(--clr-primary-shade);
   }
 
   line {
-    stroke: var(--primary);
+    stroke: var(--clr-primary);
   }
 }
 

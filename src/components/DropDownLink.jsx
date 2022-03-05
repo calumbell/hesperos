@@ -11,14 +11,12 @@ export default function DropDownLink({
 
   if (disableDropdown) return (
       <div className={`${styles.dropDownContainer}`}>
-        <Link 
-          to={defaultURL}
-          className="nav-item"
-        >
+        <Link to={defaultURL} className="nav-item"> 
           {menuTitle}
         </Link>
+
         { links &&
-          <ul className={styles.dropDownContent}>
+          <ul className={`${styles.dropDownContent} highlight-border bg-light`}>
             { links.map((link, i) => {
               return <li key={i}><Link className="nav-link" to={link.url}>{link.name}</Link></li>
             })}

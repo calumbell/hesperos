@@ -12,6 +12,7 @@
 
 .slide-show-image {
   height: 75vh;
-  width: 90vw;
+  width: 92vw;
+  /* rmv image from flow so they can stack during fades */
   position: absolute;
 }

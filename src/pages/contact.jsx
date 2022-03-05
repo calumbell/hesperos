@@ -49,7 +49,7 @@ export default function Contact({data}) {
 
   return (
     <Layout>
-      <section className={styles.contentWithAside}>       
+      <section className={`flex mt-4 ${styles.contentWithAside}`}>       
         <aside>
           <h1>Contact</h1>
           <p>
@@ -66,7 +66,7 @@ export default function Contact({data}) {
         />
       </section>
       
-      <section className={styles.contentWithAside}>
+      <section className={`flex mt-4 ${styles.contentWithAside}`}>
         <aside>
           <h2>Mailing List</h2>
           <p>

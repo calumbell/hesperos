@@ -27,7 +27,7 @@ export default function Events({data}) {
         flatten={flattenEventData}
       />
       <footer>
-        <Link to="/pastEvents">Past Events</Link>
+        <Link to="/pastEvents" className="link">Past Events</Link>
       </footer>
     </Layout>
   )

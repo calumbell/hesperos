@@ -1,11 +1,5 @@
 @import './breakpoints';
 
-.content-with-aside {
-  display: flex;
-  justify-content: center;
-  margin-top: 4rem;
-}
-
 .content-with-aside > * {
   display: inline;
   margin: 0 1rem;

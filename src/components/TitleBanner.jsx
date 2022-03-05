@@ -4,7 +4,7 @@ import * as styles from '../styles/modules/TitleBanner.module.scss';
 
 export default function TitleAndBanner({title, image, subtitle}) {
   return (
-  <div className={styles.bannerContainer}>
+  <div className={`mb-4 ${styles.bannerContainer}`}>
     <GatsbyImage 
       className={styles.bannerImage}
       image={image.gatsbyImageData}
@@ -12,11 +12,11 @@ export default function TitleAndBanner({title, image, subtitle}) {
     />
     <h1 
       className={`
+        px-5 py-4
         ${styles.bannerText} 
         ${title.length < 10 && `h1-lg`} 
         ${title.length > 20 && `h1-sm`}
         ${title.length > 30 && `h1-xs`}
-
       `}
     >
       {title}

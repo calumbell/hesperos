@@ -1,99 +1,298 @@
 @import 'breakpoints';
-@import 'colours';
 @import 'typography';
 
-// === Elements ===
-// -----------------
+/* ================================ */
+/* Type Faces                       */
+/* -------------------------------- */
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@100;200;300;400;500;700&display=swap');
+
+
+/* ================================ */
+/* Custom Properties                */
+/* -------------------------------- */
+
+:root {
+  /* Colours */
+  --clr-primary: #31708E;
+  --clr-primary-shade: #5085A5;
+  --clr-primary-pale: #8FC1E3;
+  --clr-primary-highlight: #c3ddee;
+  --clr-secondary: #e69317;
+  --clr-dark: #140a0a;
+  --clr-medium: #92949c;
+  --clr-light: #F7F9FB;
+  --clr-light-opaque: #F7F9FBCC;
+  --clr-light-shade: #eaf2f7;
+
+  /* Font Families */
+  --ff-serif: 'EB Garamond', serif;
+  --ff-sans: 'Josefin Sans', sans-serif;
+
+  /* Font sizes */
+  --fs-900: 9.375rem;
+  --fs-800: 6.25rem;
+  --fs-700: 3.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+
+  --spacing-0: 0;
+  --spacing-1: .25rem;
+  --spacing-2: .5rem;
+  --spacing-3: 1rem;
+  --spacing-4: 1.5rem;
+  --spacing-5: 3rem;
+}
+
+
+/* ------------------------------- */
+/* Reset                           */
+/* ------------------------------- */
+
+/* Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset Margin */
+body,
+h1, h2, h3, h4, h5,
+p {
+  margin: 0;
+}
+
+/* Make scrollbar visible at all times */
 html {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+/* Making sure headings aren't bold */
+h1, h2, h3, h4, h5 {
+  font-weight: 400;
+}
+
+/* Body */
 body {
-  padding: 1rem;
+  font-family: var(--ff-sans);
+  font-size: var(--fs-400);
+  color:var(--clr-dark);
+  background-color: radial-gradient(var(--light-shade), var(--light));
+  line-height: 1.5;
+  min-height: 100vh;
 }
 
-button {
-  padding: 1rem;
-  border-radius: .6rem;
+/* Focus outline */
+*:focus {
+  outline-offset: 0.1rem;
+  outline-width: 1rem;
+  outline-color: var(--clr-primary);
 }
 
-ul {
-  background-color: transparent;
-}
-article {
-  padding: 2rem 7rem;
-}
-
-form {
-  display: block;
+/* Make form elements simpler to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit; // form elements are the only ones that don't inherit font
 }
 
-input, textarea {
-  border-width: 0.13rem;
-  border-style: ridge;
-  border-color: var(--primary);
+/* disable animations for users who have turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
+
+/* ================================ */
+/* Utility Classes                  */
+/* -------------------------------- */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1em);
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+}
+
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+/* Makes an element invisible to sighted users, but visiable to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Colours */
+.bg-light { background-color: var(--clr-light); }
+.bg-dark { background-color: var(--clr-dark); }
+
+/* Spacing */
+.m-auto { margin: auto; }
+.m-0 { margin: var(--spacing-0); }
+.m-1 { margin: var(--spacing-1); }
+.m-2 { margin: var(--spacing-2); }
+.m-3 { margin: var(--spacing-3); }
+.m-4 { margin: var(--spacing-4); }
+.m-5 { margin: var(--spacing-5); }
+
+.mt-0 { margin-top: var(--spacing-0); }
+.mt-1 { margin-top: var(--spacing-1); }
+.mt-2 { margin-top: var(--spacing-2); }
+.mt-3 { margin-top: var(--spacing-3); }
+.mt-4 { margin-top: var(--spacing-4); }
+.mt-5 { margin-top: var(--spacing-5); }
+
+.mb-0 { margin-bottom: var(--spacing-0); }
+.mb-1 { margin-bottom: var(--spacing-1); }
+.mb-2 { margin-bottom: var(--spacing-2); }
+.mb-3 { margin-bottom: var(--spacing-3); }
+.mb-4 { margin-bottom: var(--spacing-4); }
+.mb-5 { margin-bottom: var(--spacing-5); }
+
+.mx-0 { margin-left: var(--spacing-0); margin-right: var(--spacing-0); }
+.mx-1 { margin-left: var(--spacing-1); margin-right: var(--spacing-1); }
+.mx-2 { margin-left: var(--spacing-2); margin-right: var(--spacing-2); }
+.mx-3 { margin-left: var(--spacing-3); margin-right: var(--spacing-3); }
+.mx-4 { margin-left: var(--spacing-4); margin-right: var(--spacing-4); }
+.mx-5 { margin-left: var(--spacing-5); margin-right: var(--spacing-5); }
+
+.my-0 { margin-top: var(--spacing-0); margin-bottom: var(--spacing-0); }
+.my-1 { margin-top: var(--spacing-1); margin-bottom: var(--spacing-1); }
+.my-2 { margin-top: var(--spacing-2); margin-bottom: var(--spacing-2); }
+.my-3 { margin-top: var(--spacing-3); margin-bottom: var(--spacing-3); }
+.my-4 { margin-top: var(--spacing-4); margin-bottom: var(--spacing-4); }
+.my-5 { margin-top: var(--spacing-5); margin-bottom: var(--spacing-5); }
+
+.p-auto { margin: auto; }
+.p-0 { padding: var(--spacing-0); }
+.p-1 { padding: var(--spacing-1); }
+.p-2 { padding: var(--spacing-2); }
+.p-3 { padding: var(--spacing-3); }
+.p-4 { padding: var(--spacing-4); }
+.p-5 { padding: var(--spacing-5); }
+
+.px-0 { padding-left: var(--spacing-0); padding-right: var(--spacing-0); }
+.px-1 { padding-left: var(--spacing-1); padding-right: var(--spacing-1); }
+.px-2 { padding-left: var(--spacing-2); padding-right: var(--spacing-2); }
+.px-3 { padding-left: var(--spacing-3); padding-right: var(--spacing-3); }
+.px-4 { padding-left: var(--spacing-4); padding-right: var(--spacing-4); }
+.px-5 { padding-left: var(--spacing-5); padding-right: var(--spacing-5); }
+
+.py-0 { padding-top: var(--spacing-0); padding-bottom: var(--spacing-0); }
+.py-1 { padding-top: var(--spacing-1); padding-bottom: var(--spacing-1); }
+.py-2 { padding-top: var(--spacing-2); padding-bottom: var(--spacing-2); }
+.py-3 { padding-top: var(--spacing-3); padding-bottom: var(--spacing-3); }
+.py-4 { padding-top: var(--spacing-4); padding-bottom: var(--spacing-4); }
+.py-5 { padding-top: var(--spacing-5); padding-bottom: var(--spacing-5); }
+
+.highlight-border {
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(var(--clr-primary), var(--clr-secondary));
+}
 
 /* ================================ */
 /* Component Classes                */
 /* -------------------------------- */
 
 .call-to-action {
-  color: var(--primary);
+  color: var(--clr-primary);
   background-color: transparent;
-  border-color: var(--primary-shade);
+  border-color: var(--clr-primary-shade);
   padding: 0.5rem 1rem;
   border-width: 0.25rem;
   border-style: solid;
   border-radius: 1rem;
 }
 
-.call-to-action:hover {
+.call-to-action:hover,
+.call-to-action:focus {
   transition: border-color 0.25s;
   transition: color 0.25;
   background-color: var(--light-shade);
-  border-color: var(--primary-pale);
-  color: var(--dark);
+  border-color: var(--clr-primary-pale);
+  color: var(--clr-dark);
 }
 
+.form {
+
+  div, input, textarea {
+    width: 100%;
+  }
+  input, textarea {
+    border-width: 0.13rem;
+    border-style: ridge;
+    border-color: var(--clr-primary);
+    background-color: var(--light);
+    transition: background-color 0.25s;
+    font-weight: 300;
+  }
+  input:focus, textarea:focus {
+    background-color: var(--light-shade);
+    border-color: var(--clr-primary);
+  }
+}
+
+
+/* hyperlinks & navlinks */
 @mixin link-underline-anim-mixin() {
-  background: linear-gradient(90deg, var(--primary), var(--primary-highlight));
-  background-size: 0% 4px;
-  background-position: 100% .8rem;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-primary-highlight));
+  background-size: 0% 2px;
+  background-position: 100% 100%;
   background-repeat: no-repeat;
-  overflow: visible;
-  &:hover {
+  overflow-y: visible;
+  &:hover,
+  &:focus {
     transition: 0.8s;
-    background: linear-gradient(90deg, var(--primary), var(--primary-highlight));
-    background-size: 100% 2px;
-    background-position: 100% .8rem;
+    background: linear-gradient(90deg, var(--clr-primary), var(--clr-primary-highlight));
+    background-size: 110% 2px;
+    background-position: 100% 100%;
     background-repeat: no-repeat;
-    color: var(--dark);
+    color: var(--clr-dark);
   }
 }
 
 .link {
-  color: var(--primary-shade);
+  @include link-underline-anim-mixin();
+  transition: color 0.25s, background-size 0.4s;
+  color: var(--clr-primary-shade);
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 1px;
-  font-size: 0.9rem;
-  @include link-underline-anim-mixin();
 }
 
 .nav-item {
   transition: color 0.25s, background-size 0.4s;
-  font-size: 0.9rem;
   font-weight: 300;
   margin-top: 1rem;
   margin-bottom: .25rem;
-}
-
-.nav-dropdown {
-  @extend .nav-item;
-  a { @extend .nav-link; }
 }
 
 .nav-link {
@@ -102,8 +301,9 @@ input, textarea {
 }
 
 
+/* for styling richtext returned from Prismic queries */
 .rich-text {
-  a {
+  * a {
     @extend .link; 
   }
 }

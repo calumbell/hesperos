@@ -23,7 +23,7 @@ export default function MenuExpandButton({
 
   return (
     <button 
-      className={styles.menuExpandBtn}
+      className={`mt-3 mb-0 p-0 ${styles.menuExpandBtn}`}
       onClick={() => {setExpanded(!isExpanded)}}
     >
       <motion.svg 
