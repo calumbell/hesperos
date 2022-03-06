@@ -33,11 +33,11 @@ export default function PastEvents({ data }) {
 
   return (
     <Layout>
-      <h1>Past Events</h1>
+      <h1 className='fs-700'>Past Events</h1>
       {Object.keys(eventsByYear).reverse().map((year) => {
         return(
-          <div>
-            <p>{year}</p>
+          <div className='mt-4'>
+            <p className='text-primary fs-400 fw-bold letter-spacing-2'>{year}</p>
             <CardGrid
               Card={EventCardThumbnail}
               data={eventsByYear[year]}

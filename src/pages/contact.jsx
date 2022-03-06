@@ -1,8 +1,7 @@
 import React from 'react';
 import { ContactForm, Layout, MailchimpForm } from '../components';
-import * as styles from '../styles/contact.module.scss';
 
-export default function Contact({data}) {
+export default function Contact() {
 
   const contactFormFields = [
     {
@@ -49,9 +48,9 @@ export default function Contact({data}) {
 
   return (
     <Layout>
-      <section className={`flex mt-4 ${styles.contentWithAside}`}>       
+      <section className={`flex flex-wrap mt-4`}>       
         <aside>
-          <h1>Contact</h1>
+          <h1 className='fs-700'>Contact</h1>
           <p>
             Please use this contact form if you have any questions about the choir.
           </p>
@@ -66,9 +65,9 @@ export default function Contact({data}) {
         />
       </section>
       
-      <section className={`flex mt-4 ${styles.contentWithAside}`}>
+      <section className={`flex flex-wrap mt-4`}>
         <aside>
-          <h2>Mailing List</h2>
+          <h2 className='fs-600'>Mailing List</h2>
           <p>
             Sign up to our mailing list for regular updates 
             (not more than once a month).

@@ -8,12 +8,12 @@ export default function Index({data}) {
   return (
     <Layout>
       <aside className={`${styles.homePageAside} highlight-border bg-light p-4`}>
-        <h1>Hesperos Choir</h1>
+        <h1 className='fs-700 letter-spacing-3'>Hesperos Choir</h1>
         <p>{data.prismicHomepage.data.short_description.text}</p>
         {nextEvent && (
           <Link to={`/events/${nextEvent.uid}`}>
-            <sub>Our next event:</sub>
-            <h2>{nextEvent.data.title.text}</h2>
+            <sub className='subtitle'>Our next event</sub>
+            <h2 className='fs-500'>{nextEvent.data.title.text}</h2>
             <p>{nextEvent.data.date}</p>
           </Link>)
         }

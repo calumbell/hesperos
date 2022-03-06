@@ -22,7 +22,7 @@
 }
 
 /* Layout for medium screens */
-@media (min-width: $breakpoint-md) {
+@media (min-width: $breakpoint-lg) {
   .card-grid-lg {
     grid-template-columns: repeat(3, 1fr);
     padding: 0rem 1rem;

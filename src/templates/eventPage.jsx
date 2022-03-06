@@ -24,7 +24,8 @@ export default function eventPage({ data }) {
           <time className='block'>{event.time.text}</time>
           <p>
             {event.address.text} 
-            <a target="_blank" rel="noreferrer"
+            <a 
+            class="link"target="_blank" rel="noreferrer"
               href={`http://maps.google.com/?q=${event.address.text}`}
             > (View on Map)</a>
           </p>

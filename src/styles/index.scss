@@ -1,17 +1,16 @@
+/* ------------------------------------------------- */
+/*  I M P O R T S                                    */
+/* ------------------------------------------------- */
+
+
 @import 'breakpoints';
-@import 'typography';
-
-/* ================================ */
-/* Type Faces                       */
-/* -------------------------------- */
-
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@100;200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@200;300;400;500&display=swap');
 
 
-/* ================================ */
-/* Custom Properties                */
-/* -------------------------------- */
+/* ------------------------------------------------- */
+/*  C U S T O M   P R O P E R T I E S                */
+/* ------------------------------------------------- */
 
 :root {
   /* Colours */
@@ -30,15 +29,20 @@
   --ff-sans: 'Josefin Sans', sans-serif;
 
   /* Font sizes */
-  --fs-900: 9.375rem;
-  --fs-800: 6.25rem;
-  --fs-700: 3.5rem;
-  --fs-600: 2rem;
-  --fs-500: 1.75rem;
+  --fs-800: 3.5rem;
+  --fs-700: 2.8rem;
+  --fs-600: 1.8rem;
+  --fs-500: 1.5rem;
   --fs-400: 1.125rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
 
+  /* Font weights */
+  --fw-xl: 200;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-bold: 500;
+  
   --spacing-0: 0;
   --spacing-1: .25rem;
   --spacing-2: .5rem;
@@ -47,10 +51,37 @@
   --spacing-5: 3rem;
 }
 
+/* ------------------------------------------------- */
+/*  R E S P O N S I V E   D E S I G N                */
+/* ------------------------------------------------- */
 
-/* ------------------------------- */
-/* Reset                           */
-/* ------------------------------- */
+/* Responsive Font Sizes */
+:root { font-size: 16px; }
+
+@media (min-width: $breakpoint-sm) {
+  * { font-size: 15px; }
+}
+
+@media (min-width: $breakpoint-md) {
+  * { font-size: 14px; }
+}
+
+@media (min-width: $breakpoint-lg) {
+  * { font-size: 16px; }
+}
+
+@media (min-width: $breakpoint-xl) {
+  * { font-size: 18px; }
+}
+
+@media (min-width: $breakpoint-xxl) {
+  * { font-size: 20px; }
+}
+
+
+/* ------------------------------------------------- */
+/*  R E S E T                                        */
+/* ------------------------------------------------- */
 
 /* Box Sizing */
 *,
@@ -60,10 +91,13 @@
 }
 
 /* Reset Margin */
-body,
-h1, h2, h3, h4, h5,
-p {
+body, h1, h2, h3, h4, h5, p {
   margin: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 /* Make scrollbar visible at all times */
@@ -73,14 +107,16 @@ html {
 }
 
 /* Making sure headings aren't bold */
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6, sub {
   font-weight: 400;
+  font-family: var(--ff-serif);
 }
 
 /* Body */
 body {
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
+  font-weight: 300;
   color:hsl(var(--clr-dark));
   background-color: radial-gradient(var(--light-shade), var(--light));
   line-height: 1.5;
@@ -104,6 +140,12 @@ select {
 
 }
 
+/* Remove default link styles */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 textarea {
   height: 8rem;
 }
@@ -120,10 +162,9 @@ textarea {
   }
 }
 
-
-/* ================================ */
-/* Utility Classes                  */
-/* -------------------------------- */
+/* ------------------------------------------------- */
+/*  U T I L I T Y   C L A S S E S                    */
+/* ------------------------------------------------- */
 
 .container {
   padding-inline: 2em;
@@ -150,26 +191,53 @@ textarea {
 .bg-light-shade { background-color: hsl( var(--clr-light-shade)); }
 .bg-dark { background-color: hsl( var(--clr-dark) ); }
 
-.txt-primary { color: hsl( var(--clr-primary) ); }
+.text-primary { color: hsl( var(--clr-primary) ); }
+.text-faded { color: hsl( var(--clr-medium)); }
+
+/* Typography */
+.ff-serif { font-family: var(--ff-serif); }
+.ff-sans { font-family: var(--ff-sans); }
+
+.uppercase { text-transform: uppercase;}
+
+.letter-spacing-1 { letter-spacing: 4.5px; }
+.letter-spacing-2 { letter-spacing: 2.6px; }
+.letter-spacing-3 { letter-spacing: 2px; }
+
+/* Font Size */
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+/* Font Weight */
+.fw-xl { font-weight: 200; }
+.fw-light { font-weight: 300; }
+.fw-reg { font-weight: 400; }
+.fw-med { font-weight: 500; }
+.fw-bold { font-weight: 600; }
+
+.text-align-c { text-align: center;}
 
 /* Display */
-.block {
-  display: block;
-}
-
+.block { display: block; }
 .flex {
   display: flex;
   gap: var(--gap, 1em);
   justify-content: space-between;
 }
+.flex-wrap { flex-wrap: wrap; }
+.grid { display: grid; }
 
-.grid {
-  display: grid;
-}
 
 /* Sizing */
 .w-50 { width: 50%; }
 .w-100 { width: 100%; }
+.h-50 { height: 50%; }
+.h-25 { height: 25%; }
 
 /* Spacing - Margins */
 .m-auto { margin: auto; }
@@ -237,9 +305,9 @@ textarea {
   border-image-source: linear-gradient(hsl( var(--clr-primary) ), hsl(var(--clr-secondary)));
 }
 
-/* ================================ */
-/* Component Classes                */
-/* -------------------------------- */
+/* ------------------------------------------------- */
+/*  C O M P O N E N T   C L A S S E S                */
+/* ------------------------------------------------- */
 
 .call-to-action {
   color: hsl( var(--clr-primary) );
@@ -306,6 +374,12 @@ textarea {
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 1px;
+}
+
+.subtitle {
+  letter-spacing: var(--spacing-1);
+  text-transform: uppercase;
+  font-size: var(--fs-200)
 }
 
 .nav-item {

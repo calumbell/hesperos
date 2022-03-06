@@ -29,13 +29,13 @@ export default function MailchimpForm() {
   return (
     <form 
       onSubmit={handleSubmit}
-      className='form flex'
+      className='form grid p-1'
     >
       <div className='flex form-row'>
         <label className='w-100'>
           First Name
           <input 
-            className='w-100 p-2'
+            className='p-2'
             type='text'
             name='first name'
             onChange={handleFirstNameChange}
@@ -55,7 +55,7 @@ export default function MailchimpForm() {
         <label className='w-100'>
           Email Address
           <input 
-            className='w-100 p-2'
+            className='p-2'
             type='email'
             name='EMAIL'
             onChange={handleEmailChange}

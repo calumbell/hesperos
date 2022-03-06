@@ -10,18 +10,24 @@ export default function EventCard({ data }) {
       className={`${styles.card} p-3 m-1`}
     >
       <GatsbyImage 
-        className={`${styles.cardImage}`}
+        className={`${styles.cardImage} block`}
         image={data.image}
         alt={data.altText}
       />
 
-      <time className='mt-2'>{data.date}</time>
-      <h2 className={`mt-1 ${styles.cardTitle}`}>{data.title}</h2>
-      <sub>{data.subtitle}</sub>
+      <time className='mt-2 fw-xl'>{data.date}</time>
+      <h2 className={`mt-1 fw-reg 
+        ${data.title.length <= 15 ? `fs-600` : `fs-500` /* resize longer text */}`}
+      >{data.title}</h2>
+      { data.subtitle &&
+        <sub className={`text-faded ff-sans letter-spacing-3 fs-200`}> 
+          {data.subtitle}
+        </sub>
+      }
       {data.displayDateBubble &&
-        <div className={`p-2 ${styles.dateBubble}`}>
-          <p className={`p-0 m-0 ${styles.bubbleTextLg}`}>{data.date.split(" ")[1]}</p>
-          <p className={`mt-3 ${styles.bubbleTextSm}`}>{data.date.split(" ")[2].slice(0,3)}</p>
+        <div className={`p-2 bg-light ${styles.dateBubble}`}>
+          <p className='p-0 mt-1 fs-500'>{data.date.split(" ")[1]}</p>
+          <p className={`p-0 m-0 fs-200`}>{data.date.split(" ")[2].slice(0,3)}</p>
         </div>
       }
     </Link>

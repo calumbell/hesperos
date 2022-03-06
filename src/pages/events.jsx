@@ -20,7 +20,7 @@ export default function Events({data}) {
 
   return (
     <Layout>
-      <h1>Events</h1>
+      <h1 className='fs-700'>Events</h1>
       <CardGrid
         Card={Card}
         data={data.allPrismicEvent.nodes}

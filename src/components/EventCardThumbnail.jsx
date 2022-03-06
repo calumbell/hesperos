@@ -13,9 +13,9 @@ export default function EventCardThumbnail({ data }) {
         alt={data.imgAltText}
       />
       <div className={`bg-light p-2 ${styles.tooltip}`}>
-          <p className={`m-2 ${styles.tooltipTitle}`}>{data.title}</p>
-          <p className={`m-2 ${styles.tooltipItem}`}>{data.date}</p>
-          <p className={`m-2 ${styles.tooltipItem}`}>{data.subtitle}</p>
+          <p className='m-2 ff-serif fs-400 fw-med'>{data.title}</p>
+          <p className='m-2 fs-300 fw-med text-faded'>{data.subtitle}</p>
+          <p className='m-2'>{data.date}</p>
       </div>
     </Link>
   )

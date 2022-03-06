@@ -17,7 +17,7 @@ export default function Notes({data}) {
   
   return (
     <Layout>
-      <h1>Notes</h1>
+      <h1 className='fs-700'>Notes</h1>
       <CardGrid 
         Card={Card}
         data={data.allPrismicPost.nodes}

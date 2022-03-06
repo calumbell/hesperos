@@ -11,9 +11,9 @@ export default function postPage({ data }) {
   return (
     <Layout>
       <article>
-        <h1>{post.title.text}</h1>
+        <h1 className='fs-700'>{post.title.text}</h1>
         <sub>{post.title.subtitle}</sub>
-        <time>{post.date}</time>
+        <time className='fw-xl fs-400'>{post.date}</time>
         {post.body.map((section, i) => {
           if (section.slice_type === "text_section") {
             return RichText.render(section.primary.section_body.richText)
@@ -26,8 +26,7 @@ export default function postPage({ data }) {
                 image={section.primary.embedded_image.gatsbyImageData} 
                 alt={section.primary.embedded_image.alt}
               />
-              <sub>{section.primary.caption.text}</sub>
-
+              <sub className='ff-sans block text-primary uppercase letter-spacing-2 my-2'>{section.primary.caption.text}</sub>
             </>
           }
 
