@@ -16,16 +16,16 @@ export default function eventPage({ data }) {
         subtitle={event.location.text || null}
       />
 
-      <div className={styles.eventDetailContainer}>
+      <div className={`d-grid ${styles.eventDetailContainer}`}>
 
         <aside className={styles.eventDetailsAside}>   
           <p>{event.location.text || `Location TBC`}</p>
-          <time className='block'>{event.date}</time>
-          <time className='block'>{event.time.text}</time>
+          <time className='d-block'>{event.date}</time>
+          <time className='d-block'>{event.time.text}</time>
           <p>
             {event.address.text} 
             <a 
-            class="link"target="_blank" rel="noreferrer"
+            class="link" target="_blank" rel="noreferrer"
               href={`http://maps.google.com/?q=${event.address.text}`}
             > (View on Map)</a>
           </p>
@@ -55,7 +55,7 @@ export default function eventPage({ data }) {
       </div>
       { event.program.richText.length > 0 &&
         <div className={`${styles.programContainer} bg-light-shade p-4`}>
-          <h2 className={styles.programTitle}>Program</h2>
+          <h2 className={`fs-500 letter-spacing-3 mb-2 ${styles.programTitle}`}>Program</h2>
           <p className={styles.programText}>
             {RichText.render(event.program.richText)}
           </p>

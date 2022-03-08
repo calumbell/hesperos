@@ -26,7 +26,7 @@ export default function postPage({ data }) {
                 image={section.primary.embedded_image.gatsbyImageData} 
                 alt={section.primary.embedded_image.alt}
               />
-              <sub className='ff-sans block text-primary uppercase letter-spacing-2 my-2'>{section.primary.caption.text}</sub>
+              <sub className='ff-sans d-block text-primary uppercase letter-spacing-2 my-2'>{section.primary.caption.text}</sub>
             </>
           }
 

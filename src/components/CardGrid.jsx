@@ -9,7 +9,9 @@ export default function CardGrid({
   size,     // 'large' or 'small'
 }) {
   return (
-    <div className={size === 'small' ? styles.cardGridSm : styles.cardGridLg}>
+    <div className={`d-grid
+      ${size === 'small' ? styles.cardGridSm : styles.cardGridLg}`}
+    >
       {data.map((item, i) => {
         return <Card key={i} data={flatten(item)}/>
       })}

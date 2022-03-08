@@ -14,7 +14,7 @@ export default function SlideShow({images}) {
   }, [currentImage])
   
   return(
-    <AnimatePresence className={styles.slideShowContainer}>
+    <AnimatePresence className={`d-flex w-100 ${styles.slideShowContainer}`}>
       { images.map((image, i) => 
         { if(currentImage === i) {
             return(
@@ -25,12 +25,12 @@ export default function SlideShow({images}) {
                 exit={{ opacity: 0 }}
                 transition={{
                   type: 'spring',
-                  duration: 1,
+                  duration: 2,
                 }}
                 
               >
                 <GatsbyImage
-                  className={styles.slideShowImage}
+                  className={`position-ab ${styles.slideShowImage}`}
                   image={image.image.gatsbyImageData}
                 />
               </motion.div>

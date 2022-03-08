@@ -7,10 +7,10 @@ export default function EventCard({ data }) {
   return (
     <Link 
       to={`/${data.subroute}/${data.uid}`} 
-      className={`${styles.card} p-3 m-1`}
+      className={`${styles.card} position-rel p-3 m-1`}
     >
       <GatsbyImage 
-        className={`${styles.cardImage} block`}
+        className={`${styles.cardImage} d-block`}
         image={data.image}
         alt={data.altText}
       />
@@ -25,7 +25,10 @@ export default function EventCard({ data }) {
         </sub>
       }
       {data.displayDateBubble &&
-        <div className={`p-2 bg-light ${styles.dateBubble}`}>
+        <div 
+          className={`position-ab d-flex p-2 bg-light ${styles.dateBubble}`}
+          style={{'--gap': '0rem'}}
+        >
           <p className='p-0 mt-1 fs-500'>{data.date.split(" ")[1]}</p>
           <p className={`p-0 m-0 fs-200`}>{data.date.split(" ")[2].slice(0,3)}</p>
         </div>

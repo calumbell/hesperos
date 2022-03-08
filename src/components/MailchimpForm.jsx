@@ -31,7 +31,7 @@ export default function MailchimpForm() {
       onSubmit={handleSubmit}
       className='form grid p-1'
     >
-      <div className='flex form-row'>
+      <div className='d-flex form-row'>
         <label className='w-100'>
           First Name
           <input 
@@ -51,7 +51,7 @@ export default function MailchimpForm() {
           />
         </label>
       </div>
-      <div className='flex form-row'>
+      <div className='d-flex form-row'>
         <label className='w-100'>
           Email Address
           <input 

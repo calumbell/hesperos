@@ -7,7 +7,7 @@ export default function Index({data}) {
   const nextEvent = data.allPrismicEvent.nodes[0];
   return (
     <Layout>
-      <aside className={`${styles.homePageAside} highlight-border bg-light p-4`}>
+      <aside className={`position-ab bg-light p-4 ${styles.homePageAside}`}>
         <h1 className='fs-700 letter-spacing-3'>Hesperos Choir</h1>
         <p>{data.prismicHomepage.data.short_description.text}</p>
         {nextEvent && (

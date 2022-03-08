@@ -56,14 +56,14 @@
 /* ------------------------------------------------- */
 
 /* Responsive Font Sizes */
-:root { font-size: 16px; }
+:root { font-size: 14px; }
 
 @media (min-width: $breakpoint-sm) {
   * { font-size: 15px; }
 }
 
 @media (min-width: $breakpoint-md) {
-  * { font-size: 14px; }
+  * { font-size: 15px; }
 }
 
 @media (min-width: $breakpoint-lg) {
@@ -187,7 +187,7 @@ textarea {
 
 /* Colours */
 .bg-light { background-color: hsl( var(--clr-light) ); }
-.bg-light-opaque { background-color: hsl( var(--clr-light) / 0.5); }
+.bg-light-opaque { background-color: hsl( var(--clr-light) / 0.8); }
 .bg-light-shade { background-color: hsl( var(--clr-light-shade)); }
 .bg-dark { background-color: hsl( var(--clr-dark) ); }
 
@@ -223,15 +223,20 @@ textarea {
 .text-align-c { text-align: center;}
 
 /* Display */
-.block { display: block; }
-.flex {
+.d-block { display: block; }
+.d-flex {
   display: flex;
   gap: var(--gap, 1em);
   justify-content: space-between;
 }
-.flex-wrap { flex-wrap: wrap; }
-.grid { display: grid; }
+.d-grid { display: grid; }
 
+
+.flex-wrap { flex-wrap: wrap; }
+
+/* Position */
+.position-ab { position: absolute; }
+.position-rel { position: relative; }
 
 /* Sizing */
 .w-50 { width: 50%; }
@@ -284,6 +289,20 @@ textarea {
 .p-3 { padding: var(--spacing-3); }
 .p-4 { padding: var(--spacing-4); }
 .p-5 { padding: var(--spacing-5); }
+
+.pt-0 { padding-top: var(--spacing-0); }
+.pt-1 { padding-top: var(--spacing-1); }
+.pt-2 { padding-top: var(--spacing-2); }
+.pt-3 { padding-top: var(--spacing-3); }
+.pt-4 { padding-top: var(--spacing-4); }
+.pt-5 { padding-top: var(--spacing-5); }
+
+.pb-0 { padding-bottom: var(--spacing-0); }
+.pb-1 { padding-bottom: var(--spacing-1); }
+.pb-2 { padding-bottom: var(--spacing-2); }
+.pb-3 { padding-bottom: var(--spacing-3); }
+.pb-4 { padding-bottom: var(--spacing-4); }
+.pb-5 { padding-bottom: var(--spacing-5); }
 
 .px-0 { padding-left: var(--spacing-0); padding-right: var(--spacing-0); }
 .px-1 { padding-left: var(--spacing-1); padding-right: var(--spacing-1); }

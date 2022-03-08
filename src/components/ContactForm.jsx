@@ -11,7 +11,7 @@ export default function ContactForm({fields}) {
     // render multi fields by iterating over their subfields
     if (field.type === 'multi') {
       return (
-        <div className='form-row flex'>
+        <div className='form-row d-flex'>
           {field.content.map((subfield, i) => {
             return(
               <div className='w-100' key={i}>
@@ -30,7 +30,7 @@ export default function ContactForm({fields}) {
 
     // render non-nested fields
     return(
-      <div className='form-row flex'>
+      <div className='form-row d-flex'>
         <label className='w-100'>{field.content.displayName}
           {field.type === 'textarea' 
           ? <textarea 
@@ -49,7 +49,7 @@ export default function ContactForm({fields}) {
   };
 
   return(
-    <form className='form grid p-1' onSubmit={handleSubmit}>
+    <form className='form d-grid p-1' onSubmit={handleSubmit}>
       {fields.map(field => {return createFormField(field)})}
       <div className='form-row mt-2'>
         <button className='call-to-action' type='submit'>

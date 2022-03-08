@@ -25,8 +25,8 @@ export default function Navbar({routes}) {
 
   
   return (
-    <nav className={`flex mt-2 mb-3`}>
-      <div className={`flex ${styles.navbarLeftSide}`}>
+    <nav className='d-flex mt-2 mb-3'>
+      <div className={`d-flex ${styles.navbarLeftSide}`}>
         <Link to="/" onClick={() => setMenuExpansion(false)}>
           <Logo size="6rem"/>
         </Link>
@@ -38,7 +38,7 @@ export default function Navbar({routes}) {
       />
 
       <div 
-        className={`flex ${styles.navbarRightSide} ${isMenuExpanded && `${styles.popupMenu} highlight-border`}`}       
+        className={`d-flex ${styles.navbarRightSide} ${isMenuExpanded && `${styles.popupMenu} highlight-border`}`}       
         onClick={() => setMenuExpansion(false)} // close hamburg. clicks/presses Esc/Enter while focused
         onKeyDown={(e) => { if (['Escape', 'Enter'].includes(e.key)) setMenuExpansion(false)}}
         aria-hidden='true'

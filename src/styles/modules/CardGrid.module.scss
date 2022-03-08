@@ -1,12 +1,10 @@
 @import '../breakpoints';
 
 .card-grid-lg {
-  display: grid;
   grid-template-columns: 1fr;
 }
 
 .card-grid-sm {
-  @extend .card-grid-lg;
   grid-template-columns: repeat(2, 1fr);
 }
 
@@ -33,12 +31,9 @@
 }
 
 /* Layout for large screens */
-@media (min-width: $breakpoint-lg) {
+@media (min-width: $breakpoint-xl) {
   .card-grid-sm {
     grid-template-columns: repeat(5, 1fr);
-  }
-  * {
-    font-size: 15px;
   }
 }
 

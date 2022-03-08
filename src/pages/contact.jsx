@@ -48,7 +48,7 @@ export default function Contact() {
 
   return (
     <Layout>
-      <section className={`flex flex-wrap mt-4`}>       
+      <section className={`d-flex flex-wrap mt-4`}>       
         <aside>
           <h1 className='fs-700'>Contact</h1>
           <p>
@@ -65,7 +65,7 @@ export default function Contact() {
         />
       </section>
       
-      <section className={`flex flex-wrap mt-4`}>
+      <section className={`d-flex flex-wrap mt-4`}>
         <aside>
           <h2 className='fs-600'>Mailing List</h2>
           <p>

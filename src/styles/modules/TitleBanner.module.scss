@@ -1,26 +1,16 @@
-.banner-container {
-  width: 100%;
-  position: relative;
-}
-
 .banner-image {
   z-index: -1;
   height: 10rem;
   border-radius: 0.5rem;
-  width: 100%;
 }
 
 .banner-text {
-  position: absolute;
   top: 1rem;
   left: 1rem;
-  background-color: hsl( var(--clr-light) / 0.9 );
   border-radius: 0.25rem;
   overflow: hidden;
 }
 
 .banner-subtitle {
-  display: block;
   text-align: right;
-  font-weight: 300;
 }

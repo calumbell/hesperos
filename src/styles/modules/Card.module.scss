@@ -1,6 +1,5 @@
 .card {
   transition: box-shadow 0.2s;
-  position: relative;
 }
 
 .card:hover {
@@ -15,16 +14,13 @@
 .date-bubble {
   align-items: center;
   border-radius: 50%;
-  display: flex;
   flex-direction: column;
-  height: 3.5rem;
+  width: 5rem;
+  height: 5rem;
   justify-content: center;
   opacity: 0.72;
-  position: absolute;
   right: 8%;
   text-align: center;
   top: 5%;
-  width: 3.5rem;
   z-index: 1;
 }
-

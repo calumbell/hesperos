@@ -9,8 +9,13 @@ export default function TextWithFacingImage({data}) {
   const headingOnLeft = !(data.isHeadingAboveText ^ bodyOnLeft);
 
   return (
-    <div className={`mb-4 ${data.format === 'Full width text' ? `${styles.containerOneCol}` : `${styles.containerTwoCol}`}`}>
-      <h2 className={headingOnLeft ? `${styles.left}` : `${styles.right}`}>{data.title}</h2>
+    <div className={`mb-4 d-grid
+      ${data.format === 'Full width text' ? `${styles.containerOneCol}` : `${styles.containerTwoCol}`}`
+    }>
+      <h2 className={`fs-600
+        ${headingOnLeft ? `${styles.left}` : `${styles.right}`}`}
+      > {data.title} </h2>
+
       <p className={bodyOnLeft ? `${styles.left}` : `${styles.right}`}>{data.bodyText}</p>
       {data.image.gatsbyImageData &&
         <GatsbyImage 

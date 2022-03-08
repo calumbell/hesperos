@@ -2,10 +2,8 @@
 
 /* Container - needed to position dropdown content */
 .drop-down-container {
-  padding-top: 1.1rem;
-  padding-bottom: .25rem;
+  padding-top: .9rem;
   display: inline;
-  position: relative;
 }
 
 .drop-down-container:hover .drop-down-content {
@@ -20,9 +18,9 @@
   transition: opacity 5s;
   opacity: 0.9;
   padding: 0.5rem 1rem;
-  position: absolute;
-  top: .65rem;
-  left: -50%;
+
+  top: .75rem;
+  left: -40%;
   z-index: 2;
 
   li {
