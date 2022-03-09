@@ -5,17 +5,9 @@
 
 .program-container {
   border: 2px solid hsl( var(--clr-primary) );
-  max-width: 32rem;
-  display: table;
-  margin: auto;
-}
-
-.program-title {
-  text-align: center;
 }
 
 .program-text {
-  text-align: left;
   ul {
     list-style-type: none;
     background-color: transparent;

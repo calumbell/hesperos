@@ -11,62 +11,32 @@ export default function Join({data}) {
         title={pageData.page_title.text}
         image={pageData.banner_image}
       />
+      <div className='center-content'>
+        {pageData.body.map(section => {
+          return(
+            <section className='rich-text mt-4'>
+              <h2 className='fs-700'>{section.primary.section_title.text}</h2>
+              {RichText.render(section.primary.section_content.richText)}
+            </section>
+          )
+        })}
 
-      {pageData.body.map(section => {
-        return(
-          <section className='rich-text'>
-            <h2>{section.primary.section_title.text}</h2>
-            {RichText.render(section.primary.section_content.richText)}
-          </section>
-        )
-      })}
-
-      <ContactForm 
-        endpoint=""
-        fields={[
-          {
-            type: 'multi',
-            content: [
-              {
-                type: 'text',
-                content: {
-                  name: 'fname',
-                  displayName: 'First Name',
-                }
-              },
-              {
-                type: 'text',
-                content: {
-                  name: 'lname',
-                  displayName: 'Last Name',
-                }
-              }
-            ]
-          },
-          {
-            type: 'email',
-            content: {
-              name: 'email',
-              displayName: 'Email',
-            }
-          },
-          {
-            type: 'text',
-            content: {
-              name: 'part',
-              displayName: 'Voice Part',
-            }
-          },
-          {
-            type: 'textarea',
-            content: {
-              name: 'experience',
-              displayName: 'Singing Experience',
-            }
-          },
-        ]}
-      />
-
+        <ContactForm 
+          endpoint=""
+          fields={[
+            {
+              type: 'multi',
+              content: [
+                { type: 'text', content: { name: 'fname', displayName: 'First Name'} },
+                { type: 'text', content: { name: 'lname', displayName: 'Last Name', } }
+              ]
+            },
+            { type: 'email', content: { name: 'email', displayName: 'Email' } },
+            { type: 'text', content: { name: 'part', displayName: 'Voice Part' } },
+            { type: 'textarea', content: { name: 'experience', displayName: 'Singing Experience' } },
+          ]}
+        />
+      </div>
     </Layout>
   )
 }

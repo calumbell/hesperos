@@ -21,8 +21,8 @@ export default function Layout({ children }) {
 
       <motion.main
         id="content-wrapper"
-        initial={{ opacity: 0}}
-        animate={{ opacity: 1}}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{
           type: 'tween',

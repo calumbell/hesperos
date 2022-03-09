@@ -20,7 +20,7 @@ export default function TitleAndBanner({title, image, subtitle}) {
     >
       {title}
       {subtitle && 
-        <subtitle className={`d-block fw-light ${styles.bannerSubtitle}`}>
+        <subtitle className={`d-block fw-light fs-400 ${styles.bannerSubtitle}`}>
           {subtitle}
         </subtitle>
       }

@@ -26,7 +26,7 @@ export default function EventCard({ data }) {
       }
       {data.displayDateBubble &&
         <div 
-          className={`position-ab d-flex p-2 bg-light ${styles.dateBubble}`}
+          className={`position-ab d-flex p-2 bg-light text-center ${styles.dateBubble}`}
           style={{'--gap': '0rem'}}
         >
           <p className='p-0 mt-1 fs-500'>{data.date.split(" ")[1]}</p>

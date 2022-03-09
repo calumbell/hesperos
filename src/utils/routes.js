@@ -1,54 +1,22 @@
 const routes = [
+  { name: `ABOUT`, url: `/about`, },
   {
-    name: `ABOUT`,
-    url: `/about`,
-    children: null,
-  },
-
-  {
-    name: `EVENTS`,
-    url: `/events`,  
+    name: `EVENTS`, url: `/events`,  
     children: [
-      {
-        name: `UPCOMING`,
-        longName: `UPCOMING EVENTS`,
-        url: `/events`,
-      },
-      {
-        name: `PAST`,
-        longName: `PAST EVENTS`,
-        url: `/pastEvents`,
-      }
-    ]
-  },
-
-  {
-    name: `NEWS`,
-    url: `/news`,
-    children: [
-      {
-        name: `NEWS`,
-        url: `/news`,
-      },
-      {
-        name: `NOTES`,
-        url: `/notes`,
-      }
+      { name: `UPCOMING`, longName: `UPCOMING EVENTS`, url: `/events`, },
+      { name: `PAST`, longName: `PAST EVENTS`, url: `/pastEvents`, },
     ]
   },
   {
-    name: 'JOIN',
-    url: '/join'
+    name: `NEWS`, url: `/news`,
+    children: [
+      { name: `NEWS`, url: `/news`, },
+      { name: `NOTES`, url: `/notes`, },
+    ]
   },
-  {
-    name: 'CONTACT',
-    url: '/contact',
-  },
-  {
-    name: 'SUPPORT',
-    url: '/support',
-    style: 'call-to-action',
-  }
+  { name: 'JOIN', url: '/join' },
+  { name: 'CONTACT', url: '/contact' },
+  { name: 'SUPPORT', url: '/support', style: 'call-to-action', }
 ]
 
 export default routes;

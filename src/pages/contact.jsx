@@ -48,36 +48,38 @@ export default function Contact() {
 
   return (
     <Layout>
-      <section className={`d-flex flex-wrap mt-4`}>       
-        <aside>
-          <h1 className='fs-700'>Contact</h1>
-          <p>
-            Please use this contact form if you have any questions about the choir.
-          </p>
-          <p>
-            All data is processed in accordance with GDPR regulations.
-          </p>
-        </aside>
+      <div className='center-content'>
+        <section className={`d-flex flex-wrap mt-4`}>       
+          <aside>
+            <h1 className='fs-700'>Contact</h1>
+            <p>
+              Please use this contact form if you have any questions about the choir.
+            </p>
+            <p>
+              All data is processed in accordance with GDPR regulations.
+            </p>
+          </aside>
 
-        <ContactForm 
-          endpoint=""
-          fields={contactFormFields}
-        />
-      </section>
-      
-      <section className={`d-flex flex-wrap mt-4`}>
-        <aside>
-          <h2 className='fs-600'>Mailing List</h2>
-          <p>
-            Sign up to our mailing list for regular updates 
-            (not more than once a month).
-          </p>
-          <p>
-            You can unsubscribe at any time by clicking the link in the footer of our emails.
-          </p>
-        </aside>
-        <MailchimpForm />
-      </section>
+          <ContactForm 
+            endpoint=""
+            fields={contactFormFields}
+          />
+        </section>
+        
+        <section className={`d-flex flex-wrap mt-4`}>
+          <aside>
+            <h2 className='fs-600'>Mailing List</h2>
+            <p>
+              Sign up to our mailing list for regular updates 
+              (not more than once a month).
+            </p>
+            <p>
+              You can unsubscribe at any time by clicking the link in the footer of our emails.
+            </p>
+          </aside>
+          <MailchimpForm />
+        </section>
+      </div>
     </Layout>
   )
 }

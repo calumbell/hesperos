@@ -10,7 +10,7 @@ export default function postPage({ data }) {
 
   return (
     <Layout>
-      <article>
+      <article className='center-content rich-text'>
         <h1 className='fs-700'>{post.title.text}</h1>
         <sub>{post.title.subtitle}</sub>
         <time className='fw-xl fs-400'>{post.date}</time>
