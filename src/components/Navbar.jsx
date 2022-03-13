@@ -21,7 +21,7 @@ export default function Navbar({routes}) {
     }
     window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);
-  }, []);
+  }, [width]);
 
   
   return (

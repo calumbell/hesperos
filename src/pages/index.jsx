@@ -37,6 +37,7 @@ export const query = graphql`
             items {
               image {
                 gatsbyImageData
+                alt
               }
             }
           }

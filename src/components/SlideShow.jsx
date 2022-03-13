@@ -11,7 +11,7 @@ export default function SlideShow({images}) {
       setCurrentImage((currentImage + 1) % images.length)
     }, 5000);
     return () => clearInterval(timer); // clean-up
-  }, [currentImage])
+  }, [currentImage, images.length])
   
   return(
     <AnimatePresence className={`d-flex w-100 ${styles.slideShowContainer}`}>
@@ -23,15 +23,12 @@ export default function SlideShow({images}) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{
-                  type: 'spring',
-                  duration: 2,
-                }}
-                
+                transition={{type: 'spring', duration: 2 }}               
               >
                 <GatsbyImage
                   className={`position-ab ${styles.slideShowImage}`}
                   image={image.image.gatsbyImageData}
+                  alt={image.image.alt}
                 />
               </motion.div>
             )
