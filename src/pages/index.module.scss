@@ -1,0 +1,44 @@
+@import '../styles/breakpoints';
+
+.home-page-container {
+  height: 72vh;
+}
+
+.home-page-bio {
+  text-align: right;
+  width: 24rem;
+  opacity: 0.9;
+  right: 1rem;
+  top: 1rem;
+  z-index: 1;
+  border-radius: 0.15rem;
+}
+
+.home-page-next-event {
+  bottom: 1rem;
+  left: 1rem;
+  border-radius: 0.15rem;
+  opacity: 0.9;
+}
+
+@media (max-width: $breakpoint-md) {
+  .home-page-bio {
+    text-align: center;
+    display: block;
+    right: unset;
+    width: 100%;
+    margin-top: -1.5rem;
+    p {
+      font-size: var(--fs-300);
+    }
+  }
+  .home-page-next-event {
+    display: block;
+    margin-top: var(--spacing-5);
+    top: 30rem;
+    left: 10%;
+    bottom: unset;
+    border-radius: 0.15rem;
+    width: 75%;
+  }
+}

@@ -8,6 +8,7 @@
 
 .drop-down-container:hover .drop-down-content {
   display: block;
+  position: absolute;
 }
 
 .drop-down-content {
@@ -18,10 +19,11 @@
   transition: opacity 5s;
   opacity: 0.9;
   padding: 0.5rem 1rem;
+  overflow: visible;
 
   top: .75rem;
   left: -40%;
-  z-index: 2;
+  z-index: 10000;
 
   li {
     opacity: 1;

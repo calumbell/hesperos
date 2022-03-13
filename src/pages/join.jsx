@@ -27,8 +27,8 @@ export default function Join({data}) {
             {
               type: 'multi',
               content: [
-                { type: 'text', content: { name: 'fname', displayName: 'First Name'} },
-                { type: 'text', content: { name: 'lname', displayName: 'Last Name', } }
+                { type: 'text', content: { name: 'fname', displayName: 'First Name' } },
+                { type: 'text', content: { name: 'lname', displayName: 'Last Name' } }
               ]
             },
             { type: 'email', content: { name: 'email', displayName: 'Email' } },

@@ -14,27 +14,29 @@ export default function SlideShow({images}) {
   }, [currentImage, images.length])
   
   return(
-    <AnimatePresence className={`d-flex w-100 ${styles.slideShowContainer}`}>
-      { images.map((image, i) => 
-        { if(currentImage === i) {
-            return(
-              <motion.div
-                key={i}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{type: 'spring', duration: 2 }}               
-              >
-                <GatsbyImage
-                  className={`position-ab ${styles.slideShowImage}`}
-                  image={image.image.gatsbyImageData}
-                  alt={image.image.alt}
-                />
-              </motion.div>
-            )
-          } else return null;
-        }
-      )}
-    </AnimatePresence>
+    <div className={`${styles.slideShowContainer}`}>
+      <AnimatePresence className={'d-flex align-items-center'}>
+        { images.map((image, i) => 
+          { if(currentImage === i) {
+              return(
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{type: 'spring', duration: 2 }}               
+                >
+                  <GatsbyImage
+                    className={`position-ab ${styles.slideShowImage}`}
+                    image={image.image.gatsbyImageData}
+                    alt={image.image.alt}
+                  />
+                </motion.div>
+              )
+            } else return null;
+          }
+        )}
+      </AnimatePresence>
+    </div>
   )
 }

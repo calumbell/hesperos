@@ -1,14 +1,17 @@
 @import '../breakpoints';
 
+
 .navbar-left-side {   
   flex: 25%;
   justify-content: space-between;
   align-items: center;
+  z-index: 10;
 }
 
 .navbar-right-side {
   @extend .navbar-left-side;
   flex: 75%;
+
 }
 
 .navbar-right-side:hover, .navbar-right-side:focus {
@@ -51,6 +54,6 @@
     right: -5rem;
   }
   to {
-    right: 0rem;
+    right: 0.5rem;
   }
 }

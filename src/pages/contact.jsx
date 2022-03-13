@@ -6,50 +6,21 @@ export default function Contact() {
   const contactFormFields = [
     {
       type: 'multi',
-      content: [{
-          type: 'text',
-          content: {
-            name: 'fname',
-            displayName: 'First Name',
-          }
-        },
-        {
-          type: 'text',
-          content: {
-            name: 'lname',
-            displayName: 'Last Name',
-          }
-        }
+      content: [
+        { type: 'text', content: { name: 'fname', displayName: 'First Name' } },
+        { type: 'text', content: { name: 'lname', displayName: 'Last Name' } }
       ]
     },
-    {
-      type: 'email',
-      content: {
-        name: 'email',
-        displayName: 'Email Address',
-      }
-    },
-    
-    {
-      type: 'text',
-      content: {
-        name: 'subject',
-        displayName: 'Subject',
-      }
-    },
-    { type: 'textarea',
-      content: {
-        name: 'message',
-        displayName: 'Message'
-      }
-    }
-  ]
+    { type: 'email', content: { name: 'email', displayName: 'Email Address', } }, 
+    { type: 'text', content: { name: 'subject', displayName: 'Subject' } },
+    { type: 'textarea', content: { name: 'message', displayName: 'Message' } }
+  ];
 
 
   return (
     <Layout>
       <div className='center-content'>
-        <section className={`d-flex flex-wrap mt-4`}>       
+        <section className='d-flex flex-wrap mt-4'>       
           <aside>
             <h1 className='fs-700'>Contact</h1>
             <p>
@@ -66,7 +37,7 @@ export default function Contact() {
           />
         </section>
         
-        <section className={`d-flex flex-wrap mt-4`}>
+        <section className='d-flex flex-wrap mt-4'>
           <aside>
             <h2 className='fs-600'>Mailing List</h2>
             <p>

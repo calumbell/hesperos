@@ -4,7 +4,7 @@ import * as styles from '../styles/modules/TitleBanner.module.scss';
 
 export default function TitleAndBanner({title, image, subtitle}) {
   return (
-  <div className='mb-4 w-100 position-rel'>
+  <div className={`mb-4 w-100 position-rel ${styles.bannerContainer}`}>
     <GatsbyImage 
       className={`w-100 ${styles.bannerImage} `}
       image={image.gatsbyImageData}

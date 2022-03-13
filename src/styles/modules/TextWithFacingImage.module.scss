@@ -1,3 +1,5 @@
+@import '../breakpoints';
+
 .grid-row-container {
   grid-auto-flow: column;
 }
@@ -24,4 +26,8 @@
 .right {
   @extend .grid-item;
   grid-column: 2;
+}
+
+@media (max-width: $breakpoint-md) {
+  .grid-row-container { display: block; }
 }

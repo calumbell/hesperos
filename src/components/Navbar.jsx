@@ -25,7 +25,7 @@ export default function Navbar({routes}) {
 
   
   return (
-    <nav className='d-flex mt-2 mb-3'>
+    <nav className={`d-flex mt-2 mb-3 ${styles.navbar}`}>
       <div className={`d-flex ${styles.navbarLeftSide}`}>
         <Link to="/" onClick={() => setMenuExpansion(false)}>
           <Logo size="6rem"/>
@@ -48,12 +48,9 @@ export default function Navbar({routes}) {
         if (!route['children'])
           return (
             <Link 
-              key={i}
-              className={(width > breakpoint && route['style'] ) || `nav-link`}
-              to={route.url}
-            > 
-              {route.name}
-            </Link>
+              key={i} to={route.url}
+              className={(width > breakpoint && route['style'] ) || `nav-link`} 
+            > {route.name} </Link>
           )
         
         // if route has child routes, render  as a drop down

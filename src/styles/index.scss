@@ -2,7 +2,6 @@
 /*  I M P O R T S                                    */
 /* ------------------------------------------------- */
 
-
 @import 'breakpoints';
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@200;300;400;500&display=swap');
@@ -103,7 +102,6 @@ img {
 
 /* Make scrollbar visible at all times */
 html {
-  overflow-y: scroll;
   overflow-x: hidden;
 }
 
@@ -115,6 +113,8 @@ h1, h2, h3, h4, h5, h6, sub {
 
 /* Body */
 body {
+  overflow-x: hidden;
+  position: relative;
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
   font-weight: 300;
@@ -235,12 +235,20 @@ textarea {
 }
 .d-grid { display: grid; }
 
-
 .flex-wrap { flex-wrap: wrap; }
+
+
+/* Visibility */
+.hide-on-sm {
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
 
 /* Position */
 .position-ab { position: absolute; }
 .position-rel { position: relative; }
+.align-items-center { align-items: center; }
 
 /* Sizing */
 .w-50 { width: 50%; }
@@ -328,6 +336,37 @@ textarea {
   border-image-source: linear-gradient(hsl( var(--clr-primary) ), hsl(var(--clr-secondary)));
 }
 
+.border-primary {
+  border: 2px solid hsl(var(--clr-primary));
+  border-radius: 0.5rem;
+}
+
+.hover-shadow {
+  transition: box-shadow 0.3s;
+  &:hover { box-shadow: 0 0 11px hsl( var(--clr-dark) / 0.5); }
+}
+
+/* ------------------------------------------------- */
+/*  A N I M A T I O N   M I X I N S                  */
+/* ------------------------------------------------- */
+
+@mixin link-underline-anim-mixin() {
+  background: linear-gradient(90deg, hsl(var(--clr-primary)), hsl( var(--clr-primary-highlight) ));
+  background-size: 0% 2px;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  overflow-y: visible;
+  &:hover,
+  &:focus {
+    transition: 0.8s;
+    background: linear-gradient(90deg, hsl( var(--clr-primary) ), hsl( var(--clr-primary-highlight) ));
+    background-size: 110% 2px;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    color: hsl(var(--clr-dark));
+  }
+}
+
 /* ------------------------------------------------- */
 /*  C O M P O N E N T   C L A S S E S                */
 /* ------------------------------------------------- */
@@ -340,23 +379,24 @@ textarea {
   border-width: 0.25rem;
   border-style: solid;
   border-radius: 1rem;
+
+  &:hover, &:focus {
+    transition: border-color 0.25s;
+    transition: color 0.25;
+    background-color: hsl( var(--clr-light-shade) );
+    border-color: hsl( var(--clr-primary-pale) );
+    color: hsl( var(--clr-dark) );
+  }
 }
 
-.call-to-action:hover,
-.call-to-action:focus {
-  transition: border-color 0.25s;
-  transition: color 0.25;
-  background-color: hsl( var(--clr-light-shade) );
-  border-color: hsl( var(--clr-primary-pale) );
-  color: hsl( var(--clr-dark) );
-}
-
+/* Layout */
 .center-content {
   max-width: var(--max-width, 48rem);
   display: table;
   margin: auto;
 }
 
+/* Forms */
 .form {
   input, textarea {
     border-width: 0.13rem;
@@ -379,23 +419,6 @@ textarea {
 
 
 /* hyperlinks & navlinks */
-@mixin link-underline-anim-mixin() {
-  background: linear-gradient(90deg, hsl(var(--clr-primary)), hsl( var(--clr-primary-highlight) ));
-  background-size: 0% 2px;
-  background-position: 100% 100%;
-  background-repeat: no-repeat;
-  overflow-y: visible;
-  &:hover,
-  &:focus {
-    transition: 0.8s;
-    background: linear-gradient(90deg, hsl( var(--clr-primary) ), hsl( var(--clr-primary-highlight) ));
-    background-size: 110% 2px;
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-    color: hsl(var(--clr-dark));
-  }
-}
-
 .link {
   @include link-underline-anim-mixin();
   transition: color 0.25s, background-size 0.4s;
@@ -403,12 +426,6 @@ textarea {
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 1px;
-}
-
-.subtitle {
-  letter-spacing: var(--spacing-1);
-  text-transform: uppercase;
-  font-size: var(--fs-200)
 }
 
 .nav-item {
@@ -423,6 +440,13 @@ textarea {
   @include link-underline-anim-mixin(); 
 }
 
+/* Typography */
+.subtitle {
+  letter-spacing: var(--spacing-1);
+  text-transform: uppercase;
+  font-size: var(--fs-200)
+}
+
 
 /* for styling richtext returned from Prismic queries */
 .rich-text {
@@ -435,3 +459,5 @@ textarea {
     text-transform: none;
   }
 }
+
+

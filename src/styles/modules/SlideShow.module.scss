@@ -4,12 +4,17 @@
  * before proceeding.
  */
 
-.slide-show-container {
-  align-items: center;
-}
+@import '../breakpoints';
+
 
 .slide-show-image {
   height: 75vh;
-  width: 92vw;
-  /* rmv image from flow so they can stack during fades */
+  width: 100%;
+}
+
+@media (max-width: $breakpoint-md) {
+  .slide-show-image {
+    top: 8rem;
+    height: 24rem;
+  }
 }

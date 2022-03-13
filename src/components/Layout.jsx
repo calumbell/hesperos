@@ -20,7 +20,7 @@ export default function Layout({ children }) {
       />
 
       <motion.main
-        id="content-wrapper"
+        className='page'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
