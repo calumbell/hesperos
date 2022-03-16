@@ -13,7 +13,7 @@ export default function Support({data}) {
         title={pageData.page_title.text}
         image={pageData.banner_image}
       />
-      <div className='center-content'>
+      <div className='center-content rich-text'>
         {pageData.display_friends_scheme &&
           <section className='text-center text-faded fs-700 fw-light'>
             <h2>{pageData.friends_scheme_title.text}</h2>

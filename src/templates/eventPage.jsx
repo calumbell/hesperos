@@ -14,7 +14,7 @@ export default function eventPage({ data }) {
         image={event.event_image}
         subtitle={event.location.text || null}
       />
-      <section className="center-content" style={{'--max-width': '56rem'}}>
+      <section className="center-content rich-text" style={{'--max-width': '56rem'}}>
         <div className={`d-grid my-4 ${styles.eventDetailContainer}`}>
           <aside className={styles.eventDetailsAside}>
             <p className='mb-2'>

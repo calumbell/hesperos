@@ -24,7 +24,7 @@ export default function About({data}) {
         title={pageData.page_title.text}
         image={pageData.hero_image}
       />
-      <div className='center-content'>
+      <div className='center-content rich-text'>
         <TextWithFacingImageGrid
           containerStyles='center-content'
           data={pageData.body[0].items.map(section => flattenSection(section))} 
