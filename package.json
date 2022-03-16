@@ -18,6 +18,7 @@
     "@stripe/stripe-js": "^1.22.0",
     "ansi-regex": ">=6.0.1",
     "browserslist": ">=4.19.1",
+    "dotenv": "^16.0.0",
     "framer-motion": "^6.2.3",
     "gatsby": "^4.6.0",
     "gatsby-cli": "^4.6.0",

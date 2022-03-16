@@ -8,7 +8,6 @@ let stripePromise;
 const getStripe = () => {
   if (!stripePromise) {
     stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY);
-    //stripePromise = loadStripe(`pk_test_L79mhXEd2CmUBGzX1rQcMsml`);
   }
   return stripePromise;
 }
