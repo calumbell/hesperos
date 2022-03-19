@@ -7,8 +7,12 @@ import { Navbar } from '.';
 import routes from '../utils/routes';
 
 export default function Layout({ children }) {
+  setTimeout(() => document.getElementById('layout-container').id="", 200);
   return (
-    <div className="container">
+    <div
+      id="layout-container" 
+      className="container"
+    >
       <Helmet>
         <title>Hesperos Choir</title>
         <link rel="icon" href={favicon}></link>

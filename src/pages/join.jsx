@@ -45,9 +45,7 @@ export const query = graphql`
   query JoinPageQuery {
     prismicJoinPage {
       data {
-        page_title {
-          text
-        }
+        page_title { text }
         banner_image {
           gatsbyImageData
           alt
@@ -55,12 +53,8 @@ export const query = graphql`
         body {
           ... on PrismicJoinPageDataBodyTextSection {
             primary {
-              section_title {
-                text
-              }
-              section_content {
-                richText
-              }
+              section_title { text }
+              section_content { richText }
             }
           }
         }

@@ -11,7 +11,7 @@ export default function TitleAndBanner({title, image, subtitle}) {
       alt={image.alt}
     />
     <h1 
-      className={`position-ab px-5 py-4 bg-light-opaque 
+      className={`position-ab px-5 py-4 bg-light-opaque box-shadow
         ${(title.length <= 12) && `fs-700`}
         ${(20 >= title.length && title.length > 12) && `fs-600`}
         ${(title.length > 20) && `fs-500`}

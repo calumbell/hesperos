@@ -103,6 +103,7 @@ img {
 /* Make scrollbar visible at all times */
 html {
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 /* Making sure headings aren't bold */
@@ -122,6 +123,11 @@ body {
   background-color: radial-gradient(var(--light-shade), var(--light));
   line-height: 1.5;
   min-height: 100vh;
+}
+
+/* Stop animations on page load. Remove this id after a short delay to enable animations */
+#layout-container * {
+  animation-duration: 0s !important;
 }
 
 /* Focus outline */
@@ -348,9 +354,13 @@ textarea {
   border-radius: 0.5rem;
 }
 
+.box-shadow {
+  box-shadow: 0 0 10px hsl( var(--clr-dark) / 0.2);
+}
+
 .hover-shadow {
   transition: box-shadow 0.3s;
-  &:hover { box-shadow: 0 0 11px hsl( var(--clr-dark) / 0.5); }
+  &:hover { box-shadow: 0 0 13px hsl( var(--clr-dark) / 0.6); }
 }
 
 /* ------------------------------------------------- */
@@ -383,6 +393,7 @@ textarea {
   background-color: transparent;
   border-color: hsl( var(--clr-primary-shade) );
   padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
   border-width: 0.25rem;
   border-style: solid;
   border-radius: 1rem;

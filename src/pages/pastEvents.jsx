@@ -65,12 +65,8 @@ export const query = graphql`
         uid
         data {
           date(formatString: "dddd DD MMMM YYYY")
-          title {
-            text
-          }
-          location {
-            text
-          }
+          title { text }
+          location { text }
           event_image {
             gatsbyImageData(placeholder: BLURRED)
             alt

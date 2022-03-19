@@ -30,8 +30,8 @@
     height: auto;
     justify-content: right;
     position: absolute;
-    right: -500px;
-    top: 5rem;
+    right: -100vw;
+    top: 7.5rem;
     transition: right 0.25s;
   }
 
@@ -54,6 +54,6 @@
     right: -5rem;
   }
   to {
-    right: 0.5rem;
+    right: 1rem;
   }
 }

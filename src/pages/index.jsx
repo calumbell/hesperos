@@ -10,18 +10,18 @@ export default function Index({data}) {
       <div className={`position-rel ${styles.homePageContainer}`}>
         <SlideShow images={data.prismicHomepage.data.body[0].items} />
 
-        <aside className={`position-ab bg-light p-4 border-primary ${styles.homePageBio}`}>
-          <h1 className='fs-700 fw-bold letter-spacing-3'>Hesperos Choir</h1>
+        <aside className={`position-ab bg-light p-4 border-primary box-shadow ${styles.homePageBio}`}>
+          <h1 className='fs-800 fw-xl letter-spacing-3'>Hesperos Choir</h1>
           <p className='mb-4 hide-on-sm'>{data.prismicHomepage.data.short_description.text}</p>
         </aside>
         
         {nextEvent && 
           <aside className={`
-            position-ab bg-light p-4 hover-shadow border-primary
+            position-ab bg-light p-4 box-shadow hover-shadow border-primary
             ${styles.homePageNextEvent}
           `}>
             <Link to={`/events/${nextEvent.uid}`}>
-              <sub className='uppercase letter-spacing-1'>Our next event</sub>
+              <sub className='uppercase fw-normal letter-spacing-1'>Our next event</sub>
               <h2 className='fs-500'>{nextEvent.data.title.text}</h2>
               <p>{nextEvent.data.date}</p>
             </Link>
@@ -37,9 +37,7 @@ export const query = graphql`
   query HomepageQuery ($date: Date) {
     prismicHomepage {
       data {
-        short_description {
-          text
-        }
+        short_description { text }
         body {
           ... on PrismicHomepageDataBodyImageCarousel {
             items {
@@ -61,9 +59,7 @@ export const query = graphql`
         uid
         data {
           date(formatString: "dddd DD MMMM YYYY")
-          title {
-            text
-          }
+          title { text }
           event_image {
             gatsbyImageData(placeholder: BLURRED)
             alt
