@@ -4,6 +4,7 @@ import ContactForm from './ContactForm';
 import Donate from './Donate';
 import DropDownLink from './DropDownLink';
 import EventCardThumbnail from './EventCardThumbnail';
+import Footer from './Footer';
 import Layout from './Layout';
 import Logo from './Logo';
 import MailchimpForm from './MailchimpForm';
@@ -22,6 +23,7 @@ export {
   Donate,
   DropDownLink,
   EventCardThumbnail,
+  Footer,
   Layout,
   Logo,
   MailchimpForm,

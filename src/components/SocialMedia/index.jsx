@@ -18,6 +18,7 @@ const SocialMedia = () => {
             url={network.url}
             className={styles.icon}
             bgColor='#306F8D'
+            style={{ width: '2rem', height: '2rem' }}
           />
         </li>
       )}

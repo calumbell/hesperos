@@ -91,7 +91,7 @@
 }
 
 /* Reset Margin */
-body, h1, h2, h3, h4, h5, p {
+body, h1, h2, h3, h4, h5, p, footer {
   margin: 0;
 }
 
@@ -177,6 +177,7 @@ textarea {
   padding-inline: 2em;
   margin-inline: auto;
   max-width: 80rem;
+  margin-bottom: 4rem; /* Space for footer */
 }
 
 /* Makes an element invisible to sighted users, but visiable to screen readers */

@@ -1,0 +1,17 @@
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  height: 3rem;
+  width: 100%;
+  background-color: hsl(var(--clr-light)/0.8);
+  border-top: 2px solid hsl(var(--clr-primary));
+  justify-content: center;
+}
+
+.copyright {
+  position: absolute;
+  right: 0;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  font-size: .8rem;
+}
