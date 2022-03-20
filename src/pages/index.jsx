@@ -8,13 +8,14 @@ export default function Index({data}) {
   return (
     <Layout>
       <div className={`position-rel ${styles.homePageContainer}`}>
+        
+        <aside className={`bg-light p-4 border-primary box-shadow ${styles.homePageBio}`}>
+          <h1 className='fs-800 fw-xl letter-spacing-3  hide-on-sm'>Hesperos Choir</h1>
+          <p className='mb-4'>{data.prismicHomepage.data.short_description.text}</p>
+        </aside>
+
         <SlideShow images={data.prismicHomepage.data.body[0].items} />
 
-        <aside className={`position-ab bg-light p-4 border-primary box-shadow ${styles.homePageBio}`}>
-          <h1 className='fs-800 fw-xl letter-spacing-3'>Hesperos Choir</h1>
-          <p className='mb-4 hide-on-sm'>{data.prismicHomepage.data.short_description.text}</p>
-        </aside>
-        
         {nextEvent && 
           <aside className={`
             position-ab bg-light p-4 box-shadow hover-shadow border-primary

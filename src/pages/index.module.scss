@@ -5,6 +5,7 @@
 }
 
 .home-page-bio {
+  position: absolute;
   text-align: right;
   width: 24rem;
   opacity: 0.9;
@@ -22,23 +23,25 @@
 }
 
 @media (max-width: $breakpoint-md) {
+
+  .home-page-container {
+    height: unset;
+  }
+  .home-page-bio, .home-page-next-event {
+    position: unset;
+    margin-top: var(--spacing-3);
+    width: unset;
+  }
+
   .home-page-bio {
-    text-align: center;
-    display: block;
-    right: unset;
-    width: 100%;
-    margin-top: -1.5rem;
-    p {
-      font-size: var(--fs-300);
-    }
+    border: none;
+    box-shadow: none;
   }
   .home-page-next-event {
+    padding: var(--spacing-3) var(--spacing-4);
     display: block;
-    margin-top: var(--spacing-5);
-    top: 30rem;
-    left: 10%;
     bottom: unset;
+    width: fit-content;
     border-radius: 0.15rem;
-    width: 75%;
   }
 }

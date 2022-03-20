@@ -11,6 +11,7 @@ const Logo = () => {
       className={` ${styles.logo}`}
 
     >
+      
       <path 
         id="Selection"
         fill="#5085A5" 

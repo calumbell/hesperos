@@ -8,13 +8,12 @@
 
 
 .slide-show-image {
-  height: 75vh;
+  height: 70vh;
   width: 100%;
 }
 
 @media (max-width: $breakpoint-md) {
-  .slide-show-image {
-    top: 8rem;
-    height: 24rem;
+  .slide-show-container, .slide-show-image {
+    height: 35vh;
   }
 }

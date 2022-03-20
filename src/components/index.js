@@ -10,6 +10,7 @@ import MailchimpForm from './MailchimpForm';
 import MenuExpandButton from './MenuExpandButton';
 import Navbar from './Navbar';
 import SlideShow from './SlideShow';
+import SocialMedia from './SocialMedia';
 import TextWithFacingImage from './TextWithFacingImage';
 import TextWithFacingImageGrid from './TextWithFacingImageGrid';
 import TitleBanner from './TitleBanner';
@@ -27,6 +28,7 @@ export {
   MenuExpandButton,
   Navbar,
   SlideShow,
+  SocialMedia,
   TextWithFacingImage,
   TextWithFacingImageGrid,
   TitleBanner

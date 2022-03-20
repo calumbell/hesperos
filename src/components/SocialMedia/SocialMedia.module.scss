@@ -1,0 +1,10 @@
+.social-media-container {
+  display: flex;
+  list-style: none;
+  z-index: 10;
+
+  li {
+    display: inline;
+    margin: 1rem 2rem;
+  }
+}

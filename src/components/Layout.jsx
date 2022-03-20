@@ -3,8 +3,9 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import '../styles/index.scss';
 import favicon from '../images/hesperos-favicon.png'
-import { Navbar } from '.';
+import { Navbar, SocialMedia } from '.';
 import routes from '../utils/routes';
+
 
 export default function Layout({ children }) {
   setTimeout(() => document.getElementById('layout-container').id="", 200);
@@ -36,7 +37,11 @@ export default function Layout({ children }) {
         }}
       >
         {children}
+        
       </motion.main>
+      <footer>
+      <SocialMedia />
+      </footer>
     </div>
   )
 }
