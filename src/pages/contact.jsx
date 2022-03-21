@@ -23,12 +23,8 @@ export default function Contact() {
         <section className='d-flex flex-wrap mt-4'>       
           <aside>
             <h1 className='fs-700'>Contact</h1>
-            <p>
-              Please use this contact form if you have any questions about the choir.
-            </p>
-            <p>
-              All data is processed in accordance with GDPR regulations.
-            </p>
+            <p>Please use this contact form if you have any questions about the choir.</p>
+            <p>All data is processed in accordance with GDPR regulations.</p>
           </aside>
 
           <ContactForm 

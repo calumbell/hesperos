@@ -2,13 +2,18 @@ import React from 'react';
 import * as styles from './eventPage.module.scss';
 import { RichText } from 'prismic-reactjs';
 import { Link, graphql } from 'gatsby';
-import { Layout, TitleBanner } from  '../components';
+import { Layout, SEO, TitleBanner } from  '../components';
 
 export default function eventPage({ data }) {
   // data argument contains result of graphql query
   const event = data.prismicEvent.data;
   return (
     <Layout>
+      <SEO 
+        title={event.title.text}
+        image={event.event_image.url}
+        desciption={event.event_description.text}
+      />
       <TitleBanner
         title={event.title.text}
         image={event.event_image}
@@ -67,33 +72,24 @@ export const query = graphql`
   query EventPage($slug: String) {
     prismicEvent(uid: {eq: $slug}) {
       data {
-        title {
-          text
-        }
+        title { text }
         date(formatString: "dddd DD MMMM YYYY")
-        time {
-          text
-        }
-        location {
-          text
-        }
+        time { text }
+        location { text }
+        event_description { text }
+        buy_ticket_link { url }
         event_image {
           gatsbyImageData(placeholder: BLURRED)
           alt
+          url
         }
         address {
           text
           richText
         }
-        event_description {
-          text
-        }
         program {
           text
           richText
-        }
-        buy_ticket_link {
-          url
         }
       }
     }

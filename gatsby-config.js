@@ -4,9 +4,13 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.hesperoschoir.com",
-    title: "hesperos",
+    title: "Hesperos Choir",
+    description: "Hesperos is a chamber choir based in London, singing sacred and secular music.",
+    url: "https://www.hesperoschoir.com",
+    image: '/src/images/hesperos-favicon.png',
+    twitterUsername: "@hesperoschoir",
   },
+
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",

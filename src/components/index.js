@@ -10,6 +10,7 @@ import Logo from './Logo';
 import MailchimpForm from './MailchimpForm';
 import MenuExpandButton from './MenuExpandButton';
 import Navbar from './Navbar';
+import SEO from './SEO';
 import SlideShow from './SlideShow';
 import SocialMedia from './SocialMedia';
 import TextWithFacingImage from './TextWithFacingImage';
@@ -29,6 +30,7 @@ export {
   MailchimpForm,
   MenuExpandButton,
   Navbar,
+  SEO,
   SlideShow,
   SocialMedia,
   TextWithFacingImage,

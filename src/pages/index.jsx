@@ -1,12 +1,13 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { Layout, SlideShow } from '../components';
+import { Layout, SEO, SlideShow } from '../components';
 import * as styles from './index.module.scss';
 
 export default function Index({data}) {
   const nextEvent = data.allPrismicEvent.nodes[0];
   return (
     <Layout>
+      <SEO />
       <div className={`position-rel ${styles.homePageContainer}`}>
         
         <aside className={`bg-light p-4 border-primary box-shadow ${styles.homePageBio}`}>
