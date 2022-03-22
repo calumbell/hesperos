@@ -36,6 +36,7 @@
   --fs-400: 1.125rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
+  --fs-100: 0.65rem;
 
   /* Font weights */
   --fw-xl: 200;
@@ -56,7 +57,7 @@
 /* ------------------------------------------------- */
 
 /* Responsive Font Sizes */
-:root { font-size: 14px; }
+:root { font-size: 13px; }
 
 @media (min-width: $breakpoint-sm) {
   :root { font-size: 15px; }
@@ -71,11 +72,11 @@
 }
 
 @media (min-width: $breakpoint-xl) {
-  :root { font-size: 18px; }
+  :root { font-size: 17px; }
 }
 
 @media (min-width: $breakpoint-xxl) {
-  * { font-size: 20px; }
+  * { font-size: 19px; }
 }
 
 
@@ -177,7 +178,7 @@ textarea {
   padding-inline: 2em;
   margin-inline: auto;
   max-width: 80rem;
-  margin-bottom: 3rem; /* Space for footer */
+  margin-bottom: 4rem; /* Space for footer */
 }
 
 /* Makes an element invisible to sighted users, but visiable to screen readers */
@@ -198,6 +199,7 @@ textarea {
 .bg-light-opaque { background-color: hsl( var(--clr-light) / 0.8); }
 .bg-light-shade { background-color: hsl( var(--clr-light-shade)); }
 .bg-dark { background-color: hsl( var(--clr-dark) ); }
+.bg-primary { background-color: hsl ( var(--clr-primary)); }
 
 .text-primary { color: hsl( var(--clr-primary) ); }
 .text-faded { color: hsl( var(--clr-medium)); }
@@ -221,6 +223,7 @@ textarea {
 .fs-400 { font-size: var(--fs-400); }
 .fs-300 { font-size: var(--fs-300); }
 .fs-200 { font-size: var(--fs-200); }
+.fs-100 { font-size: var(--fs-100); }
 
 /* Font Weight */
 .fw-xl { font-weight: var(--fw-xl); }
@@ -243,7 +246,6 @@ textarea {
 .d-grid { display: grid; }
 
 .flex-wrap { flex-wrap: wrap; }
-
 .center-children {
   display: flex;
   justify-content: center;
@@ -351,7 +353,7 @@ textarea {
 }
 
 .border-primary {
-  border: 2px solid hsl(var(--clr-primary));
+  border: 1px solid hsl(var(--clr-primary));
   border-radius: 0.5rem;
 }
 
@@ -443,7 +445,7 @@ textarea {
   transition: color 0.25s, background-size 0.4s;
   color: hsl( var(--clr-primary-shade) );
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 1px;
 }
 
@@ -479,6 +481,15 @@ textarea {
   font-size: var(--fs-200)
 }
 
+
+.address {
+  background-color: hsl( var(--clr-light-shade));
+  padding: var(--spacing-2);
+  margin: var(--spacing-3) 0;
+  * {
+    margin: 0;
+  }
+}
 
 /* for styling richtext returned from Prismic queries */
 .rich-text {

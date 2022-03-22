@@ -21,14 +21,12 @@ export default function Events({data}) {
   return (
     <Layout>
       <h1 className='fs-700'>Events</h1>
+      <Link to="/pastEvents" className="link fs-200">View Past Events</Link>
       <CardGrid
         Card={Card}
         data={data.allPrismicEvent.nodes}
         flatten={flattenEventData}
       />
-      <footer>
-        <Link to="/pastEvents" className="link">Past Events</Link>
-      </footer>
     </Layout>
   )
 }

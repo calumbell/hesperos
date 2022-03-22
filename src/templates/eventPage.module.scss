@@ -3,8 +3,16 @@
   grid-template-columns: 1fr 2fr;
 }
 
+.event-description-main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .program-container {
   border: 2px solid hsl( var(--clr-primary) );
+  margin-bottom: var(--spacing-4);
 }
 
 .program-text {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContactForm, Layout, MailchimpForm } from '../components';
+import { ContactForm, Layout, MailchimpForm, TitleBanner } from '../components';
 
 export default function Contact() {
 
@@ -19,10 +19,13 @@ export default function Contact() {
 
   return (
     <Layout>
+      <TitleBanner 
+        title='Contact'
+       />
       <div className='center-content'>
+
         <section className='d-flex flex-wrap mt-4'>       
           <aside>
-            <h1 className='fs-700'>Contact</h1>
             <p>Please use this contact form if you have any questions about the choir.</p>
             <p>All data is processed in accordance with GDPR regulations.</p>
           </aside>

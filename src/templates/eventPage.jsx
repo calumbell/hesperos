@@ -5,7 +5,6 @@ import { Link, graphql } from 'gatsby';
 import { Layout, SEO, TitleBanner } from  '../components';
 
 export default function eventPage({ data }) {
-  // data argument contains result of graphql query
   const event = data.prismicEvent.data;
   return (
     <Layout>
@@ -19,27 +18,31 @@ export default function eventPage({ data }) {
         image={event.event_image}
         subtitle={event.location.text || null}
       />
-      <section className="center-content rich-text" style={{'--max-width': '56rem'}}>
-        <div className={`d-grid my-4 ${styles.eventDetailContainer}`}>
-          <aside className={styles.eventDetailsAside}>
+
+      <section className="center-content" style={{'--max-width': '56rem'}}>
+        <div className={`d-grid my-3 ${styles.eventDetailContainer}`}>
+
+          <aside className={`border-shadow p-4 ${styles.eventDetailsAside}`}>
             <p className='mb-2'>
-              <Link className='link fs-400' to="/events/">
+              <Link className='link fs-200' to="/events/">
                 Back to all events
               </Link>
             </p> 
             <p className='fw-med ff-sans letter-spacing-3'>{event.location.text || `Location TBC`}</p>
             <date className='d-block fs-400'>{event.date}</date>
             <time className='d-block fs-300'>{event.time.text}</time>
-            <p className='my-3'> {RichText.render(event.address.richText)}</p>
-            <a className="link" target="_blank" rel="noreferrer"
-              href={`http://maps.google.com/?q=${event.location.text} ${event.address.text}`}
-            > (View on Map)</a>
+            <p className='my-3 fs-200 address'> {RichText.render(event.address.richText)}
+              <a className="link fs-200" target="_blank" rel="noreferrer"
+                href={`http://maps.google.com/?q=${event.location.text} ${event.address.text}`}
+              > (View on Map)</a>
+            </p>
           </aside>
 
-          <div>
+          <div className={styles.eventDescriptionMain}>
             <p>{event.event_description.text}</p>
             { event.buy_ticket_link.url &&
               <a
+                className='link fs-300'
                 href={event.buy_ticket_link.url}
                 target="_blank"
                 rel="noreferrer"

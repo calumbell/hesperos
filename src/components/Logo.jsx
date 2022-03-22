@@ -5,8 +5,8 @@ const Logo = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg" 
-      width="200" 
-      height="100"
+      width="10rem" 
+      height="5rem"
       viewBox={`${viewbox}`}
       className={` ${styles.logo}`}
 

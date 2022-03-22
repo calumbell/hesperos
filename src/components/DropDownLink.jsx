@@ -31,10 +31,7 @@ export default function DropDownLink({
         className={`nav-link`}        
         to={link.url}
       >
-        {link.longName
-          ? link.longName
-          : link.name
-        }
+        {link.longName ? link.longName : link.name }
       </Link>
     })
   )

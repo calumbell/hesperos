@@ -6,6 +6,7 @@
 
 .card-grid-sm {
   grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
 /* Layout for small screens */
@@ -31,13 +32,6 @@
 }
 
 /* Layout for large screens */
-@media (min-width: $breakpoint-xl) {
-  .card-grid-sm {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-/* Layout for extra large screens */
 @media (min-width: $breakpoint-xl) {
   .card-grid-lg {
     grid-template-columns: repeat(3, 1fr);

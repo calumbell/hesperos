@@ -25,7 +25,7 @@ export default function Navbar({routes}) {
 
   
   return (
-    <nav className={`d-flex mt-2 mb-3 ${styles.navbar}`}>
+    <nav className={`d-flex mb-1 ${styles.navbar}`}>
       <div className={`d-flex ${styles.navbarLeftSide}`}>
         <Link to="/" onClick={() => setMenuExpansion(false)}>
           <Logo size="6rem"/>

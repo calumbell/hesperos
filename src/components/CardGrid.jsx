@@ -9,7 +9,7 @@ export default function CardGrid({
   size,     // 'large' or 'small'
 }) {
   return (
-    <div className={`d-grid
+    <div className={`d-grid mt-3
       ${size === 'small' ? styles.cardGridSm : styles.cardGridLg}`}
     >
       {data.map((item, i) => {

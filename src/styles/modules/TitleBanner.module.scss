@@ -1,8 +1,14 @@
 @import '../breakpoints';
 
+.banner-container {
+  height: 10rem;
+  background-color: hsl(var(--clr-primary) / 0.25);
+  z-index: -2;
+}
+
 .banner-image {
   z-index: -1;
-  height: 10rem;
+  height: inherit;
   border-radius: 0.5rem;
 }
 

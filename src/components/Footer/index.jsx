@@ -20,7 +20,8 @@ const Footer = () => {
     setVisibility(
       scrollPosition < lastScrollPosition
       || scrollPosition === 0
-      || scrollPosition + window.innerHeight + 25 >= document.body.scrollHeight
+      || scrollPosition + window.innerHeight >= document.body.scrollHeight
+      || document.body.scrollHeight < 700
     )
     setLastScrollPosition(scrollPosition);
   }
