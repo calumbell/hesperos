@@ -11,7 +11,7 @@ export default function Join({data}) {
         title={pageData.page_title.text}
         image={pageData.banner_image}
       />
-      <div className='center-content rich-text'>
+      <div className='center-content rich-text px-3'>
         {pageData.body.map(section => {
           return(
             <section className='rich-text mt-4'>

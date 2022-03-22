@@ -12,8 +12,8 @@ const SocialMedia = () => {
   return (
     <ul className={styles.socialMediaContainer}>
       {networks.map((network, i) => 
-        <li>
-          <SocialIcon key={i}
+        <li key={i}>
+          <SocialIcon 
             network={network.name.toLowerCase()}
             url={network.url}
             className={styles.icon}

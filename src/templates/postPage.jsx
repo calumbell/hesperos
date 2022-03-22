@@ -57,23 +57,15 @@ export const query = graphql`
   query PostPage($slug: String) {
     prismicPost(uid: {eq: $slug}) {
       data {
-        title {
-          text
-        }
-        subtitle {
-          text
-        }
+        title { text }
+        subtitle { text }
         date(formatString: "DD MMMM YYYY")
         body {
           ... on PrismicPostDataBodyTextSection {
             slice_type
             primary {
-              section_heading {
-                text
-              }
-              section_body {
-                richText
-              }
+              section_heading { text }
+              section_body { richText }
             }
           }
           ... on PrismicPostDataBodyImbeddedImage {
@@ -83,9 +75,7 @@ export const query = graphql`
                 gatsbyImageData
                 url
               }
-              caption {
-                text
-              }
+              caption { text }
             }
           }
           ... on PrismicPostDataBodyEmbeddedElement {
@@ -95,9 +85,7 @@ export const query = graphql`
                 html
                 provider_name
               }
-              caption {
-                text
-              }
+              caption { text }
             }
           }
         }
