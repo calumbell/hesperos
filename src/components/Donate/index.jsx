@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import getStripe from '../utils/stripejs';
+import getStripe from '../../utils/stripejs';
 
 const Donate = () => {
 

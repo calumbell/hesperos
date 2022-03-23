@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-import * as styles from '../styles/modules/EventCardThumbnail.module.scss';
+import * as styles from './EventCardThumbnail.module.scss';
 
-export default function EventCardThumbnail({ data }) {
+const EventCardThumbnail = ({ data }) => {
   return (
     <Link to={`/events/${data.uid}`} className={`position-rel m-1 ${styles.card}`}>
       <GatsbyImage
@@ -20,3 +20,5 @@ export default function EventCardThumbnail({ data }) {
     </Link>
   )
 }
+
+export default EventCardThumbnail;

@@ -1,8 +1,8 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import { ContactForm, Layout, MailchimpForm, TitleBanner } from '../components';
 
-export default function Contact() {
-
+export default function Contact({ data }) {
   const contactFormFields = [
     {
       type: 'multi',
@@ -16,11 +16,13 @@ export default function Contact() {
     { type: 'textarea', content: { name: 'message', displayName: 'Message' } }
   ];
 
+  const pageData = data.prismicContactPage.data;
 
   return (
     <Layout>
       <TitleBanner 
-        title='Contact'
+        title={pageData.page_title.text}
+        image={pageData.banner_image}
        />
       <div className='center-content'>
 
@@ -53,3 +55,18 @@ export default function Contact() {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query ContactPageQuery {
+    prismicContactPage {
+      data {
+        page_title { text }
+        body { richText }
+        banner_image {
+          gatsbyImageData
+          alt
+        }
+      }
+    }
+  }
+`

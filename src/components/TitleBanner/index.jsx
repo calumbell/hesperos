@@ -1,8 +1,8 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import * as styles from '../styles/modules/TitleBanner.module.scss';
+import * as styles from './TitleBanner.module.scss';
 
-export default function TitleAndBanner({title, image, subtitle}) {
+const TitleAndBanner = ({title, image, subtitle}) => {
   return (
   <div className={`mb-4 w-100 position-rel bg-primary ${styles.bannerContainer}`}>
     { image &&
@@ -31,3 +31,5 @@ export default function TitleAndBanner({title, image, subtitle}) {
   </div>
   );
 }
+
+export default TitleAndBanner;

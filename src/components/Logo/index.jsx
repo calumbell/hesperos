@@ -1,6 +1,7 @@
 import React from 'react'
-import * as styles from '../styles/modules/Logo.module.scss';
-import { viewbox, path } from '../images/hesperosLogoSvgData';
+import * as styles from './Logo.module.scss';
+import { viewbox, path } from './hesperosLogoSvgData';
+
 const Logo = () => {
   return (
     <svg
@@ -9,7 +10,6 @@ const Logo = () => {
       height="5rem"
       viewBox={`${viewbox}`}
       className={` ${styles.logo}`}
-
     >
       
       <path 

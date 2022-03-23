@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import * as styles from '../styles/modules/DropDownLink.module.scss';
+import * as styles from './DropDownLink.module.scss';
 
-export default function DropDownLink({
+const DropDownLink = ({
   menuTitle,
   defaultURL,
   links,
   disableDropdown,
-}) {
+}) => {
 
   if (disableDropdown) return (
       <div className={`position-rel ${styles.dropDownContainer}`}>
@@ -36,3 +36,5 @@ export default function DropDownLink({
     })
   )
 }
+
+export default DropDownLink;

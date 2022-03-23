@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
-import '../styles/index.scss';
-import favicon from '../images/hesperos-favicon.png'
-import { Navbar, Footer } from '.';
-import routes from '../utils/routes';
+import '../../styles/index.scss';
+import favicon from '../../images/hesperos-favicon.png'
+import { Navbar, Footer } from '../';
+import routes from '../../utils/routes';
 
 
-export default function Layout({ children }) {
+const Layout = ({ children }) => {
   setTimeout(() => document.getElementById('layout-container').id="", 200);
   return (
     <>
@@ -45,3 +45,5 @@ export default function Layout({ children }) {
     </>
   )
 }
+
+export default Layout;

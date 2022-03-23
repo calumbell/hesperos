@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
-import { MenuExpandButton, DropDownLink, Logo } from './';
+import { MenuExpandButton, DropDownLink, Logo } from '../';
 
-import * as styles from '../styles/modules/Navbar.module.scss';
+import * as styles from './Navbar.module.scss';
 
-export default function Navbar({routes}) {
+const Navbar = ({routes}) => {
   // determines whether the pop-up menu is expanded or hidden
   const [isMenuExpanded, setMenuExpansion] = useState(false);
 
@@ -68,3 +68,5 @@ export default function Navbar({routes}) {
     </nav>
   )
 }
+
+export default Navbar;

@@ -1,8 +1,8 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import * as styles from '../styles/modules/TextWithFacingImage.module.scss';
+import * as styles from './TextWithFacingImage.module.scss';
 
-export default function TextWithFacingImage({data}) {
+const TextWithFacingImage = ({data}) => {
 
   // logic for aligning elements left and right
   const bodyOnLeft = !(data.format === 'Main text right')
@@ -26,3 +26,5 @@ export default function TextWithFacingImage({data}) {
     </div>
   );
 }
+
+export default TextWithFacingImage;

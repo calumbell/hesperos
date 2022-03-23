@@ -1,13 +1,13 @@
 import React from 'react';
-import * as styles from '../styles/modules/CardGrid.module.scss';
+import * as styles from './CardGrid.module.scss';
 
 
-export default function CardGrid({ 
+const CardGrid = ({ 
   Card,     // The card component to be rendered
   data,     // Arr of data, each index = 1 card
   flatten,  // A fn. that formats props for Card cmpnt
   size,     // 'large' or 'small'
-}) {
+}) => {
   return (
     <div className={`d-grid mt-3
       ${size === 'small' ? styles.cardGridSm : styles.cardGridLg}`}
@@ -18,3 +18,5 @@ export default function CardGrid({
     </div>
   )
 }
+
+export default CardGrid;

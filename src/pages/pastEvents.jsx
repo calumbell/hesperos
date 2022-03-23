@@ -34,6 +34,7 @@ export default function PastEvents({ data }) {
   return (
     <Layout>
       <h1 className='fs-700'>Past Events</h1>
+      <Link class='link fs-200' to="/events">View upcoming Events</Link>
       {Object.keys(eventsByYear).reverse().map((year) => {
         return(
           <div className='mt-4'>
@@ -48,9 +49,9 @@ export default function PastEvents({ data }) {
         )
       })}
 
-      <footer>
-        <Link to="/events">Back to Events</Link>
-      </footer>
+
+        
+
     </Layout>
   )
 }

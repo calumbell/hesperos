@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { AnimatePresence, motion } from 'framer-motion';
-import * as styles from '../styles/modules/SlideShow.module.scss';
+import * as styles from './SlideShow.module.scss';
 
-export default function SlideShow({images}) {
+const SlideShow = ({images}) => {
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
@@ -40,3 +40,5 @@ export default function SlideShow({images}) {
     </div>
   )
 }
+
+export default SlideShow;

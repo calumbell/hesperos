@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import * as styles from '../styles/modules/Card.module.scss';
+import * as styles from './Card.module.scss';
 
-export default function EventCard({ data }) {
+const Card = ({ data }) => {
   return (
     <Link 
       to={`/${data.subroute}/${data.uid}`} 
@@ -40,3 +40,5 @@ export default function EventCard({ data }) {
     </Link>
   )
 }
+
+export default Card;

@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 
-export default function MailchimpForm() {
-  const [email, setEmail] = useState('');
+const MailchimpForm = () => {
+const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   
@@ -70,3 +70,5 @@ export default function MailchimpForm() {
     </form>
   )
 }
+
+export default MailchimpForm;

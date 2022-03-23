@@ -1,7 +1,8 @@
 import React from 'react';
 
 
-export default function ContactForm({fields}) {
+const ContactForm = ({fields}) => {
+
   const handleSubmit = event => {
     event.preventDefault();
     // TODO: send form data via email
@@ -59,3 +60,5 @@ export default function ContactForm({fields}) {
     </form>
   );
 }
+
+export default ContactForm;

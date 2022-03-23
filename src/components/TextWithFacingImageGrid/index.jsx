@@ -1,8 +1,7 @@
 import React from 'react';
-import TextWithFacingImage from './TextWithFacingImage';
+import { TextWithFacingImage } from '../';
 
-export default function TextWithFacingImageGrid({data}) {
-  
+const TextWithFacingImageGrid = ({data}) => { 
   return(
     <div>
       {data.map((section, i) => {
@@ -11,3 +10,5 @@ export default function TextWithFacingImageGrid({data}) {
     </div>
   );
 }
+
+export default TextWithFacingImageGrid;
