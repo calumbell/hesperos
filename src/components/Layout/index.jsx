@@ -8,13 +8,9 @@ import routes from '../../utils/routes';
 
 
 const Layout = ({ children }) => {
-  setTimeout(() => document.getElementById('layout-container').id="", 200);
   return (
     <>
-      <div
-        id="layout-container" 
-        className="container"
-      >
+      <div className="container" >
         <Helmet>
           <title>Hesperos Choir</title>
           <link rel="icon" href={favicon}></link>

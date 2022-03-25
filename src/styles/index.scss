@@ -126,11 +126,6 @@ body {
   min-height: 100vh;
 }
 
-/* Stop animations on page load. Remove this id after a short delay to enable animations */
-#layout-container * {
-  animation-duration: 0s !important;
-}
-
 /* Focus outline */
 *:focus {
   outline-offset: 0.1rem;

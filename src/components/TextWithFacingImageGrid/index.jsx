@@ -4,9 +4,9 @@ import { TextWithFacingImage } from '../';
 const TextWithFacingImageGrid = ({data}) => { 
   return(
     <div>
-      {data.map((section, i) => {
-        return <TextWithFacingImage data={section} key={i}/>
-      })}
+      {data.map((section, i) => 
+        <TextWithFacingImage data={section} key={i}/>
+      )}
     </div>
   );
 }

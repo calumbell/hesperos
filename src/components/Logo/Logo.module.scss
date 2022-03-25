@@ -1,9 +1,9 @@
 .logo {
   overflow: visible;
   path {
-    animation-name: logo-hover-off-animation;
-    animation-duration: 0.25s;
-    animation-fill-mode: forwards;
+    // animation-name: logo-hover-off-animation;
+    // animation-fill-mode: forwards;
+    transition: scale .25s ease-in-out, fill .25s ease-in-out, stroke-width .25s ease-in-out;
     stroke:hsl( var(--clr-primary) );
     scale: 1;
     fill: hsl( var(--clr-primary) );
@@ -12,36 +12,44 @@
 }
 
 .logo:hover {
-  path {
-    animation-name: logo-hover-on-animation;
-    animation-duration: 0.25s;
-  }
-}
-
-@keyframes logo-hover-on-animation {
-  from {
-    scale: 1;
-    fill: hsl( var(--clr-primary) );
-    stroke-width: 0;
-  }
-
-  to {
-    scale: 0.995;
-    fill: hsl( var(--clr-primary-pale) );
-    stroke-width: 0.5rem;
-  }
-}
-
-@keyframes logo-hover-off-animation {
-  to {
-    scale: 1;
-    fill: hsl( var(--clr-primary) );
-    stroke-width: 0;
-  }
-
-  from {
+  path{
     scale: 0.995;
     fill: hsl( var(--clr-primary-pale) );
     stroke-width: .5rem;
   }
 }
+
+// .logo:hover {
+//   path {
+//     animation-name: logo-hover-on-animation;
+//     animation-duration: 0.25s;
+//   }
+// }
+
+// @keyframes logo-hover-on-animation {
+//   from {
+//     scale: 1;
+//     fill: hsl( var(--clr-primary) );
+//     stroke-width: 0;
+//   }
+
+//   to {
+//     scale: 0.995;
+//     fill: hsl( var(--clr-primary-pale) );
+//     stroke-width: 0.5rem;
+//   }
+// }
+
+// @keyframes logo-hover-off-animation {
+//   to {
+//     scale: 1;
+//     fill: hsl( var(--clr-primary) );
+//     stroke-width: 0;
+//   }
+
+//   from {
+//     scale: 0.995;
+//     fill: hsl( var(--clr-primary-pale) );
+//     stroke-width: .5rem;
+//   }
+// }
