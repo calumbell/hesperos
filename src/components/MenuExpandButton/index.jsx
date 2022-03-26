@@ -33,7 +33,7 @@ const MenuExpandButton = ({
         width="50"
         height="50"  
         strokeWidth="4"
-        style={{'transform-origin' : 0.5}}
+        style={{transformOrigin : 0.5}}
       >
         <circle 
           cx="40"

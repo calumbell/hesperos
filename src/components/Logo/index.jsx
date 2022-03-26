@@ -1,11 +1,10 @@
 import React from 'react'
 import * as styles from './Logo.module.scss';
-import { viewbox, path } from './hesperosLogoSvgData';
+import { viewbox, path } from './hesperosLogoPathData';
 
 const Logo = () => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg" 
       width="10rem" 
       height="5rem"
       viewBox={`${viewbox}`}

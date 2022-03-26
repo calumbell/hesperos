@@ -9,7 +9,7 @@ const CardGrid = ({
   size,     // 'large' or 'small'
 }) => {
   return (
-    <div className={`d-grid mt-3
+    <div className={`d-grid mt-1
       ${size === 'small' ? styles.cardGridSm : styles.cardGridLg}`}
     >
       {data.map((item, i) => {

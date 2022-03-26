@@ -8,11 +8,11 @@ const ContactForm = ({fields}) => {
     // TODO: send form data via email
   };
 
-  const createFormField = field => {
+  const createFormField = (field, key) => {
     // render multi fields by iterating over their subfields
     if (field.type === 'multi') {
       return (
-        <div className='form-row d-flex'>
+        <div key={key} className='form-row d-flex'>
           {field.content.map((subfield, i) => {
             return(
               <div className='w-100' key={i}>
@@ -20,7 +20,8 @@ const ContactForm = ({fields}) => {
                   <input 
                     className='p-2'
                     type={subfield.type}
-                    name={subfield.content.name}/>
+                    name={subfield.content.name}
+                  />
                 </label>
               </div>
             )
@@ -31,7 +32,7 @@ const ContactForm = ({fields}) => {
 
     // render non-nested fields
     return(
-      <div className='form-row d-flex'>
+      <div key={key} className='form-row d-flex'>
         <label className='w-100'>{field.content.displayName}
           {field.type === 'textarea' 
           ? <textarea 
@@ -51,7 +52,7 @@ const ContactForm = ({fields}) => {
 
   return(
     <form className='form d-grid p-1' onSubmit={handleSubmit}>
-      {fields.map(field => {return createFormField(field)})}
+      {fields.map((field, i) => {return createFormField(field, i)})}
       <div className='form-row mt-2'>
         <button className='call-to-action' type='submit'>
           Submit
