@@ -17,11 +17,11 @@ const Navbar = ({routes}) => {
   useEffect(() => {
     const handleWindowResize = () => {
       setWidth(window.innerWidth);
-      if (width > breakpoint) setMenuExpansion(false);
+      if (window.innerWidth > breakpoint) setMenuExpansion(false);
     }
     window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);
-  }, [width]);
+  }, []);
 
   
   return (

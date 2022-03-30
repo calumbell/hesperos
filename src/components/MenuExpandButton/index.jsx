@@ -30,8 +30,8 @@ const MenuExpandButton = ({
         whileHover={{ scale: 1.1  }}
         whileTap={{ scale: 0.95 }}
         viewBox="0 0 80 80" 
-        width="50"
-        height="50"  
+        width="3rem"
+        height="3rem"  
         strokeWidth="4"
         style={{transformOrigin : 0.5}}
       >

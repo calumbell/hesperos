@@ -60,7 +60,7 @@
 :root { font-size: 13px; }
 
 @media (min-width: $breakpoint-sm) {
-  :root { font-size: 15px; }
+  :root { font-size: 14px; }
 }
 
 @media (min-width: $breakpoint-md) {
@@ -452,8 +452,7 @@ textarea {
 .nav-item {
   transition: color 0.25s, background-size 0.4s;
   font-weight: 300;
-  margin-top: 1rem;
-  margin-bottom: .25rem;
+  margin-top: .65rem;
 }
 
 .nav-link {
