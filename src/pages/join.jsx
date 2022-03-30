@@ -12,9 +12,9 @@ export default function Join({data}) {
         image={pageData.banner_image}
       />
       <div className='center-content rich-text px-3'>
-        {pageData.body.map(section => {
+        {pageData.body.map((section, i) => {
           return(
-            <section className='rich-text mt-4'>
+            <section className='rich-text mt-4' key={i}>
               <h2 className='fs-700'>{section.primary.section_title.text}</h2>
               {RichText.render(section.primary.section_content.richText)}
             </section>

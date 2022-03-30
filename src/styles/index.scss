@@ -113,6 +113,10 @@ h1, h2, h3, h4, h5, h6, sub {
   font-family: var(--ff-serif);
 }
 
+address {
+  font-style: normal;
+}
+
 /* Body */
 body {
   overflow-x: hidden;
@@ -203,7 +207,7 @@ textarea {
 .ff-serif { font-family: var(--ff-serif); }
 .ff-sans { font-family: var(--ff-sans); }
 
-.uppercase { text-transform: uppercase;}
+.uppercase { text-transform: uppercase; }
 
 .letter-spacing-1 { letter-spacing: 4.5px; }
 .letter-spacing-2 { letter-spacing: 2.6px; }
@@ -263,6 +267,7 @@ textarea {
 /* Sizing */
 .w-25 { width: 25%; }
 .w-50 { width: 50%; }
+.w-75 { width: 75%; }
 .w-100 { width: 100%; }
 .h-50 { height: 50%; }
 .h-25 { height: 25%; }
@@ -358,7 +363,7 @@ textarea {
 
 .hover-shadow {
   transition: box-shadow 0.3s;
-  &:hover { box-shadow: 0 0 13px hsl( var(--clr-dark) / 0.6); }
+  &:hover, &:focus { box-shadow: 0 0 13px hsl( var(--clr-dark) / 0.6); }
 }
 
 /* ------------------------------------------------- */

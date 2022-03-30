@@ -16,7 +16,7 @@ export default function News({data}) {
   
   return (
     <Layout>
-      <h1 className='fs-700'>News</h1>
+      <h1 className='fs-800 letter-spacing-3'>News</h1>
       <CardGrid 
         Card={Card}
         data={data.allPrismicPost.nodes}

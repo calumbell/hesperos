@@ -33,8 +33,8 @@ export default function PastEvents({ data }) {
 
   return (
     <Layout>
-      <h1 className='fs-700'>Past Events</h1>
-      <Link class='link fs-200' to="/events">View upcoming Events</Link>
+      <h1 className='fs-800 letter-spacing-3'>Past Events</h1>
+      <Link to="/events" className='link fs-200' >View upcoming Events</Link>
       {Object.keys(eventsByYear).reverse().map((year, i) => {
         return(
           <div className='mt-4' key={i}>

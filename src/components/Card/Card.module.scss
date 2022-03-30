@@ -1,17 +1,19 @@
 .card-image {
   max-height: 40vh;
+  margin-inline: 1rem;
 }
 
 // Styling for inset date bubble
 .date-bubble {
   align-items: center;
   border-radius: 50%;
+  border: 1px solid hsl(var(--clr-primary));
   flex-direction: column;
   width: 5rem;
   height: 5rem;
   justify-content: center;
   opacity: 0.72;
-  right: 12%;
+  right: 15%;
   top: 8%;
   z-index: 1;
 }

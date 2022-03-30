@@ -44,13 +44,18 @@ export default function postPage({ data }) {
             } 
 
             else if (section.slice_type === "imbedded_image") {
-              return <section key={i}>
+              return <section key={i} className='center-children mx-5'>
                 <GatsbyImage 
+                  className='w-75 border-primary'
                   key={i} 
                   image={section.primary.embedded_image.gatsbyImageData} 
                   alt={section.primary.embedded_image.alt}
                 />
-                <sub className='ff-sans d-block text-primary uppercase letter-spacing-2 my-2'>{section.primary.caption.text}</sub>
+                <sub className='w-75 d-block my-2
+                  ff-sans text-primary uppercase letter-spacing-2'
+                >
+                  {section.primary.caption.text}
+                </sub>
               </section>
             }
 

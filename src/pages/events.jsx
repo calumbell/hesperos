@@ -20,7 +20,7 @@ export default function Events({data}) {
 
   return (
     <Layout>
-      <h1 className='fs-700'>Events</h1>
+      <h1 className='fs-800 letter-spacing-3'>Events</h1>
       <Link to="/pastEvents" className="link fs-200">View Past Events</Link>
       <CardGrid
         Card={Card}

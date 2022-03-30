@@ -9,7 +9,7 @@ const TitleAndBanner = ({title, image, subtitle}) => {
       <GatsbyImage 
         className={`w-100 ${styles.bannerImage} `}
         image={image.gatsbyImageData}
-        alt={image.alt}
+        alt={image.alt || ""}
       />
     }
     <h1 
@@ -22,9 +22,9 @@ const TitleAndBanner = ({title, image, subtitle}) => {
     >
       {title}
       {subtitle && 
-        <subtitle className={`d-block fw-light fs-400 ${styles.bannerSubtitle}`}>
+        <sub className={`d-block fw-light fs-400 ${styles.bannerSubtitle}`}>
           {subtitle}
-        </subtitle>
+        </sub>
       }
     </h1>
     

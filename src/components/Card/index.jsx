@@ -8,22 +8,21 @@ const Card = ({ data }) => {
     <Link 
       to={`/${data.subroute}/${data.uid}`} 
       className='position-rel p-4 m-1 hover-shadow'
-      
     >
       <GatsbyImage 
-        className={`${styles.cardImage} d-block`}
+        className={`${styles.cardImage} mb-2 d-block`}
         image={data.image}
         alt={data.altText}
       />
 
       <time className='mt-2 mb-0 fw-xl'>{data.date}</time>
 
-      <h2 className={`m-0 p-0 fw-reg 
+      <h2 className={`m-0 p-0 fw-bold
         ${data.title.length <= 20 ? `fs-500` : `fs-400` /* resize longer text */}`}
       >{data.title}</h2>
 
       { data.subtitle &&
-        <sub className={`text-faded ff-sans letter-spacing-  fs-200`}> 
+        <sub className={`text-faded ff-sans letter-spacing-3  fs-200`}> 
           {data.subtitle}
         </sub>
       }

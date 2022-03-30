@@ -24,32 +24,34 @@ export default function Contact({ data }) {
         title={pageData.page_title.text}
         image={pageData.banner_image}
        />
-      <div className='center-content'>
+      <div className='center-content' style={{'--max-width': '42rem'}}>
 
-        <section className='d-flex flex-wrap mt-4'>       
-          <aside>
-            <p>Please use this contact form if you have any questions about the choir.</p>
-            <p>All data is processed in accordance with GDPR regulations.</p>
+        <section>       
+          <aside className='my-3'>
+            <p>
+              Please use this contact form if you have any questions about the choir.
+              All data is processed in accordance with GDPR regulations.
+            </p>
           </aside>
-
-          <ContactForm 
-            endpoint=""
-            fields={contactFormFields}
-          />
+          <div>
+            <ContactForm 
+              endpoint=""
+              fields={contactFormFields}
+            />
+          </div>
         </section>
         
-        <section className='d-flex flex-wrap mt-4'>
-          <aside>
+        <section className='mt-4'>
+          <aside className='my-3'>
             <h2 className='fs-600'>Mailing List</h2>
             <p>
-              Sign up to our mailing list for regular updates 
-              (not more than once a month).
-            </p>
-            <p>
+              Sign up to our mailing list for regular updates (not more than once a month).
               You can unsubscribe at any time by clicking the link in the footer of our emails.
             </p>
           </aside>
-          <MailchimpForm />
+          <div>
+            <MailchimpForm />
+          </div>
         </section>
       </div>
     </Layout>

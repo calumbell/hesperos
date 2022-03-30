@@ -4,7 +4,6 @@ import { RichText } from 'prismic-reactjs';
 import { Donate, Layout, TitleBanner } from '../components';
 
 export default function Support({data}) {
-  console.log(data)
   const pageData = data.prismicSupportPage.data;
 
   return (

@@ -8,11 +8,13 @@ export default function eventPage({ data }) {
   const event = data.prismicEvent.data;
   return (
     <Layout>
+
       <SEO 
         title={event.title.text}
         image={event.event_image.url}
         desciption={event.event_description.text}
       />
+
       <TitleBanner
         title={event.title.text}
         image={event.event_image}
@@ -29,13 +31,13 @@ export default function eventPage({ data }) {
               </Link>
             </p> 
             <p className='fw-med ff-sans letter-spacing-3'>{event.location.text || `Location TBC`}</p>
-            <date className='d-block fs-400'>{event.date}</date>
+            <time className='d-block fs-400'>{event.date}</time>
             <time className='d-block fs-300'>{event.time.text}</time>
-            <p className='my-3 fs-200 address'> {RichText.render(event.address.richText)}
+            <address className='my-3 fs-200 address'> {RichText.render(event.address.richText)}
               <a className="link fs-200" target="_blank" rel="noreferrer"
                 href={`http://maps.google.com/?q=${event.location.text} ${event.address.text}`}
               > (View on Map)</a>
-            </p>
+            </address>
           </aside>
 
           <div className={styles.eventDescriptionMain}>
@@ -50,17 +52,16 @@ export default function eventPage({ data }) {
                 Click here to buy tickets
               </a>
             }
-
           </div>
         </div>
       </section>
       { event.program.richText.length > 0 &&
-        <div className={`${styles.programContainer} center-content bg-light-shade p-4`}>
+        <section className={`${styles.programContainer} center-content bg-light-shade p-4`}>
           <h2 className='fs-500 letter-spacing-3 mb-2 text-center'>Program</h2>
-          <p className={`text-left ${styles.programText}`}>
+          <article className={`text-left ${styles.programText}`}>
             {RichText.render(event.program.richText)}
-          </p>
-        </div>
+          </article>
+        </section>
       }
     </Layout>
   )
