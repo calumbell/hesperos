@@ -19,9 +19,9 @@ export default function Index({data}) {
 
         {nextEvent && 
           <aside className={`
-            position-ab bg-light p-4 box-shadow hover-shadow border-primary
-            ${styles.homePageNextEvent}
-          `}>
+            position-ab bg-light px-4 py-3 box-shadow 
+            hover-shadow border-primary ${styles.homePageNextEvent} `}
+          >
             <Link to={`/events/${nextEvent.uid}`}>
               <sub className='uppercase fw-normal letter-spacing-1'>Our next event</sub>
               <h2 className='fs-500'>{nextEvent.data.title.text}</h2>

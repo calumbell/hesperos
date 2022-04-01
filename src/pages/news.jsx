@@ -29,7 +29,7 @@ export default function News({data}) {
 export const query = graphql`
   query NewsPostSummaries {
     allPrismicPost(
-      sort: {fields: data___date, order: ASC}
+      sort: {fields: data___date, order: DESC}
       filter: {data: {post_type: {eq: "News"}}}
     ) {
       nodes {

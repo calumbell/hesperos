@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
-
 import { Layout, SEO }  from '../components';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
@@ -10,7 +9,6 @@ export default function postPage({ data }) {
   const url = data.site.siteMetadata.url;
   return (
     <Layout>
-
       <SEO
         title={`${post.title.text} | Hesperos Choir`}
         image={post.thumbnail.url}
@@ -24,15 +22,15 @@ export default function postPage({ data }) {
 
       <article className='center-content rich-text'>
 
-        <h1 className='fs-700'>
+        <h1 className='fs-800 fw-light'>
           {post.title.text}
         </h1>
 
-        <sub>
-          {post.title.subtitle}
+        <sub className='d-block ff-sans fs-500 fw-light uppercase text-faded'>
+          {post.subtitle.text}
         </sub>
         
-        <time className='fw-xl fs-400'>
+        <time className='fw-xl fs-400 my-5'>
           {post.date}
         </time>
 
@@ -51,8 +49,8 @@ export default function postPage({ data }) {
                   image={section.primary.embedded_image.gatsbyImageData} 
                   alt={section.primary.embedded_image.alt}
                 />
-                <sub className='w-75 d-block my-2
-                  ff-sans text-primary uppercase letter-spacing-2'
+                <sub className='w-75 d-block my-2 fs-200
+                  ff-sans clr-primary-shade uppercase letter-spacing-2'
                 >
                   {section.primary.caption.text}
                 </sub>

@@ -1,12 +1,18 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
+const ContactForm = ({ fields}) => {
+  const data = useStaticQuery(graphql`
+    query EmailAddressQuery {
+      prismicWebsiteDetails {
+        data {
+          email_address { text }
+        }
+      }
+    }
+  `);
 
-const ContactForm = ({fields}) => {
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    // TODO: send form data via email
-  };
+  const email = data.prismicWebsiteDetails.data.email_address.text;
 
   const createFormField = (field, key) => {
     // render multi fields by iterating over their subfields
@@ -51,7 +57,11 @@ const ContactForm = ({fields}) => {
   };
 
   return(
-    <form className='form d-grid p-1' onSubmit={handleSubmit}>
+    <form
+      className='form d-grid p-1' 
+      action={`https://formsubmit.co/${email}`}
+      method='POST'
+    >
       {fields.map((field, i) => {return createFormField(field, i)})}
       <div className='form-row mt-2'>
         <button className='call-to-action' type='submit'>

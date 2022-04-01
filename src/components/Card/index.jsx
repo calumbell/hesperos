@@ -17,7 +17,7 @@ const Card = ({ data }) => {
 
       <time className='mt-2 mb-0 fw-xl'>{data.date}</time>
 
-      <h2 className={`m-0 p-0 fw-bold
+      <h2 className={`m-0 p-0 fw-med
         ${data.title.length <= 20 ? `fs-500` : `fs-400` /* resize longer text */}`}
       >{data.title}</h2>
 

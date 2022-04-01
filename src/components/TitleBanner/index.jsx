@@ -22,7 +22,7 @@ const TitleAndBanner = ({title, image, subtitle}) => {
     >
       {title}
       {subtitle && 
-        <sub className={`d-block fw-light fs-400 text-primary ${styles.bannerSubtitle}`}>
+        <sub className={`d-block fw-light fs-400 text-faded ${styles.bannerSubtitle}`}>
           {subtitle}
         </sub>
       }
