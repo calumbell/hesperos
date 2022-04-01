@@ -8,9 +8,10 @@ const Navbar = ({routes}) => {
   // determines whether the pop-up menu is expanded or hidden
   const [isMenuExpanded, setMenuExpansion] = useState(false);
 
-  // Logic for condional rendering based of browser window
-  const [width, setWidth] = useState(window.innerWidth);
-  const breakpoint = 767;
+  /* Logic for condional rendering based of browser window */
+
+  const [width, setWidth] = useState(1250);
+  const breakpoint = 767; 
 
   /* [] as 2nd arg to only attach listener on   *
    * rtns cleanup fnc that runs on unmount      */

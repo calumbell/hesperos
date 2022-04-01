@@ -1,19 +1,23 @@
-/* TODO
- * This starts to look wonky on larger screens due to page margins being handled
- * in rem and the img width being set using vh. Waiting on higher-res images
- * before proceeding.
- */
-
  @import '../../styles/breakpoints';
 
+ .container {
+   height: 70vh;
+   width: 100%; 
+ }
+
+.slide-show {
+  position: absolute;
+  height: inherit;
+  width: inherit; 
+}
 
 .slide-show-image {
-  height: 70vh;
-  width: 100%;
+  height: inherit;
+  width: inherit;
 }
 
 @media (max-width: $breakpoint-md) {
-  .slide-show-container, .slide-show-image {
+  .container {
     height: 35vh;
   }
 }

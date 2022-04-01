@@ -14,12 +14,13 @@ const SlideShow = ({images}) => {
   }, [currentImage, images.length])
   
   return(
-    <div className={styles.slideShowContainer}>
-      <AnimatePresence className='d-flex align-items-center'>
+    <div className={styles.container}>
+      <AnimatePresence>
         { images.map((image, i) => 
           { if(currentImage === i) {
               return(
                 <motion.div
+                  className={styles.slideShow}
                   key={i}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -27,7 +28,7 @@ const SlideShow = ({images}) => {
                   transition={{type: 'spring', duration: 2 }}               
                 >
                   <GatsbyImage
-                    className={`position-ab ${styles.slideShowImage}`}
+                    className={styles.slideShowImage}
                     image={image.image.gatsbyImageData}
                     alt={image.image.alt ?? ''}
                   />
