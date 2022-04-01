@@ -4,6 +4,8 @@ import { Layout, SEO, SlideShow } from '../components';
 import * as styles from './index.module.scss';
 
 export default function Index({data}) {
+  const title = data.prismicWebsiteDetails.data.title.text;
+  const bio = data.prismicWebsiteDetails.data.bio.text;
   const nextEvent = data.allPrismicEvent.nodes[0];
   return (
     <Layout>
@@ -11,8 +13,8 @@ export default function Index({data}) {
       <div className={`position-rel ${styles.homePageContainer}`}>
         
         <aside className={`bg-light p-4 border-primary box-shadow ${styles.homePageBio}`}>
-          <h1 className='fs-800 fw-xl letter-spacing-3  hide-on-sm'>Hesperos Choir</h1>
-          <p className='mb-4'>{data.prismicHomepage.data.short_description.text}</p>
+          <h1 className='fs-800 fw-xl letter-spacing-3  hide-on-sm'>{title}</h1>
+          <p className='mb-4'>{bio}</p>
         </aside>
 
         <SlideShow images={data.prismicHomepage.data.body[0].items} />
@@ -37,9 +39,14 @@ export default function Index({data}) {
 // query Prismic for page data & next event data
 export const query = graphql`
   query HomepageQuery ($date: Date) {
+    prismicWebsiteDetails {
+      data {
+        title { text }
+        bio { text }
+      }
+    }
     prismicHomepage {
       data {
-        short_description { text }
         body {
           ... on PrismicHomepageDataBodyImageCarousel {
             items {
