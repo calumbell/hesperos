@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-const ContactForm = ({ fields}) => {
+const ContactForm = ({ fields }) => {
   const data = useStaticQuery(graphql`
     query EmailAddressQuery {
       prismicWebsiteDetails {

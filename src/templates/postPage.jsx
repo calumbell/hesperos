@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
 import { Layout, SEO }  from '../components';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import * as styles from './postPage.module.scss';
 
 export default function postPage({ data }) {
   const post = data.prismicPost.data;
@@ -22,11 +23,15 @@ export default function postPage({ data }) {
 
       <article className='center-content rich-text'>
 
-        <h1 className='fs-800 fw-light'>
+        <h1 className={`fw-light mb-2
+          ${post.title.text.length < 20 
+            ? styles.titleLong 
+            : styles.titleShort}`}
+        >
           {post.title.text}
         </h1>
 
-        <sub className='d-block ff-sans fs-500 fw-light uppercase text-faded'>
+        <sub className='d-block ff-sans fs-400 mb-2 fw-light uppercase text-faded'>
           {post.subtitle.text}
         </sub>
         
@@ -42,15 +47,15 @@ export default function postPage({ data }) {
             } 
 
             else if (section.slice_type === "imbedded_image") {
-              return <section key={i} className='center-children mx-5'>
+              return <section key={i} className={styles.imageSection}>
                 <GatsbyImage 
-                  className='w-75 border-primary'
+                  className='border-primary'
                   key={i} 
                   image={section.primary.embedded_image.gatsbyImageData} 
                   alt={section.primary.embedded_image.alt}
                 />
-                <sub className='w-75 d-block my-2 fs-200
-                  ff-sans clr-primary-shade uppercase letter-spacing-2'
+                <sub className='d-block my-2 fs-200
+                  ff-sans text-faded uppercase letter-spacing-2'
                 >
                   {section.primary.caption.text}
                 </sub>

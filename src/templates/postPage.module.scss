@@ -1,0 +1,30 @@
+@import '../styles/breakpoints.scss';
+
+.title-long {
+  font-size: var(--fs-800);
+}
+
+.title-short {
+  font-size: var(--fs-700);
+  line-height: 3.5rem;
+  margin-block: var(--spacing-2);
+}
+
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  * {
+    width: 75%;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .image-section {
+      * { 
+      max-height: 50vh;
+      width: 100%;
+    }
+  }
+} 

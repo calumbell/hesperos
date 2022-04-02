@@ -1,6 +1,7 @@
 @import '../../styles/breakpoints';
 
 .banner-container {
+  margin-bottom: var(--spacing-4);
   height: 10rem;
   background-color: hsl(var(--clr-primary) / 0.25);
   z-index: -2;
@@ -13,6 +14,9 @@
 }
 
 .banner-text {
+  position: absolute;
+  padding-block: var(--spacing-4);
+  padding-inline: var(--spacing-5);
   top: 1rem;
   left: 1rem;
   border-radius: 0.25rem;
@@ -24,10 +28,16 @@
 }
 
 @media (max-width: $breakpoint-md) {
+  .banner-container {
+    height: 8rem;
+    margin-bottom: var(--spacing-2);
+  }
+
   .banner-text {
     padding: var(--spacing-4);
     margin: var(--spacing-1);
     top: 12.5%;
     height: auto;
+    padding-block: var(--spacing-2);
   }
 }

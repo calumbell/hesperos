@@ -1,7 +1,7 @@
  @import '../../styles/breakpoints';
 
  .container {
-   height: 70vh;
+   height: 75vh;
    width: 100%; 
  }
 
@@ -18,6 +18,10 @@
 
 @media (max-width: $breakpoint-md) {
   .container {
-    height: 35vh;
+    height: 45vh;
+  }
+  // Nested query: styles for less tall phones
+  @media (max-height: $breakpoint-sm) {
+    .container { height: 35vh; }
   }
 }

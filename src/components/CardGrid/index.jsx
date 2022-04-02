@@ -13,7 +13,7 @@ const CardGrid = ({
       ${size === 'small' ? styles.cardGridSm : styles.cardGridLg}`}
     >
       {data.map((item, i) => {
-        return <Card key={i} data={flatten(item)}/>
+        return <Card key={i} data={flatten(item)} />
       })}
     </div>
   )

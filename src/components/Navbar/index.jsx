@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'gatsby';
 import { MenuExpandButton, DropDownLink, Logo } from '../';
 
@@ -8,19 +8,31 @@ const Navbar = ({routes}) => {
   // determines whether the pop-up menu is expanded or hidden
   const [isMenuExpanded, setMenuExpansion] = useState(false);
 
-  /* Logic for condional rendering based of browser window */
+  // Logic for condional rendering based of browser window
+  
+  // A reference is used to access state within event listener
+  const [width, _setWidth] = useState(0);
 
-  const [width, setWidth] = useState(1250);
+  const widthRef = useRef(width);
+  const setWidth = data => {
+    widthRef.current = data;
+    _setWidth(data);
+  }
+
   const breakpoint = 767; 
 
-  /* [] as 2nd arg to only attach listener on   *
-   * rtns cleanup fnc that runs on unmount      */
   useEffect(() => {
+    // set initial width
+    setWidth(window.innerWidth);
+
+    // attach event listener for updating state
     const handleWindowResize = () => {
       setWidth(window.innerWidth);
-      if (window.innerWidth > breakpoint) setMenuExpansion(false);
+      if (widthRef.current > breakpoint) setMenuExpansion(false);
     }
     window.addEventListener("resize", handleWindowResize);
+
+    // clean-up
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
 

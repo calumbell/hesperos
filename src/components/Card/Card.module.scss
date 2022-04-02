@@ -1,6 +1,15 @@
+@import '../../styles/breakpoints';
+
+.card {
+  position: relative;
+  background-color: white;
+  border-radius: 5px;
+}
+
 .card-image {
   height: 40vh;
   margin-inline: 1rem;
+  border: 2px solid hsl(var(--clr-primary));
 }
 
 // Styling for inset date bubble
@@ -16,4 +25,8 @@
   right: 15%;
   top: 8%;
   z-index: 1;
+}
+
+@media (max-width: $breakpoint-md) {
+  .card-image { height: 30vh; }
 }

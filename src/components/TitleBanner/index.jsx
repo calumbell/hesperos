@@ -4,7 +4,7 @@ import * as styles from './TitleBanner.module.scss';
 
 const TitleAndBanner = ({title, image, subtitle}) => {
   return (
-  <div className={`mb-4 w-100 position-rel bg-primary ${styles.bannerContainer}`}>
+  <div className={`w-100 position-rel bg-primary ${styles.bannerContainer}`}>
     { image &&
       <GatsbyImage 
         className={`w-100 ${styles.bannerImage} `}
@@ -13,7 +13,7 @@ const TitleAndBanner = ({title, image, subtitle}) => {
       />
     }
     <h1 
-      className={`position-ab px-5 py-4 bg-light-opaque box-shadow
+      className={`bg-light-opaque box-shadow
         ${(title.length <= 12) && `fs-700`}
         ${(20 >= title.length && title.length > 12) && `fs-600`}
         ${(title.length > 20) && `fs-500`}

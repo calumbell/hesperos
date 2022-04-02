@@ -24,7 +24,7 @@ export default function eventPage({ data }) {
       <section className="center-content" style={{'--max-width': '56rem'}}>
         <div className={`d-grid my-3 ${styles.eventDetailContainer}`}>
 
-          <aside className={`border-shadow p-4`}>
+          <aside className={`border-shadow`}>
             <p className='mb-2'>
               <Link className='link fs-200' to="/events/">
                 Back to all events
@@ -44,7 +44,7 @@ export default function eventPage({ data }) {
             <p>{event.event_description.text}</p>
             { event.buy_ticket_link.url &&
               <a
-                className='link fs-300'
+                className='link fs-300 mt-3'
                 href={event.buy_ticket_link.url}
                 target="_blank"
                 rel="noreferrer"

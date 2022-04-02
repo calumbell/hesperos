@@ -5,6 +5,10 @@
   z-index: 0;
 }
 
+.title {
+  font-size: var(--fs-800);
+}
+
 .home-page-bio {
   position: absolute;
   text-align: right;
@@ -17,6 +21,7 @@
 }
 
 .home-page-next-event {
+  position: absolute;
   bottom: 2rem;
   left: 1rem;
   border-radius: 0.15rem;
@@ -38,12 +43,28 @@
   .home-page-bio {
     border: none;
     box-shadow: none;
+    font-size: var(--fs-300);
   }
+
   .home-page-next-event {
     padding: var(--spacing-3) var(--spacing-4);
-    display: block;
-    bottom: unset;
-    width: fit-content;
+    display: flex;
+    position: unset;
+    justify-content: center;
+    width: 70%;
+    margin-inline: 15%;
     border-radius: 0.15rem;
   }
+  
+  // Nested query: styles for less tall phones
+  @media (max-height: $breakpoint-sm) {
+    .home-page-bio { font-size: var(--fs-200); }
+    .title { font-size: var(--fs-500); }
+    .home-page-next-event {
+      font-size: var(--fs-300);
+      margin-inline: 0;
+      width: 100%;
+    }
+  }
+
 }

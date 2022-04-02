@@ -57,7 +57,7 @@
 /* ------------------------------------------------- */
 
 /* Responsive Font Sizes */
-:root { font-size: 13px; }
+:root { font-size: 12px; }
 
 @media (min-width: $breakpoint-sm) {
   :root { font-size: 14px; }
@@ -79,6 +79,10 @@
   * { font-size: 19px; }
 }
 
+/* Remove left margin on uls for small screens */
+@media (max-width: $breakpoint-md) {
+  ul { padding-left: 1rem; }
+}
 
 /* ------------------------------------------------- */
 /*  R E S E T                                        */
@@ -125,7 +129,7 @@ body {
   font-size: var(--fs-400);
   font-weight: 300;
   color:hsl(var(--clr-dark));
-  background-color: radial-gradient(var(--light-shade), var(--light));
+  background-color: hsl( var(--clr-light) );
   line-height: 1.5;
   min-height: 100vh;
 }
@@ -439,6 +443,13 @@ textarea {
   width: 100%;
 }
 
+@media (max-width: $breakpoint-sm) {
+  .form-row {
+    flex-direction: column;
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-1);
+  }
+}
 
 /* hyperlinks & navlinks */
 .link {
@@ -484,8 +495,10 @@ textarea {
 
 .address {
   background-color: hsl( var(--clr-light-shade));
-  padding: var(--spacing-2);
+  padding-inline: var(--spacing-4);
+  padding-block: var(--spacing-3);
   margin: var(--spacing-3) 0;
+  width: fit-content;
   * {
     margin: 0;
   }

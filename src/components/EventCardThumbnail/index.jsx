@@ -6,7 +6,10 @@ import * as styles from './EventCardThumbnail.module.scss';
 
 const EventCardThumbnail = ({ data }) => {
   return (
-    <Link to={`/events/${data.uid}`} className={`position-rel m-1 ${styles.card}`}>
+    <Link 
+      to={`/events/${data.uid}`} 
+      className={`position-rel m-1 ${styles.card}`}
+    >
       <GatsbyImage
         className={`${styles.cardImage}`} 
         image={data.img}

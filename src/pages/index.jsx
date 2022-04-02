@@ -13,7 +13,7 @@ export default function Index({data}) {
       <div className={`position-rel ${styles.homePageContainer}`}>
         
         <aside className={`bg-light p-4 border-primary box-shadow ${styles.homePageBio}`}>
-          <h1 className='fs-800 fw-xl letter-spacing-3  hide-on-sm'>{title}</h1>
+          <h1 className={`${styles.title} fw-xl letter-spacing-3`}>{title}</h1>
           <p className='mb-4'>{bio}</p>
         </aside>
 
@@ -21,7 +21,7 @@ export default function Index({data}) {
 
         {nextEvent && 
           <aside className={`
-            position-ab bg-light px-4 py-3 box-shadow 
+            bg-light px-4 py-3 box-shadow 
             hover-shadow border-primary ${styles.homePageNextEvent} `}
           >
             <Link to={`/events/${nextEvent.uid}`}>
