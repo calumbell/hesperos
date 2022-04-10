@@ -8,8 +8,6 @@
 
 .card-image {
   height: 40vh;
-  margin-inline: 1rem;
-  border: 2px solid hsl(var(--clr-primary));
 }
 
 // Styling for inset date bubble
@@ -22,8 +20,8 @@
   height: 5rem;
   justify-content: center;
   opacity: 0.72;
-  right: 15%;
-  top: 8%;
+  right: 6%;
+  top: 3%;
   z-index: 1;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Card, CardGrid, Layout } from '../components';
+import { Card, CardGrid, Layout, TitleBanner } from '../components';
 
 export default function News({data}) {
   const flattenPostData = node => {
@@ -16,7 +16,9 @@ export default function News({data}) {
   
   return (
     <Layout>
-      <h1 className='fs-800 letter-spacing-3'>News</h1>
+      <TitleBanner 
+        title="News"
+      />
       <CardGrid 
         Card={Card}
         data={data.allPrismicPost.nodes}

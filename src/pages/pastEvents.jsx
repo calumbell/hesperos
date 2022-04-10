@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { EventCardThumbnail, CardGrid, Layout } from '../components';
+import { EventCardThumbnail, CardGrid, Layout, TitleBanner } from '../components';
 
 export default function PastEvents({ data }) {
   const flattenEventData = node => {
@@ -33,7 +33,9 @@ export default function PastEvents({ data }) {
 
   return (
     <Layout>
-      <h1 className='fs-800 letter-spacing-3'>Past Events</h1>
+      <TitleBanner 
+        title="Past Events"
+      />
       <Link to="/events" className='link fs-200' >View upcoming Events</Link>
       {Object.keys(eventsByYear).reverse().map((year, i) => {
         return(

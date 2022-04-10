@@ -18,7 +18,14 @@ const DropDownLink = ({
         { links &&
           <ul className={`${styles.dropDownContent} position-ab highlight-border bg-light`}>
             { links.map((link, i) => {
-              return <li key={i}><Link className="nav-link" to={link.url}>{link.name}</Link></li>
+              return <li key={i}>
+                <Link 
+                  className="nav-link" 
+                  to={link.url}
+                >
+                  {link.name}
+                </Link>
+              </li>
             })}
           </ul>
         }

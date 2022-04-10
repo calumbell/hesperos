@@ -2,7 +2,7 @@
 
 .banner-container {
   margin-bottom: var(--spacing-4);
-  height: 10rem;
+  height: 9rem;
   background-color: hsl(var(--clr-primary) / 0.25);
   z-index: -2;
 }
@@ -19,22 +19,24 @@
   padding-inline: var(--spacing-5);
   top: 1rem;
   left: 1rem;
+  height: 7rem;
   border-radius: 0.25rem;
   overflow: hidden;
 }
 
 .banner-subtitle {
   text-align: right;
+  margin-top: -.25rem;
 }
 
 @media (max-width: $breakpoint-md) {
   .banner-container {
-    height: 8rem;
+    height: 7rem;
     margin-bottom: var(--spacing-2);
   }
 
   .banner-text {
-    padding: var(--spacing-4);
+    padding: var(--spacing-5);
     margin: var(--spacing-1);
     top: 12.5%;
     height: auto;

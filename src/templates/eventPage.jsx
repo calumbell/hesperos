@@ -24,16 +24,19 @@ export default function eventPage({ data }) {
       <section className="center-content" style={{'--max-width': '56rem'}}>
         <div className={`d-grid my-3 ${styles.eventDetailContainer}`}>
 
-          <aside className={`border-shadow`}>
+          <aside className={styles.eventDetailsAside}>
             <p className='mb-2'>
-              <Link className='link fs-200' to="/events/">
+              <Link className='link fs-200 mb-2' to="/events/">
                 Back to all events
               </Link>
-            </p> 
-            <p className='fw-med ff-sans letter-spacing-3'>{event.location.text || `Location TBC`}</p>
-            <time className='d-block fs-400'>{event.date}</time>
-            <time className='d-block fs-300'>{event.time.text}</time>
-            <address className='my-3 fs-200 address'> {RichText.render(event.address.richText)}
+            
+              <p className='fw-med ff-sans letter-spacing-3'>{event.location.text || `Location TBC`}</p>
+              <time className='d-block fs-400'>{event.date}</time>
+              <time className='d-block fs-300'>{event.time.text}</time>
+            </p>
+
+            <address className='fs-200 address'> 
+              {RichText.render(event.address.richText)}
               <a className="link fs-200" target="_blank" rel="noreferrer"
                 href={`http://maps.google.com/?q=${event.location.text} ${event.address.text}`}
               > (View on Map)</a>

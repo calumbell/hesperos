@@ -7,25 +7,26 @@ const Card = ({ data }) => {
   return (
     <Link 
       to={`/${data.subroute}/${data.uid}`} 
-      className={`${styles.card} p-4 m-1 hover-shadow highlight-border`}
+      className={`${styles.card} p-0 m-1 hover-shadow border-faded`}
     >
       <GatsbyImage 
         className={`${styles.cardImage} mb-2 d-block`}
         image={data.image}
         alt={data.altText}
       />
+      <p className='mx-3 mt-1 mb-3'>
+        <time className='mb-0 fw-xl'>{data.date}</time>
 
-      <time className='mt-2 mb-0 fw-xl'>{data.date}</time>
+        <h2 className={`fw-med
+          ${data.title.length <= 20 ? `fs-500` : `fs-400` /* resize longer text */}`}
+        >{data.title}</h2>
 
-      <h2 className={`m-0 p-0 fw-med
-        ${data.title.length <= 20 ? `fs-500` : `fs-400` /* resize longer text */}`}
-      >{data.title}</h2>
-
-      { data.subtitle &&
-        <sub className={`text-faded ff-sans letter-spacing-3  fs-200`}> 
-          {data.subtitle}
-        </sub>
-      }
+        { data.subtitle &&
+          <sub className={`text-faded ff-sans letter-spacing-3  fs-300`}> 
+            {data.subtitle}
+          </sub>
+        }
+      </p>
 
       {data.displayDateBubble &&
         <div 

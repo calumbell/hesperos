@@ -36,18 +36,19 @@
   }
   .home-page-bio, .home-page-next-event {
     position: unset;
-    margin-top: var(--spacing-3);
     width: unset;
   }
 
   .home-page-bio {
     border: none;
     box-shadow: none;
+    padding-top: var(--spacing-2);
     font-size: var(--fs-300);
   }
 
   .home-page-next-event {
-    padding: var(--spacing-3) var(--spacing-4);
+    padding: var(--spacing-4) var(--spacing-4);
+    margin-top: var(--spacing-3);
     display: flex;
     position: unset;
     justify-content: center;

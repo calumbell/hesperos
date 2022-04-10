@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { Card, CardGrid, Layout } from '../components';
+import { Card, CardGrid, Layout, TitleBanner } from '../components';
 
 export default function Events({data}) {
 
@@ -20,8 +20,10 @@ export default function Events({data}) {
 
   return (
     <Layout>
-      <h1 className='fs-800 letter-spacing-3'>Events</h1>
-      <Link to="/pastEvents" className="link fs-200">View Past Events</Link>
+      <TitleBanner 
+        title='Events'
+      />
+      <Link to="/pastEvents" className="link fs-200 mb-1">View Past Events</Link>
       <CardGrid
         Card={Card}
         data={data.allPrismicEvent.nodes}

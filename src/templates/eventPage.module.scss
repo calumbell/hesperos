@@ -1,3 +1,4 @@
+@import '../styles/breakpoints';
 .event-detail-container {
   grid-column-gap: 1rem;
   grid-template-columns: 1fr 2fr;
@@ -23,7 +24,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: $breakpoint-sm) {
   .event-detail-container {
     grid-template-columns: 1fr;
   }

@@ -9,10 +9,8 @@ const Navbar = ({routes}) => {
   const [isMenuExpanded, setMenuExpansion] = useState(false);
 
   // Logic for condional rendering based of browser window
-  
   // A reference is used to access state within event listener
-  const [width, _setWidth] = useState(0);
-
+  const [width, _setWidth] = useState(1000);  
   const widthRef = useRef(width);
   const setWidth = data => {
     widthRef.current = data;
