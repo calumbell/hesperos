@@ -40,7 +40,7 @@ const Donate = () => {
           {donationLevels.map((donation, i) => 
             <li>
               <button 
-                className='call-to-action'
+                className='call-to-action-secondary'
                 onClick={(e) => redirectToCheckout(e, donation.stripePrice)}
               >{donation.name}</button>
             </li>

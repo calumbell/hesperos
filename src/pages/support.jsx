@@ -20,7 +20,7 @@ export default function Support({data}) {
           </section>
         }
 
-        <section className='mt-2'>
+        <section className='mt-3'>
           <h2 className='text-center text-faded fs-700 fw-light my-2'>{pageData.donation_title.text}</h2>
           {RichText.render(pageData.donation_text.richText)}
           <Donate />

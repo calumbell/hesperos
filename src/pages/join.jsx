@@ -14,8 +14,10 @@ export default function Join({data}) {
       <div className='center-content rich-text px-3'>
         {pageData.body.map((section, i) => {
           return(
-            <section className='rich-text mt-4' key={i}>
-              <h2 className='fs-700'>{section.primary.section_title.text}</h2>
+            <section className='rich-text mt-3' key={i}>
+              <h2 className='fs-700 text-center text-faded fw-light'>
+                {section.primary.section_title.text}
+              </h2>
               {RichText.render(section.primary.section_content.richText)}
             </section>
           )

@@ -49,7 +49,6 @@ export default function postPage({ data }) {
             else if (section.slice_type === "imbedded_image") {
               return <section key={i} className={styles.imageSection}>
                 <GatsbyImage 
-                  className='border-primary'
                   key={i} 
                   image={section.primary.embedded_image.gatsbyImageData} 
                   alt={section.primary.embedded_image.alt}

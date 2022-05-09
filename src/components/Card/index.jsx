@@ -7,7 +7,7 @@ const Card = ({ data }) => {
   return (
     <Link 
       to={`/${data.subroute}/${data.uid}`} 
-      className={`${styles.card} p-0 m-1 hover-shadow border-faded`}
+      className={`${styles.card} p-0 hover-shadow border-faded`}
     >
       <GatsbyImage 
         className={`${styles.cardImage} mb-2 d-block`}
