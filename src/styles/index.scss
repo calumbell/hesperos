@@ -107,6 +107,7 @@ img {
 
 /* Make scrollbar visible at all times */
 html {
+  scroll-behavior: smooth;
   overflow-x: hidden;
   overflow-y: scroll;
 }

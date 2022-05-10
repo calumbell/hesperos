@@ -1,4 +1,5 @@
 import React from 'react';
+import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
 import { ContactForm, Layout, MailchimpForm, TitleBanner } from '../components';
 
@@ -24,15 +25,26 @@ export default function Contact({ data }) {
         title={pageData.page_title.text}
         image={pageData.banner_image}
        />
+      
       <div className='center-content' style={{'--max-width': '42rem'}}>
+        <section>
+          {RichText.render(pageData.content)}
+          <ul>
+            <li>
+              <a className='link' href='#email-form'>Send us an email</a>
+            </li>
+            <li>
+              <a className='link' href='#mailing-list'>Join our mailing list</a>
+            </li>
+          </ul>
+        </section>
 
-        <section>       
-          <aside className='my-3'>
-            <p>
+        <section id='email-form'>
+          <h2 className='fs-700 mt-4 text-faded text-center'>Send us an Email</h2>       
+            <p className='my-3'>
               Please use this contact form if you have any questions about the choir.
               All data is processed in accordance with GDPR regulations.
             </p>
-          </aside>
           <div>
             <ContactForm 
               endpoint=""
@@ -41,17 +53,15 @@ export default function Contact({ data }) {
           </div>
         </section>
         
-        <section className='mt-4'>
-          <aside className='my-3'>
-            <h2 className='fs-600'>Mailing List</h2>
-            <p>
+        <section id='mailing-list'>
+            <h2 className='fs-700 mt-4 text-faded text-center'>
+              Mailing List
+            </h2>
+            <p className='my-3'>
               Sign up to our mailing list for regular updates (not more than once a month).
               You can unsubscribe at any time by clicking the link in the footer of our emails.
             </p>
-          </aside>
-          <div>
             <MailchimpForm />
-          </div>
         </section>
       </div>
     </Layout>
