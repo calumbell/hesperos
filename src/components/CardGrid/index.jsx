@@ -10,8 +10,10 @@ const CardGrid = ({
 }) => {
   return (
     <div className={`d-grid
-      ${size === 'small' ? styles.cardGridSm : styles.cardGridLg}`}
-    >
+      ${size === 'small' && styles.cardGridSm}
+      ${size === 'medium' && styles.cardGridMd}
+      ${size === 'large' && styles.cardGridLg}
+    `}>
       {data.map((item, i) => {
         return <Card key={i} data={flatten(item)} />
       })}

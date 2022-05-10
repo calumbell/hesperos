@@ -8,6 +8,7 @@ export default function News({data}) {
       uid: node.uid,
       subroute: `news`,
       title: node.data.title.text,
+      subtitle: node.data.subtitle.text,
       date: node.data.date,
       image: node.data.thumbnail.gatsbyImageData,
       altText: node.data.thumbnail.alt,
@@ -17,10 +18,11 @@ export default function News({data}) {
   return (
     <Layout>
       <TitleBanner 
-        title="News"
+        title='News'
       />
       <CardGrid 
         Card={Card}
+        size='medium'
         data={data.allPrismicPost.nodes}
         flatten={flattenPostData}
       />
@@ -32,14 +34,12 @@ export const query = graphql`
   query NewsPostSummaries {
     allPrismicPost(
       sort: {fields: data___date, order: DESC}
-      filter: {data: {post_type: {eq: "News"}}}
     ) {
       nodes {
         uid
         data {
-          title {
-            text
-          }
+          title { text }
+          subtitle { text }
           thumbnail {
             gatsbyImageData
             alt

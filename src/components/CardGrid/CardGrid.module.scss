@@ -4,7 +4,10 @@
   grid-template-columns: 1fr;
   gap: 1rem;
 }
-
+.card-grid-md {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
 .card-grid-sm {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -13,6 +16,9 @@
 /* Layout for small screens */
 @media (min-width: $breakpoint-sm) {
   .card-grid-lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-grid-md {
     grid-template-columns: repeat(2, 1fr);
   }
   .card-grid-sm {
@@ -26,6 +32,9 @@
   .card-grid-lg {
     grid-template-columns: repeat(3, 1fr);
   }
+  .card-grid-md {
+    grid-template-columns: repeat(4, 1fr);
+  }
   .card-grid-sm {
     grid-template-columns: repeat(5, 1fr);
   }
@@ -35,6 +44,9 @@
 @media (min-width: $breakpoint-xl) {
   .card-grid-lg {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .card-grid-md {
+    grid-template-columns: repeat(4, 1fr);
   }
   .card-grid-sm {
     grid-template-columns: repeat(5, 1fr);

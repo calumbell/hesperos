@@ -28,6 +28,7 @@ export default function Events({data}) {
         Card={Card}
         data={data.allPrismicEvent.nodes}
         flatten={flattenEventData}
+        size='large'
       />
     </Layout>
   )

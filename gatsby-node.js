@@ -12,9 +12,6 @@ exports.createPages = async ({ graphql, actions }) => {
       allPrismicPost {
         nodes {
           uid
-          data {
-            post_type
-          }
         }
       }
     }
@@ -31,9 +28,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // create post pages
   data.allPrismicPost.nodes.forEach((post) => {
-    const subroute = post.data.post_type.toLowerCase();
     actions.createPage({
-      path: `/${subroute}/${post.uid}`,
+      path: `/news/${post.uid}`,
       component: path.resolve('./src/templates/postPage.jsx'),
       context: { slug: post.uid },
     })
