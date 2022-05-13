@@ -1,3 +1,5 @@
+@import '../../styles/breakpoints';
+
 .card-image {
   max-width: fit-content;
   max-height: 75vw;
@@ -6,6 +8,7 @@
 }
 
 .tooltip {
+  position: absolute;
   border-radius: 0.2rem;
   left: 9.5%;
   opacity: 0;
@@ -16,6 +19,7 @@
 
   p {
     opacity: 1;
+    margin: var(--spacing-2);
   }
 }
 
@@ -26,4 +30,26 @@
 
 .card:hover .tooltip {
   opacity: 0.8;
+}
+
+
+/* Disable hover effects on mobile & display title under card */
+@media (hover: none) and (pointer: none), (pointer: course) {
+  .tooltip {
+    width: auto;
+    position: unset;
+    display: block;
+    opacity: 1;
+  }
+
+  .tooltip p:first-child {
+    margin: -.25rem;
+    width: auto;
+    color: hsl(var(--clr-faded));
+    font-size: var(--fs-200);
+  }
+
+  .tooltip :not(p:first-child) {
+    display: none;
+  }
 }

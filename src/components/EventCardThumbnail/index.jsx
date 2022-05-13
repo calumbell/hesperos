@@ -15,10 +15,10 @@ const EventCardThumbnail = ({ data }) => {
         image={data.img}
         alt={data.imgAltText || ''}
       />
-      <div className={`position-ab bg-light p-2 text-center ${styles.tooltip}`}>
-          <p className='m-2 ff-serif fs-300 fw-med'>{data.title}</p>
-          <p className='m-2 fs-200 fw-med text-faded'>{data.subtitle}</p>
-          <p className='m-2 fs-200'>{data.date}</p>
+      <div className={`bg-light p-2 text-center ${styles.tooltip}`}>
+          <p className='ff-serif fs-300 fw-med'>{data.title}</p>
+          <p className='fs-200 fw-med text-faded'>{data.subtitle}</p>
+          <p className='fs-200'>{data.date}</p>
       </div>
     </Link>
   )

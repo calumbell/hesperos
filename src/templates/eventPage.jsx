@@ -24,7 +24,7 @@ export default function eventPage({ data }) {
       <section className="center-content" style={{'--max-width': '56rem'}}>
         <div className={`d-grid my-3 ${styles.eventDetailContainer}`}>
 
-          <aside className={styles.eventDetailsAside}>
+          <aside>
             <p className='mb-2'>
               <Link className='link fs-200 mb-2' to="/events/">
                 Back to all events

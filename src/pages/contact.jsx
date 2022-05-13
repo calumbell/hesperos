@@ -29,6 +29,7 @@ export default function Contact({ data }) {
       <div className='center-content' style={{'--max-width': '42rem'}}>
         <section>
           {RichText.render(pageData.content)}
+          <p>Please use the forms below if you have any queries or would like to join our mailing list</p>
           <ul>
             <li>
               <a className='link' href='#email-form'>Send us an email</a>

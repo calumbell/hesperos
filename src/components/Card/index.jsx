@@ -18,13 +18,13 @@ const Card = ({ data }) => {
         <time className='mb-0 fw-xl'>{data.date}</time>
 
         <h2 className={`fw-med
-          ${data.title.length <= 20 ? `fs-500` : `fs-400` /* resize longer text */}`}
+          ${data.title.length <= 20 ? `fs-500` : `fs-400`}`} // resize long txt
         >{data.title}</h2>
 
         { data.subtitle &&
-          <sub className={`text-faded ff-sans letter-spacing-3  fs-300`}> 
-            {data.subtitle}
-          </sub>
+          <sub className={`text-faded ff-sans letter-spacing-3 
+            ${data.subtitle.length <= 25 ? `fs-300` : `fs-200`}`}
+          > {data.subtitle}</sub>
         }
       </p>
 
