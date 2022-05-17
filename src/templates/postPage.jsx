@@ -13,7 +13,7 @@ export default function postPage({ data }) {
       <SEO
         title={`${post.title.text} | Hesperos Choir`}
         image={post.thumbnail.url}
-        url={`${url}/${post.post_type}/${data.prismicPost.uid}`}
+        url={`${url}/news/${data.prismicPost.uid}`}
         description={post.body.find(section => {
             return section.slice_type === "text_section";
           }).primary.section_body.richText[0]
@@ -94,7 +94,6 @@ export const query = graphql`
     prismicPost(uid: {eq: $slug}) {
       uid
       data {
-        post_type
         title { text }
         subtitle { text }
         thumbnail { url }
