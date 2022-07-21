@@ -26,7 +26,7 @@ export default function Index({data}) {
           >
             <Link to={`/events/${nextEvent.uid}`}>
               <sub className='uppercase fw-normal letter-spacing-1'>Our next event</sub>
-              <h2 className='fs-500'>{nextEvent.data.title.text}</h2>
+              <h2 className='fs-600'>{nextEvent.data.title.text}</h2>
               <p>{nextEvent.data.date}</p>
             </Link>
           </aside>

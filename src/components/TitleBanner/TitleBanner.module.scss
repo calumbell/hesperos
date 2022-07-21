@@ -3,7 +3,7 @@
 .banner-container {
   margin-bottom: var(--spacing-4);
   height: 9rem;
-  background-color: hsl(var(--clr-primary) / 0.25);
+  background-color: hsl(var(--clr-primary) / 0.85);
   z-index: -2;
 }
 
@@ -22,6 +22,9 @@
   height: 7rem;
   border-radius: 0.25rem;
   overflow: hidden;
+  background-color: hsl(var(--clr-light) / 0.97);
+  color: hsl(var(--clr-dark));
+  font-weight: var(--fw-bold);
 }
 
 .banner-subtitle {
