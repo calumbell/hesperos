@@ -41,7 +41,7 @@ export default function Contact({ data }) {
         </section>
 
         <section id='email-form'>
-          <h2 className='fs-700 mt-4 text-faded text-center'>Send us an Email</h2>       
+          <h2 className='fs-700 mt-4 text-center'>Send us an Email</h2>       
             <p className='my-3'>
               Please use this contact form if you have any questions about the choir.
               All data is processed in accordance with GDPR regulations.
@@ -55,7 +55,7 @@ export default function Contact({ data }) {
         </section>
         
         <section id='mailing-list'>
-            <h2 className='fs-700 mt-4 text-faded text-center'>
+            <h2 className='fs-700 mt-4 text-center'>
               Mailing List
             </h2>
             <p className='my-3'>

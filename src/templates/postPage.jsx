@@ -64,7 +64,9 @@ export default function postPage({ data }) {
             else if (section.slice_type === "embedded_element") {
               // remove default sizing for embedded YouTube videos
               const html = section.primary.element.provider_name === "YouTube"
-                ? section.primary.element.html.replace(`width="200"`, `width="100%"`).replace(`height="113"`, `height="300"`)
+                ? section.primary.element.html
+                  .replace(`width="200"`, `width="100%"`)
+                  .replace(`height="113"`, `height="300"`)
                 : section.primary.element.html;
               
               return (

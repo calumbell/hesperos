@@ -12,7 +12,7 @@ const TextWithFacingImage = ({data}) => {
     <div className={`mb-4 d-grid my-4
       ${data.format === 'Full width text' ? `${styles.containerOneCol}` : `${styles.containerTwoCol}`}`
     }>
-      <h2 className={`fs-800 text-faded letter-spacing-2
+      <h2 className={`sub-heading letter-spacing-2
         ${headingOnLeft ? styles.left : styles.right}`}
       > {data.title} </h2>
 

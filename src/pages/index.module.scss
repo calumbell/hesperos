@@ -7,13 +7,14 @@
 
 .title {
   font-size: var(--fs-800);
+  font-weight: var(--fw-medium);
 }
 
 .home-page-bio {
   position: absolute;
   text-align: right;
   width: 24rem;
-  opacity: 0.9;
+  opacity: 0.95;
   right: 1rem;
   top: 1rem;
   z-index: 1;
