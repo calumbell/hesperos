@@ -1,0 +1,53 @@
+.accordion {
+	width: 100%;
+	position: relative;
+	margin-block: 1rem;
+	overflow: hidden;
+
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	height: min-content;
+}
+
+.title {
+	font-size: var(--fs-700);
+}
+
+.expand-btn-open {
+	border: none;
+	position: absolute;
+	left: 0;
+	padding-inline: .5rem;
+	margin: 0;
+	font-size: var(--fs-700);
+	font-weight: var(--fw-bold);
+	color: hsl( var(--clr-primary));
+	background-color: transparent;
+	margin: 0;
+	rotate: 90deg;
+	width: fit-content;
+	transition: rotate 0.5s;
+}
+
+.expand-btn-closed {
+	@extend .expand-btn-open;
+	rotate: 0deg;
+}
+
+.content-hidden {
+	height: 0;
+	transition: height 0.5s;
+	background-color: hsl( var(--clr-light-shade) );
+
+}
+
+.content-visible {
+	@extend .content-hidden;
+	padding: 1rem;
+	height: max-content;
+	transition: height 0.5s;
+}

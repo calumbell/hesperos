@@ -1,7 +1,14 @@
 import React from 'react';
 import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
-import { ContactForm, Layout, MailchimpForm, TitleBanner } from '../components';
+import { 
+  Accordion,
+  ContactForm,
+  Layout,
+  MailchimpForm,
+  TitleBanner
+} from '../components';
+
 
 export default function Contact({ data }) {
   const contactFormFields = [
@@ -27,18 +34,15 @@ export default function Contact({ data }) {
        />
       
       <div className='center-content' style={{'--max-width': '42rem'}}>
-        <section>
-          {RichText.render(pageData.content)}
-          <p>Please use the forms below if you have any queries or would like to join our mailing list</p>
-          <ul>
-            <li>
-              <a className='link' href='#email-form'>Send us an email</a>
-            </li>
-            <li>
-              <a className='link' href='#mailing-list'>Join our mailing list</a>
-            </li>
-          </ul>
-        </section>
+        <p>Please use the forms below if you have any queries or would like to join our mailing list</p>
+
+        <Accordion title="Mailing List">
+          <p>
+            Sign up to our mailing list for regular updates (not more than once a month).
+            You can unsubscribe at any time by clicking the link in the footer of our emails.
+          </p>
+          <MailchimpForm />
+        </Accordion>
 
         <section id='email-form'>
           <h2 className='fs-700 mt-4 text-center'>Send us an Email</h2>       

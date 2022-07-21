@@ -404,7 +404,7 @@ textarea {
 
 .call-to-action {
   color: hsl( var(--clr-primary) );
-  background-color: transparent;
+  background-color: hsl( var(--clr-light)) ;
   border-color: hsl( var(--clr-primary-shade) );
   padding-inline: 1.25rem;
   padding-top: .5rem;
