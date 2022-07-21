@@ -8,10 +8,12 @@ export default function Support({data}) {
 
   return (
     <Layout>
+      
       <TitleBanner
         title={pageData.page_title.text}
         image={pageData.banner_image}
       />
+
       <div className='center-content rich-text'>
         {pageData.display_friends_scheme &&
           <section className='text-center text-faded fs-700 fw-light'>

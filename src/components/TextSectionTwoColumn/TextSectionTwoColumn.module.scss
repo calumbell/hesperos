@@ -1,0 +1,35 @@
+@import '../../styles/breakpoints';
+
+.container {
+  display: grid;
+  grid-template-columns: 5fr 8fr;
+  margin-block: 2.0rem;
+  width: 100%;
+}
+
+.title {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  font-size: var(--fs-800);
+  justify-content: center;
+  margin-block-start: var(--spacing-3);
+  margin-right: var(--spacing-4);
+  margin-block-end: var(--spacing-4);
+  border-bottom: solid hsl(var( --clr-primary )) .125rem;
+}
+
+.body-text {
+  display: inline;
+}
+
+@media (max-width: $breakpoint-md) {
+  .container h2 { 
+    display: block;
+    text-align: center;
+  }
+
+  .container p {
+    display: block;
+  }
+}

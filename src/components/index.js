@@ -13,8 +13,7 @@ import Navbar from './Navbar';
 import SEO from './SEO';
 import SlideShow from './SlideShow';
 import SocialMedia from './SocialMedia';
-import TextWithFacingImage from './TextWithFacingImage';
-import TextWithFacingImageGrid from './TextWithFacingImageGrid';
+import TextSectionTwoColumn from './TextSectionTwoColumn';
 import TitleBanner from './TitleBanner';
 
 export {
@@ -33,7 +32,6 @@ export {
   SEO,
   SlideShow,
   SocialMedia,
-  TextWithFacingImage,
-  TextWithFacingImageGrid,
+  TextSectionTwoColumn,
   TitleBanner
 }

@@ -1,22 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Layout, TextWithFacingImageGrid, TitleBanner } from '../components';
+import { 
+  Layout, 
+  TextSectionTwoColumn, 
+  TitleBanner
+} from '../components';
 
-export default function About({data}) {
+export default function About({ data }) {
+  const sections = data.prismicAboutPage.data.body[0].items;
   const pageData = data.prismicAboutPage.data;
-  // function for flatten graphql response into something easier to use
-  const flattenSection = section => {
-    return {
-      title: section.section_title.text,
-      bodyText: section.main_text.text,
-      image: {
-        gatsbyImageData: section.optional_section_image.gatsbyImageData,
-        alt: section.optional_section_image.alt,
-      },
-      format: section.format,
-      isHeadingAboveText: section.heading_above_main_text,
-    }
-  }
 
   return(
     <Layout>
@@ -25,10 +17,14 @@ export default function About({data}) {
         image={pageData.hero_image}
       />
       <div className='center-content rich-text'>
-        <TextWithFacingImageGrid
-          containerStyles='center-content'
-          data={pageData.body[0].items.map(section => flattenSection(section))} 
-        />
+        {sections.map(section => 
+          <TextSectionTwoColumn 
+            data={{
+              title: section.section_title.text,
+              bodyText: section.main_text.text,
+            }}
+          />
+        )}
       </div>
     </Layout>
   )
@@ -54,12 +50,6 @@ export const query = graphql`
               main_text {
                 text
               }
-              optional_section_image {
-                gatsbyImageData
-                alt
-              }
-              format
-              heading_above_main_text
             }
           }
         }
