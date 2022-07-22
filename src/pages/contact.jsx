@@ -34,9 +34,12 @@ export default function Contact({ data }) {
        />
       
       <div className='center-content' style={{'--max-width': '42rem'}}>
-        <p>Please use the forms below if you have any queries or would like to join our mailing list</p>
+        <p>
+          Please use the forms below if you have any queries or would like to join our mailing list.
+          All data is processed in accordance with GDPR regulations.
+        </p>
 
-        <Accordion title="Mailing List">
+        <Accordion title="Mailing List" index="1">
           <p>
             Sign up to our mailing list for regular updates (not more than once a month).
             You can unsubscribe at any time by clicking the link in the footer of our emails.
@@ -44,30 +47,15 @@ export default function Contact({ data }) {
           <MailchimpForm />
         </Accordion>
 
-        <section id='email-form'>
-          <h2 className='fs-700 mt-4 text-center'>Send us an Email</h2>       
-            <p className='my-3'>
+        <Accordion title="Send an Email" index="2">
+            <p>
               Please use this contact form if you have any questions about the choir.
-              All data is processed in accordance with GDPR regulations.
             </p>
-          <div>
             <ContactForm 
               endpoint=""
               fields={contactFormFields}
             />
-          </div>
-        </section>
-        
-        <section id='mailing-list'>
-            <h2 className='fs-700 mt-4 text-center'>
-              Mailing List
-            </h2>
-            <p className='my-3'>
-              Sign up to our mailing list for regular updates (not more than once a month).
-              You can unsubscribe at any time by clicking the link in the footer of our emails.
-            </p>
-            <MailchimpForm />
-        </section>
+        </Accordion>
       </div>
     </Layout>
   )

@@ -1,17 +1,19 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
+// Query Prismic for email address to send form submissions to
 const ContactForm = ({ fields }) => {
   const data = useStaticQuery(graphql`
     query EmailAddressQuery {
       prismicWebsiteDetails {
         data {
-          email_address { text }
+          email_address { 
+            text 
+          }
         }
       }
     }
   `);
-
   const email = data.prismicWebsiteDetails.data.email_address.text;
 
   const createFormField = (field, key) => {
@@ -42,11 +44,11 @@ const ContactForm = ({ fields }) => {
         <label className='w-100'>{field.content.displayName}
           {field.type === 'textarea' 
           ? <textarea 
-              className='p-2'
+              className='p-1'
               type={field.content.type}
               name={field.content.name}
             />
-          : <input className='p-2'
+          : <input className='p-1'
               type={field.content.type}
               name={field.content.name}
             />
