@@ -12,7 +12,6 @@ const Accordion = ({
 
  	return(
 		<div className={styles.accordion}>
-
 			<button
 				id						= {`${id}-accordion-header`}
 				className			= {styles.header}
@@ -23,7 +22,7 @@ const Accordion = ({
 				<span className={styles.expandIcon} aria-expanded={isOpen}>
 					&#8250;
 				</span>
-				<span className={styles.title}>{title}</span>
+				<span>{title}</span>
 
 			</button>
 
@@ -37,6 +36,7 @@ const Accordion = ({
 						initial 				= {{height: 0}}
 						animate 				= {{height: "max-content"}}
 						exit 						= {{height: 0}}
+						transition			= {{duration: 0.5}}
 					>
 						<div>{children}</div>
 					</motion.div>

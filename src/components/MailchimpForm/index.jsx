@@ -6,7 +6,7 @@ const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     addToMailchimp(email, {
       FNAME: firstName,
@@ -14,15 +14,15 @@ const [email, setEmail] = useState('');
     })
   }
 
-  const handleEmailChange = event => {
+  const handleEmailChange = (event) => {
     setEmail(event.currentTarget.value);
   }
 
-  const handleFirstNameChange = event => {
+  const handleFirstNameChange = (event) => {
     setFirstName(event.currentTarget.value);
   }
 
-  const handleLastNameChange = event => {
+  const handleLastNameChange = (event) => {
     setLastName(event.currentTarget.value);
   }
 

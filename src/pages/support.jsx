@@ -16,20 +16,20 @@ export default function Support({data}) {
 
       <div className='center-content rich-text'>
         {pageData.display_friends_scheme &&
-          <section className='text-center text-faded fs-700 fw-light'>
+          <section className='text-center fs-700 fw-bold'>
             <h2>{pageData.friends_scheme_title.text}</h2>
             {RichText.render(pageData.friends_scheme_text.richText)}
           </section>
         }
 
         <section className='mt-3'>
-          <h2 className='text-center text-faded fs-700 fw-light my-2'>{pageData.donation_title.text}</h2>
+          <h2 className='text-center fs-700 fw-bold my-2'>{pageData.donation_title.text}</h2>
           {RichText.render(pageData.donation_text.richText)}
           <Donate />
         </section>
 
         <section className='mt-4'>
-          <h2 className='text-center text-faded fs-700 fw-xl'>{pageData.our_supporters_title.text}</h2>
+          <h2 className='text-center fs-700 fw-xl'>{pageData.our_supporters_title.text}</h2>
           {RichText.render(pageData.our_supporters_text.richText)}
         </section>
       </div>

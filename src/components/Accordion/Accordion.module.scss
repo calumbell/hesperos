@@ -40,5 +40,6 @@
 	overflow: hidden;
 	transition: max-height 0.5s ease-in-out;
 	background-color: hsl( var(--clr-light-shade) );
-	div { padding: var(--spacing-4); }
+	border: solid .05rem hsl( var(--clr-primary) );
+	> div { padding: var(--spacing-4); }
 }
