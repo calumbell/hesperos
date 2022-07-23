@@ -1,74 +1,75 @@
 import React from 'react';
 import * as styles from './eventPage.module.scss';
 import { RichText } from 'prismic-reactjs';
-import { Link, graphql } from 'gatsby';
-import { Layout, SEO, TitleBanner } from  '../components';
+import { graphql } from 'gatsby';
+import { Layout, SEO } from  '../components';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-export default function eventPage({ data }) {
+const eventPage = ({ data }) => {
   const event = data.prismicEvent.data;
   return (
     <Layout>
-
       <SEO 
         title={event.title.text}
         image={event.event_image.url}
         desciption={event.event_description.text}
       />
 
-      <TitleBanner
-        title={event.title.text}
-        image={event.event_image}
-        subtitle={event.location.text || null}
-      />
-
-      <section className="center-content" style={{'--max-width': '56rem'}}>
-        <div className={`d-grid my-3 ${styles.eventDetailContainer}`}>
-
-          <aside>
-            <p className='mb-2'>
-              <Link className='link fs-200 mb-2' to="/events/">
-                Back to all events
-              </Link>
-            
-              <p className='fw-med ff-sans letter-spacing-3'>{event.location.text || `Location TBC`}</p>
-              <time className='d-block fs-400'>{event.date}</time>
-              <time className='d-block fs-300'>{event.time.text}</time>
+      <div className={`${styles.page} center-content`} style={{'--max-width': '48rem'}}>
+        <div className={styles.topBox}>
+          <aside className={styles.eventInfo}>
+            <h1 className={styles.title}>{event.title.text}</h1>
+            <p className={styles.dateTime}>
+              <date>{event.date}</date>
+              <time>{event.time.text}</time>
             </p>
-
-            <address className='fs-200 address'> 
-              {RichText.render(event.address.richText)}
-              <a className="link fs-200" target="_blank" rel="noreferrer"
-                href={`http://maps.google.com/?q=${event.location.text} ${event.address.text}`}
-              > (View on Map)</a>
-            </address>
+            <p>{`Venue: ${event.location.text || `TBC`}`}</p>
+            <p>
+              { event.buy_ticket_link.url &&
+                <a
+                  className='call-to-action'
+                  href={event.buy_ticket_link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Buy Tickets
+                </a>
+              }
+            </p>
           </aside>
-
-          <div className={styles.eventDescriptionMain}>
-            <p>{event.event_description.text}</p>
-            { event.buy_ticket_link.url &&
-              <a
-                className='link fs-300 mt-3'
-                href={event.buy_ticket_link.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Click here to buy tickets
-              </a>
-            }
-          </div>
+          <GatsbyImage
+            className={styles.poster}
+            image={event.event_image.gatsbyImageData}
+            width={400}
+            height={400}
+          />
         </div>
-      </section>
-      { event.program.richText.length > 0 &&
-        <section className={`${styles.programContainer} center-content bg-light-shade p-4`}>
-          <h2 className='fs-500 letter-spacing-3 mb-2 text-center'>Program</h2>
-          <article className={`text-left ${styles.programText}`}>
-            {RichText.render(event.program.richText)}
-          </article>
-        </section>
-      }
+
+        <section className={styles.eventDescription}>{event.event_description.text}</section>
+        
+        { event.program.richText.length > 0 &&
+          <section 
+            className={`${styles.program} center-content`}
+            style={{'--max-width': '36rem'}}
+          >
+            <h2 className={`${styles.heading} text-center`}>Program</h2>
+            <article className={styles.programText}>
+              {RichText.render(event.program.richText)}
+            </article>
+          </section>
+        }
+
+        { event.location.text && <section className={styles.venueDetails}>
+          <h2 className={styles.heading}>Venue</h2>
+          <p>{event.location.text}</p>
+          <p>{RichText.render(event.address.richText)}</p>
+        </section>}
+      </div>
     </Layout>
   )
 }
+
+export default eventPage;
 
 /* 
  * query Prismic - variable $slug passed via createPage 

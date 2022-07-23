@@ -1,19 +1,59 @@
 @import '../styles/breakpoints';
-.event-detail-container {
-  grid-column-gap: 1rem;
-  grid-template-columns: 1fr 2fr;
+
+.page {
+  margin-top: 1rem;
 }
 
-.event-description-main {
+.title {
+  font-size: var(--fs-800);
+  display: inline-block;
+  border-bottom: solid hsl( var(--clr-primary) ) .25rem;
+  height: min-content;
+  width: fit-content;
+}
+
+.heading {
+  font-size: var(--fs-700);
+  text-decoration: underline;
+  text-decoration-color: hsl( var(--clr-primary) );
+  text-decoration-thickness: .15rem;
+  text-decoration-skip: 1rem;
+}
+
+.top-box {
+  margin-block: 2rem;
+  display: grid;
+  grid-template-columns: 8fr 5fr;
+  grid-column-gap: 1.25rem;
+}
+
+.poster {
+  max-height: 100%;
+}
+
+.event-info {
   display: flex;
-  align-items: center;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-light);
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
-.program-container {
+.date-time {
+  time {
+    display: block;
+  }
+}
+
+.event-description {
+  margin-block: 3rem;
+}
+
+.program {
   border: 2px solid hsl( var(--clr-primary) );
-  margin-bottom: var(--spacing-4);
+  font-size: var(--fs-300);
+  padding: 2rem;
+  background-color: hsl( var(--clr-light-shade) );
 }
 
 .program-text {
@@ -24,8 +64,12 @@
   }
 }
 
-@media (max-width: $breakpoint-sm) {
-  .event-detail-container {
-    grid-template-columns: 1fr;
-  }
+.venue-details {
+  margin-block: 2rem;
 }
+
+// @media (max-width: $breakpoint-sm) {
+//   .event-detail-container {
+//     grid-template-columns: 1fr;
+//   }
+// }
