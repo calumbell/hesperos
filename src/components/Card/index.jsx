@@ -22,7 +22,7 @@ const Card = ({ data }) => {
         >{data.title}</h2>
 
         { data.subtitle &&
-          <sub className={`text-faded ff-sans letter-spacing-3 
+          <sub className={`text-faded fw-light ff-sans letter-spacing-3 
             ${data.subtitle.length <= 25 ? `fs-300` : `fs-200`}`}
           > {data.subtitle}</sub>
         }

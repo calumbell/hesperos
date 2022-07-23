@@ -3,10 +3,12 @@ import { graphql, Link } from 'gatsby';
 import { Layout, SEO, SlideShow } from '../components';
 import * as styles from './index.module.scss';
 
-export default function Index({data}) {
+const Index = ({data}) => {
   const title = data.prismicWebsiteDetails.data.title.text;
   const bio = data.prismicWebsiteDetails.data.bio.text;
   const nextEvent = data.allPrismicEvent.nodes[0];
+  const images = data.prismicHomepage.data.slideshow;
+  
   return (
     <Layout>
       <SEO />
@@ -17,7 +19,7 @@ export default function Index({data}) {
           <p className='mb-4'>{bio}</p>
         </aside>
 
-        <SlideShow images={data.prismicHomepage.data.body[0].items} />
+        <SlideShow images={images} />
 
         {nextEvent && 
           <aside className={`
@@ -36,25 +38,27 @@ export default function Index({data}) {
   )
 }
 
+export default Index;
+
 // query Prismic for page data & next event data
 export const query = graphql`
   query HomepageQuery ($date: Date) {
     prismicWebsiteDetails {
       data {
-        title { text }
-        bio { text }
+        title { 
+          text
+        }
+        bio {
+          text
+        }
       }
     }
     prismicHomepage {
       data {
-        body {
-          ... on PrismicHomepageDataBodyImageCarousel {
-            items {
-              image {
-                gatsbyImageData
-                alt
-              }
-            }
+        slideshow {
+          image {
+            gatsbyImageData
+            alt
           }
         }
       }

@@ -76,7 +76,7 @@
 }
 
 @media (min-width: $breakpoint-xxl) {
-  * { font-size: 19px; }
+  :root { font-size: 19px; }
 }
 
 /* Remove left margin on uls for small screens */

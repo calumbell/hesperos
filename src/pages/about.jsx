@@ -6,7 +6,7 @@ import {
   TitleBanner
 } from '../components';
 
-export default function About({ data }) {
+const About = ({ data }) => {
   const sections = data.prismicAboutPage.data.body[0].items;
   const pageData = data.prismicAboutPage.data;
 
@@ -20,8 +20,8 @@ export default function About({ data }) {
         {sections.map(section => 
           <TextSectionTwoColumn 
             data={{
-              title: section.section_title.text,
-              bodyText: section.main_text.text,
+              title: section.title.text,
+              bodyText: section.content.text,
             }}
           />
         )}
@@ -29,6 +29,9 @@ export default function About({ data }) {
     </Layout>
   )
 }
+
+export default About;
+
 
 export const query = graphql`
   query AboutPageQuery {
@@ -44,10 +47,10 @@ export const query = graphql`
         body {
           ... on PrismicAboutPageDataBodyTwoColumnRichText {
             items {
-              section_title {
+              title {
                 text
               }
-              main_text {
+              content {
                 text
               }
             }

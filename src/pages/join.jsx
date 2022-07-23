@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
 import { ContactForm, Layout, TitleBanner } from '../components';
 
-export default function Join({data}) {
+const Join = ({data}) => {
   const pageData = data.prismicJoinPage.data;
   return (
     <Layout>
@@ -24,7 +24,6 @@ export default function Join({data}) {
         })}
 
         <ContactForm 
-          endpoint=""
           fields={[
             {
               type: 'multi',
@@ -42,6 +41,8 @@ export default function Join({data}) {
     </Layout>
   )
 }
+
+export default Join;
 
 export const query = graphql`
   query JoinPageQuery {

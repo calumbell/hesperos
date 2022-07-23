@@ -1,5 +1,4 @@
 import React from 'react';
-import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
 import { 
   Accordion,
@@ -10,7 +9,7 @@ import {
 } from '../components';
 
 
-export default function Contact({ data }) {
+const Contact = ({ data }) => {
   const contactFormFields = [
     {
       type: 'multi',
@@ -51,15 +50,14 @@ export default function Contact({ data }) {
             <p>
               Please use this contact form if you have any questions about the choir.
             </p>
-            <ContactForm 
-              endpoint=""
-              fields={contactFormFields}
-            />
+            <ContactForm fields={contactFormFields} />
         </Accordion>
       </div>
     </Layout>
   )
 }
+
+export default Contact;
 
 export const query = graphql`
   query ContactPageQuery {
