@@ -1,7 +1,14 @@
 import React from 'react';
 import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
-import { ContactForm, Layout, MailchimpForm, TitleBanner } from '../components';
+import { 
+  Accordion,
+  ContactForm,
+  Layout,
+  MailchimpForm,
+  TitleBanner
+} from '../components';
+
 
 export default function Contact({ data }) {
   const contactFormFields = [
@@ -27,43 +34,28 @@ export default function Contact({ data }) {
        />
       
       <div className='center-content' style={{'--max-width': '42rem'}}>
-        <section>
-          {RichText.render(pageData.content)}
-          <p>Please use the forms below if you have any queries or would like to join our mailing list</p>
-          <ul>
-            <li>
-              <a className='link' href='#email-form'>Send us an email</a>
-            </li>
-            <li>
-              <a className='link' href='#mailing-list'>Join our mailing list</a>
-            </li>
-          </ul>
-        </section>
+        <p>
+          Please use the forms below if you have any queries or would like to join our mailing list.
+          All data is processed in accordance with GDPR regulations.
+        </p>
 
-        <section id='email-form'>
-          <h2 className='fs-700 mt-4 text-center'>Send us an Email</h2>       
-            <p className='my-3'>
+        <Accordion title="Mailing List" index="1">
+          <p>
+            Sign up to our mailing list for regular updates (not more than once a month).
+            You can unsubscribe at any time by clicking the link in the footer of our emails.
+          </p>
+          <MailchimpForm />
+        </Accordion>
+
+        <Accordion title="Send an Email" index="2">
+            <p>
               Please use this contact form if you have any questions about the choir.
-              All data is processed in accordance with GDPR regulations.
             </p>
-          <div>
             <ContactForm 
               endpoint=""
               fields={contactFormFields}
             />
-          </div>
-        </section>
-        
-        <section id='mailing-list'>
-            <h2 className='fs-700 mt-4 text-center'>
-              Mailing List
-            </h2>
-            <p className='my-3'>
-              Sign up to our mailing list for regular updates (not more than once a month).
-              You can unsubscribe at any time by clicking the link in the footer of our emails.
-            </p>
-            <MailchimpForm />
-        </section>
+        </Accordion>
       </div>
     </Layout>
   )

@@ -1,3 +1,4 @@
+import Accordion from './Accordion';
 import Card from './Card';
 import CardGrid from './CardGrid';
 import ContactForm from './ContactForm';
@@ -17,6 +18,7 @@ import TextSectionTwoColumn from './TextSectionTwoColumn';
 import TitleBanner from './TitleBanner';
 
 export {
+  Accordion,
   Card,
   CardGrid,
   ContactForm,

@@ -20,16 +20,15 @@
 }
 
 .body-text {
-  display: inline;
+  display: flex;
 }
 
 @media (max-width: $breakpoint-md) {
-  .container h2 { 
-    display: block;
-    text-align: center;
+  .container {
+    display: flex;
+    flex-direction: column;
   }
-
-  .container p {
-    display: block;
+  .container h2 { 
+    align-self: center;
   }
 }
