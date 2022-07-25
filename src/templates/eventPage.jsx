@@ -2,8 +2,14 @@ import React from 'react';
 import * as styles from './eventPage.module.scss';
 import { RichText } from 'prismic-reactjs';
 import { graphql } from 'gatsby';
-import { Layout, SEO } from  '../components';
+import {
+  ExternalLink,
+  Layout,
+  LinkToMap,
+  SEO,
+} from  '../components';
 import { GatsbyImage } from 'gatsby-plugin-image';
+
 
 const eventPage = ({ data }) => {
   const event = data.prismicEvent.data;
@@ -24,18 +30,12 @@ const eventPage = ({ data }) => {
               <time>{event.time.text}</time>
             </p>
             <p>{`Venue: ${event.location.text || `TBC`}`}</p>
-            <p>
-              { event.buy_ticket_link.url &&
-                <a
-                  className='call-to-action'
-                  href={event.buy_ticket_link.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Buy Tickets
-                </a>
-              }
-            </p>
+            <ExternalLink 
+              url={event.buy_ticket_link.url}
+              title='Buy Tickets'
+              altTitle='This event is unticketed'
+            />
+
           </aside>
           <GatsbyImage
             className={styles.poster}
@@ -44,9 +44,7 @@ const eventPage = ({ data }) => {
             height={400}
           />
         </div>
-
         <section className={styles.eventDescription}>{event.event_description.text}</section>
-        
         { event.program.richText.length > 0 &&
           <section 
             className={`${styles.program} center-content`}
@@ -61,9 +59,16 @@ const eventPage = ({ data }) => {
 
         { event.location.text && <section className={styles.venueDetails}>
           <h2 className={styles.heading}>Venue</h2>
-          <p>{event.location.text}</p>
+          <ExternalLink
+            url={event.location_website.text}
+            title={event.location.text}
+          />
           <p>{RichText.render(event.address.richText)}</p>
+          <LinkToMap 
+            query={`${event.location.text} ${event.address.text}`}
+          />
         </section>}
+
       </div>
     </Layout>
   )
@@ -84,6 +89,7 @@ export const query = graphql`
         date(formatString: "dddd DD MMMM YYYY")
         time { text }
         location { text }
+        location_website { text }
         event_description { text }
         buy_ticket_link { url }
         event_image {

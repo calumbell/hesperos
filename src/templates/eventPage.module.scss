@@ -7,9 +7,10 @@
 .title {
   font-size: var(--fs-800);
   display: inline-block;
-  border-bottom: solid hsl( var(--clr-primary) ) .25rem;
+  border-bottom: solid hsl( var(--clr-primary) ) .15rem;
   height: min-content;
   width: fit-content;
+  margin-block-end: .6rem;
 }
 
 .heading {
@@ -17,7 +18,7 @@
   text-decoration: underline;
   text-decoration-color: hsl( var(--clr-primary) );
   text-decoration-thickness: .15rem;
-  text-decoration-skip: 1rem;
+  text-underline-offset: .30rem;
 }
 
 .top-box {
@@ -37,6 +38,9 @@
   font-weight: var(--fw-light);
   flex-direction: column;
   justify-content: space-between;
+  > * {
+    width: fit-content;
+  }
 }
 
 .date-time {
@@ -46,7 +50,7 @@
 }
 
 .event-description {
-  margin-block: 3rem;
+  margin-block: 2.4rem;
 }
 
 .program {
@@ -68,8 +72,13 @@
   margin-block: 2rem;
 }
 
-// @media (max-width: $breakpoint-sm) {
-//   .event-detail-container {
-//     grid-template-columns: 1fr;
-//   }
-// }
+@media (max-width: $breakpoint-sm) {
+  .top-box {
+    grid-template-columns: 1fr;
+  }
+  .poster {
+    width: 68%;
+    margin-block: 1rem;
+    justify-self: center;
+  }
+}

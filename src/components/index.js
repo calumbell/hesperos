@@ -5,10 +5,13 @@ import ContactForm from './ContactForm';
 import Donate from './Donate';
 import DropDownLink from './DropDownLink';
 import EventCardThumbnail from './EventCardThumbnail';
+import ExternalLink from './ExternalLink';
 import Footer from './Footer';
 import Layout from './Layout';
 import Logo from './Logo';
 import MailchimpForm from './MailchimpForm';
+import Map from './Map';
+import LinkToMap from './LinkToMap';
 import MenuExpandButton from './MenuExpandButton';
 import Navbar from './Navbar';
 import SEO from './SEO';
@@ -25,10 +28,13 @@ export {
   Donate,
   DropDownLink,
   EventCardThumbnail,
+  ExternalLink,
   Footer,
   Layout,
   Logo,
   MailchimpForm,
+  Map,
+  LinkToMap,
   MenuExpandButton,
   Navbar,
   SEO,
