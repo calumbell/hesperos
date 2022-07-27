@@ -17,8 +17,9 @@
   font-size: var(--fs-700);
   text-decoration: underline;
   text-decoration-color: hsl( var(--clr-primary) );
-  text-decoration-thickness: .15rem;
+  text-decoration-thickness: .1rem;
   text-underline-offset: .30rem;
+  margin-block-end: .25rem;
 }
 
 .top-box {
@@ -34,7 +35,7 @@
 
 .event-info {
   display: flex;
-  font-size: var(--fs-400);
+  font-size: var(--fs-300);
   font-weight: var(--fw-light);
   flex-direction: column;
   justify-content: space-between;
@@ -51,6 +52,7 @@
 
 .event-description {
   margin-block: 2.4rem;
+  letter-spacing: .05rem;
 }
 
 .program {
@@ -77,8 +79,17 @@
     grid-template-columns: 1fr;
   }
   .poster {
-    width: 68%;
-    margin-block: 1rem;
-    justify-self: center;
+    display: none;
+  }
+
+  .event-description {
+    letter-spacing: unset;
+  }
+
+  .program {
+    padding: .6rem;
+    p:not(:last-child) {
+      margin-block-end: 1rem;
+    }
   }
 }

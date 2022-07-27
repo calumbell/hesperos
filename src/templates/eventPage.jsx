@@ -23,7 +23,7 @@ const eventPage = ({ data }) => {
       />
 
       <div className={`${styles.page} center-content`} style={{'--max-width': '48rem'}}>
-        <div className={styles.topBox}>
+        <section className={styles.topBox}>
           <aside className={styles.eventInfo}>
             <h1 className={styles.title}>{event.title.text}</h1>
             <time className={styles.dateTime}>
@@ -42,19 +42,8 @@ const eventPage = ({ data }) => {
             image={event.event_image.gatsbyImageData}
             alt={event.event_image.alt ?? ''}
           />
-        </div>
+        </section>
         <section className={styles.eventDescription}>{event.event_description.text}</section>
-        { event.program.richText.length > 0 &&
-          <section 
-            className={`${styles.program} center-content`}
-            style={{'--max-width': '36rem'}}
-          >
-            <h2 className={`${styles.heading} text-center`}>Program</h2>
-            <article className={styles.programText}>
-              <RichTextRenderer content={event.program.richText}/>
-            </article>
-          </section>
-        }
 
         { event.location.text && <section className={styles.venueDetails}>
           <h2 className={styles.heading}>Venue</h2>
@@ -69,6 +58,20 @@ const eventPage = ({ data }) => {
             query={`${event.location.text} ${event.address.text}`}
           />
         </section>}
+
+        { event.program.richText.length > 0 &&
+          <section 
+            className={`${styles.program} center-content`}
+            style={{'--max-width': '36rem'}}
+          >
+            <h2 className={`${styles.heading} text-center`}>Program</h2>
+            <article className={styles.programText}>
+              <RichTextRenderer content={event.program.richText}/>
+            </article>
+          </section>
+        }
+
+
 
       </div>
     </Layout>

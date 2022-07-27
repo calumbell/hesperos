@@ -57,10 +57,10 @@
 /* ------------------------------------------------- */
 
 /* Responsive Font Sizes */
-:root { font-size: 12px; }
+:root { font-size: 14px; }
 
 @media (min-width: $breakpoint-sm) {
-  :root { font-size: 14px; }
+  :root { font-size: 15px; }
 }
 
 @media (min-width: $breakpoint-md) {
@@ -114,8 +114,9 @@ html {
 
 /* Making sure headings aren't bold */
 h1, h2, h3, h4, h5, h6, sub {
-  font-weight: 600;
+  font-weight: 500;
   font-family: var(--ff-serif);
+  letter-spacing: 0.05rem;
 }
 
 address {
@@ -206,7 +207,7 @@ textarea {
 .bg-primary { background-color: hsl ( var(--clr-primary)); }
 
 .text-primary { color: hsl( var(--clr-primary) ); }
-.text-faded { color: hsl( var(--clr-medium)); }
+.text-faded { color: hsl( var(--clr-primary)); }
 .clr-primary-shade { color: hsl( var(--clr-primary-shade) ); }
 
 /* Typography */

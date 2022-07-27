@@ -8,7 +8,7 @@ const EventCardThumbnail = ({ data }) => {
   return (
     <Link 
       to={`/events/${data.uid}`} 
-      className={`position-rel m-1 ${styles.card}`}
+      className={`position-rel  ${styles.card}`}
     >
       <GatsbyImage
         className={`${styles.cardImage}`} 
@@ -17,8 +17,8 @@ const EventCardThumbnail = ({ data }) => {
       />
       <div className={`bg-light p-2 text-center ${styles.tooltip}`}>
           <p className='ff-serif fs-300 fw-med'>{data.title}</p>
-          <p className='fs-200 fw-med text-faded'>{data.subtitle}</p>
-          <p className='fs-200'>{data.date}</p>
+          <p className='fs-300 fw-med text-faded'>{data.subtitle}</p>
+          <p className='fs-300'>{data.date}</p>
       </div>
     </Link>
   )

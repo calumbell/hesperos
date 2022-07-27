@@ -1,7 +1,8 @@
 .container {
+  width: 100%;
   display: flex;
   flex-direction: column;
-
+  margin-block: 1.5rem;
   // for styling nested RichText & UI
   p, button {
     margin-top: 1rem;
@@ -13,8 +14,9 @@
 
 .section-title {
   align-self: center;
-  text-justify: center;
-  font-size: var(--fs-700);
+  text-align: center;
+  width: min-content;
+  max-height: max-content;  font-size: var(--fs-700);
   border-bottom: solid hsl(var( --clr-primary )) .125rem;
   width: fit-content;
 }
