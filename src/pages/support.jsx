@@ -1,9 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { RichText } from 'prismic-reactjs';
-import { Donate, Layout, TitleBanner } from '../components';
 
-export default function Support({data}) {
+import { 
+  Donate,
+  Layout,
+  RichTextRenderer,
+  TextSection,
+  TitleBanner,
+} from '../components';
+
+const Support = ({data}) => {
   const pageData = data.prismicSupportPage.data;
 
   return (
@@ -14,29 +20,28 @@ export default function Support({data}) {
         image={pageData.banner_image}
       />
 
-      <div className='center-content rich-text'>
-        {pageData.display_friends_scheme &&
-          <section className='text-center fs-700 fw-bold'>
-            <h2>{pageData.friends_scheme_title.text}</h2>
-            {RichText.render(pageData.friends_scheme_text.richText)}
-          </section>
+      <div className='center-content'>
+        {pageData.display_friends_scheme && 
+          <TextSection title={pageData.friends_scheme_title.text}>
+            <RichTextRenderer content={pageData.friends_scheme_text.richText}/>
+          </TextSection>
         }
 
-        <section className='mt-3'>
-          <h2 className='text-center fs-700 fw-bold my-2'>{pageData.donation_title.text}</h2>
-          {RichText.render(pageData.donation_text.richText)}
+        <TextSection title={pageData.donation_title.text}>
+          <RichTextRenderer content={pageData.donation_text.richText} />
           <Donate />
-        </section>
+        </TextSection>
 
-        <section className='mt-4'>
-          <h2 className='text-center fs-700 fw-xl'>{pageData.our_supporters_title.text}</h2>
-          {RichText.render(pageData.our_supporters_text.richText)}
-        </section>
+        <TextSection title={pageData.our_supporters_title.text}>
+          <RichTextRenderer content={pageData.our_supporters_text.richText} />
+        </TextSection>
       </div>
 
     </Layout>
   )
 }
+
+export default Support;
 
 export const query = graphql`
   query SupportPageQuery {

@@ -1,15 +1,16 @@
 import React from 'react';
-import * as styles from './eventPage.module.scss';
-import { RichText } from 'prismic-reactjs';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
+
 import {
   ExternalLink,
   Layout,
   LinkToMap,
+  RichTextRenderer,
   SEO,
 } from  '../components';
-import { GatsbyImage } from 'gatsby-plugin-image';
 
+import * as styles from './eventPage.module.scss';
 
 const eventPage = ({ data }) => {
   const event = data.prismicEvent.data;
@@ -25,10 +26,9 @@ const eventPage = ({ data }) => {
         <div className={styles.topBox}>
           <aside className={styles.eventInfo}>
             <h1 className={styles.title}>{event.title.text}</h1>
-            <p className={styles.dateTime}>
-              <date>{event.date}</date>
-              <time>{event.time.text}</time>
-            </p>
+            <time className={styles.dateTime}>
+              {event.date} <br /> {event.time.text}
+            </time>
             <p>{`Venue: ${event.location.text || `TBC`}`}</p>
             <ExternalLink 
               url={event.buy_ticket_link.url}
@@ -40,8 +40,7 @@ const eventPage = ({ data }) => {
           <GatsbyImage
             className={styles.poster}
             image={event.event_image.gatsbyImageData}
-            width={400}
-            height={400}
+            alt={event.event_image.alt ?? ''}
           />
         </div>
         <section className={styles.eventDescription}>{event.event_description.text}</section>
@@ -52,7 +51,7 @@ const eventPage = ({ data }) => {
           >
             <h2 className={`${styles.heading} text-center`}>Program</h2>
             <article className={styles.programText}>
-              {RichText.render(event.program.richText)}
+              <RichTextRenderer content={event.program.richText}/>
             </article>
           </section>
         }
@@ -63,7 +62,9 @@ const eventPage = ({ data }) => {
             url={event.location_website.text}
             title={event.location.text}
           />
-          <p>{RichText.render(event.address.richText)}</p>
+          <address>
+            <RichTextRenderer content={event.address.richText} />
+          </address>
           <LinkToMap 
             query={`${event.location.text} ${event.address.text}`}
           />

@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Card, CardGrid, Layout, TitleBanner } from '../components';
 
-export default function News({data}) {
+const News = ({ data }) => {
   const flattenPostData = node => {
     return {
       uid: node.uid,
@@ -29,6 +29,8 @@ export default function News({data}) {
     </Layout>
   )
 }
+
+export default News;
 
 export const query = graphql`
   query NewsPostSummaries {

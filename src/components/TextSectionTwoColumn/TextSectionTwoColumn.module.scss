@@ -5,18 +5,13 @@
   grid-template-columns: 5fr 8fr;
   margin-block: 2.0rem;
   width: 100%;
-}
-
-.title {
-  height: fit-content;
-  width: fit-content;
-  display: flex;
-  font-size: var(--fs-800);
-  justify-content: center;
-  margin-block-start: var(--spacing-3);
-  margin-right: var(--spacing-4);
-  margin-block-end: var(--spacing-4);
-  border-bottom: solid hsl(var( --clr-primary )) .125rem;
+  // for styling nested RichText
+  p {
+    margin-top: 1rem;
+  }
+  :last-child {
+    margin-bottom: 1rem;
+  }
 }
 
 .body-text {

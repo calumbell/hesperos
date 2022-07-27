@@ -12,9 +12,9 @@ const Card = ({ data }) => {
       <GatsbyImage 
         className={`${styles.cardImage} mb-2 d-block`}
         image={data.image}
-        alt={data.altText}
+        alt={data.altText ?? ''}
       />
-      <p className='mx-3 mt-1 mb-3'>
+      <div className='mx-3 mt-1 mb-3'>
         <time className='mb-0 fw-xl'>{data.date}</time>
 
         <h2 className={`fw-med
@@ -26,7 +26,7 @@ const Card = ({ data }) => {
             ${data.subtitle.length <= 25 ? `fs-300` : `fs-200`}`}
           > {data.subtitle}</sub>
         }
-      </p>
+      </div>
 
       {data.displayDateBubble &&
         <div 

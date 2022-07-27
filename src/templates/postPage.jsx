@@ -1,11 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
-import { Layout, SEO }  from '../components';
 import { GatsbyImage } from 'gatsby-plugin-image';
+
+import { Layout, SEO }  from '../components';
+
 import * as styles from './postPage.module.scss';
 
-export default function postPage({ data }) {
+const postPage = ({ data }) => {
   const post = data.prismicPost.data;
   const url = data.site.siteMetadata.url;
   return (
@@ -35,6 +37,8 @@ export default function postPage({ data }) {
           {post.subtitle.text}
         </sub>
         
+        {post.author && <p>{post.author.text}</p>}
+
         <time className='fw-xl fs-400 my-5'>
           {post.date}
         </time>
@@ -53,7 +57,7 @@ export default function postPage({ data }) {
                   image={section.primary.embedded_image.gatsbyImageData} 
                   alt={section.primary.embedded_image.alt}
                 />
-                <sub className='d-block my-2 fs-200
+                <sub className='d-block my-2 fs-200 fw-light
                   ff-sans text-faded uppercase letter-spacing-2'
                 >
                   {section.primary.caption.text}
@@ -84,6 +88,8 @@ export default function postPage({ data }) {
   );
 }
 
+export default postPage;
+
 /* Query Prismic - variable $slug is passed via the 
  * create pages API (see context arg in gatsby-node.js) 
  */
@@ -98,6 +104,7 @@ export const query = graphql`
       data {
         title { text }
         subtitle { text }
+        author { text }
         thumbnail { url }
         date(formatString: "DD MMMM YYYY")
         body {

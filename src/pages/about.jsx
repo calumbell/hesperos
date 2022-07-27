@@ -16,9 +16,10 @@ const About = ({ data }) => {
         title={pageData.page_title.text}
         image={pageData.hero_image}
       />
-      <div className='center-content rich-text'>
-        {sections.map(section => 
+      <div className='center-content'>
+        {sections.map((section, i) => 
           <TextSectionTwoColumn 
+            key={i}
             data={{
               title: section.title.text,
               bodyText: section.content.text,

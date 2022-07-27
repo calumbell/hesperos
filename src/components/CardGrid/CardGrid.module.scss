@@ -1,14 +1,21 @@
 @import '../../styles/breakpoints';
 
+.card-grid {
+  margin-bottom: var(--spacing-4);
+}
+
 .card-grid-lg {
+  @extend .card-grid;
   grid-template-columns: 1fr;
   gap: 1rem;
 }
 .card-grid-md {
-  grid-template-columns: repeat(2, 1fr);
+  @extend .card-grid;
+  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
 }
 .card-grid-sm {
+  @extend .card-grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }

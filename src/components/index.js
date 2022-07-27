@@ -14,9 +14,11 @@ import Map from './Map';
 import LinkToMap from './LinkToMap';
 import MenuExpandButton from './MenuExpandButton';
 import Navbar from './Navbar';
+import RichTextRenderer from './RichText';
 import SEO from './SEO';
 import SlideShow from './SlideShow';
 import SocialMedia from './SocialMedia';
+import TextSection from './TextSection';
 import TextSectionTwoColumn from './TextSectionTwoColumn';
 import TitleBanner from './TitleBanner';
 
@@ -37,9 +39,11 @@ export {
   LinkToMap,
   MenuExpandButton,
   Navbar,
+  RichTextRenderer,
   SEO,
   SlideShow,
   SocialMedia,
+  TextSection,
   TextSectionTwoColumn,
   TitleBanner
 }

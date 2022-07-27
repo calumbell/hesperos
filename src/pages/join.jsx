@@ -1,7 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { RichText } from 'prismic-reactjs';
-import { ContactForm, Layout, TitleBanner } from '../components';
+import { 
+  ContactForm,
+  Layout,
+  RichTextRenderer,
+  TextSection,
+  TitleBanner,
+} from '../components';
 
 const Join = ({data}) => {
   const pageData = data.prismicJoinPage.data;
@@ -11,15 +16,17 @@ const Join = ({data}) => {
         title={pageData.page_title.text}
         image={pageData.banner_image}
       />
-      <div className='center-content rich-text px-3'>
+      <div className='center-content px-3'>
         {pageData.body.map((section, i) => {
           return(
-            <section className='rich-text mt-3' key={i}>
-              <h2 className='fs-700 text-center fw-normal'>
-                {section.primary.section_title.text}
-              </h2>
-              {RichText.render(section.primary.section_content.richText)}
-            </section>
+            <TextSection
+              key={i}
+              title={section.primary.section_title.text}
+            >
+              <RichTextRenderer 
+                content={section.primary.section_content.richText}
+              />
+            </TextSection>
           )
         })}
 

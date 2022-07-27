@@ -33,7 +33,9 @@ const SlideShow = ({images}) => {
                 loading="eager"
               />
             </motion.div>
-          )}
+          )
+          return undefined;
+        }
         )}
       </AnimatePresence>
     </div>

@@ -15,7 +15,6 @@ const Footer = () => {
   })
 
   const onScroll = (e) => {
-    // console.log(window.innerHeight + window.scrollY >= document.body.scrollHeight)
     const scrollPosition = window.scrollY
     setVisibility(
       scrollPosition < lastScrollPosition

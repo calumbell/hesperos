@@ -1,8 +1,13 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { EventCardThumbnail, CardGrid, Layout, TitleBanner } from '../components';
+import { 
+  EventCardThumbnail,
+  CardGrid,
+  Layout,
+  TitleBanner
+} from '../components';
 
-export default function PastEvents({ data }) {
+const PastEvents = ({ data }) => {
   const flattenEventData = node => {
     let date = node.data.date.split(" ").slice(1);
     date[1] = `${date[1].slice(0,3)}.`;
@@ -57,6 +62,8 @@ export default function PastEvents({ data }) {
     </Layout>
   )
 }
+
+export default PastEvents;
 
 export const query = graphql`
   query PastEvents($date: Date) {

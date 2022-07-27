@@ -23,13 +23,18 @@ export default function Events({data}) {
       <TitleBanner 
         title='Events'
       />
-      <Link to="/pastEvents" className="link fs-200 mb-1">View Past Events</Link>
       <CardGrid
         Card={Card}
         data={data.allPrismicEvent.nodes}
         flatten={flattenEventData}
-        size='large'
+        size='medium'
       />
+      <Link 
+        to="/pastEvents" 
+        className="link fs-200 mb-1"
+      >
+        View Past Events
+      </Link>
     </Layout>
   )
 }

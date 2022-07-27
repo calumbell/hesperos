@@ -38,7 +38,7 @@ const Donate = () => {
       {popupVisible &&
         <ul className='btn-list d-flex w-50'>
           {donationLevels.map((donation, i) => 
-            <li>
+            <li key={i}>
               <button 
                 className='call-to-action-secondary'
                 onClick={(e) => redirectToCheckout(e, donation.stripePrice)}

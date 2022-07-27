@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout } from '../components';
 
 
-export default function NotFoundPage() {
+const NotFoundPage = () => {
   return (
     <Layout>
       <h1>404</h1>
@@ -11,3 +11,4 @@ export default function NotFoundPage() {
   )
 }
 
+export default NotFoundPage;

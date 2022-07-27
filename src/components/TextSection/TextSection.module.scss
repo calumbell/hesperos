@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  // for styling nested RichText & UI
+  p, button {
+    margin-top: 1rem;
+  }
+  :last-child {
+    margin-bottom: 1rem;
+  }
+}
+
+.section-title {
+  align-self: center;
+  text-justify: center;
+  font-size: var(--fs-700);
+  border-bottom: solid hsl(var( --clr-primary )) .125rem;
+  width: fit-content;
+}
