@@ -32,11 +32,11 @@ const Contact = ({ data }) => {
         image={pageData.banner_image}
        />
       
-      <div className='center-content' style={{'--max-width': '42rem'}}>
-        <p>
+      <article className='center-content' style={{'--max-width': '42rem'}}>
+        <section>
           Please use the forms below if you have any queries or would like to join our mailing list.
           All data is processed in accordance with GDPR regulations.
-        </p>
+        </section>
 
         <Accordion title="Mailing List" index="1">
           <p>
@@ -52,7 +52,7 @@ const Contact = ({ data }) => {
             </p>
             <ContactForm fields={contactFormFields} />
         </Accordion>
-      </div>
+      </article>
     </Layout>
   )
 }

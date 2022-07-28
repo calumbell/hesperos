@@ -1,7 +1,10 @@
 @import '../../styles/breakpoints';
 
 .card-grid {
+  padding-left: 0;
   margin-bottom: var(--spacing-4);
+  list-style-type: none;
+  height: fit-content;
 }
 
 .card-grid-lg {
@@ -22,7 +25,6 @@
 
 /* Layout for small screens */
 @media (min-width: $breakpoint-sm) {
-
   .card-grid-lg {
     grid-template-columns: repeat(2, 1fr);
   }

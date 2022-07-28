@@ -16,7 +16,7 @@ const About = ({ data }) => {
         title={pageData.page_title.text}
         image={pageData.hero_image}
       />
-      <div className='center-content'>
+      <article className='center-content'>
         {sections.map((section, i) => 
           <TextSectionTwoColumn 
             key={i}
@@ -26,7 +26,7 @@ const About = ({ data }) => {
             }}
           />
         )}
-      </div>
+      </article>
     </Layout>
   )
 }

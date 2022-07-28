@@ -33,14 +33,16 @@ const postPage = ({ data }) => {
           {post.title.text}
         </h1>
 
-        <sub className='d-block ff-sans fs-400 mb-2 fw-light uppercase text-faded'>
-          {post.subtitle.text}
-        </sub>
+        {post.subtitle.text && 
+          <sub className='d-block ff-sans fs-400 mb-2
+                          fw-light uppercase text-faded'
+          >
+            {post.subtitle.text}
+          </sub>}
         
         <p>
-          {post.author && <span>By {post.author.text}, </span>}
-          <span> </span>
-          {post.date   && <span>{post.date}</span>}
+          {post.author.text && <span>By {post.author.text}, </span>}
+          {post.date && <span>{post.date}</span>}
         </p>
 
         {post.body.map((section, i) => {

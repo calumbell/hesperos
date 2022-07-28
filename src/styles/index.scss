@@ -136,13 +136,13 @@ body {
   min-height: 100vh;
 }
 
-/* Focus outline */
-*:focus {
-  outline-offset: 0.3rem;
-  outline-width: 2px;
-  outline-style: solid;
-  outline-color: hsl(var(--clr-primary));
-}
+// /* Focus outline */
+// :focus {
+//   outline-offset: 0.3rem;
+//   outline-width: 2px;
+//   outline-style: solid;
+//   outline-color: hsl(var(--clr-primary));
+// }
 
 /* Make form elements simpler to work with */
 input,

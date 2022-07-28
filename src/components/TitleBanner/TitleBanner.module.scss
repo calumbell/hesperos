@@ -25,6 +25,7 @@
   background-color: hsl(var(--clr-light) / 0.97);
   color: hsl(var(--clr-dark));
   font-weight: var(--fw-bold);
+  z-index: 2;
 }
 
 .banner-subtitle {

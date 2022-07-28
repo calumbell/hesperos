@@ -22,7 +22,7 @@ const eventPage = ({ data }) => {
         desciption={event.event_description.text}
       />
 
-      <div className={`${styles.page} center-content`} style={{'--max-width': '48rem'}}>
+      <article className={`${styles.page} center-content`} style={{'--max-width': '48rem'}}>
         <section className={styles.topBox}>
           <aside className={styles.eventInfo}>
             <h1 className={styles.title}>{event.title.text}</h1>
@@ -70,10 +70,7 @@ const eventPage = ({ data }) => {
             </article>
           </section>
         }
-
-
-
-      </div>
+      </article>
     </Layout>
   )
 }

@@ -16,7 +16,7 @@ const Join = ({data}) => {
         title={pageData.page_title.text}
         image={pageData.banner_image}
       />
-      <div className='center-content px-3'>
+      <article className='center-content px-3'>
         {pageData.body.map((section, i) => {
           return(
             <TextSection
@@ -44,7 +44,7 @@ const Join = ({data}) => {
             { type: 'textarea', content: { name: 'experience', displayName: 'Singing Experience' } },
           ]}
         />
-      </div>
+      </article>
     </Layout>
   )
 }

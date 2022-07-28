@@ -20,7 +20,7 @@ const Support = ({data}) => {
         image={pageData.banner_image}
       />
 
-      <div className='center-content'>
+      <article className='center-content'>
         {pageData.display_friends_scheme && 
           <TextSection title={pageData.friends_scheme_title.text}>
             <RichTextRenderer content={pageData.friends_scheme_text.richText}/>
@@ -35,7 +35,7 @@ const Support = ({data}) => {
         <TextSection title={pageData.our_supporters_title.text}>
           <RichTextRenderer content={pageData.our_supporters_text.richText} />
         </TextSection>
-      </div>
+      </article>
 
     </Layout>
   )

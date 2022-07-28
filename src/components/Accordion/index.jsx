@@ -15,7 +15,7 @@ const Accordion = ({
 	const id = index ?? Math.random() * Number.MAX_SAFE_INTEGER - 1;
 
  	return(
-		<div className={styles.accordion}>
+		<section className={styles.accordion}>
 			<button
 				id						= {`${id}-accordion-header`}
 				className			= {styles.header}
@@ -46,7 +46,7 @@ const Accordion = ({
 					</motion.div>
 				}
 			</AnimatePresence>
-		</div>
+		</section>
 	);
 }
 
