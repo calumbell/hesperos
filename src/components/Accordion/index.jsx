@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+
+import { 
+	motion,
+	AnimatePresence
+} from 'framer-motion';
 import * as styles from './Accordion.module.scss';
 
 const Accordion = ({

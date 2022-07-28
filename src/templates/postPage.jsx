@@ -37,11 +37,11 @@ const postPage = ({ data }) => {
           {post.subtitle.text}
         </sub>
         
-        {post.author && <p>{post.author.text}</p>}
-
-        <time className='fw-xl fs-400 my-5'>
-          {post.date}
-        </time>
+        <p>
+          {post.author && <span>By {post.author.text}, </span>}
+          <span> </span>
+          {post.date   && <span>{post.date}</span>}
+        </p>
 
         {post.body.map((section, i) => {
             if (section.slice_type === "text_section") {

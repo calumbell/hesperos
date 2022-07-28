@@ -12,6 +12,7 @@
 .icon-link {
   height: 2rem;
   width: 2rem;
+  top: .65rem;
   display: inline-block;
   position: relative;
   margin: var(--spacing-1);
@@ -19,7 +20,6 @@
 }
 .icon-svg {
   position: absolute;
-  top: .65rem;
   border-radius: 50%; 
   width: 100%;
   height: 100%;

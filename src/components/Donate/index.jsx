@@ -34,7 +34,7 @@ const Donate = () => {
       <button 
         onClick={ () => setPopupVisibility(!popupVisible) }
         className={`call-to-action mt-2 w-25`}
-      > Donate </button>
+      > Donate Now</button>
       {popupVisible &&
         <ul className='btn-list d-flex w-50'>
           {donationLevels.map((donation, i) => 

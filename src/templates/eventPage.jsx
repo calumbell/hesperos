@@ -29,7 +29,7 @@ const eventPage = ({ data }) => {
             <time className={styles.dateTime}>
               {event.date} <br /> {event.time.text}
             </time>
-            <p>{`Venue: ${event.location.text || `TBC`}`}</p>
+            <p>{`Location: ${event.location.text || `TBC`}`}</p>
             <ExternalLink 
               url={event.buy_ticket_link.url}
               title='Buy Tickets'

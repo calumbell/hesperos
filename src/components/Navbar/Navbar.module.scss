@@ -1,5 +1,31 @@
 @import '../../styles/breakpoints';
 
+.skip-main {
+  left: -999px;
+  position: absolute;
+  top: 5rem;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+
+.skip-main:focus, .skip-main:active {
+  left: auto;
+  padding: 1rem;
+  font-size: var(--fs-500);
+  background-color: hsl( var(--clr-light) / 0.95 );
+  border: solid hsl( var(--clr-primary) ) .1rem;
+  width: auto;
+  height: auto;
+  z-index: 999;
+  text-decoration: underline;
+  text-decoration-color: hsl( var(--clr-primary) );
+  text-decoration-thickness: .1rem;
+  text-underline-offset: .5rem;
+
+}
+
 .navbar-left-side {   
   flex: 25%;
   justify-content: space-between;

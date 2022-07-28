@@ -138,8 +138,9 @@ body {
 
 /* Focus outline */
 *:focus {
-  outline-offset: 0.1rem;
-  outline-width: 1rem;
+  outline-offset: 0.3rem;
+  outline-width: 2px;
+  outline-style: solid;
   outline-color: hsl(var(--clr-primary));
 }
 

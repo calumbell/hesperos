@@ -3,7 +3,6 @@ import { SocialMedia } from '../';
 import * as styles from './Footer.module.scss';
 
 
-
 const Footer = () => {
   const [lastScrollPosition, setLastScrollPosition] = useState(0);
   const [isVisible, setVisibility] = useState(true);
@@ -26,6 +25,7 @@ const Footer = () => {
   }
 
   const today = new Date();
+
   return (
     <>
 

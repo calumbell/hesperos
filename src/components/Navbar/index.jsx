@@ -37,8 +37,15 @@ const Navbar = ({routes}) => {
   
   return (
     <nav className={`d-flex mb-1`}>
+      <a className={styles.skipMain} href="#main">
+        Skip to main content
+      </a>
       <div className={`d-flex ${styles.navbarLeftSide}`}>
-        <Link to="/" onClick={() => setMenuExpansion(false)}>
+        <Link 
+          to="/" 
+          onClick={() => setMenuExpansion(false)}
+        >
+          <title className="sr-only">Home Page</title>
           <Logo size="6rem"/>
         </Link>
       </div>
@@ -49,8 +56,13 @@ const Navbar = ({routes}) => {
       />
 
       <div 
-        className={`d-flex ${styles.navbarRightSide} ${isMenuExpanded && `${styles.popupMenu} highlight-border`}`}       
-        onClick={() => setMenuExpansion(false)} // close hamburg. clicks/presses Esc/Enter while focused
+        className={`
+          d-flex 
+          ${styles.navbarRightSide}
+          ${isMenuExpanded && `${styles.popupMenu} highlight-border`}
+        `}
+        // close hamburg. on click/Esc/Enter while focused
+        onClick={() => setMenuExpansion(false)} 
         onKeyDown={(e) => { if (['Escape', 'Enter'].includes(e.key)) setMenuExpansion(false)}}
         aria-hidden='true'
       >
@@ -59,8 +71,10 @@ const Navbar = ({routes}) => {
         if (!route['children'])
           return (
             <Link 
-              key={i} to={route.url}
-              className={(width > breakpoint && route['style'] ) || `nav-link`} 
+              key={i}
+              to={route.url}
+              className={(width > breakpoint && route['style'] ) || `nav-link`}
+              tabIndex="0" 
             > {route.name} </Link>
           )
         

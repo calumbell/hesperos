@@ -23,6 +23,7 @@ const Layout = ({ children }) => {
 
         <motion.main
           className='page'
+          id='main'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
