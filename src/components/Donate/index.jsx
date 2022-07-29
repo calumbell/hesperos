@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import getStripe from '../../utils/stripejs';
+import * as styles from './Donate.module.scss';
 
 const Donate = () => {
 
@@ -33,10 +34,10 @@ const Donate = () => {
     <section className='center-children'>
       <button 
         onClick={ () => setPopupVisibility(!popupVisible) }
-        className={`call-to-action mt-2 w-25`}
+        className={`call-to-action mt-2`}
       > Donate Now</button>
       {popupVisible &&
-        <ul className='btn-list d-flex w-50'>
+        <ul className={styles.btnList}>
           {donationLevels.map((donation, i) => 
             <li key={i}>
               <button 

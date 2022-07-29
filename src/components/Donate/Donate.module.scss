@@ -1,0 +1,13 @@
+.btn-list {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  width: 100%;
+  margin: 0;
+  li {
+    display: inline;
+  }
+}

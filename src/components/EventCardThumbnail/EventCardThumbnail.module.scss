@@ -29,6 +29,12 @@
   }
 }
 
+.subtitle {
+  font-size: var(--fs-300);
+  color: hsl(var(--clr-primary));
+  display: none;
+}
+
 // Hover animations
 .card:hover .card-image {
   opacity: 0.9;
@@ -39,13 +45,16 @@
 }
 
 
-// @media (min-width: $breakpoint-md) {
-//   .tooltip {
-//     p {
-//       font-size: var(--fs-400);
-//     }
-//   }
-// }
+@media (min-width: $breakpoint-md) {
+  .tooltip {
+    p {
+      font-size: var(--fs-400);
+    }
+  }
+  .subtitle {
+    display: block;
+  }
+}
 
 /* Disable hover effects on mobile & display title under card */
 @media (hover: none) and (pointer: none), (pointer: course) {

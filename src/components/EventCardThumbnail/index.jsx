@@ -17,7 +17,8 @@ const EventCardThumbnail = ({ data }) => {
       />
       <div className={`bg-light p-2 text-center ${styles.tooltip}`}>
           <p className='ff-serif fs-300 fw-med'>{data.title}</p>
-          <p className='fs-300 fw-med text-faded'>{data.subtitle}</p>
+          {/* <p className='fs-300 fw-med text-faded'>{data.subtitle}</p> */}
+          <p className={styles.subtitle}>{data.subtitle}</p>
           <p className='fs-300'>{data.date}</p>
       </div>
     </Link>

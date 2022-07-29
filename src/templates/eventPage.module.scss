@@ -74,12 +74,24 @@
   margin: 2rem auto;
 }
 
+// Style overloads for small screens
 @media (max-width: $breakpoint-sm) {
   .top-box {
+    margin-top: 0;
     grid-template-columns: 1fr;
+  }
+  .title {
+    font-size: var(--fs-700);
   }
   .poster {
     display: none;
+  }
+
+  .event-info {
+    font-size: var(--fs-400);
+    >:not(:last-child) {
+      margin-bottom: 1rem;
+    }
   }
 
   .event-description {

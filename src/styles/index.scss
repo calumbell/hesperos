@@ -57,15 +57,7 @@
 /* ------------------------------------------------- */
 
 /* Responsive Font Sizes */
-:root { font-size: 14px; }
-
-@media (min-width: $breakpoint-sm) {
-  :root { font-size: 15px; }
-}
-
-@media (min-width: $breakpoint-md) {
-  :root { font-size: 15px; }
-}
+:root { font-size: 15px; }
 
 @media (min-width: $breakpoint-lg) {
   :root { font-size: 16px; }
@@ -145,13 +137,16 @@ body {
 // }
 
 /* Make form elements simpler to work with */
+button {
+  font: inherit;
+}
+
+
 input,
-button,
 textarea,
 select {
   font: inherit; // form elements are the only ones that don't inherit font
   width: 100%;
-
 }
 
 /* Remove default link styles */
@@ -425,6 +420,10 @@ textarea {
 
 .call-to-action-secondary {
   @extend .call-to-action;
+  margin: 0.2rem;
+  padding: .5rem .75rem;
+  color: hsl( var(--clr-dark) );
+  font-size: var(--fs-300);
   border-width: 0.1rem;
 }
 
@@ -488,19 +487,6 @@ textarea {
 .nav-link {
   @extend .nav-item;
   @include link-underline-anim-mixin(); 
-}
-
-.btn-list {
-  align-self: center;
-  justify-content: center;
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  width: 100%;
-  margin: 0;
-  li {
-    display: inline;
-  }
 }
 
 /* Typography */

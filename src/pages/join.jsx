@@ -13,7 +13,8 @@ const Join = ({data}) => {
   return (
     <Layout>
       <TitleBanner
-        title={pageData.page_title.text}
+        title='Join'
+        // title={pageData.page_title.text}
         image={pageData.banner_image}
       />
       <article className='center-content px-3'>

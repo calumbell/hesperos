@@ -1,10 +1,11 @@
 .accordion {
 	width: 100%;
 	position: relative;
-	margin: auto 1rem;
+	margin: 1rem 0rem;
 }
 
 .header {
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	cursor: pointer;
@@ -13,14 +14,17 @@
 	font-size: var(--fs-700);
 	font-weight: var(--fw-medium);
 	font-family: var(--ff-serif);
+	color: hsl( var(--clr-dark) );
 }
+
 
 .expandIcon {
 	border: none;
 	color: hsl( var(--clr-primary) );
 	position: absolute;
+	width: 2rem;
 	left: 0;
-	padding: auto .5rem;
+	padding: 0;
 	margin: 0;
 	font-size: var(--fs-700);
 	font-weight: var(--fw-bold);

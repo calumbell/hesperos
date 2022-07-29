@@ -38,19 +38,20 @@ const Contact = ({ data }) => {
           All data is processed in accordance with GDPR regulations.
         </section>
 
-        <Accordion title="Mailing List" index="1">
+
+
+        <Accordion title="Email" index="1">
+            <p>
+              Please use this contact form if you have any questions about the choir.
+            </p>
+            <ContactForm fields={contactFormFields} />
+        </Accordion>
+        <Accordion title="Mailing List" index="2">
           <p>
             Sign up to our mailing list for regular updates (not more than once a month).
             You can unsubscribe at any time by clicking the link in the footer of our emails.
           </p>
           <MailchimpForm />
-        </Accordion>
-
-        <Accordion title="Send an Email" index="2">
-            <p>
-              Please use this contact form if you have any questions about the choir.
-            </p>
-            <ContactForm fields={contactFormFields} />
         </Accordion>
       </article>
     </Layout>
