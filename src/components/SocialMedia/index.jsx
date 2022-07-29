@@ -24,7 +24,7 @@ const SocialMedia = () => {
       name: key.split('_')[0],      // rm '_link' from network name
       url: value ? value.text : '', // only check for text if value isn't null
     })
-  }
+  } 
 
   return (
     <ul className={styles.socialMediaContainer}>

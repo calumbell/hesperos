@@ -10,7 +10,7 @@
   border-bottom: solid hsl( var(--clr-primary) ) .15rem;
   height: min-content;
   width: fit-content;
-  margin-block-end: .6rem;
+  margin-bottom: .6rem;
 }
 
 .heading {
@@ -19,11 +19,11 @@
   text-decoration-color: hsl( var(--clr-primary) );
   text-decoration-thickness: .1rem;
   text-underline-offset: .30rem;
-  margin-block-end: .25rem;
+  margin-bottom: .25rem;
 }
 
 .top-box {
-  margin-block: 2rem;
+  margin: 2rem auto;
   display: grid;
   grid-template-columns: 8fr 5fr;
   grid-column-gap: 1.25rem;
@@ -51,7 +51,7 @@
 }
 
 .event-description {
-  margin-block: 2.4rem;
+  margin: 2.4rem auto;
   letter-spacing: .05rem;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .venue-details {
-  margin-block: 2rem;
+  margin: 2rem auto;
 }
 
 @media (max-width: $breakpoint-sm) {
@@ -89,7 +89,7 @@
   .program {
     padding: .6rem;
     p:not(:last-child) {
-      margin-block-end: 1rem;
+      margin-bottom: 1rem;
     }
   }
 }

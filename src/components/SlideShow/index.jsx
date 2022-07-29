@@ -30,7 +30,7 @@ const SlideShow = ({images}) => {
                 className={styles.slideShowImage}
                 image={image.image.gatsbyImageData}
                 alt={image.image.alt ?? ''}
-                loading="eager"
+                loading="lazy"
               />
             </motion.div>
           )

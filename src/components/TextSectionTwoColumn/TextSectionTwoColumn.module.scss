@@ -3,7 +3,7 @@
 .container {
   display: grid;
   grid-template-columns: 5fr 8fr;
-  margin-block: 1.5rem;
+  margin: 1.5rem auto;
   width: 100%;
   // for styling nested RichText
   p {

@@ -49,12 +49,11 @@
 
   .home-page-next-event {
     padding: var(--spacing-4) var(--spacing-4);
-    margin-top: var(--spacing-3);
+    margin: var(--spacing-3) 15% auto;
     display: flex;
     position: unset;
     justify-content: center;
     width: 70%;
-    margin-inline: 15%;
     border-radius: 0.15rem;
   }
   
@@ -68,7 +67,8 @@
     }
     .home-page-next-event {
       font-size: var(--fs-300);
-      margin-inline: 0;
+      margin-left: 0;
+      margin-right: 0;
       width: 100%;
     }
   }

@@ -181,10 +181,9 @@ textarea {
 /* ------------------------------------------------- */
 
 .container {
-  padding-inline: 2em;
-  margin-inline: auto;
+  padding: 0rem 2rem;
+  margin: auto auto 4rem; /* Space for footer */
   max-width: 80rem;
-  margin-bottom: 4rem; /* Space for footer */
 }
 
 /* Makes an element invisible to sighted users, but visiable to screen readers */
@@ -408,9 +407,7 @@ textarea {
   color: hsl( var(--clr-primary) );
   background-color: hsl( var(--clr-light)) ;
   border-color: hsl( var(--clr-primary-shade) );
-  padding-inline: 1.25rem;
-  padding-top: .5rem;
-  padding-bottom: .25rem;
+  padding: .5rem 1.25rem .25rem;
   margin-top: 0.5rem;
   margin-bottom: 0.1rem;
   border-width: 0.25rem;
@@ -528,8 +525,7 @@ textarea {
 
 .address {
   background-color: hsl( var(--clr-light-shade));
-  padding-inline: var(--spacing-4);
-  padding-block: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
   margin: var(--spacing-3) 0;
   width: fit-content;
   > * {
