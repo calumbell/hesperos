@@ -41,7 +41,7 @@ const PastEvents = ({ data }) => {
       <TitleBanner 
         title="Past Events"
       />
-      <Link to="/events" className='link fs-200'>View upcoming Events</Link>
+      <Link to="/events" className='link fs-300'>View upcoming Events</Link>
       {Object.keys(eventsByYear).reverse().map((year, i) => {
         return(
           <div className='mt-4' key={i}>

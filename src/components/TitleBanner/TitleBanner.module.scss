@@ -5,14 +5,19 @@
   position: relative;
   background-color: hsl( var(--clr-primary) );
   margin-bottom: var(--spacing-4);
-  height: 9rem;
+  height: 8rem;
   background-color: hsl(var(--clr-primary) / 0.85);
   z-index: -2;
 }
 
-.banner-image {
+.banner-image-wrapper {
   position: absolute;
   z-index: -1;
+  height: inherit;
+  width: 100%;
+}
+
+.banner-image {
   width: 100%;
   height: inherit;
   border-radius: 0.5rem;
@@ -20,10 +25,10 @@
 
 .banner-text {
   position: absolute;
-  padding: var(--spacing-4) var(--spacing-5);
+  padding: 1rem 2rem;
   top: 1rem;
   left: 1rem;
-  height: 7rem;
+  height: 6rem;
   border-radius: 0.25rem;
   overflow: hidden;
   background-color: hsl(var(--clr-light) / 0.97);

@@ -1,6 +1,7 @@
 @import '../styles/breakpoints';
 
 .home-page-container {
+  position: relative;
   height: 72vh;
   z-index: 0;
 }
@@ -23,6 +24,8 @@
 
 .home-page-next-event {
   position: absolute;
+  background-color: hsl( var(--clr-light) );
+  padding: 1.5rem;
   bottom: 1rem;
   left: 1rem;
   border-radius: 0.15rem;
@@ -30,14 +33,33 @@
   z-index: 1;
 }
 
-@media (max-width: $breakpoint-md) {
+.altImage {
+  display: none;
+}
+
+@media (max-width: $breakpoint-sm) {
 
   .home-page-container {
     height: unset;
   }
+
   .home-page-bio, .home-page-next-event {
+    padding: 0;
     position: unset;
-    width: unset;
+    text-align: left;
+    width: 100%;
+    right: unset;
+    top: unset;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: .5rem;
+    text-decoration: underline;
+    text-decoration-thickness: .15rem;
+    text-decoration-color: hsl( var(--clr-primary));
+    text-underline-offset: .18rem;
+    font-size: var(--fs-700);
   }
 
   .home-page-bio {
@@ -48,15 +70,24 @@
   }
 
   .home-page-next-event {
+    align-self: center;
+    margin-top: .5rem;
     padding: var(--spacing-4) var(--spacing-4);
-    margin: var(--spacing-3) 15% auto;
     display: flex;
+    flex-direction: column;
     position: unset;
     justify-content: center;
-    width: 70%;
+    align-items: center;
+    max-width: 100%;
     border-radius: 0.15rem;
+    border: solid hsl( var(--clr-primary)) 0.1rem;
   }
   
+  .altImage {
+    display: block;
+    max-height: 33vh;
+  }
+
   // Nested query: styles for less tall phones
   @media (max-height: $breakpoint-sm) {
     .home-page-bio { 

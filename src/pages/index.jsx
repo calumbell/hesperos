@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { Layout, SEO, SlideShow } from '../components';
 import * as styles from './index.module.scss';
 
@@ -8,31 +9,34 @@ const Index = ({data}) => {
   const bio = data.prismicWebsiteDetails.data.bio.text;
   const nextEvent = data.allPrismicEvent.nodes[0];
   const images = data.prismicHomepage.data.slideshow;
-  
+
   return (
     <Layout>
       <SEO />
-      <div className={`position-rel ${styles.homePageContainer}`}>
+      <div className={styles.homePageContainer}>
         
-        <aside className={`bg-light py-4 px-5 box-shadow ${styles.homePageBio}`}>
+        <section className={`bg-light py-4 px-5 box-shadow ${styles.homePageBio}`}>
           <h1 className={`${styles.title} fw-xl letter-spacing-3`}>{title}</h1>
           <p className='mb-4'>{bio}</p>
-        </aside>
+        </section>
 
-        <SlideShow images={images} />
+        <GatsbyImage 
+          className={styles.altImage}
+          image={images[0].image.gatsbyImageData}
+          alt={images[0].image.alt || ""}
+        />
 
         {nextEvent && 
-          <aside className={`
-            bg-light px-5 py-3 box-shadow 
-            hover-shadow ${styles.homePageNextEvent} `}
+          <Link 
+            className={`${styles.homePageNextEvent} box-shadow hover-shadow`}
+            to={`/events/${nextEvent.uid}`}
           >
-            <Link to={`/events/${nextEvent.uid}`}>
-              <sub className='uppercase fw-normal letter-spacing-1'>Our next event</sub>
-              <h2 className='fs-600'>{nextEvent.data.title.text}</h2>
-              <p>{nextEvent.data.date}</p>
-            </Link>
-          </aside>
+            <sub className='uppercase fw-normal letter-spacing-1'>Our next event</sub>
+            <h2 className='fs-600'>{nextEvent.data.title.text}</h2>
+            <p>{nextEvent.data.date}</p>
+          </Link>
         }
+        <SlideShow images={images} />
       </div>
     </Layout>
   )

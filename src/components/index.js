@@ -1,4 +1,5 @@
 import Accordion from './Accordion';
+import BuyTicketLink from './BuyTicketLink';
 import Card from './Card';
 import CardGrid from './CardGrid';
 import ContactForm from './ContactForm';
@@ -24,6 +25,7 @@ import TitleBanner from './TitleBanner';
 
 export {
   Accordion,
+  BuyTicketLink,
   Card,
   CardGrid,
   ContactForm,

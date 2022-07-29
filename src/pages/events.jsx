@@ -31,7 +31,7 @@ export default function Events({data}) {
       />
       <Link 
         to="/pastEvents" 
-        className="link fs-200 mb-1"
+        className="link fs-300 mb-1"
       >
         View Past Events
       </Link>

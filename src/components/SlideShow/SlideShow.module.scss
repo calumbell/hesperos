@@ -16,12 +16,8 @@
   width: inherit;
 }
 
-@media (max-width: $breakpoint-md) {
+@media (max-width: $breakpoint-sm) {
   .container {
-    height: 45vh;
-  }
-  // Nested query: styles for less tall phones
-  @media (max-height: $breakpoint-sm) {
-    .container { height: 35vh; }
+    display: none;
   }
 }

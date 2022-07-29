@@ -36,11 +36,11 @@
 }
 
 // Hover animations
-.card:hover .card-image {
+.card:hover, .card:focus .card-image {
   opacity: 0.9;
 }
 
-.card:hover .tooltip {
+.card:hover, .card:focus .tooltip {
   opacity: 0.8;
 }
 
