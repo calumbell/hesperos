@@ -25,15 +25,15 @@
 	font-size: var(--fs-700);
 	font-weight: var(--fw-bold);
 	margin: 0;
-	transition: rotate 0.5s ease-in-out;
+	transition: transform 0.25s ease-in-out;
 }
 
 .expandIcon[aria-expanded="true"] {
-	rotate: 90deg;
+	transform: rotate(90deg);
 }
 
 .expandIcon[aria-expanded="false"] {
-	rotate: 0deg;
+	transform: rotate(0deg);
 }
 
 .panel {

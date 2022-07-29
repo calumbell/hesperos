@@ -15,7 +15,7 @@ const ExternalLink = ({
   )
   
   return <p
-    className='uppercase text-faded'
+    className='uppercase text-primary'
   >{altTitle ?? title}</p>
 }
 

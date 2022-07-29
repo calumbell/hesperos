@@ -11,6 +11,7 @@ import {
 } from  '../components';
 
 import * as styles from './eventPage.module.scss';
+import BuyTicketLink from '../components/BuyTicketLink';
 
 const eventPage = ({ data }) => {
   const event = data.prismicEvent.data;
@@ -30,11 +31,7 @@ const eventPage = ({ data }) => {
               {event.date} <br /> {event.time.text}
             </time>
             <p>{`Location: ${event.location.text || `TBC`}`}</p>
-            <ExternalLink 
-              url={event.buy_ticket_link.url}
-              title='Buy Tickets'
-              altTitle='This event is unticketed'
-            />
+            <BuyTicketLink event={event} />
 
           </aside>
           <GatsbyImage
