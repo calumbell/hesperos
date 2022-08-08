@@ -1,6 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'gatsby';
-import { MenuExpandButton, DropDownLink, Logo } from '../';
+import { 
+  MenuExpandButton,
+  DropDownLink,
+  Logo,
+} from '../';
 
 import * as styles from './Navbar.module.scss';
 
@@ -36,17 +40,17 @@ const Navbar = ({routes}) => {
 
   
   return (
-    <nav className={`d-flex mb-1`}>
+    <nav className={styles.navbar}>
       <a className={styles.skipMain} href="#main">
         Skip to main content
       </a>
-      <div className={`d-flex ${styles.navbarLeftSide}`}>
+      <div className={styles.navbarLeftSide}>
         <Link 
           to="/" 
           onClick={() => setMenuExpansion(false)}
         >
           <title className="sr-only">Home Page</title>
-          <Logo size="6rem"/>
+          <Logo />
         </Link>
       </div>
       

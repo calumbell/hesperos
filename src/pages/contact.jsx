@@ -32,7 +32,10 @@ const Contact = ({ data }) => {
         image={pageData.banner_image}
        />
       
-      <article className='center-content' style={{'--max-width': '42rem'}}>
+      <article 
+        className='center-content'
+        style={{'--max-width': '42rem'}}
+      >
         <section>
           Please use the forms below if you have any queries or would like to join our mailing list.
           All data is processed in accordance with GDPR regulations.

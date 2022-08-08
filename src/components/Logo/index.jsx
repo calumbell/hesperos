@@ -8,7 +8,7 @@ const Logo = () => {
       width="10rem" 
       height="5rem"
       viewBox={`${viewbox}`}
-      className={` ${styles.logo}`}
+      className={styles.logo}
     >
       
       <path 

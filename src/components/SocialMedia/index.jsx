@@ -35,7 +35,8 @@ const SocialMedia = () => {
             <a 
               href={network.url} 
               className={styles.iconLink}
-              target='_blank' rel='noreferrer noopener'
+              target='_blank'
+              rel='noreferrer noopener'
             >
               <svg className={styles.iconSvg} viewBox='0 0 64 64'>
                 <circle cx="32"cy="32" r="31"/>

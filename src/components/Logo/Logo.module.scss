@@ -1,5 +1,9 @@
+@import '../../styles/breakpoints';
+
 .logo {
   overflow: visible;
+  width: 10rem;
+  height: 5rem;
   
   path {
     transition: scale .25s ease-in-out, fill .25s ease-in-out, stroke-width .25s ease-in-out;
@@ -15,5 +19,12 @@
     scale: 0.995;
     fill: hsl( var(--clr-primary-pale) );
     stroke-width: .5rem;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .logo {
+    width: 8rem;
+    height: 4rem;
   }
 }

@@ -6,16 +6,19 @@
   cursor: pointer;
   display: none;
   width: min-content;
+}
 
-  * {
-    fill: hsl( var(--clr-light) );   
-    stroke: hsl( var(--clr-primary) );
-  }
+.svg {
+  fill: hsl( var(--clr-light) );   
+  stroke: hsl( var(--clr-primary) );
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 @media (max-width: $breakpoint-md) {
   .menu-expand-btn {
     display: flex;
     align-items: center;
+    size: 3rem;
   }
 }

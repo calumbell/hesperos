@@ -8,9 +8,9 @@ const SlideShow = ({images}) => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((currentImage + 1) % images.length)
+      setCurrentImage((currentImage + 1) % images.length);
     }, 5000);
-    return () => clearInterval(timer); // clean-up
+    return () => clearInterval(timer);
   }, [currentImage, images.length])
   
   return(

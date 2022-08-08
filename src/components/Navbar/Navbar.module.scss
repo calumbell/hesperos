@@ -26,7 +26,12 @@
 
 }
 
+.navbar {
+  display: flex;
+}
+
 .navbar-left-side {   
+  display: flex;
   flex: 25%;
   justify-content: space-between;
   align-items: center;

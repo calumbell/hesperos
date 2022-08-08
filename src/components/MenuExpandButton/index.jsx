@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import * as styles from './MenuExpandButton.module.scss';
 
 const MenuExpandButton = ({
-  isExpanded, setExpanded
+  isExpanded,
+  setExpanded,
 }) => {
 
   const variants = {
@@ -23,15 +24,14 @@ const MenuExpandButton = ({
 
   return (
     <button 
-      className={`mt-3 mb-0 p-0 ${styles.menuExpandBtn}`}
+      className={styles.menuExpandBtn}
       onClick={() => {setExpanded(!isExpanded)}}
     >
-      <motion.svg 
+      <motion.svg
+        className={styles.svg}
         whileHover={{ scale: 1.1  }}
         whileTap={{ scale: 0.95 }}
-        viewBox="0 0 80 80" 
-        width="3rem"
-        height="3rem"  
+        viewBox="0 0 80 80"
         strokeWidth="4"
         style={{transformOrigin : 0.5}}
       >

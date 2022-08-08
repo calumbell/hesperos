@@ -1,8 +1,13 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { Card, CardGrid, Layout, TitleBanner } from '../components';
+import { 
+  Card,
+  CardGrid,
+  Layout,
+  TitleBanner,
+} from '../components';
 
-export default function Events({data}) {
+export default function Events({ data }) {
 
   // Flattener fnc converts graphql response to less deeply nested JSON
   const flattenEventData = node => {
