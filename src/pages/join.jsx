@@ -32,19 +32,12 @@ const Join = ({data}) => {
         })}
 
         <ContactForm 
-          fields={[
-            {
-              type: 'multi',
-              content: [
-                { type: 'text', content: { name: 'fname', displayName: 'First Name' } },
-                { type: 'text', content: { name: 'lname', displayName: 'Last Name' } }
-              ]
-            },
-            { type: 'email', content: { name: 'email', displayName: 'Email' } },
-            { type: 'text', content: { name: 'part', displayName: 'Voice Part' } },
-            { type: 'textarea', content: { name: 'experience', displayName: 'Singing Experience' } },
-          ]}
-        />
+          fields={{
+            "name"    : "name",
+            "email"   : "text",
+            "Voice Part" : "text",
+            "Singing Experience" : "textarea",
+          }} />
       </article>
     </Layout>
   )

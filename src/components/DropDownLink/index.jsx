@@ -10,13 +10,13 @@ const DropDownLink = ({
 }) => {
 
   if (disableDropdown) return (
-      <div className={`position-rel ${styles.dropDownContainer}`}>
+      <div className={styles.dropDownContainer}>
         <Link to={defaultURL} className="nav-item"> 
           {menuTitle}
         </Link>
 
         { links &&
-          <ul className={`${styles.dropDownContent} position-ab highlight-border bg-light`}>
+          <ul className={`${styles.dropDownContent} highlight-border bg-light`}>
             { links.map((link, i) => {
               return <li key={i}>
                 <Link 

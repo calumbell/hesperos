@@ -8,12 +8,13 @@ const CardGrid = ({
   flatten,  // A fn. that formats props for Card cmpnt
   size,     // 'large' or 'small'
 }) => {
+  const cardStyles = {
+    'small':  styles.cardGridSm,
+    'medium': styles.cardGridMd,
+    'large':  styles.cardGridLg,
+  }
   return (
-    <ul className={`d-grid
-      ${size === 'small' && styles.cardGridSm}
-      ${size === 'medium' && styles.cardGridMd}
-      ${size === 'large' && styles.cardGridLg}
-    `}>
+    <ul className={cardStyles[size]}>
       {data.map((item, i) => {
         return <Card key={i} data={flatten(item)} />
       })}

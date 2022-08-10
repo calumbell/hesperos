@@ -261,19 +261,6 @@ textarea {
   }
 }
 
-/* Position */
-.position-ab { position: absolute; }
-.position-rel { position: relative; }
-.align-items-center { align-items: center; }
-
-/* Sizing */
-.w-25 { width: 25%; }
-.w-50 { width: 50%; }
-.w-75 { width: 75%; }
-.w-100 { width: 100%; }
-.h-50 { height: 50%; }
-.h-25 { height: 25%; }
-
 /* Spacing - Margins */
 .m-auto { margin: auto; }
 .m-0 { margin: var(--spacing-0); }
@@ -436,12 +423,19 @@ textarea {
 
 /* Forms */
 .form {
+  padding: var(--spacing-1);
+
+  label {
+    width: 100%;
+  }
   input, textarea {
     border-width: 0.13rem;
     border-style: ridge;
     border-color: hsl( var(--clr-primary) );
     background-color: hsl( var(--clr-light) );
     transition: background-color 0.25s;
+    padding: var(--spacing-2);
+    
   }
   input:focus, textarea:focus {
     background-color: hsl( var(--clr-light-shade) );
@@ -450,9 +444,11 @@ textarea {
 }
 
 .form-row {
+  display: flex;
   padding: var(--spacing-1);
   gap: 2rem;
   width: 100%;
+  justify-content: center;
 }
 
 @media (max-width: $breakpoint-sm) {

@@ -10,19 +10,6 @@ import {
 
 
 const Contact = ({ data }) => {
-  const contactFormFields = [
-    {
-      type: 'multi',
-      content: [
-        { type: 'text', content: { name: 'fname', displayName: 'First Name' } },
-        { type: 'text', content: { name: 'lname', displayName: 'Last Name' } }
-      ]
-    },
-    { type: 'email', content: { name: 'email', displayName: 'Email Address', } }, 
-    { type: 'text', content: { name: 'subject', displayName: 'Subject' } },
-    { type: 'textarea', content: { name: 'message', displayName: 'Message' } }
-  ];
-
   const pageData = data.prismicContactPage.data;
 
   return (
@@ -47,7 +34,12 @@ const Contact = ({ data }) => {
             <p>
               Please use this contact form if you have any questions about the choir.
             </p>
-            <ContactForm fields={contactFormFields} />
+            <ContactForm fields={{
+              "name"    : "name",
+              "email"   : "text",
+              "subject" : "text",
+              "message" : "textarea",
+            }} />
         </Accordion>
         <Accordion title="Mailing List" index="2">
           <p>

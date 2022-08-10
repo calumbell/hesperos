@@ -2,6 +2,7 @@
 
 .card {
   width: 100%;
+  position: relative;
 }
 .card-image {
   width: 100%;
@@ -21,18 +22,19 @@
   top: 7.5%;
   width: 80%;
   z-index: 1;
+  background-color: hsl( var(--clr-light) );
 
   p {
     opacity: 1;
     margin: var(--spacing-2);
-    font-size: var(--fs-200);
+    font-size: var(--fs-300);
   }
 }
 
 .subtitle {
   font-size: var(--fs-300);
   color: hsl(var(--clr-primary));
-  display: none;
+  display: block;
 }
 
 // Hover animations
@@ -40,12 +42,12 @@
   opacity: 0.9;
 }
 
-.card:hover, .card:focus .tooltip {
+.card:hover .tooltip, .card:focus .tooltip {
   opacity: 0.8;
 }
 
 
-@media (min-width: $breakpoint-md) {
+@media (min-width: $breakpoint-lg) {
   .tooltip {
     p {
       font-size: var(--fs-400);

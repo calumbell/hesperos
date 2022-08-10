@@ -31,9 +31,9 @@ const [email, setEmail] = useState('');
       onSubmit={handleSubmit}
       className='form grid p-1'
     >
-      <div className='d-flex form-row'>
-        <label className='w-100'>
-          First Name
+      <div className='form-row'>
+        <label>
+          <p>First Name</p>
           <input 
             className='p-2'
             type='text'
@@ -41,8 +41,8 @@ const [email, setEmail] = useState('');
             onChange={handleFirstNameChange}
           />
         </label>
-        <label className='w-100'>
-          Last Name
+        <label>
+          <p>Last Name</p>
           <input 
             className='p-2'
             type='text'
@@ -51,8 +51,8 @@ const [email, setEmail] = useState('');
           />
         </label>
       </div>
-      <div className='d-flex form-row'>
-        <label className='w-100'>
+      <div className='form-row'>
+        <label>
           Email Address
           <input 
             className='p-2'
@@ -62,7 +62,7 @@ const [email, setEmail] = useState('');
           />
         </label>
       </div>
-      <div className='form-row mt-2'>
+      <div className='form-row'>
         <button className='call-to-action' type='submit'>
           Subscribe
         </button>

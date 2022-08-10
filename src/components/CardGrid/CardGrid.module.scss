@@ -1,6 +1,7 @@
 @import '../../styles/breakpoints';
 
 .card-grid {
+  display: grid;
   padding-left: 0;
   margin-bottom: var(--spacing-4);
   list-style-type: none;
@@ -32,7 +33,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .card-grid-sm {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -41,7 +42,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .card-grid-sm {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

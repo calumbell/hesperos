@@ -4,20 +4,21 @@ import { AnimatePresence, motion } from 'framer-motion';
 import * as styles from './SlideShow.module.scss';
 
 const SlideShow = ({images}) => {
-  const [currentImage, setCurrentImage] = useState(0);
+  const [currentIndex, setcurrentIndex] = useState(0);
 
+  // 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((currentImage + 1) % images.length);
+      setcurrentIndex((currentIndex + 1) % images.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [currentImage, images.length])
+  }, [currentIndex, images.length])
   
   return(
     <div className={styles.container}>
       <AnimatePresence>
         {images.map((image, i) => { 
-          if(currentImage === i) return(
+          if(currentIndex === i) return(
             <motion.div
               className={styles.slideShow}
               key={i}

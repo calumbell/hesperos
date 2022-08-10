@@ -1,8 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-// Query Prismic for email address to send form submissions to
 const ContactForm = ({ fields }) => {
+  // Query Prismic for email address to send form submissions to
   const data = useStaticQuery(graphql`
     query EmailAddressQuery {
       prismicWebsiteDetails {
@@ -16,56 +16,23 @@ const ContactForm = ({ fields }) => {
   `);
   const email = data.prismicWebsiteDetails.data.email_address.text;
 
-  const createFormField = (field, key) => {
-    // render multi fields by iterating over their subfields
-    if (field.type === 'multi') {
-      return (
-        <div key={key} className='form-row d-flex'>
-          {field.content.map((subfield, i) => {
-            return(
-              <div className='w-100' key={i}>
-                <label>{subfield.content.displayName}
-                  <input 
-                    className='p-2'
-                    type={subfield.type}
-                    name={subfield.content.name}
-                  />
-                </label>
-              </div>
-            )
-          })}
-        </div>
-      )
-    }
-
-    // render non-nested fields
-    return(
-      <div key={key} className='form-row d-flex'>
-        <label className='w-100'>{field.content.displayName}
-          {field.type === 'textarea' 
-          ? <textarea 
-              className='p-1'
-              type={field.content.type}
-              name={field.content.name}
-            />
-          : <input className='p-1'
-              type={field.content.type}
-              name={field.content.name}
-            />
-          }
-        </label>
-      </div>
-    )
-  };
-
-  return(
+  return (
     <form
-      className='form d-grid p-1' 
+      className='form' 
       action={`https://formsubmit.co/${email}`}
       method='POST'
     >
-      {fields.map((field, i) => {return createFormField(field, i)})}
-      <div className='form-row mt-2'>
+      {Object.keys(fields).map((name, index) => {
+        return (
+          <div className='form-row' key={index}>
+            {fields[name] === 'name' && <NameFields />}
+            {fields[name] === 'textarea' && <TextareaField title={name} />}
+            {!['name','textarea'].includes(fields[name]) && 
+              <FormField title={name}/>}
+          </div>
+        )
+      })}
+      <div className='form-row'>
         <button className='call-to-action' type='submit'>
           Submit
         </button>
@@ -75,3 +42,31 @@ const ContactForm = ({ fields }) => {
 }
 
 export default ContactForm;
+
+// Helper Atoms: sub-components for sundry form fields
+const NameFields = () => {
+  return <>
+    <label>
+      <p>First Name</p>
+      <input name="fname" type="text" />
+    </label>
+    <label>
+      <p>Last Name</p>
+      <input name="lname" type="text" />
+    </label>
+  </>
+}
+
+const FormField = ({ title }) => {
+  return <label>
+    <p>{`${title[0].toUpperCase()}${title.slice(1)}`}</p>
+    <input name={title} type="text"/>
+  </label>
+}
+
+const TextareaField = ({ title }) => {
+  return <label>
+    <p>{`${title[0].toUpperCase()}${title.slice(1)}`}</p>
+    <textarea name={title} type='textarea'/>
+  </label>
+}
