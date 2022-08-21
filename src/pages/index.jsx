@@ -4,7 +4,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { Layout, SEO, SlideShow } from '../components';
 import * as styles from './index.module.scss';
 
-const Index = ({data}) => {
+const Index = ({ data }) => {
   const title = data.prismicWebsiteDetails.data.title.text;
   const bio = data.prismicWebsiteDetails.data.bio.text;
   const nextEvent = data.allPrismicEvent.nodes[0];
@@ -20,11 +20,12 @@ const Index = ({data}) => {
           <p className='mb-4'>{bio}</p>
         </section>
 
-        <GatsbyImage 
-          className={styles.altImage}
-          image={images[0].image.gatsbyImageData}
-          alt={images[0].image.alt || ""}
-        />
+        <div className={styles.altImage}>
+          <GatsbyImage 
+            image={images[0].image.gatsbyImageData}
+            alt={images[0].image.alt || ""}
+          />
+        </div>
 
         {nextEvent && 
           <Link 
@@ -61,7 +62,7 @@ export const query = graphql`
       data {
         slideshow {
           image {
-            gatsbyImageData
+            gatsbyImageData(placeholder: BLURRED)
             alt
           }
         }
