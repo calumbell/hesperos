@@ -39,7 +39,8 @@ const PastEvents = ({ data }) => {
   return (
     <Layout>
       <TitleBanner 
-        title="Past Events"
+        title={data.prismicPastEventsPage.data.title.text}
+        image={data.prismicPastEventsPage.data.banner}
       />
       <Link to="/events" className='link fs-300'>View upcoming Events</Link>
       {Object.keys(eventsByYear).reverse().map((year, i) => {
@@ -67,6 +68,16 @@ export default PastEvents;
 
 export const query = graphql`
   query PastEvents($date: Date) {
+    prismicPastEventsPage {
+      data {
+        title { text }
+        banner {
+          gatsbyImageData
+          alt
+        }
+      }
+    }
+    
     allPrismicEvent(
       sort: {fields: data___date, order: DESC}
       filter: {data: {date: {lt: $date}}}

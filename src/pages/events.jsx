@@ -22,11 +22,11 @@ export default function Events({ data }) {
       displayDateBubble: true,
     }  
   }
-
   return (
     <Layout>
       <TitleBanner 
-        title='Events'
+        title={data.prismicEventsPage.data.title.text}
+        image={data.prismicEventsPage.data.banner}
       />
       <CardGrid
         Card={Card}
@@ -48,6 +48,15 @@ export default function Events({ data }) {
 // Results are passed to Event cmp via 'data' prop
 export const query = graphql`
   query EventSummaries($date: Date) {
+    prismicEventsPage {
+      data {
+        title { text }
+        banner {
+          gatsbyImageData
+          alt
+        }
+      }
+    }
     allPrismicEvent(
       sort: {fields: data___date, order: ASC}
       filter: {data: {date: {gte: $date}}}

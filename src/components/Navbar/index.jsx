@@ -33,8 +33,6 @@ const Navbar = ({routes}) => {
       if (widthRef.current > breakpoint) setMenuExpansion(false);
     }
     window.addEventListener("resize", handleWindowResize);
-
-    // clean-up
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
 
@@ -61,7 +59,6 @@ const Navbar = ({routes}) => {
 
       <div 
         className={`
-          d-flex 
           ${styles.navbarRightSide}
           ${isMenuExpanded && `${styles.popupMenu} highlight-border`}
         `}

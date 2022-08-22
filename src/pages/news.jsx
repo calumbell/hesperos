@@ -1,6 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Card, CardGrid, Layout, TitleBanner } from '../components';
+import { 
+  Card,
+  CardGrid,
+  Layout,
+  TitleBanner
+} from '../components';
 
 const News = ({ data }) => {
   const flattenPostData = node => {
