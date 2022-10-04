@@ -11,7 +11,7 @@ const BuyTicketLink = ({ event }) => {
   return <ExternalLink
     url={event.buy_ticket_link.url}
     title='Buy Tickets'
-    altTitle='No advanced tickets available'
+    altTitle='No advance tickets available'
   />
 }
 

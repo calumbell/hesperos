@@ -55,14 +55,14 @@
   letter-spacing: .05rem;
 }
 
-.program {
+.programme {
   border: 2px solid hsl( var(--clr-primary) );
   font-size: var(--fs-300);
   padding: 2rem;
   background-color: hsl( var(--clr-light-shade) );
 }
 
-.program-text {
+.programme-text {
   ul {
     list-style-type: none;
     background-color: transparent;
@@ -98,7 +98,7 @@
     letter-spacing: unset;
   }
 
-  .program {
+  .programme {
     padding: .6rem;
     p:not(:last-child) {
       margin-bottom: 1rem;

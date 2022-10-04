@@ -58,12 +58,12 @@ const eventPage = ({ data }) => {
 
         { event.program.richText.length > 0 &&
           <section 
-            className={`${styles.program} center-content`}
+            className={`${styles.programme} center-content`}
             style={{'--max-width': '36rem'}}
           >
-            <h2 className={`${styles.heading} text-center`}>Program</h2>
-            <article className={styles.programText}>
-              <RichTextRenderer content={event.program.richText}/>
+            <h2 className={`${styles.heading} text-center`}>Programme</h2>
+            <article className={styles.programmeText}>
+              <RichTextRenderer content={event.programme.richText}/>
             </article>
           </section>
         }
