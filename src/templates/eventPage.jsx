@@ -63,7 +63,7 @@ const eventPage = ({ data }) => {
           >
             <h2 className={`${styles.heading} text-center`}>Programme</h2>
             <article className={styles.programmeText}>
-              <RichTextRenderer content={event.programme.richText}/>
+              <RichTextRenderer content={event.program.richText}/>
             </article>
           </section>
         }
