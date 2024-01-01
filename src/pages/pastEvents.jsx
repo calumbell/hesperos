@@ -5,9 +5,12 @@ import {
   CardGrid,
   Layout,
   TitleBanner,
+  SEO,
 } from "../components";
 
-const PastEvents = ({ data }) => {
+export const Head = () => <SEO />;
+
+export default function PastEvents({ data }) {
   const flattenEventData = (node) => {
     let date = node.data.date.split(" ").slice(1);
     date[1] = `${date[1].slice(0, 3)}.`;
@@ -64,9 +67,7 @@ const PastEvents = ({ data }) => {
         })}
     </Layout>
   );
-};
-
-export default PastEvents;
+}
 
 export const query = graphql`
   query PastEvents($date: Date) {

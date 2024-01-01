@@ -4,7 +4,9 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { Layout, SEO, SlideShow } from "../components";
 import * as styles from "./index.module.scss";
 
-const Index = ({ data }) => {
+export const Head = () => <SEO />;
+
+export default function Index({ data }) {
   const title = data.prismicWebsiteDetails.data.title.text;
   const bio = data.prismicWebsiteDetails.data.bio.text;
   const nextEvent = data.allPrismicEvent.nodes[0];
@@ -12,7 +14,6 @@ const Index = ({ data }) => {
 
   return (
     <Layout>
-      <SEO />
       <div className={styles.homePageContainer}>
         <section
           className={`bg-light py-4 px-5 box-shadow ${styles.homePageBio}`}
@@ -44,9 +45,7 @@ const Index = ({ data }) => {
       </div>
     </Layout>
   );
-};
-
-export default Index;
+}
 
 // query Prismic for page data & next event data
 export const query = graphql`

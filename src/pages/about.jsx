@@ -1,38 +1,33 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import { 
-  Layout, 
-  TextSectionTwoColumn, 
-  TitleBanner
-} from '../components';
+import React from "react";
+import { graphql } from "gatsby";
+import { Layout, TextSectionTwoColumn, SEO, TitleBanner } from "../components";
 
-const About = ({ data }) => {
+export const Head = () => <SEO />;
+
+export default function About({ data }) {
   const sections = data.prismicAboutPage.data.body[0].items;
   const pageData = data.prismicAboutPage.data;
 
-  return(
+  return (
     <Layout>
-      <TitleBanner 
+      <TitleBanner
         title={pageData.page_title.text}
         image={pageData.hero_image}
       />
-      <article className='center-content'>
-        {sections.map((section, i) => 
-          <TextSectionTwoColumn 
+      <article className="center-content">
+        {sections.map((section, i) => (
+          <TextSectionTwoColumn
             key={i}
             data={{
               title: section.title.text,
               bodyText: section.content.text,
             }}
           />
-        )}
+        ))}
       </article>
     </Layout>
-  )
+  );
 }
-
-export default About;
-
 
 export const query = graphql`
   query AboutPageQuery {

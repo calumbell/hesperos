@@ -1,66 +1,70 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import { 
+import React from "react";
+import { graphql } from "gatsby";
+import {
   Accordion,
   ContactForm,
   Layout,
   MailchimpForm,
-  TitleBanner
-} from '../components';
+  SEO,
+  TitleBanner,
+} from "../components";
 
+export const Head = () => <SEO />;
 
-const Contact = ({ data }) => {
+export default function Contact({ data }) {
   const pageData = data.prismicContactPage.data;
 
   return (
     <Layout>
-      <TitleBanner 
+      <TitleBanner
         title={pageData.page_title.text}
         image={pageData.banner_image}
-       />
-      
-      <article 
-        className='center-content'
-        style={{'--max-width': '42rem'}}
-      >
+      />
+
+      <article className="center-content" style={{ "--max-width": "42rem" }}>
         <section>
-          Please use the forms below if you have any queries or would like to join our mailing list.
-          All data is processed in accordance with GDPR regulations.
+          Please use the forms below if you have any queries or would like to
+          join our mailing list. All data is processed in accordance with GDPR
+          regulations.
         </section>
 
-
-
         <Accordion title="Email" index="1">
-            <p>
-              Please use this contact form if you have any questions about the choir.
-            </p>
-            <ContactForm fields={{
-              "name"    : "name",
-              "email"   : "text",
-              "subject" : "text",
-              "message" : "textarea",
-            }} />
+          <p>
+            Please use this contact form if you have any questions about the
+            choir.
+          </p>
+          <ContactForm
+            fields={{
+              name: "name",
+              email: "text",
+              subject: "text",
+              message: "textarea",
+            }}
+          />
         </Accordion>
         <Accordion title="Mailing List" index="2">
           <p>
-            Sign up to our mailing list for regular updates (not more than once a month).
-            You can unsubscribe at any time by clicking the link in the footer of our emails.
+            Sign up to our mailing list for regular updates (not more than once
+            a month). You can unsubscribe at any time by clicking the link in
+            the footer of our emails.
           </p>
           <MailchimpForm />
         </Accordion>
       </article>
     </Layout>
-  )
+  );
 }
-
-export default Contact;
 
 export const query = graphql`
   query ContactPageQuery {
     prismicContactPage {
       data {
-        page_title { text }
-        body { richText }
+        page_title {
+          text
+        }
+        body {
+          richText
+        }
         banner_image {
           gatsbyImageData
           alt
@@ -68,4 +72,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

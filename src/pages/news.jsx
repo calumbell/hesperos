@@ -1,8 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Card, CardGrid, Layout, TitleBanner } from "../components";
+import { Card, CardGrid, Layout, SEO, TitleBanner } from "../components";
 
-const News = ({ data }) => {
+export const Head = () => <SEO />;
+
+export default function News({ data }) {
   const flattenPostData = (node) => {
     return {
       uid: node.uid,
@@ -26,9 +28,7 @@ const News = ({ data }) => {
       />
     </Layout>
   );
-};
-
-export default News;
+}
 
 export const query = graphql`
   query NewsPostSummaries {

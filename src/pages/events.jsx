@@ -1,6 +1,8 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import { Card, CardGrid, Layout, TitleBanner } from "../components";
+import { Card, CardGrid, Layout, SEO, TitleBanner } from "../components";
+
+export const Head = () => <SEO />;
 
 export default function Events({ data }) {
   // Flattener fnc converts graphql response to less deeply nested JSON
@@ -22,6 +24,7 @@ export default function Events({ data }) {
         title={data.prismicEventsPage.data.title.text}
         image={data.prismicEventsPage.data.banner}
       />
+      {data.allPrismicEvent.nodes.length === 0 && <p>No events scheduled</p>}
       <CardGrid
         Card={Card}
         data={data.allPrismicEvent.nodes}
