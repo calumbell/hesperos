@@ -1,14 +1,9 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import { 
-  Card,
-  CardGrid,
-  Layout,
-  TitleBanner
-} from '../components';
+import React from "react";
+import { graphql } from "gatsby";
+import { Card, CardGrid, Layout, TitleBanner } from "../components";
 
 const News = ({ data }) => {
-  const flattenPostData = node => {
+  const flattenPostData = (node) => {
     return {
       uid: node.uid,
       subroute: `news`,
@@ -17,36 +12,36 @@ const News = ({ data }) => {
       date: node.data.date,
       image: node.data.thumbnail.gatsbyImageData,
       altText: node.data.thumbnail.alt,
-    }
-  }
-  
+    };
+  };
+
   return (
     <Layout>
-      <TitleBanner 
-        title='News'
-      />
-      <CardGrid 
+      <TitleBanner title="News" />
+      <CardGrid
         Card={Card}
-        size='medium'
+        size="medium"
         data={data.allPrismicPost.nodes}
         flatten={flattenPostData}
       />
     </Layout>
-  )
-}
+  );
+};
 
 export default News;
 
 export const query = graphql`
   query NewsPostSummaries {
-    allPrismicPost(
-      sort: {fields: data___date, order: DESC}
-    ) {
+    allPrismicPost(sort: { data: { date: DESC } }) {
       nodes {
         uid
         data {
-          title { text }
-          subtitle { text }
+          title {
+            text
+          }
+          subtitle {
+            text
+          }
           thumbnail {
             gatsbyImageData
             alt
