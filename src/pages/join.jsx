@@ -9,7 +9,7 @@ import {
   TitleBanner,
 } from "../components";
 
-export const Head = () => <SEO />;
+export const Head = () => <SEO path="/join" />;
 
 export default function Join({ data }) {
   const pageData = data.prismicJoinPage.data;

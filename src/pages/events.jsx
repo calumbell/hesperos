@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import { Card, CardGrid, Layout, SEO, TitleBanner } from "../components";
 
-export const Head = () => <SEO />;
+export const Head = () => <SEO path="/events" />;
 
 export default function Events({ data }) {
   // Flattener fnc converts graphql response to less deeply nested JSON

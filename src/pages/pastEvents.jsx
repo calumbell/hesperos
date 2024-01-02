@@ -8,7 +8,7 @@ import {
   SEO,
 } from "../components";
 
-export const Head = () => <SEO />;
+export const Head = () => <SEO path="/pastEvents" />;
 
 export default function PastEvents({ data }) {
   const flattenEventData = (node) => {

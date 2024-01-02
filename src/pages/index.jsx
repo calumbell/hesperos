@@ -4,7 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { Layout, SEO, SlideShow } from "../components";
 import * as styles from "./index.module.scss";
 
-export const Head = () => <SEO />;
+export const Head = () => <SEO path="/" />;
 
 export default function Index({ data }) {
   const title = data.prismicWebsiteDetails.data.title.text;

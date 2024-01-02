@@ -9,7 +9,7 @@ import {
   TitleBanner,
 } from "../components";
 
-export const Head = () => <SEO />;
+export const Head = () => <SEO path="/contant" />;
 
 export default function Contact({ data }) {
   const pageData = data.prismicContactPage.data;

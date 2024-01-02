@@ -10,7 +10,7 @@ import {
   TitleBanner,
 } from "../components";
 
-export const Head = () => <SEO />;
+export const Head = () => <SEO path="/support" />;
 
 export default function Support({ data }) {
   const pageData = data.prismicSupportPage.data;

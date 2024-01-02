@@ -13,18 +13,19 @@ import {
 import * as styles from "./eventPage.module.scss";
 import BuyTicketLink from "../components/BuyTicketLink";
 
-export const Head = () => <SEO />;
+export const Head = ({ data }) => (
+  <SEO
+    title={`${data.prismicEvent.data.title.text} | Hesperos Choir`}
+    image={data.prismicEvent.data.event_image.url}
+    description={data.prismicEvent.data.event_description.text}
+    path={`/events/${data.prismicEvent.uid}`}
+  />
+);
 
 export default function eventPage({ data }) {
   const event = data.prismicEvent.data;
   return (
     <Layout>
-      {/* <SEO 
-        title={event.title.text}
-        image={event.event_image.url}
-        desciption={event.event_description.text}
-      /> */}
-
       <article
         className={`${styles.page} center-content`}
         style={{ "--max-width": "48rem" }}
@@ -86,6 +87,7 @@ export default function eventPage({ data }) {
 export const query = graphql`
   query EventPage($slug: String) {
     prismicEvent(uid: { eq: $slug }) {
+      uid
       data {
         title {
           text

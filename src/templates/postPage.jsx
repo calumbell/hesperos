@@ -7,22 +7,18 @@ import { Layout, SEO } from "../components";
 
 import * as styles from "./postPage.module.scss";
 
+export const Head = ({ data }) => (
+  <SEO
+    title={`${data.prismicPost.data.title.text} | Hesperos Choir`}
+    image={data.prismicPost.data.thumbnail.url}
+    path={`/news/${data.prismicPost.uid}`}
+  />
+);
+
 export default function postPage({ data }) {
   const post = data.prismicPost.data;
-  const url = data.site.siteMetadata.url;
   return (
     <Layout>
-      {/* <SEO
-        title={`${post.title.text} | Hesperos Choir`}
-        image={post.thumbnail.url}
-        url={`${url}/news/${data.prismicPost.uid}`}
-        description={post.body.find(section => {
-            return section.slice_type === "text_section";
-          }).primary.section_body.richText[0]
-            .text.split('.')[0].concat('.').slice(0,320)
-        }
-      /> */}
-
       <article className="center-content rich-text">
         <h1
           className={`fw-light mb-2

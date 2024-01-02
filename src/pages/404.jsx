@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout, SEO } from "../components";
 
-// export const Head = () => <SEO />;
+export const Head = () => <SEO path="/404" />;
 
 export default function NotFoundPage() {
   return (
