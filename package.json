@@ -19,7 +19,7 @@
     "ansi-html": "^0.0.9",
     "ansi-regex": "^6.0.1",
     "browserslist": "^4.20.2",
-    "cross-fetch": "^3.1.5",
+    "cross-fetch": "^4.0.0",
     "dicer": "^0.3.1",
     "dotenv": "^16.0.0",
     "file-type": "^17.1.4",
