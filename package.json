@@ -23,7 +23,7 @@
     "dicer": "^0.3.1",
     "dotenv": "^16.0.0",
     "file-type": "^17.1.4",
-    "framer-motion": "^10.16.16",
+    "framer-motion": "^6.2.8",
     "gatsby": "^5.13.1",
     "gatsby-cli": "^5.13.1",
     "gatsby-plugin-image": "^3.13.0",
