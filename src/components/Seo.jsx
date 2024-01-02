@@ -1,7 +1,7 @@
 import React from "react";
-import favicon from "../../images/hesperos-favicon.png";
+import favicon from "../images/hesperos-favicon.png";
 
-import { useSiteMetadata } from "../../hooks/useSiteMetadata";
+import { useSiteMetadata } from "../hooks/useSiteMetadata";
 
 const Seo = ({ title, description, path, image }) => {
   const {
