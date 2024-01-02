@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Card, CardGrid, Layout, SEO, TitleBanner } from "../components";
+import { Card, CardGrid, Layout, Seo, TitleBanner } from "../components";
 
-export const Head = () => <SEO path="/news" />;
+export const Head = () => <Seo path="/news" />;
 
 export default function News({ data }) {
   const flattenPostData = (node) => {

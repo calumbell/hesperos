@@ -5,11 +5,11 @@ import {
   ContactForm,
   Layout,
   MailchimpForm,
-  SEO,
+  Seo,
   TitleBanner,
 } from "../components";
 
-export const Head = () => <SEO path="/contant" />;
+export const Head = () => <Seo path="/contant" />;
 
 export default function Contact({ data }) {
   const pageData = data.prismicContactPage.data;

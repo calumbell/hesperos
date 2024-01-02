@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { Layout, SEO, SlideShow } from "../components";
+import { Layout, Seo, SlideShow } from "../components";
 import * as styles from "./index.module.scss";
 
-export const Head = () => <SEO path="/" />;
+export const Head = () => <Seo path="/" />;
 
 export default function Index({ data }) {
   const title = data.prismicWebsiteDetails.data.title.text;

@@ -7,14 +7,14 @@ import {
   Layout,
   LinkToMap,
   RichTextRenderer,
-  SEO,
+  Seo,
 } from "../components";
 
 import * as styles from "./eventPage.module.scss";
 import BuyTicketLink from "../components/BuyTicketLink";
 
 export const Head = ({ data }) => (
-  <SEO
+  <Seo
     title={`${data.prismicEvent.data.title.text} | Hesperos Choir`}
     image={data.prismicEvent.data.event_image.url}
     description={data.prismicEvent.data.event_description.text}

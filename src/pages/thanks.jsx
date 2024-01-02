@@ -1,7 +1,7 @@
 import React from "react";
-import { Layout, SEO } from "../components";
+import { Layout, Seo } from "../components";
 
-export const Head = () => <SEO path="/thanks" />;
+export const Head = () => <Seo path="/thanks" />;
 
 export default function ThankYou() {
   return (

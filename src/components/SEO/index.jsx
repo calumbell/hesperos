@@ -3,7 +3,7 @@ import favicon from "../../images/hesperos-favicon.png";
 
 import { useSiteMetadata } from "../../hooks/useSiteMetadata";
 
-const SEO = ({ title, description, path, image }) => {
+const Seo = ({ title, description, path, image }) => {
   const {
     title: defaultTitle,
     description: defaultDescription,
@@ -42,4 +42,4 @@ const SEO = ({ title, description, path, image }) => {
   );
 };
 
-export default SEO;
+export default Seo;

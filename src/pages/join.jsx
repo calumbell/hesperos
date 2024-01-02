@@ -4,12 +4,12 @@ import {
   ContactForm,
   Layout,
   RichTextRenderer,
-  SEO,
+  Seo,
   TextSection,
   TitleBanner,
 } from "../components";
 
-export const Head = () => <SEO path="/join" />;
+export const Head = () => <Seo path="/join" />;
 
 export default function Join({ data }) {
   const pageData = data.prismicJoinPage.data;

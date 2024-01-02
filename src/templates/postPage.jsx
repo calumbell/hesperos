@@ -3,12 +3,12 @@ import { graphql } from "gatsby";
 import { RichText } from "prismic-reactjs";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-import { Layout, SEO } from "../components";
+import { Layout, Seo } from "../components";
 
 import * as styles from "./postPage.module.scss";
 
 export const Head = ({ data }) => (
-  <SEO
+  <Seo
     title={`${data.prismicPost.data.title.text} | Hesperos Choir`}
     image={data.prismicPost.data.thumbnail.url}
     path={`/news/${data.prismicPost.uid}`}

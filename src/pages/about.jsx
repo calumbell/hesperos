@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Layout, TextSectionTwoColumn, SEO, TitleBanner } from "../components";
+import { Layout, TextSectionTwoColumn, Seo, TitleBanner } from "../components";
 
-export const Head = () => <SEO path="/about" />;
+export const Head = () => <Seo path="/about" />;
 
 export default function About({ data }) {
   const sections = data.prismicAboutPage.data.body[0].items;
