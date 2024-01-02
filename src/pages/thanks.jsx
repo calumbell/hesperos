@@ -1,10 +1,12 @@
-import React from 'react';
-import { Layout } from '../components';
+import React from "react";
+import { Layout, Seo } from "../components";
 
-const ThankYou = () => (
-  <Layout>
-    <h1>Thank you for your support!</h1>
-  </Layout>
-)
+export const Head = () => <Seo path="/thanks" />;
 
-export default ThankYou;
+export default function ThankYou() {
+  return (
+    <Layout>
+      <h1>Thank you for your support!</h1>
+    </Layout>
+  );
+}

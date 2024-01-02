@@ -1,19 +1,19 @@
-require('dotenv').config({
+require("dotenv").config({
   path: `.env`,
-})
+});
 
 module.exports = {
   siteMetadata: {
     title: "Hesperos Choir",
-    description: "Hesperos is a chamber choir based in London, singing sacred and secular music.",
+    description:
+      "Hesperos is a chamber choir based in London, singing sacred and secular music.",
     url: "https://www.hesperoschoir.com",
-    image: '/src/images/hesperos-favicon.png',
+    image: "/src/images/hesperos-favicon.png",
     twitterUsername: "@hesperoschoir",
   },
 
   plugins: [
     "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
@@ -22,7 +22,7 @@ module.exports = {
       options: {
         endpoint: process.env.MAILCHIMP_SUBSCRIBE_ENDPOINT,
         timeout: 3500,
-      }
+      },
     },
     {
       resolve: "gatsby-source-prismic",
