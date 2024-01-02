@@ -22,7 +22,7 @@
     "cross-fetch": "^4.0.0",
     "dicer": "^0.3.1",
     "dotenv": "^16.0.0",
-    "file-type": "^17.1.4",
+    "file-type": "^18.7.0",
     "framer-motion": "^6.2.8",
     "gatsby": "^5.13.1",
     "gatsby-cli": "^5.13.1",
