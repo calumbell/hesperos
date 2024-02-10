@@ -31,9 +31,15 @@ export default function Support({ data }) {
 
         <TextSection title={pageData.donation_title.text}>
           <RichTextRenderer content={pageData.donation_text.richText} />
-          <Donate />
         </TextSection>
-
+        <section className="center-children m-0">
+          <a
+            href="https://hesperos.sumupstore.com/product/donate-to-hesperos-choir"
+            className="call-to-action w-fit fs-500"
+          >
+            Make a one-off donatation
+          </a>
+        </section>
         <TextSection title={pageData.our_supporters_title.text}>
           <RichTextRenderer content={pageData.our_supporters_text.richText} />
         </TextSection>
