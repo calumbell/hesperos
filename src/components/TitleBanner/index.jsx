@@ -3,6 +3,14 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import * as styles from './TitleBanner.module.scss';
 
 const TitleAndBanner = ({ title, image }) => {
+
+  // Resize fonts for relative to title length
+  const titleFontSize = (() => {
+    if (title.length > 20) return 'fs-500'
+    if (title.length > 12) return 'fs-600'
+    return 'fs-700'
+  });
+
   return (
   <h1 className={styles.bannerContainer}>
     { image &&
@@ -15,15 +23,11 @@ const TitleAndBanner = ({ title, image }) => {
         />
       </div>
     }
-    <p 
-      className={`${styles.bannerText} 
-        ${(title.length <= 12) && `fs-700`}
-        ${(20 >= title.length && title.length > 12) && `fs-600`}
-        ${(title.length > 20) && `fs-500`}
-      `}
+    <span 
+      className={`${styles.bannerText} ${titleFontSize}`}
     >
       {title}
-    </p>
+    </span>
     
   </h1>
   );
