@@ -15,7 +15,6 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@stripe/stripe-js": "^2.2.2",
     "ansi-html": "^0.0.9",
     "ansi-regex": "^6.0.1",
     "browserslist": "^4.20.2",
@@ -24,14 +23,13 @@
     "dotenv": "^16.0.0",
     "file-type": "^18.7.0",
     "framer-motion": "^6.2.8",
-    "gatsby": "^5.13.1",
+    "gatsby": "^5.13.3",
     "gatsby-cli": "^5.13.1",
     "gatsby-plugin-image": "^3.13.0",
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-sass": "^6.13.0",
     "gatsby-plugin-sharp": "^5.13.0",
     "gatsby-source-prismic": "^6.0.1",
-    "gatsby-source-stripe": "^4.0.0",
     "gatsby-transformer-sharp": "^5.13.0",
     "got": "^12.2.0",
     "immer": ">=9.0.12",

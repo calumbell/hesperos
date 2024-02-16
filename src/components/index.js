@@ -3,7 +3,6 @@ import BuyTicketLink from "./BuyTicketLink";
 import Card from "./Card";
 import CardGrid from "./CardGrid";
 import ContactForm from "./ContactForm";
-import Donate from "./Donate";
 import DropDownLink from "./DropDownLink";
 import EventCardThumbnail from "./EventCardThumbnail";
 import ExternalLink from "./ExternalLink";
@@ -29,7 +28,6 @@ export {
   Card,
   CardGrid,
   ContactForm,
-  Donate,
   DropDownLink,
   EventCardThumbnail,
   ExternalLink,
