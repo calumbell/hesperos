@@ -7,7 +7,6 @@ const routes = [
       { name: `PAST`, longName: `PAST EVENTS`, url: `/pastEvents`, },
     ]
   },
-  { name: `NEWS`, url: `/news`, },
   { name: 'JOIN', url: '/join', },
   { name: 'CONTACT', url: '/contact', },
   { name: 'SUPPORT', url: '/support', style: 'call-to-action', }

@@ -2,7 +2,6 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import {
-  Donate,
   Layout,
   RichTextRenderer,
   Seo,
