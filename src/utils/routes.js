@@ -1,5 +1,4 @@
 const routes = [
-  { name: `ABOUT`, url: `/about`, },
   {
     name: `EVENTS`, url: `/events`,  
     children: [
