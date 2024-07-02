@@ -34,13 +34,13 @@ const SocialMedia = () => {
           <li key={i}>
             <a 
               href={network.url} 
-              className={styles.iconLink}
+              className={styles.iconLink + " group size-full"}
               target='_blank'
               rel='noreferrer noopener'
             >
-              <svg className={styles.iconSvg} viewBox='0 0 64 64'>
-                <circle cx="32"cy="32" r="31"/>
-                <path d={icons[network.name]} />
+              <svg className="rounded-full" viewBox='0 0 64 64'>
+                <circle className="fill-light" cx="32"cy="32" r="31" />
+                <path className="fill-primary transition-colors group-hover:fill-primary-shade" d={icons[network.name]} />
               </svg>
             </a>
           </li>
