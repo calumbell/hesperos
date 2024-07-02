@@ -27,7 +27,7 @@ export default function eventPage({ data }) {
   return (
     <Layout>
       <article
-        className={`${styles.page} center-content`}
+        className={`${styles.page} max-w-[48rem] mx-auto table`}
         style={{ "--max-width": "48rem" }}
       >
         <section className={styles.topBox}>
@@ -65,7 +65,7 @@ export default function eventPage({ data }) {
 
         {event.program.richText.length > 0 && (
           <section
-            className={`${styles.programme} center-content`}
+            className={`${styles.programme} `}
             style={{ "--max-width": "36rem" }}
           >
             <h2 className={`${styles.heading} text-center`}>Programme</h2>

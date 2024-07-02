@@ -17,10 +17,9 @@ export default function Join({ data }) {
     <Layout>
       <TitleBanner
         title="Join"
-        // title={pageData.page_title.text}
         image={pageData.banner_image}
       />
-      <article className="center-content px-3">
+      <article className="max-w-[48rem] mx-auto table px-3">
         {pageData.body.map((section, i) => {
           return (
             <TextSection key={i} title={section.primary.section_title.text}>

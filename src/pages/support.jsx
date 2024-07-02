@@ -21,7 +21,7 @@ export default function Support({ data }) {
         image={pageData.banner_image}
       />
 
-      <article className="center-content">
+      <article className="max-w-[48rem] mx-auto table">
         {pageData.display_friends_scheme && (
           <TextSection title={pageData.friends_scheme_title.text}>
             <RichTextRenderer content={pageData.friends_scheme_text.richText} />
@@ -31,7 +31,7 @@ export default function Support({ data }) {
         <TextSection title={pageData.donation_title.text}>
           <RichTextRenderer content={pageData.donation_text.richText} />
         </TextSection>
-        <section className="center-children m-0">
+        <section className="max-w-[48rem] mx-auto table m-0">
           <a
             href="https://hesperos.sumupstore.com/product/donate-to-hesperos-choir"
             className="call-to-action w-fit text-2xl"

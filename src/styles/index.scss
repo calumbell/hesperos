@@ -227,34 +227,6 @@ textarea {
 /*  C O M P O N E N T   C L A S S E S                */
 /* ------------------------------------------------- */
 
-.call-to-action {
-  color: hsl( var(--clr-primary) );
-  background-color: hsl( var(--clr-light)) ;
-  border-color: hsl( var(--clr-primary-shade) );
-  padding: .5rem 1.25rem .25rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.1rem;
-  border-width: 0.25rem;
-  border-style: solid;
-  border-radius: 1rem;
-
-  &:hover, &:focus {
-    transition: border-color 0.25s;
-    transition: color 0.25;
-    background-color: hsl( var(--clr-light-shade) );
-    border-color: hsl( var(--clr-primary-pale) );
-    color: hsl( var(--clr-dark) );
-  }
-}
-
-
-/* Layout */
-.center-content {
-  max-width: var(--max-width, 48rem);
-  display: table;
-  margin: auto;
-}
-
 /* Forms */
 .form {
   padding: var(--spacing-1);

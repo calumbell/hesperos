@@ -462,6 +462,33 @@ h2 {
   line-height: 2.25rem;
 }
 
+.call-to-action {
+  border-radius: 0.75rem;
+  border-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(80 132 165 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(48 111 141 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.call-to-action:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(145 194 227 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 241 247 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(20 10 0 / var(--tw-text-opacity));
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -731,6 +758,10 @@ h2 {
 
 .max-w-\[48rem\] {
   max-width: 48rem;
+}
+
+.max-w-\[42rem\] {
+  max-width: 42rem;
 }
 
 .resize {

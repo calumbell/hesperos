@@ -19,7 +19,7 @@ export default function postPage({ data }) {
   const post = data.prismicPost.data;
   return (
     <Layout>
-      <article className="center-content rich-text">
+      <article className="max-w-[48rem] mx-auto table rich-text">
         <h1
           className={`font-light mb-2
           ${
