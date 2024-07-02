@@ -26,7 +26,7 @@ const SocialMedia = () => {
   } 
 
   return (
-    <ul className="flex justify-evenly h-8 w-100">
+    <ul className="flex justify-evenly h-8 w-100 list-none">
       {networks.map((network, i) => {
         if(network.url === '') return <></>
         return(
