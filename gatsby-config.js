@@ -15,7 +15,6 @@ module.exports = {
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sass",
-    "gatsby-plugin-postcss",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -32,5 +31,6 @@ module.exports = {
         customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
       },
     },
+    "gatsby-plugin-postcss",
   ],
 };
