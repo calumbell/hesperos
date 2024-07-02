@@ -17,12 +17,14 @@ const Card = ({ data }) => {
       <div className='mx-3 mt-1 mb-3'>
         <time className='mb-0 fw-xl'>{data.date}</time>
 
-        <h2 className={`fw-med
+        <h2 className={`fw-med font-serif
           ${data.title.length <= 20 ? `fs-500` : `fs-400`}`} // resize long txt
-        >{data.title}</h2>
+        >
+          {data.title}
+        </h2>
 
         { data.subtitle &&
-          <sub className={`text-faded fw-light ff-sans letter-spacing-3 
+          <sub className={`text-faded fw-light font-sans letter-spacing-3 
             ${data.subtitle.length <= 25 ? `fs-300` : `fs-200`}`}
           > {data.subtitle}</sub>
         }

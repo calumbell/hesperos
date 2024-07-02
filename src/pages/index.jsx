@@ -35,10 +35,10 @@ export default function Index({ data }) {
             className={`${styles.homePageNextEvent} box-shadow hover-shadow`}
             to={`/events/${nextEvent.uid}`}
           >
-            <sub className="uppercase fw-normal letter-spacing-1">
+            <sub className="uppercase font-serif fw-normal letter-spacing-1">
               Our next event
             </sub>
-            <h2 className="fs-600">{nextEvent.data.title.text}</h2>
+            <h2 className="text-3xl mb-1">{nextEvent.data.title.text}</h2>
             <p>{nextEvent.data.date}</p>
           </Link>
         )}

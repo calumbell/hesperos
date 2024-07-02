@@ -26,7 +26,7 @@ const Accordion = ({
 				<span className={styles.expandIcon} aria-expanded={isOpen}>
 					&#8250;
 				</span>
-				<span>{title}</span>
+				<span className="font-serif">{title}</span>
 
 			</button>
 

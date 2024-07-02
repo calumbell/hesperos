@@ -6,7 +6,10 @@ module.exports = {
     "./src/templates/**/*.{js,jsx}"
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'serif': ["Bodoni Moda", "serif"],
+      'sans': ["Josefin Sans", 'Helvetica', 'Arial', 'sans-serif'],
+    },
   },
   plugins: [],
 }

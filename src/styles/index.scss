@@ -25,10 +25,6 @@
   --clr-light: 210 33% 98%;
   --clr-light-shade: 203 45% 94%;
 
-  /* Font Families */
-  --ff-serif: 'Bodoni Moda', serif;
-  --ff-sans: 'Josefin Sans', sans-serif;
-
   /* Font sizes */
   --fs-900: 3.5rem;
   --fs-800: 3.0rem;
@@ -110,7 +106,6 @@ html {
 /* Making sure headings aren't bold */
 h1, h2, h3, h4, h5, h6, sub {
   font-weight: 500;
-  font-family: var(--ff-serif);
   letter-spacing: 0.05rem;
 }
 
@@ -122,7 +117,6 @@ address {
 body {
   overflow-x: hidden;
   position: relative;
-  font-family: var(--ff-sans);
   font-size: var(--fs-400);
   font-weight: 300;
   color:hsl(var(--clr-dark));
@@ -208,11 +202,7 @@ textarea {
 .text-faded { color: hsl( var(--clr-primary)); }
 .clr-primary-shade { color: hsl( var(--clr-primary-shade) ); }
 
-/* Typography */
-.ff-serif { font-family: var(--ff-serif); }
-.ff-sans { font-family: var(--ff-sans); }
 
-.uppercase { text-transform: uppercase; }
 
 .letter-spacing-1 { letter-spacing: 4.5px; }
 .letter-spacing-2 { letter-spacing: 2.6px; }

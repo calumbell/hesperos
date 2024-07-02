@@ -30,7 +30,7 @@ export default function postPage({ data }) {
         </h1>
 
         {post.subtitle.text && (
-          <sub className="d-block ff-sans fs-400 mb-2 fw-light uppercase text-faded">
+          <sub className="d-block font-sans fs-400 mb-2 fw-light uppercase text-faded">
             {post.subtitle.text}
           </sub>
         )}
@@ -57,7 +57,7 @@ export default function postPage({ data }) {
                 />
                 <sub
                   className="d-block my-2 fs-200 fw-light
-                  ff-sans text-faded uppercase letter-spacing-2"
+                  font-sans text-faded uppercase letter-spacing-2"
                 >
                   {section.primary.caption.text}
                 </sub>
