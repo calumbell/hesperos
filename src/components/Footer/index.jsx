@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { SocialMedia } from '../';
-import * as styles from './Footer.module.scss';
-
 
 const Footer = () => {
   const [lastScrollPosition, setLastScrollPosition] = useState(0);
@@ -27,19 +25,15 @@ const Footer = () => {
   const today = new Date();
 
   return (
-    <>
-
-      <footer className={`
-        ${styles.footerContainer}
-        ${!isVisible && styles.hide}
-      `}>
-        <SocialMedia />
-        <div className={styles.copyright}>
-          <span className='hide-on-sm'>{`© Hesperos Choir ${today.getFullYear()}`}</span>
-        </div>
-      </footer>
-
-    </>
+    <footer className={`
+      fixed bottom-0 w-full h-12 bg-light/80 border-t border-t-primary transition-all
+      ${!isVisible && "bottom-[-60px]"}
+    `}>
+      <SocialMedia />
+      <span className={"absolute hidden sm:block text-xs bottom-3 right-3"}>
+          {`© Hesperos Choir ${today.getFullYear()}`}
+      </span>
+    </footer>
   )
 }
 export default Footer;
