@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { Layout, Seo, SlideShow } from "../components";
+import { TextSectionTwoColumn, Layout, Seo, SlideShow } from "../components";
 import * as styles from "./index.module.scss";
 
 export const Head = () => <Seo path="/" />;
@@ -11,6 +11,7 @@ export default function Index({ data }) {
   const bio = data.prismicWebsiteDetails.data.bio.text;
   const nextEvent = data.allPrismicEvent.nodes[0];
   const images = data.prismicHomepage.data.slideshow;
+  const sections = data.prismicAboutPage.data.body[0].items;
 
   return (
     <Layout>
@@ -42,6 +43,19 @@ export default function Index({ data }) {
           </Link>
         )}
         <SlideShow images={images} />
+        <section>
+          <article className="center-content">
+            {sections.map((section, i) => (
+              <TextSectionTwoColumn
+                key={i}
+                data={{
+                  title: section.title.text,
+                  bodyText: section.content.text,
+                }}
+              />
+            ))}
+          </article>
+        </section>
       </div>
     </Layout>
   );
@@ -85,6 +99,29 @@ export const query = graphql`
           event_image {
             gatsbyImageData(placeholder: BLURRED)
             alt
+          }
+        }
+      }
+    }
+    prismicAboutPage {
+      data {
+        page_title {
+          text
+        }
+        hero_image {
+          gatsbyImageData
+          alt
+        }
+        body {
+          ... on PrismicAboutPageDataBodyTwoColumnRichText {
+            items {
+              title {
+                text
+              }
+              content {
+                text
+              }
+            }
           }
         }
       }
