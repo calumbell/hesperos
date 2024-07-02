@@ -1,14 +1,13 @@
 import React from 'react';
-import * as styles from './TextSectionTwoColumn.module.scss';
 
 const TextSectionTwoColumn = ({data}) => {
 
   return (
-    <section className={styles.container}>
-      <h2 className='title'>
+    <section className="grid grid-cols-2 my-6">
+      <h2 className='title text-3xl'>
         {data.title}
       </h2>
-      <p className={styles.bodyText}>
+      <p>
         {data.bodyText}
       </p>
     </section>
