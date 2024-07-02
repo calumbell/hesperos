@@ -25,24 +25,6 @@
   --clr-light: 210 33% 98%;
   --clr-light-shade: 203 45% 94%;
 
-  /* Font sizes */
-  --fs-900: 3.5rem;
-  --fs-800: 3.0rem;
-  --fs-700: 2.5rem;
-  --fs-600: 1.8rem;
-  --fs-500: 1.5rem;
-  --fs-400: 1.125rem;
-  --fs-300: 1rem;
-  --fs-200: 0.875rem;
-  --fs-100: 0.65rem;
-
-  /* Font weights */
-  --fw-xl: 200;
-  --fw-light: 300;
-  --fw-normal: 500;
-  --fw-medium: 600;
-  --fw-bold: 700;
-  
   --spacing-0: 0;
   --spacing-1: .25rem;
   --spacing-2: .5rem;
@@ -103,11 +85,6 @@ html {
   overflow-y: scroll;
 }
 
-/* Making sure headings aren't bold */
-h1, h2, h3, h4, h5, h6, sub {
-  font-weight: 500;
-  letter-spacing: 0.05rem;
-}
 
 address {
   font-style: normal;
@@ -117,21 +94,12 @@ address {
 body {
   overflow-x: hidden;
   position: relative;
-  font-size: var(--fs-400);
   font-weight: 300;
   color:hsl(var(--clr-dark));
   background-color: hsl( var(--clr-light) );
   line-height: 1.5;
   min-height: 100vh;
 }
-
-// /* Focus outline */
-// :focus {
-//   outline-offset: 0.3rem;
-//   outline-width: 2px;
-//   outline-style: solid;
-//   outline-color: hsl(var(--clr-primary));
-// }
 
 /* Make form elements simpler to work with */
 button {
@@ -208,36 +176,12 @@ textarea {
 .letter-spacing-2 { letter-spacing: 2.6px; }
 .letter-spacing-3 { letter-spacing: 2px; }
 
-/* Font Size */
-.fs-900 { font-size: var(--fs-900); }
-.fs-800 { font-size: var(--fs-800); }
-.fs-700 { font-size: var(--fs-700); }
-.fs-600 { font-size: var(--fs-600); }
-.fs-500 { font-size: var(--fs-500); }
-.fs-400 { font-size: var(--fs-400); }
-.fs-300 { font-size: var(--fs-300); }
-.fs-200 { font-size: var(--fs-200); }
-.fs-100 { font-size: var(--fs-100); }
-
-/* Font Weight */
-.fw-xl { font-weight: var(--fw-xl); }
-.fw-light { font-weight: var(--fw-light); }
-.fw-reg { font-weight: var(--fw-normal); }
-.fw-med { font-weight: 500; }
-.fw-bold { font-weight: 600; }
-
-.text-left { text-align: left; }
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-
 /* Display */
-.d-block { display: block; }
 .d-flex {
   display: flex;
   gap: var(--gap, 1em);
   justify-content: space-between;
 }
-.d-grid { display: grid; }
 
 .flex-wrap { flex-wrap: wrap; }
 .center-children {
@@ -400,14 +344,6 @@ textarea {
   }
 }
 
-.call-to-action-secondary {
-  @extend .call-to-action;
-  margin: 0.2rem;
-  padding: .5rem .75rem;
-  color: hsl( var(--clr-dark) );
-  font-size: var(--fs-300);
-  border-width: 0.1rem;
-}
 
 /* Layout */
 .center-content {
@@ -467,7 +403,6 @@ textarea {
 .sub-heading {
   height: fit-content;
   padding: var(--spacing-4);
-  font-size: var(--fs-700);
 }
 .nav-item {
   transition: color 0.25s, background-size 0.4s;
@@ -484,7 +419,6 @@ textarea {
 .subtitle {
   letter-spacing: var(--spacing-1);
   text-transform: uppercase;
-  font-size: var(--fs-200)
 }
 
 .underline {
@@ -496,7 +430,6 @@ textarea {
   @extend .underline;
   height: fit-content;
   display: flex;
-  font-size: var(--fs-800);
   justify-content: center;
 }
 

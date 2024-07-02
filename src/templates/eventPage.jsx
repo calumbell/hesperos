@@ -31,7 +31,7 @@ export default function eventPage({ data }) {
         style={{ "--max-width": "48rem" }}
       >
         <section className={styles.topBox}>
-          <aside className={styles.eventInfo}>
+          <aside className="font-light">
             <h1 className={styles.title}>{event.title.text}</h1>
             <time className={styles.dateTime}>
               {event.date} <br /> {event.time.text}

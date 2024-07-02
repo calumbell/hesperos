@@ -6,11 +6,6 @@
   z-index: 0;
 }
 
-.title {
-  font-size: var(--fs-800);
-  font-weight: var(--fw-medium);
-}
-
 .home-page-bio {
   position: absolute;
   text-align: right;
@@ -59,14 +54,12 @@
     text-decoration-thickness: .15rem;
     text-decoration-color: hsl( var(--clr-primary));
     text-underline-offset: .18rem;
-    font-size: var(--fs-700);
   }
 
   .home-page-bio {
     border: none;
     box-shadow: none;
     padding-top: var(--spacing-2);
-    font-size: var(--fs-400);
   }
 
   .home-page-next-event {
@@ -91,13 +84,9 @@
   // Nested query: styles for less tall phones
   @media (max-height: $breakpoint-sm) {
     .home-page-bio { 
-      font-size: var(--fs-300); 
-    }
-    .title { 
-      font-size: var(--fs-700);
+      @apply text-sm;
     }
     .home-page-next-event {
-      font-size: var(--fs-300);
       margin-left: 0;
       margin-right: 0;
       width: 100%;

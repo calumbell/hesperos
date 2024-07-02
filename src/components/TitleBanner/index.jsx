@@ -15,13 +15,7 @@ const TitleAndBanner = ({ title, image }) => {
         />
       </div>
     }
-    <p 
-      className={`${styles.bannerText} 
-        ${(title.length <= 12) && `fs-700`}
-        ${(20 >= title.length && title.length > 12) && `fs-600`}
-        ${(title.length > 20) && `fs-500`}
-      `}
-    >
+    <p className={`${styles.bannerText} font-bold text-4xl`}>
       {title}
     </p>
     

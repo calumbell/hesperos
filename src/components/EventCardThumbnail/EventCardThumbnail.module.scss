@@ -27,12 +27,10 @@
   p {
     opacity: 1;
     margin: var(--spacing-2);
-    font-size: var(--fs-300);
   }
 }
 
 .subtitle {
-  font-size: var(--fs-300);
   color: hsl(var(--clr-primary));
   display: block;
 }
@@ -49,9 +47,7 @@
 
 @media (min-width: $breakpoint-lg) {
   .tooltip {
-    p {
-      font-size: var(--fs-400);
-    }
+    @apply text-sm
   }
   .subtitle {
     display: block;
@@ -71,7 +67,6 @@
       margin: -.25rem;
       width: auto;
       color: hsl(var(--clr-faded));
-      font-size: var(--fs-300);
     }
 
     :not(p:first-child) {

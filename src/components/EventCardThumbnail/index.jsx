@@ -16,9 +16,9 @@ const EventCardThumbnail = ({ data }) => {
         alt={data.imgAltText || ''}
       />
       <div className={`p-2 text-center ${styles.tooltip}`}>
-          <p className='font-serif fs-300 fw-med'>{data.title}</p>
+          <p className='font-serif'>{data.title}</p>
           <p className={styles.subtitle}>{data.subtitle}</p>
-          <p className='fs-300'>{data.date}</p>
+          <p>{data.date}</p>
       </div>
     </Link>
   )

@@ -34,7 +34,7 @@ export default function Support({ data }) {
         <section className="center-children m-0">
           <a
             href="https://hesperos.sumupstore.com/product/donate-to-hesperos-choir"
-            className="call-to-action w-fit fs-500"
+            className="call-to-action w-fit text-2xl"
           >
             Make a one-off donatation
           </a>

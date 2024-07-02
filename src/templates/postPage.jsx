@@ -21,7 +21,7 @@ export default function postPage({ data }) {
     <Layout>
       <article className="center-content rich-text">
         <h1
-          className={`fw-light mb-2
+          className={`font-light mb-2
           ${
             post.title.text.length < 20 ? styles.titleLong : styles.titleShort
           }`}
@@ -30,7 +30,7 @@ export default function postPage({ data }) {
         </h1>
 
         {post.subtitle.text && (
-          <sub className="d-block font-sans fs-400 mb-2 fw-light uppercase text-faded">
+          <sub className="block font-sans mb-2 font-light uppercase text-faded">
             {post.subtitle.text}
           </sub>
         )}
@@ -56,7 +56,7 @@ export default function postPage({ data }) {
                   alt={section.primary.embedded_image.alt}
                 />
                 <sub
-                  className="d-block my-2 fs-200 fw-light
+                  className="block my-2 text-sm font-light
                   font-sans text-faded uppercase letter-spacing-2"
                 >
                   {section.primary.caption.text}

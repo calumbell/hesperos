@@ -10,22 +10,22 @@ const Card = ({ data }) => {
       className={`${styles.card} p-0 hover-shadow border-faded`}
     >
       <GatsbyImage 
-        className={`${styles.cardImage} mb-2 d-block`}
+        className={`${styles.cardImage} mb-2 block`}
         image={data.image}
         alt={data.altText ?? ''}
       />
       <div className='mx-3 mt-1 mb-3'>
-        <time className='mb-0 fw-xl'>{data.date}</time>
+        <time className='mb-0 font-extralight'>{data.date}</time>
 
-        <h2 className={`fw-med font-serif
-          ${data.title.length <= 20 ? `fs-500` : `fs-400`}`} // resize long txt
+        <h2 className={`font-serif
+          ${data.title.length >= 20 && 'text-xl'}`} // resize long txt
         >
           {data.title}
         </h2>
 
         { data.subtitle &&
-          <sub className={`text-faded fw-light font-sans letter-spacing-3 
-            ${data.subtitle.length <= 25 ? `fs-300` : `fs-200`}`}
+          <sub className={`text-faded font-light font-sans letter-spacing-3 
+            ${data.subtitle.length <= 25 ? `text-sm` : `text-xs`}`}
           > {data.subtitle}</sub>
         }
       </div>
@@ -35,8 +35,8 @@ const Card = ({ data }) => {
           className={`p-2 bg-light text-center ${styles.dateBubble}`}
           style={{'--gap': '0rem'}}
         >
-          <p className='p-0 mt-1 fs-500'>{data.date.split(" ")[1]}</p>
-          <p className='p-0 m-0 fs-200'>{data.date.split(" ")[2].slice(0,3)}</p>
+          <p className='p-0 mt-1 text-3xl'>{data.date.split(" ")[1]}</p>
+          <p className='p-0 m-0 2xl'>{data.date.split(" ")[2].slice(0,3)}</p>
         </div>
       }
 

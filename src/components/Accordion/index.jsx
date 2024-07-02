@@ -18,7 +18,7 @@ const Accordion = ({
 		<section className={styles.accordion}>
 			<button
 				id						= {`${id}-accordion-header`}
-				className			= {styles.header}
+				className			= {styles.header + " text-3xl"}
 				onClick				= {() => setIsOpen(!isOpen)}
 				aria-controls	= {`${id}-accordion-panel`}
 				aria-expanded	= {isOpen}

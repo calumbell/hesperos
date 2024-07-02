@@ -45,7 +45,7 @@ export default function PastEvents({ data }) {
         title={data.prismicPastEventsPage.data.title.text}
         image={data.prismicPastEventsPage.data.banner}
       />
-      <Link to="/events" className="link fs-300">
+      <Link to="/events" className="link">
         View upcoming Events
       </Link>
       {Object.keys(eventsByYear)
@@ -53,7 +53,7 @@ export default function PastEvents({ data }) {
         .map((year, i) => {
           return (
             <div className="mt-4" key={i}>
-              <p className="text-primary fs-400 fw-bold letter-spacing-2">
+              <p className="text-primary font-bold letter-spacing-2">
                 {year}
               </p>
               <CardGrid

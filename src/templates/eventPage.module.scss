@@ -5,7 +5,6 @@
 }
 
 .title {
-  font-size: var(--fs-800);
   display: inline-block;
   border-bottom: solid hsl( var(--clr-primary) ) .15rem;
   height: min-content;
@@ -14,7 +13,6 @@
 }
 
 .heading {
-  font-size: var(--fs-700);
   text-decoration: underline;
   text-decoration-color: hsl( var(--clr-primary) );
   text-decoration-thickness: .1rem;
@@ -35,8 +33,6 @@
 
 .event-info {
   display: flex;
-  font-size: var(--fs-300);
-  font-weight: var(--fw-light);
   flex-direction: column;
   justify-content: space-between;
   > * {
@@ -57,7 +53,6 @@
 
 .programme {
   border: 2px solid hsl( var(--clr-primary) );
-  font-size: var(--fs-300);
   padding: 2rem;
   background-color: hsl( var(--clr-light-shade) );
 }
@@ -80,15 +75,11 @@
     margin-top: 0;
     grid-template-columns: 1fr;
   }
-  .title {
-    font-size: var(--fs-700);
-  }
   .poster {
     display: none;
   }
 
   .event-info {
-    font-size: var(--fs-400);
     >:not(:last-child) {
       margin-bottom: 1rem;
     }

@@ -19,7 +19,7 @@ export default function Index({ data }) {
         <section
           className={`bg-light py-4 px-5 box-shadow ${styles.homePageBio}`}
         >
-          <h1 className={`${styles.title} fw-xl letter-spacing-3`}>{title}</h1>
+          <h1 className="text-5xl leading-relaxed font-bold letter-spacing-3">{title}</h1>
           <p className="mb-4">{bio}</p>
         </section>
 

@@ -31,7 +31,7 @@ export default function Events({ data }) {
         flatten={flattenEventData}
         size="medium"
       />
-      <Link to="/pastEvents" className="link fs-300 mb-1">
+      <Link to="/pastEvents" className="link mb-1">
         View Past Events
       </Link>
     </Layout>

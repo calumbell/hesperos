@@ -13,7 +13,6 @@
 .skip-main:focus, .skip-main:active {
   left: auto;
   padding: 1rem;
-  font-size: var(--fs-500);
   background-color: hsl( var(--clr-light) / 0.95 );
   border: solid hsl( var(--clr-primary) ) .1rem;
   width: auto;
@@ -63,7 +62,6 @@
     right: -100vw;
     top: 4.5rem;
     transition: right 0.25s;
-    font-size: var(--fs-400);
   }
 
   .popup-menu {
