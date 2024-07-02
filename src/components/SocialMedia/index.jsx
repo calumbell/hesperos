@@ -1,7 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { icons } from './socialMediaPathData';
-import * as styles from './SocialMedia.module.scss';
 
 const SocialMedia = () => {
   /* query Prismic for social media links */
@@ -27,14 +26,14 @@ const SocialMedia = () => {
   } 
 
   return (
-    <ul className={styles.socialMediaContainer}>
+    <ul className="flex justify-evenly h-8 w-100">
       {networks.map((network, i) => {
         if(network.url === '') return <></>
         return(
           <li key={i}>
             <a 
               href={network.url} 
-              className={styles.iconLink + " group size-full"}
+              className="inline-block group relative top-2 size-8"
               target='_blank'
               rel='noreferrer noopener'
             >
