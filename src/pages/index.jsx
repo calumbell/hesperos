@@ -2,7 +2,6 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { TextSectionTwoColumn, Layout, Seo, SlideShow } from "../components";
-import * as styles from "./index.module.scss";
 
 export const Head = () => <Seo path="/" />;
 
@@ -10,41 +9,45 @@ export default function Index({ data }) {
   const title = data.prismicWebsiteDetails.data.title.text;
   const bio = data.prismicWebsiteDetails.data.bio.text;
   const nextEvent = data.allPrismicEvent.nodes[0];
-  const images = data.prismicHomepage.data.slideshow;
+  const images = data.prismicHomepage.data.slideshow.filter((image) => image.image.gatsbyImageData);
   const sections = data.prismicAboutPage.data.body[0].items;
 
   return (
     <Layout>
-      <div className={styles.homePageContainer}>
-        <section
-          className={`bg-light py-4 px-5 box-shadow ${styles.homePageBio}`}
-        >
-          <h1 className="text-5xl leading-relaxed font-bold letter-spacing-3">{title}</h1>
-          <p className="mb-4">{bio}</p>
-        </section>
-
-        <div className={styles.altImage}>
-          <GatsbyImage
-            image={images[0].image.gatsbyImageData}
-            alt={images[0].image.alt || ""}
-          />
-        </div>
-
-        {nextEvent && (
-          <Link
-            className={`${styles.homePageNextEvent} box-shadow hover-shadow`}
-            to={`/events/${nextEvent.uid}`}
+      <div>
+        <section className="sm:h-1/2 z-0 relative">
+          <aside
+            className="bg-light/95 px-8 py-6 w-full rounded-sm z-10 right-4 top-4 sm:shadow-sm sm:absolute sm:w-96"
           >
-            <sub className="uppercase font-serif letter-spacing-1">
-              Our next event
-            </sub>
-            <h2 className="text-3xl mb-1">{nextEvent.data.title.text}</h2>
-            <p>{nextEvent.data.date}</p>
-          </Link>
-        )}
-        <SlideShow images={images} />
+            <h1 className="text-4xl text-center sm:text-right sm:text-5xl leading-relaxed font-bold letter-spacing-3">
+              {title}
+            </h1>
+            <p className="mb-4 sm:text-right">{bio}</p>
+          </aside>
+
+          <div className="sm:hidden h-1/3">
+            <GatsbyImage
+              image={images[0].image.gatsbyImageData}
+              alt={images[0].image.alt || ""}
+            />
+          </div>
+
+          {nextEvent && (
+            <Link
+              className="w-100 block sm:absolute z-10 rounded-sm p-4 bg-light/90 bottom-4 left-4 sm:shadow-sm hover:shadow"
+              to={`/events/${nextEvent.uid}`}
+            >
+              <sub className="uppercase font-serif letter-spacing-1">
+                Our next event
+              </sub>
+              <h2 className="text-3xl mb-1">{nextEvent.data.title.text}</h2>
+              <p>{nextEvent.data.date}</p>
+            </Link>
+          )}
+          <SlideShow images={images} />
+          </section>
         <section>
-          <article className="center-content">
+          <article className="max-w-[48rem] mx-auto table">
             {sections.map((section, i) => (
               <TextSectionTwoColumn
                 key={i}
