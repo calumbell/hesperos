@@ -8,7 +8,7 @@ const ExternalLink = ({
   if (url) return (
       <a
         href={url}
-        className='link d-inline'
+        className='link inline w-min text-nowrap'
         target="_blank"
         rel="noreferrer"
       > {title} </a>

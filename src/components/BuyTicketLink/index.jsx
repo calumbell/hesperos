@@ -13,11 +13,9 @@ const BuyTicketLink = ({ event }) => {
     return <p className="uppercase text-primary">This event has passed</p>;
 
   return (
-    <ExternalLink
-      url={event.buy_ticket_link.url}
-      title="Buy Tickets"
-      altTitle="No advance tickets available"
-    />
+    <a href={event.buy_ticket_link.url} className="call-to-action w-min text-2xl text-nowrap">
+      Buy Tickets
+    </a>
   );
 };
 
