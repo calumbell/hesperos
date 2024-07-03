@@ -13,7 +13,7 @@ const EventCardThumbnail = ({ data }) => {
         image={data.img}
         alt={data.imgAltText || ''}
       />
-      <div className="p-2 absolute bg-light text-center opacity-0 group-hover:opacity-90 top-4 w-[80%] left-[10%]">
+      <div className="p-2 absolute bg-light text-center opacity-0 group-hover:opacity-90 top-4 w-[80%] left-[10%] transition-all">
           <p className='font-serif mb-1'>{data.title}</p>
           <p className="text-primary">{data.subtitle}</p>
           <p>{data.date}</p>
