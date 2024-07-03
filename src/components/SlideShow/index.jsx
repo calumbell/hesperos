@@ -13,7 +13,7 @@ const SlideShow = ({images}) => {
   }, [currentIndex, images.length])
   
   return(
-    <div className="hidden sm:block relative w-100 h-[68vh]">
+    <div className="hidden md:block relative w-100 h-[68vh]">
       <AnimatePresence>
         {images.map((image, i) => { 
           if(currentIndex === i) return(

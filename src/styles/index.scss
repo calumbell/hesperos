@@ -97,7 +97,6 @@ button {
   font: inherit;
 }
 
-
 input,
 textarea,
 select {
@@ -141,13 +140,6 @@ textarea {
 .letter-spacing-2 { letter-spacing: 2.6px; }
 .letter-spacing-3 { letter-spacing: 2px; }
 
-.center-children {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 /* Visibility */
 .hide-on-sm {
   @media (max-width: $breakpoint-md) {
@@ -161,24 +153,6 @@ textarea {
   border-image-source: linear-gradient(hsl( var(--clr-primary) ), hsl(var(--clr-secondary)));
 }
 
-.border-primary {
-  border: 1px solid hsl(var(--clr-primary));
-  border-radius: 0.5rem;
-}
-
-.border-faded {
-  border: 1px solid hsl( var(--clr-dark) / 0.2);
-  border-radius: .25rem;
-}
-
-.box-shadow {
-  box-shadow: 0 0 10px hsl( var(--clr-dark) / 0.2);
-}
-
-.hover-shadow {
-  transition: box-shadow 0.3s;
-  &:hover, &:focus { box-shadow: 0 0 13px hsl( var(--clr-dark) / 0.6); }
-}
 
 /* ------------------------------------------------- */
 /*  A N I M A T I O N S                              */
@@ -260,7 +234,7 @@ textarea {
 .nav-item {
   transition: color 0.25s, background-size 0.4s;
   font-weight: 300;
-  margin-top: .65rem;
+  @apply mt-2
 }
 
 .nav-link {
@@ -272,18 +246,6 @@ textarea {
 .subtitle {
   letter-spacing: var(--spacing-1);
   text-transform: uppercase;
-}
-
-.underline {
-  border-bottom: solid hsl(var( --clr-primary )) .125rem;
-  width: fit-content;
-}
-
-.title {
-  @extend .underline;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
 }
 
 .address {

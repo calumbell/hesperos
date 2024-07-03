@@ -27,10 +27,10 @@ export default function eventPage({ data }) {
     <Layout>
       <article
         className="max-w-[48rem] mx-auto table"
-      >
-        <h1 className="border-b-primary text-center border-b-2 pb-2 mx-4 my-2 text-balance text-4xl">{event.title.text}</h1>
+      > 
         <section className="md:grid grid-cols-[8fr_5fr] my-4">
           <aside className="font-light flex flex-col mb-4 justify-between h-full">
+          <h1 className="border-b-primary text-center md:text-left border-b-2 md:border-none pb-2 my-2 text-balance text-4xl">{event.title.text}</h1>
             {event.location.text && (
               <section className="mb-4">
                 <h2 className="text-xl inline md:block">Venue</h2>
@@ -67,7 +67,7 @@ export default function eventPage({ data }) {
 
         {event.program.richText.length > 0 && (
           <section
-            className="max-w-[36rem] mx-auto bg-light-shade border-primary"
+            className="max-w-[36rem] mt-8 mx-auto bg-light-shade border border-primary"
           >
             <h2 className="text-center">Programme</h2>
             <article className="p-4">

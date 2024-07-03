@@ -60,8 +60,8 @@ const Navbar = ({routes}) => {
       {/* Right Side */}
       <div 
         className={`
-          absolute flex bg-light/90 px-6 py-2 flex-col items-center z-10 -right-full top-16 transition-all
-          md:static md:flex-row md:visible md:w-full md:justify-between md:p-0 md:ml-8 focus-within:right-0
+          absolute flex bg-light/90 px-6 py-2 flex-col items-center z-10 -right-full top-16 
+          md:static md:flex-row md:visible md:w-full md:justify-between md:p-0 md:ml-32 focus-within:right-0
           ${isMenuExpanded ? `right-0 highlight-border` : 'invisible md:visible'}
         `}
         onClick={() => setMenuExpansion(false)} 

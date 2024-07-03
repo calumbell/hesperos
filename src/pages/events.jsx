@@ -25,11 +25,9 @@ export default function Events({ data }) {
         image={data.prismicEventsPage.data.banner}
       />
       {data.allPrismicEvent.nodes.length === 0 && <p>No events scheduled</p>}
-      <ul className="grid relative mb-4 md:grid-cols-2 lg:grid-cols-3 gap-4 list-none">
+      <ul className="grid mb-4 sm:grid-cols-2 lg:grid-cols-3 gap-4 list-none">
         {data.allPrismicEvent.nodes.map((event, i) => (
-            <li className="border-primary overflow-x-hidden hover:shadow">
-              <Card data={flattenEventData(event)} key={i} />
-            </li>
+            <Card data={flattenEventData(event)} key={i} />
           )
         )}
       </ul>
