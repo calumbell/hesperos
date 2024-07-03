@@ -1,7 +1,6 @@
 import Accordion from "./Accordion";
 import BuyTicketLink from "./BuyTicketLink";
 import Card from "./Card";
-import CardGrid from "./CardGrid";
 import ContactForm from "./ContactForm";
 import DropDownLink from "./DropDownLink";
 import EventCardThumbnail from "./EventCardThumbnail";
@@ -24,7 +23,6 @@ export {
   Accordion,
   BuyTicketLink,
   Card,
-  CardGrid,
   ContactForm,
   DropDownLink,
   EventCardThumbnail,

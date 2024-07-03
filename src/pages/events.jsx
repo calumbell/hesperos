@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import { Card, CardGrid, Layout, Seo, TitleBanner } from "../components";
+import { Card, Layout, Seo, TitleBanner } from "../components";
 
 export const Head = () => <Seo path="/events" />;
 
@@ -25,13 +25,15 @@ export default function Events({ data }) {
         image={data.prismicEventsPage.data.banner}
       />
       {data.allPrismicEvent.nodes.length === 0 && <p>No events scheduled</p>}
-      <CardGrid
-        Card={Card}
-        data={data.allPrismicEvent.nodes}
-        flatten={flattenEventData}
-        size="medium"
-      />
-      <Link to="/pastEvents" className="link mb-1">
+      <ul className="grid relative mb-4 md:grid-cols-2 lg:grid-cols-3 gap-4 list-none">
+        {data.allPrismicEvent.nodes.map((event, i) => (
+            <li className="border-primary overflow-x-hidden hover:shadow">
+              <Card data={flattenEventData(event)} key={i} />
+            </li>
+          )
+        )}
+      </ul>
+      <Link to="/pastEvents" className="link text-xl">
         View Past Events
       </Link>
     </Layout>

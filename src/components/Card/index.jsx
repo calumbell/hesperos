@@ -6,7 +6,7 @@ const Card = ({ data }) => {
   return (
     <Link 
       to={`/${data.subroute}/${data.uid}`} 
-      className="rounded bg-light relative p-0 hover:shadow border-faded"
+      className="rounded bg-light relative p-0 hover:shadow size-full"
     >
       <GatsbyImage 
         className="h-96 sm:h-[68%] mb-2 block"
@@ -33,7 +33,7 @@ const Card = ({ data }) => {
 
       {data.displayDateBubble &&
         <div 
-          className="absolute flex flex-col items-center rounded-full p-2 size-20 bg-light/70 top-1 right-1 text-center"
+          className="absolute flex flex-col top-8 left-3 items-center rounded-full p-2 size-20 bg-light/70 text-center"
         >
           <p className='p-0 mt-1 text-3xl'>{data.date.split(" ")[1]}</p>
           <p className='p-0 m-0 2xl'>{data.date.split(" ")[2].slice(0,3)}</p>
