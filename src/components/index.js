@@ -19,7 +19,6 @@ import Seo from "./Seo";
 import SlideShow from "./SlideShow";
 import SocialMedia from "./SocialMedia";
 import TextSection from "./TextSection";
-import TextSectionTwoColumn from "./TextSectionTwoColumn";
 import TitleBanner from "./TitleBanner";
 
 export {
@@ -44,6 +43,5 @@ export {
   SlideShow,
   SocialMedia,
   TextSection,
-  TextSectionTwoColumn,
   TitleBanner,
 };
