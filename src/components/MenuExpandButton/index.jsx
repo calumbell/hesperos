@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import * as styles from './MenuExpandButton.module.scss';
 
 const MenuExpandButton = ({
   isExpanded,
@@ -24,16 +23,16 @@ const MenuExpandButton = ({
 
   return (
     <button 
-      className={styles.menuExpandBtn}
+      className="flex md:hidden items-center size-12"
       onClick={() => {setExpanded(!isExpanded)}}
     >
       <motion.svg
-        className={styles.svg}
-        whileHover={{ scale: 1.1  }}
-        whileTap={{ scale: 0.95 }}
+        className="fill-light stroke-primary size-10"
+        whileHover={{ scale: 1.05  }}
+        whileTap={{ scale: 0.98 }}
         viewBox="0 0 80 80"
         strokeWidth="4"
-        style={{transformOrigin : 0.5}}
+        style={{transformOrigin : 1}}
       >
         <circle 
           cx="40"
