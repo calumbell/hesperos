@@ -18,7 +18,6 @@ import RichTextRenderer from "./RichText";
 import Seo from "./Seo";
 import SlideShow from "./SlideShow";
 import SocialMedia from "./SocialMedia";
-import TextSection from "./TextSection";
 import TitleBanner from "./TitleBanner";
 
 export {
@@ -42,6 +41,5 @@ export {
   Seo,
   SlideShow,
   SocialMedia,
-  TextSection,
   TitleBanner,
 };
