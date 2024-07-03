@@ -5,7 +5,6 @@ import {
   Layout,
   RichTextRenderer,
   Seo,
-  TextSection,
   TitleBanner,
 } from "../components";
 
@@ -21,27 +20,37 @@ export default function Support({ data }) {
         image={pageData.banner_image}
       />
 
-      <article className="center-content">
+      <article className="max-w-[48rem] mx-auto table">
         {pageData.display_friends_scheme && (
-          <TextSection title={pageData.friends_scheme_title.text}>
+          <section className="flex flex-col gap-2">
+            <h2 className="text-4xl text-center mb-2 self-center border-b-2 border-b-primary w-fit">
+              {pageData.friends_scheme_title.text}
+            </h2>
             <RichTextRenderer content={pageData.friends_scheme_text.richText} />
-          </TextSection>
+          </section>
         )}
-
-        <TextSection title={pageData.donation_title.text}>
+        <section className="flex flex-col gap-2">
+          <h2 className="text-4xl text-center mb-2 self-center border-b-2 border-b-primary w-fit">
+            {pageData.donation_title.text}
+          </h2>
           <RichTextRenderer content={pageData.donation_text.richText} />
-        </TextSection>
-        <section className="center-children m-0">
+        </section>
+        <section className="flex flex-col">
           <a
             href="https://hesperos.sumupstore.com/product/donate-to-hesperos-choir"
-            className="call-to-action w-fit fs-500"
+            className="call-to-action w-fit my-4 text-2xl self-center"
           >
             Make a one-off donatation
           </a>
         </section>
-        <TextSection title={pageData.our_supporters_title.text}>
+
+        <section className="flex flex-col gap-2">
+          <h2 className="text-4xl text-center mb-2 self-center border-b-2 border-b-primary w-fit">
+            {pageData.our_supporters_title.text}
+          </h2>
           <RichTextRenderer content={pageData.our_supporters_text.richText} />
-        </TextSection>
+        </section>
+
       </article>
     </Layout>
   );

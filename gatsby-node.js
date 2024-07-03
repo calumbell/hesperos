@@ -9,11 +9,6 @@ exports.createPages = async ({ graphql, actions }) => {
           uid
         }
       }
-      allPrismicPost {
-        nodes {
-          uid
-        }
-      }
     }
   `);
   
@@ -24,15 +19,6 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve('./src/templates/eventPage.jsx'),
       context: { slug: event.uid },
     });
-  })
-
-  // create post pages
-  data.allPrismicPost.nodes.forEach((post) => {
-    actions.createPage({
-      path: `/news/${post.uid}`,
-      component: path.resolve('./src/templates/postPage.jsx'),
-      context: { slug: post.uid },
-    })
   })
 };
 

@@ -5,7 +5,6 @@ import {
   Layout,
   RichTextRenderer,
   Seo,
-  TextSection,
   TitleBanner,
 } from "../components";
 
@@ -17,19 +16,20 @@ export default function Join({ data }) {
     <Layout>
       <TitleBanner
         title="Join"
-        // title={pageData.page_title.text}
         image={pageData.banner_image}
       />
-      <article className="center-content px-3">
-        {pageData.body.map((section, i) => {
-          return (
-            <TextSection key={i} title={section.primary.section_title.text}>
+      <article className="max-w-[48rem] mx-auto table px-3">
+        {pageData.body.map((section, i) => (
+            <section key={i} className="flex flex-col gap-2">
+              <h2 className="text-4xl text-center mb-2 self-center border-b-2 border-b-primary w-fit">
+                {section.primary.section_title.text}
+              </h2>
               <RichTextRenderer
                 content={section.primary.section_content.richText}
               />
-            </TextSection>
-          );
-        })}
+            </section>
+          )
+        )}
 
         <ContactForm
           fields={{

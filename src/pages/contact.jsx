@@ -21,7 +21,7 @@ export default function Contact({ data }) {
         image={pageData.banner_image}
       />
 
-      <article className="center-content" style={{ "--max-width": "42rem" }}>
+      <article className="max-w-[42rem] mx-auto table">
         <section>
           Please use the forms below if you have any queries or would like to
           join our mailing list. All data is processed in accordance with GDPR

@@ -10,7 +10,6 @@ import {
   Seo,
 } from "../components";
 
-import * as styles from "./eventPage.module.scss";
 import BuyTicketLink from "../components/BuyTicketLink";
 
 export const Head = ({ data }) => (
@@ -27,49 +26,51 @@ export default function eventPage({ data }) {
   return (
     <Layout>
       <article
-        className={`${styles.page} center-content`}
-        style={{ "--max-width": "48rem" }}
-      >
-        <section className={styles.topBox}>
-          <aside className={styles.eventInfo}>
-            <h1 className={styles.title}>{event.title.text}</h1>
-            <time className={styles.dateTime}>
-              {event.date} <br /> {event.time.text}
-            </time>
-            <p>{`Location: ${event.location.text || `TBC`}`}</p>
+        className="max-w-[48rem] mx-auto table"
+      > 
+        <section className="md:grid grid-cols-[8fr_5fr] my-4">
+          <aside className="font-light flex flex-col mb-4 justify-between h-full">
+          <h1 className="border-b-primary text-center md:text-left border-b-2 md:border-none pb-2 my-2 text-balance text-4xl">{event.title.text}</h1>
+            {event.location.text && (
+              <section className="mb-4">
+                <h2 className="text-xl inline md:block">Venue</h2>
+                <ExternalLink
+                  url={event.location_website.text}
+                  title={event.location.text}
+                />
+                <address className="mb-2 hidden md:block">
+                  <RichTextRenderer content={event.address.richText} />
+                </address>
+                <LinkToMap query={`${event.location.text} ${event.address.text}`} />
+              </section>
+            )}
+            
+            <p className="text-lg align-center flex flex-row md:flex-col gap-1 mb-4 ">
+              <h2 className="text-xl p-0">Time</h2>
+              <time className="pt-1">{event.date}</time>
+              <time className="pt-1">{event.time.text}</time>
+            </p>
+            
+            
             <BuyTicketLink event={event} />
           </aside>
           <GatsbyImage
-            className={styles.poster}
             image={event.event_image.gatsbyImageData}
             alt={event.event_image.alt ?? ""}
           />
         </section>
-        <section className={styles.eventDescription}>
+        <section className="mb-4">
           {event.event_description.text}
         </section>
 
-        {event.location.text && (
-          <section className={styles.venueDetails}>
-            <h2 className={styles.heading}>Venue</h2>
-            <ExternalLink
-              url={event.location_website.text}
-              title={event.location.text}
-            />
-            <address>
-              <RichTextRenderer content={event.address.richText} />
-            </address>
-            <LinkToMap query={`${event.location.text} ${event.address.text}`} />
-          </section>
-        )}
+        
 
         {event.program.richText.length > 0 && (
           <section
-            className={`${styles.programme} center-content`}
-            style={{ "--max-width": "36rem" }}
+            className="max-w-[36rem] mt-8 mx-auto bg-light-shade border border-primary"
           >
-            <h2 className={`${styles.heading} text-center`}>Programme</h2>
-            <article className={styles.programmeText}>
+            <h2 className="text-center">Programme</h2>
+            <article className="p-4">
               <RichTextRenderer content={event.program.richText} />
             </article>
           </section>

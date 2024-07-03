@@ -2,24 +2,21 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-import * as styles from './EventCardThumbnail.module.scss';
-
 const EventCardThumbnail = ({ data }) => {
   return (
     <Link 
       to={`/events/${data.uid}`} 
-      className={styles.card}
+      className="w-full relative group"
     >
       <GatsbyImage
-        className={`${styles.cardImage}`} 
+        className="w-full h-full inline-block overflow-hidden group-hover:opacity-90"
         image={data.img}
         alt={data.imgAltText || ''}
       />
-      <div className={`p-2 text-center ${styles.tooltip}`}>
-          <p className='ff-serif fs-300 fw-med'>{data.title}</p>
-          {/* <p className='fs-300 fw-med text-faded'>{data.subtitle}</p> */}
-          <p className={styles.subtitle}>{data.subtitle}</p>
-          <p className='fs-300'>{data.date}</p>
+      <div className="p-2 absolute bg-light text-center opacity-0 group-hover:opacity-90 top-4 w-[80%] left-[10%] transition-all">
+          <p className='font-serif mb-1'>{data.title}</p>
+          <p className="text-primary">{data.subtitle}</p>
+          <p>{data.date}</p>
       </div>
     </Link>
   )

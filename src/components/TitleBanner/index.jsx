@@ -1,31 +1,23 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import * as styles from './TitleBanner.module.scss';
 
 const TitleAndBanner = ({ title, image }) => {
   return (
-  <h1 className={styles.bannerContainer}>
+  <section className="w-100 relative justify-center sm:justify-start items-center flex align-middle bg-primary h-32 -z-20 mb-6">
+    <h1 className="z-10 mx-4 rounded font-bold h-min py-4 px-6 bg-light/95 text-45xl">
+      {title}
+    </h1>
     { image &&
       // wrapper to stop Gatsby changing image pos. absolute => relative
-      <div className={styles.bannerImageWrapper}>
+      <div className="absolute -z-10 w-full h-[inherit]">
         <GatsbyImage 
-          className={styles.bannerImage}
+          className="w-[inherit] h-[inherit] rounded"
           image={image.gatsbyImageData}
           alt={image.alt || ""}
         />
       </div>
     }
-    <p 
-      className={`${styles.bannerText} 
-        ${(title.length <= 12) && `fs-700`}
-        ${(20 >= title.length && title.length > 12) && `fs-600`}
-        ${(title.length > 20) && `fs-500`}
-      `}
-    >
-      {title}
-    </p>
-    
-  </h1>
+  </section>
   );
 }
 

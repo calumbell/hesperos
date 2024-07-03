@@ -31,5 +31,6 @@ module.exports = {
         customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
       },
     },
+    "gatsby-plugin-postcss",
   ],
 };

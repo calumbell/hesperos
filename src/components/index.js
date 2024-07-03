@@ -1,7 +1,6 @@
 import Accordion from "./Accordion";
 import BuyTicketLink from "./BuyTicketLink";
 import Card from "./Card";
-import CardGrid from "./CardGrid";
 import ContactForm from "./ContactForm";
 import DropDownLink from "./DropDownLink";
 import EventCardThumbnail from "./EventCardThumbnail";
@@ -18,15 +17,12 @@ import RichTextRenderer from "./RichText";
 import Seo from "./Seo";
 import SlideShow from "./SlideShow";
 import SocialMedia from "./SocialMedia";
-import TextSection from "./TextSection";
-import TextSectionTwoColumn from "./TextSectionTwoColumn";
 import TitleBanner from "./TitleBanner";
 
 export {
   Accordion,
   BuyTicketLink,
   Card,
-  CardGrid,
   ContactForm,
   DropDownLink,
   EventCardThumbnail,
@@ -43,7 +39,5 @@ export {
   Seo,
   SlideShow,
   SocialMedia,
-  TextSection,
-  TextSectionTwoColumn,
   TitleBanner,
 };

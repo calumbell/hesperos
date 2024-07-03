@@ -2,7 +2,6 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import {
   EventCardThumbnail,
-  CardGrid,
   Layout,
   TitleBanner,
   Seo,
@@ -45,26 +44,26 @@ export default function PastEvents({ data }) {
         title={data.prismicPastEventsPage.data.title.text}
         image={data.prismicPastEventsPage.data.banner}
       />
-      <Link to="/events" className="link fs-300">
+      <Link to="/events" className="link">
         View upcoming Events
       </Link>
       {Object.keys(eventsByYear)
         .reverse()
-        .map((year, i) => {
-          return (
-            <div className="mt-4" key={i}>
-              <p className="text-primary fs-400 fw-bold letter-spacing-2">
-                {year}
-              </p>
-              <CardGrid
-                Card={EventCardThumbnail}
-                data={eventsByYear[year]}
-                flatten={flattenEventData}
-                size="small"
-              />
-            </div>
-          );
-        })}
+        .map((year, i) =>  (
+          <div className="mt-4" key={i}>
+            <p className="text-primary font-bold letter-spacing-2">
+              {year}
+            </p>
+            <ul className="grid relative mb-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 list-none">
+              {eventsByYear[year].map((event, i) => (
+                <li className="hover:shadow">
+                  <EventCardThumbnail data={flattenEventData(event)} key={i} />
+                </li>
+                )
+              )}
+            </ul>
+          </div>
+        ))}
     </Layout>
   );
 }

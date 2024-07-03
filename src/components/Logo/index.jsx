@@ -1,19 +1,15 @@
 import React from 'react'
-import * as styles from './Logo.module.scss';
 import { viewbox, path } from './hesperosLogoPathData';
 
 const Logo = () => {
   return (
     <svg
-      width="10rem" 
-      height="5rem"
+      className="overflow-visible w-40 h-20 group transition-all "
       viewBox={`${viewbox}`}
-      className={styles.logo}
     >
-      
       <path 
         id="Selection"
-        fill="#5085A5" 
+        className="transition-all duration-200 fill-primary group-hover:fill-primary/60 "
         d={path} 
       />
     </svg>
