@@ -17,7 +17,7 @@ export default function Index({ data }) {
       {/* Hero section - Slideshow with inset bio & next gig link */}
       <section className="md:h-1/2 z-0 relative">
         <aside
-          className="bg-light/95 mb-2 md:px-8 md:py-6 w-full rounded-sm z-10 right-4 top-4 md:shadow-sm md:absolute md:w-96"
+          className="bg-light/95 mb-2 px-2 md:px-8 md:py-6 w-full rounded-sm z-10 right-4 top-4 md:shadow-sm md:absolute md:w-96"
         >
           <h1 className="inline after:content-['_–_'] md:after:content-[] md:block text-2xl text-center md:text-right md:text-5xl leading-relaxed letter-spacing-3">
             {title}
@@ -46,8 +46,7 @@ export default function Index({ data }) {
         <SlideShow images={images} />
       </section>
 
-      {/*  */}
-      <article className="max-w-[48rem] w-full mt-4 mx-auto md:grid grid-cols-2 gap-4">
+      <article className="max-w-[48rem] w-full mt-4 px-2 md:grid grid-cols-2 gap-4">
         {sections.map((section, i) => <>
             <h2 className="flex justify-center underline decoration-primary decoration-2 underline-offset-[1rem] mb-2 h-min text-nowrap" key={i}>
               {section.title.text}
