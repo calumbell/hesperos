@@ -17,32 +17,29 @@ export default function Index({ data }) {
       {/* Hero section - Slideshow with inset bio & next gig link */}
       <section className="md:h-1/2 z-0 relative">
         <aside
-          className="bg-light/95 px-8 md:py-6 w-full rounded-sm z-10 right-4 top-4 md:shadow-sm md:absolute md:w-96"
+          className="bg-light/95 mb-2 md:px-8 md:py-6 w-full rounded-sm z-10 right-4 top-4 md:shadow-sm md:absolute md:w-96"
         >
-          <h1 className="text-3xl text-center md:text-right md:text-5xl leading-relaxed letter-spacing-3">
+          <h1 className="inline after:content-['_–_'] md:after:content-[] md:block text-2xl text-center md:text-right md:text-5xl leading-relaxed letter-spacing-3">
             {title}
           </h1>
-          <p className="mb-4 md:text-right">{bio}</p>
+          <p className="inline md:block mb-4 md:text-right">{bio}</p>
         </aside>
-
-        <div className="md:hidden h-1/3">
-          <GatsbyImage
-            image={images[0].image.gatsbyImageData}
-            alt={images[0].image.alt || ""}
-          />
-        </div>
+{/* 
 
         {/* Display data about the next gig */}
         {nextEvent && (
           <Link
-            className="w-100 block md:absolute z-10 rounded-sm p-4 bg-light/90 bottom-4 left-4 sm:shadow-sm hover:shadow"
+            className="h-max items-center flex flex-col md:h-auto md:block md:absolute z-10 w-full md:w-56 rounded-sm p-2 border-x-2 border-primary md:border-none md:bg-light/90 bottom-4 left-4 sm:shadow-sm md:hover:shadow"
             to={`/events/${nextEvent.uid}`}
           >
-            <sub className="uppercase font-serif letter-spacing-1">
-              Our next event
-            </sub>
-            <h2 className="text-3xl mb-1">{nextEvent.data.title.text}</h2>
-            <p>{nextEvent.data.date}</p>
+            <GatsbyImage className="max-w-[16rem] mx-12 center-self md:m-auto h-1/3 md:h-1/2" image={nextEvent.data.event_image.gatsbyImageData}/>
+            <div className="w-full max-w-[16rem]">
+              <sub className="uppercase font-serif letter-spacing-1">
+                Our next event
+              </sub>
+              <h2 className="text-2xl mb-1">{nextEvent.data.title.text}</h2>
+              <p>{nextEvent.data.date}</p>
+            </div>
           </Link>
         )}
         
