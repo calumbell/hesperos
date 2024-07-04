@@ -3,8 +3,8 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 const TitleAndBanner = ({ title, image }) => {
   return (
-  <section className="w-100 relative justify-center sm:justify-start items-center flex align-middle bg-primary h-32 -z-20 mb-6">
-    <h1 className="z-10 mx-4 rounded font-bold h-min py-4 px-6 bg-light/95 text-45xl">
+  <section className="w-100 relative justify-center font-medium sm:justify-start items-center flex align-middle bg-primary h-24 md:h-32 -z-20 mb-6">
+    <h1 className="z-10 mx-4 rounded h-min py-4 px-6 bg-light/95 text-3xl md:text-5xl tracking-wider">
       {title}
     </h1>
     { image &&
