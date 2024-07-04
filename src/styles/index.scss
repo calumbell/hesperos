@@ -43,10 +43,6 @@
   :root { font-size: 19px; }
 }
 
-/* Remove left margin on uls for small screens */
-@media (max-width: $breakpoint-md) {
-  ul { padding-left: 1rem; }
-}
 
 /* ------------------------------------------------- */
 /*  R E S E T                                        */
