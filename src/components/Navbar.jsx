@@ -4,7 +4,7 @@ import {
   MenuExpandButton,
   DropDownLink,
   Logo,
-} from '../';
+} from '.';
 
 const Navbar = ({routes}) => {
   // determines whether the pop-up menu is expanded or hidden

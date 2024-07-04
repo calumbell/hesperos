@@ -1,5 +1,4 @@
 import React from "react";
-import { ExternalLink } from "../";
 
 const BuyTicketLink = ({ event }) => {
   // If no url is provided, then return
