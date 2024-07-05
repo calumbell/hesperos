@@ -9,7 +9,7 @@ const DropDownLink = ({
 }) => {
 
   if (disableDropdown) return (
-      <div className={"relative inline mt-3 pb-1 group"}>
+      <div className="relative inline mt-3 pb-1 group">
         <Link to={defaultURL} className="nav-item"> 
           {menuTitle}
         </Link>

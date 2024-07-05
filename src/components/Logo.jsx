@@ -1,5 +1,5 @@
 import React from 'react'
-import { viewbox, path } from './hesperosLogoPathData';
+import { viewbox, path } from '../images/svg/hesperosLogoPathData';
 
 const Logo = () => {
   return (

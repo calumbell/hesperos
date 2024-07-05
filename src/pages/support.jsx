@@ -29,16 +29,17 @@ export default function Support({ data }) {
             <RichTextRenderer content={pageData.friends_scheme_text.richText} />
           </section>
         )}
-        <section className="flex flex-col gap-2">
+        {pageData.donation_text.text && <section className="flex flex-col gap-2">
           <h2 className="text-4xl text-center mb-2 self-center border-b-2 border-b-primary w-fit">
             {pageData.donation_title.text}
           </h2>
           <RichTextRenderer content={pageData.donation_text.richText} />
-        </section>
+        </section>}
+
         <section className="flex flex-col">
           <a
             href="https://hesperos.sumupstore.com/product/donate-to-hesperos-choir"
-            className="call-to-action w-fit my-4 text-2xl self-center"
+            className="call-to-action w-fit mb-4 text-2xl self-center"
           >
             Make a one-off donatation
           </a>

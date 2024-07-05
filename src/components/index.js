@@ -1,10 +1,9 @@
 import Accordion from "./Accordion";
-import BuyTicketLink from "./BuyTicketLink";
+import TicketCard from "./TicketCard";
 import Card from "./Card";
 import ContactForm from "./ContactForm";
 import DropDownLink from "./DropDownLink";
 import EventCardThumbnail from "./EventCardThumbnail";
-import ExternalLink from "./ExternalLink";
 import Footer from "./Footer";
 import Layout from "./Layout";
 import Logo from "./Logo";
@@ -21,12 +20,11 @@ import TitleBanner from "./TitleBanner";
 
 export {
   Accordion,
-  BuyTicketLink,
+  TicketCard,
   Card,
   ContactForm,
   DropDownLink,
   EventCardThumbnail,
-  ExternalLink,
   Footer,
   Layout,
   Logo,

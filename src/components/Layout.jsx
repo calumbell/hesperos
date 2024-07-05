@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "../../styles/index.scss";
-import { Navbar, Footer } from "../";
-import routes from "../../utils/routes";
+import "../styles/index.scss";
+import { Navbar, Footer } from ".";
+import routes from "../utils/routes";
 
 const Layout = ({ children }) => {
   return (
     <>
-      <div className="container">
+      <div className="container px-4">
         <Navbar id="navigation" routes={routes} />
 
         <motion.main

@@ -43,10 +43,6 @@
   :root { font-size: 19px; }
 }
 
-/* Remove left margin on uls for small screens */
-@media (max-width: $breakpoint-md) {
-  ul { padding-left: 1rem; }
-}
 
 /* ------------------------------------------------- */
 /*  R E S E T                                        */
@@ -131,7 +127,6 @@ textarea {
 /* ------------------------------------------------- */
 
 .container {
-  padding: 0rem 2rem;
   margin: auto auto 4rem; /* Space for footer */
   max-width: 80rem;
 }
@@ -139,13 +134,6 @@ textarea {
 .letter-spacing-1 { letter-spacing: 4.5px; }
 .letter-spacing-2 { letter-spacing: 2.6px; }
 .letter-spacing-3 { letter-spacing: 2px; }
-
-/* Visibility */
-.hide-on-sm {
-  @media (max-width: $breakpoint-md) {
-    display: none;
-  }
-}
 
 .highlight-border {
   border: 1px solid;
@@ -222,7 +210,6 @@ textarea {
   @include link-underline-anim-mixin();
   transition: color 0.25s, background-size 0.4s;
   color: hsl( var(--clr-primary-shade) );
-  text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
 }
@@ -247,30 +234,3 @@ textarea {
   letter-spacing: var(--spacing-1);
   text-transform: uppercase;
 }
-
-.address {
-  background-color: hsl( var(--clr-light-shade));
-  padding: var(--spacing-3) var(--spacing-4);
-  margin: var(--spacing-3) 0;
-  width: fit-content;
-  > * {
-    margin: 0;
-  }
-}
-
-/* for styling richtext returned from Prismic queries */
-.rich-text {
-  * p {
-    margin: var(--spacing-3) 0;
-  }
-  * p:last-child {
-    margin: 0;
-  }
-  * a {
-    @extend .link;
-    font-size: inherit;
-    text-transform: none;
-  }
-}
-
-

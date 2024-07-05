@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { icons } from './socialMediaPathData';
+import { icons } from '../images/svg/socialMediaPathData';
 
 const SocialMedia = () => {
   /* query Prismic for social media links */

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SocialMedia } from '../';
+import { SocialMedia } from './';
 
 const Footer = () => {
   const [lastScrollPosition, setLastScrollPosition] = useState(0);
