@@ -24,7 +24,12 @@ export default function Index({ data }) {
           </h1>
           <p className="inline md:block mb-4 md:text-right">{bio}</p>
         </aside>
-{/* 
+
+        {/* Alt slideshow on small screens */}
+        <GatsbyImage 
+          className="md:hidden my-2 h-40" 
+          image={images[0].image.gatsbyImageData} 
+        />
 
         {/* Display data about the next gig */}
         {nextEvent && (
@@ -32,12 +37,12 @@ export default function Index({ data }) {
             className="h-max items-center flex flex-col md:h-auto md:block md:absolute z-10 w-full md:w-56 rounded-sm p-2 border-x-2 border-primary md:border-none md:bg-light/90 bottom-4 left-4 md:hover:shadow"
             to={`/events/${nextEvent.uid}`}
           >
-            <GatsbyImage className="max-w-[16rem] mx-12 center-self md:m-auto h-1/3 md:h-1/2" image={nextEvent.data.event_image.gatsbyImageData}/>
-            <div className="w-full max-w-[16rem]">
+            {/* <GatsbyImage className="max-w-[16rem] mx-12 center-self md:m-auto h-1/3 md:h-1/2" image={nextEvent.data.event_image.gatsbyImageData}/> */}
+            <div className="w-full p-2 max-w-[18rem]">
               <sub className="uppercase font-serif letter-spacing-1">
                 Our next event
               </sub>
-              <h2 className="text-2xl mb-1">{nextEvent.data.title.text}</h2>
+              <h2 className="text-2xl md:text-3xl mb-1">{nextEvent.data.title.text}</h2>
               <p>{nextEvent.data.date}</p>
             </div>
           </Link>
@@ -92,10 +97,6 @@ export const query = graphql`
           date(formatString: "dddd DD MMMM YYYY")
           title {
             text
-          }
-          event_image {
-            gatsbyImageData(placeholder: BLURRED)
-            alt
           }
         }
       }
