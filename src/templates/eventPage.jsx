@@ -3,14 +3,8 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 
 import {
-  ExternalLink,
-  Layout,
-  LinkToMap,
-  RichTextRenderer,
-  Seo,
+  Layout, RichTextRenderer, Seo, TicketCard
 } from "../components";
-
-import BuyTicketLink from "../components/BuyTicketLink";
 
 export const Head = ({ data }) => (
   <Seo
@@ -23,41 +17,59 @@ export const Head = ({ data }) => (
 
 export default function eventPage({ data }) {
   const event = data.prismicEvent.data;
+  const isTitleLong = event.title.text.length > 24;
   return (
     <Layout>
       <article
-        className="max-w-[48rem] mx-auto table"
+        className="max-w-[48rem] mx-auto table py-0"
       > 
-        <section className="md:grid grid-cols-[8fr_5fr] my-4">
-          <aside className="font-light flex flex-col mb-4 justify-between h-full">
-          <h1 className="border-b-primary text-center md:text-left border-b-2 md:border-none pb-2 my-2 text-balance text-4xl">{event.title.text}</h1>
+        <section className="sm:grid grid-cols-[8fr_5fr] gap-6 mb-4 w-full">
+          <aside className="font-light flex flex-col mb-4 h-full">
+            <h1 className={`
+              w-full text-center sm:text-left sm:border-none pb-2 my-2 text-balance text-4xl
+              ${ isTitleLong ? " text-2xl" : " text-4xl"}
+            `}>
+              {event.title.text}
+            </h1>
+            <TicketCard event={event} />
             {event.location.text && (
               <section className="mb-4">
-                <h2 className="text-xl inline md:block">Venue</h2>
-                <ExternalLink
-                  url={event.location_website.text}
-                  title={event.location.text}
-                />
-                <address className="mb-2 hidden md:block">
+  
+                <h2 className="text-lg">Venue </h2>
+                {event.location_website.text 
+                  ? <a
+                      className="text-xl text-primary hover:text-primary-shade"
+                      href={event.location_website.text}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {event.location.text}
+                    </a>
+                  : <p className="text-xl">{event.location.text}</p>
+                }
+                            
+               <address className="mb-2 block">
                   <RichTextRenderer content={event.address.richText} />
                 </address>
-                <LinkToMap query={`${event.location.text} ${event.address.text}`} />
+                <a 
+                  className="link text-sm w-min text-nowrap inline sm:inline-block"
+                  target="_blank"
+                  rel="noreferrer"
+                  href={`http://maps.google.com/?q=${event.location.text} ${event.address.text}`}
+                >
+                  (View on Map)
+                </a>
               </section>
             )}
+
             
-            <p className="text-lg align-center flex flex-row md:flex-col gap-1 mb-4 ">
-              <h2 className="text-xl p-0">Time</h2>
-              <time className="pt-1">{event.date}</time>
-              <time className="pt-1">{event.time.text}</time>
-            </p>
-            
-            
-            <BuyTicketLink event={event} />
           </aside>
-          <GatsbyImage
-            image={event.event_image.gatsbyImageData}
-            alt={event.event_image.alt ?? ""}
-          />
+
+            <GatsbyImage
+              image={event.event_image.gatsbyImageData}
+              alt={event.event_image.alt ?? ""}
+              className="w-full sm:h-auto"
+            />
         </section>
         <section className="mb-4">
           {event.event_description.text}

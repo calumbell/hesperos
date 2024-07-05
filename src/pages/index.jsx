@@ -29,7 +29,7 @@ export default function Index({ data }) {
         {/* Display data about the next gig */}
         {nextEvent && (
           <Link
-            className="h-max items-center flex flex-col md:h-auto md:block md:absolute z-10 w-full md:w-56 rounded-sm p-2 border-x-2 border-primary md:border-none md:bg-light/90 bottom-4 left-4 sm:shadow-sm md:hover:shadow"
+            className="h-max items-center flex flex-col md:h-auto md:block md:absolute z-10 w-full md:w-56 rounded-sm p-2 border-x-2 border-primary md:border-none md:bg-light/90 bottom-4 left-4 md:hover:shadow"
             to={`/events/${nextEvent.uid}`}
           >
             <GatsbyImage className="max-w-[16rem] mx-12 center-self md:m-auto h-1/3 md:h-1/2" image={nextEvent.data.event_image.gatsbyImageData}/>

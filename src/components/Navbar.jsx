@@ -37,7 +37,10 @@ const Navbar = ({routes}) => {
   
   return (
     <nav className="flex w-full">
-      <a className={"absolute -left-full focus:left-auto bg-light/90 z-20 top-20 p-6 text-2xl"} href="#main">
+      <a 
+        className="absolute -left-full focus:left-auto bg-light/90 z-20 top-20 p-6 text-2xl"
+        href="#main"
+      >
         Skip to main content
       </a>
       {/* Left Side*/}
